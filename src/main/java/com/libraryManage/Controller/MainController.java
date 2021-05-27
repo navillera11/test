@@ -30,4 +30,10 @@ public class MainController {
 	public String admin_index() {
 		return "admin_index";
 	}
+	
+	// 회원 페이지 테스트용
+		@GetMapping("/user_index")
+		public String user_index() {
+			return "user_index";
+		}
 }
