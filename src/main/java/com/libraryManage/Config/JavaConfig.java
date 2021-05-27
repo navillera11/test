@@ -1,7 +1,6 @@
 package com.libraryManage.Config;
 
 import javax.sql.DataSource;
-import com.mysql.cj.jdbc.Driver;
 import org.springframework.context.annotation.*;
 import org.springframework.jdbc.datasource.*;
 
@@ -10,12 +9,12 @@ import org.springframework.jdbc.datasource.*;
 public class JavaConfig {
 	@Bean
 	public DataSource dataSource() {
-		SimpleDriverDataSource simpleDriverDataSource = new SimpleDriverDataSource();
-		simpleDriverDataSource.setDriverClass(Driver.class);
-		simpleDriverDataSource.setUrl("jdbc:mysql://localhost:3306/spring5fs?autoReconnect=true");
-		simpleDriverDataSource.setUsername("root");
-		simpleDriverDataSource.setPassword("rootoor");
-		return simpleDriverDataSource;
+		DriverManagerDataSource dataSource = new DriverManagerDataSource();
+		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+		dataSource.setUrl("jdbc:mysql://localhost:3306/spring5fs?autoReconnect=true");
+		dataSource.setUsername("root");
+		dataSource.setPassword("rootoor");
+		return dataSource;
 	}
 //	<?xml version="1.0" encoding="UTF-8"?>
 //	<beans xmlns="http://www.springframework.org/schema/beans"
