@@ -37,15 +37,15 @@
                 <div class="container-fluid px-4">
                     <h1 class="mt-4">도서</h1>
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item active">도서 추가</li>
+                        <li class="breadcrumb-item"><a href="/admin/book/add">도서 추가</a></li>
                         <li class="breadcrumb-item"><a href="/admin/book/delete">도서 삭제</a></li>
-                        <li class="breadcrumb-item"><a href="/admin/book/update">도서 수정</a></li>
+                        <li class="breadcrumb-item active">도서 수정</li>
                     </ol>
 
                     <!--                    도서 목록-->
                     <div class="card mb-4">
                         <div class="card-body">
-                            현재 추가 하고자 하는 도서가 존재하는지 미리 확인하세요!
+                            현재 수정 하고자 하는 도서가 존재하는지 미리 확인하세요!
                         </div>
                     </div>
                     <div class="card mb-4">
@@ -127,7 +127,7 @@
                     <div class="row justify-content-center">
                         <div class="card shadow-lg border-5 rounded-lg mt-5">
                             <div class="card-header">
-                                <h3 class="text-center font-weight-light my-4">도서 추가</h3>
+                                <h3 class="text-center font-weight-light my-4">도서 수정</h3>
                             </div>
                             <div class="card-body">
                                 <form>
@@ -182,7 +182,7 @@
                                     <input class="form-control" id="inputBookImage" type="file" placeholder="이미지 파일을 선택해주세요." />
 
                                     <div class="mt-4 mb-0">
-                                        <div class="d-grid"><input type="submit" class="btn btn-primary btn-block" value="도서를 추가합니다." /></div>
+                                        <div class="d-grid"><input type="submit" class="btn btn-primary btn-block" value="도서를 수정합니다." /></div>
                                     </div>
                                 </form>
                             </div>

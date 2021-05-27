@@ -15,28 +15,44 @@ import com.libraryManage.Service.*;
 @RequestMapping(value = "/admin/*")
 public class AdminController {
 	@Autowired
-	MemberService memberService;
-
-	// 도서 추가용
+	MemberService memService;
+	
+//	@GetMapping("/register")
+//	public String member_register() {
+//		return "member_register";
+//	}
+//	
+//	@GetMapping("/forgotPwd")
+//	public String member_forgotPwd() {
+//		return "member_forgotPwd";
+//	}
+	
+	//도서 추가용
 	@GetMapping("/book/add")
 	public String admin_book_add() {
 		return "admin_book_add";
 	}
-
-	// 도서 삭제용
+	
+	//도서 삭제용
 	@GetMapping("/book/delete")
 	public String admin_book_delete() {
 		return "admin_book_delete";
 	}
-
+	
+	//도서 수정용
+	@GetMapping("/book/update")
+	public String admin_book_update() {
+		return "admin_book_update";
+	}
+	
 	@GetMapping("/logout")
 	public String member_logout(final HttpSession session) {
-		if (session.getAttribute("auth") != null)
+		if(session.getAttribute("auth") != null)
 			session.removeAttribute("auth");
-
-		if (session.getAttribute("memberId") != null)
+		
+		if(session.getAttribute("memberId") != null)
 			session.removeAttribute("memberId");
-
+		
 		return "index";
 	}
 }

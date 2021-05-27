@@ -37,8 +37,9 @@
                 <div class="container-fluid px-4">
                     <h1 class="mt-4">도서</h1>
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item active"><a href="/admin/book/add">도서 추가</a></li>
-                        <li class="breadcrumb-item">도서 삭제</li>
+                        <li class="breadcrumb-item"><a href="/admin/book/add">도서 추가</a></li>
+                        <li class="breadcrumb-item active">도서 삭제</li>
+                        <li class="breadcrumb-item"><a href="/admin/book/update">도서 수정</a></li>
                     </ol>
 
                     <!--                    도서 목록-->
