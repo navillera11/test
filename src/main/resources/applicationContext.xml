@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="memberDAO" class="com.libraryManage.MemberDAO" />
+
+	<bean id="MemSvc" class="com.libraryManage.MemberService">
+		<constructor-arg ref="memberDAO" />
+	</bean>
+
+	<bean id="bookDAO" class="com.libraryManage.BookDAO" />
+
+	<bean id="BookSvc" class="com.libraryManage.BookService">
+		<constructor-arg ref="bookDAO" />
+	</bean>
+
+	<bean id="libraryDAO" class="com.libraryManage.LibraryDAO" />
+
+	<bean id="LibrarySvc" class="com.libraryManage.LibraryService">
+		<constructor-arg ref="libraryDAO" />
+		<constructor-arg ref="bookDAO" />
+		<constructor-arg ref="memberDAO" />
+	</bean>
+
+</beans>

@@ -38,15 +38,15 @@
 										</div>
 										<div
 											class="d-flex align-items-center justify-content-between mt-4 mb-0">
-											<a class="small" href="/user_login">Return to login</a>
-											<a class="btn btn-primary" href="/user_login">Reset
+											<a class="small" href="/member_login">Return to login</a>
+											<a class="btn btn-primary" href="/member_login">Reset
 												Password</a>
 										</div>
 									</form>
 								</div>
 								<div class="card-footer text-center py-3">
 									<div class="small">
-										<a href="/user_register">Need an account? Sign up!</a>
+										<a href="/member_register">Need an account? Sign up!</a>
 									</div>
 								</div>
 							</div>

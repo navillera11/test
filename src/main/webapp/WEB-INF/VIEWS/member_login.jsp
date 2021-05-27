@@ -36,13 +36,13 @@
                                                 <label class="form-check-label" for="inputRememberPassword">Remember Password</label>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <a class="small" href="/user_forgotPwd">Forgot Password?</a>
+                                                <a class="small" href="/member_forgotPwd">Forgot Password?</a>
                                                 <a class="btn btn-primary" href="/">Login</a>
                                             </div>
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="/user_register">Need an account? Sign up!</a></div>
+                                        <div class="small"><a href="/member_register">Need an account? Sign up!</a></div>
                                     </div>
                                 </div>
                             </div>
