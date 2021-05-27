@@ -11,6 +11,7 @@ import com.libraryManage.DTO.*;
 public class MemberService {
 	Scanner sc = new Scanner(System.in);
 
+	@Autowired
 	private MemberDAO memberDAO;
 
 	@Autowired

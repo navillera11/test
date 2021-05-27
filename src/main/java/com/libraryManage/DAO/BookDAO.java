@@ -4,6 +4,9 @@ import java.io.*;
 import java.util.*;
 import com.libraryManage.DTO.*;
 
+import org.springframework.stereotype.*;
+
+@Component
 public class BookDAO implements Serializable {
 	private Map<String, BookDTO> map = new HashMap<>();
 	private String filePath = "./src/main/resources/book_data.dat";

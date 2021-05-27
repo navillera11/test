@@ -2,8 +2,12 @@ package com.libraryManage.DAO;
 
 import java.io.*;
 import java.util.*;
+
+import org.springframework.stereotype.*;
+
 import com.libraryManage.DTO.*;
 
+@Component
 public class MemberDAO {
 	private Map<String, MemberDTO> map = new HashMap<>();
 	private String filePath = "./src/main/resources/member_data.dat";

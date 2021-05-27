@@ -2,12 +2,16 @@ package com.libraryManage.Service;
 
 import java.util.*;
 import org.springframework.beans.factory.annotation.*;
+import org.springframework.stereotype.*;
+
 import com.libraryManage.DAO.*;
 import com.libraryManage.DTO.*;
 
+@Service
 public class BookService {
 	Scanner sc = new Scanner(System.in);
 
+	@Autowired
 	private BookDAO bookDAO;
 
 	@Autowired

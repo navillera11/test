@@ -1,10 +1,14 @@
 package com.libraryManage.DAO;
 
 import java.util.*;
+
+import org.springframework.stereotype.*;
+
 import com.libraryManage.DTO.*;
 
 import java.io.*;
 
+@Component
 public class LibraryDAO {
 	private Map<String, LibraryDTO> map = new HashMap<>();
 	private String filePath = "./src/main/resources/library_data.dat";
