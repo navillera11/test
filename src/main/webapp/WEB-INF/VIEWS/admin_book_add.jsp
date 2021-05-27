@@ -172,7 +172,7 @@
 
                                     <!--                                    권수-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="inputBookCount" type="email" placeholder="권수를 입력해주세요." />
+                                        <input class="form-control" id="inputBookCount" type="number" placeholder="권수를 입력해주세요." />
                                         <label for="inputBookCount">권수</label>
                                     </div>
 
