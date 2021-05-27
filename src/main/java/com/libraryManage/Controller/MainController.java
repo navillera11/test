@@ -16,7 +16,7 @@ public class MainController {
 		String userId = (String) session.getAttribute(session.getId());
 
 		if (userId != null) {
-			if(userId.equals("admin"))
+			if (userId.equals("admin"))
 				return "admin_index";
 			else
 				return "user_index";
@@ -24,16 +24,16 @@ public class MainController {
 
 		return "index";
 	}
-	
+
 	// 관리자 페이지 테스트용
 	@GetMapping("/admin_index")
 	public String admin_index() {
 		return "admin_index";
 	}
-	
+
 	// 회원 페이지 테스트용
-		@GetMapping("/user_index")
-		public String user_index() {
-			return "user_index";
-		}
+	@GetMapping("/user_index")
+	public String user_index() {
+		return "user_index";
+	}
 }
