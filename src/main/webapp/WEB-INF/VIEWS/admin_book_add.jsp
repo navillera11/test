@@ -18,7 +18,7 @@
     <!-- Responsive navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container px-5">
-            <a class="navbar-brand" href="/admin_index">MINGW's Library Admin Page</a>
+            <a class="navbar-brand" href="/admin_index">MINGW's Library Admin Page - Book Add</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -35,7 +35,7 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">도서</h1>
+                    <h1 class="mt-4">도서 추가</h1>
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item active">도서</li>
                         <li class="breadcrumb-item"><a href="#">회원</a></li>
@@ -173,7 +173,7 @@
                                     <!--                                    권수-->
                                     <div class="form-floating mb-3">
                                         <input class="form-control" id="inputBookCount" type="email" placeholder="권수를 입력해주세요." />
-                                        <label for="inputEmail">권수</label>
+                                        <label for="inputBookCount">권수</label>
                                     </div>
 
                                     <!--                                    파일-->
