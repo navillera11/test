@@ -48,7 +48,7 @@ public class LibraryService {
 
 					bookList.add(book);
 					member.setMemBook(bookList);
-					memberDAO.exportToFile();
+					//memberDAO.exportToFile();
 					System.out.println("\n대여했습니다.\n");
 				} else {
 					System.out.println("\n비밀번호 오류\n대여하지 못했습니다.\n");
@@ -89,7 +89,7 @@ public class LibraryService {
 					bookList.remove(book);
 					member.setMemBook(bookList);
 					memberDAO.printBookList(member);
-					memberDAO.exportToFile();
+					//memberDAO.exportToFile();
 
 					book.setLended(true);
 					book.setBookEmail(null);

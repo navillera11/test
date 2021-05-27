@@ -12,11 +12,12 @@ import org.springframework.web.bind.annotation.*;
 import com.libraryManage.Service.*;
 
 @Controller
+@RequestMapping(value = "/member/*")
 public class MemberController {
 	@Autowired
 	MemberService memService;
 	
-	@GetMapping("/member/login")
+	@GetMapping("/login")
 	public String member_login(Model model, @CookieValue(value = "storedId", required = false) Cookie storedIdCookie) {
 		String storedId = "";
 		boolean checked = false;
@@ -32,17 +33,19 @@ public class MemberController {
 		return "member_login";
 	}
 	
-	@GetMapping("/member/register")
+	@GetMapping("/register")
 	public String member_register() {
 		return "member_register";
 	}
 	
-	@GetMapping("/member/forgotPwd")
+	//@GetMapping("/register_process")
+	
+	@GetMapping("/forgotPwd")
 	public String member_forgotPwd() {
 		return "member_forgotPwd";
 	}
 	
-	@GetMapping("/member/logout")
+	@GetMapping("/logout")
 	public String member_logout(final HttpSession session) {
 		if(session.getAttribute("auth") != null)
 			session.removeAttribute("auth");
