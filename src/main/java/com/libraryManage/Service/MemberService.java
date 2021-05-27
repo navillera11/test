@@ -5,6 +5,7 @@ import org.springframework.stereotype.*;
 
 import com.libraryManage.DAO.*;
 import com.libraryManage.DTO.*;
+import java.util.*;
 
 @Service
 public class MemberService {
@@ -18,32 +19,29 @@ public class MemberService {
 	public void registMember(MemberDTO _memberDTO) { // 회원가입
 		memberDAO.insertMember(_memberDTO);
 	}
-
-//	public MemberDTO loginMem() { // 로그인
-//		System.out.print("이메일 : ");
-//		String inputEmail = sc.nextLine();
-//
-//		System.out.print("비밀번호 : ");
-//		String inputPwd = sc.nextLine();
-//
-//		MemberDTO member = memberDAO.selectByEmail(inputEmail);
-//
-//		if (member == null) {
-//			System.out.println("\n입력 정보를 확인하세요.\n");
-//			return null;
-//		} else if (!member.getMemPwd().equals(inputPwd)) { // 비밀번호 오류
-//			System.out.println("\n입력 정보를 확인하세요.\n");
-//			return null;
-//		} else {
-//			if (member.getMemEmail().equals("admin")) {
-//				System.out.println("\n관리자 로그인 성공\n");
-//			} else {
-//				System.out.println("\n사용자 로그인 성공\n");
-//			}
-//		}
-//
-//		return member;
-//	}
+	
+	public MemberDTO loginMember(String inputEmail, String inputPassword) {
+		MemberDTO memberDTO = memberDAO.selectByEmail(inputEmail);
+		
+		if(memberDTO == null) {
+			System.out.println("로그인 에러");
+			return null;
+		} else if (!memberDTO.getMemberPassword().equals(inputPassword)) {
+			// 비밀번호 오류
+			System.out.println("비밀번호 에러");
+			return null;
+		} else {
+			if(memberDTO.getMemberEmail().equals("admin")) {
+				System.out.println("관리자 로그인 성공");
+				System.out.println(memberDTO.toString());
+			} else {
+				System.out.println("사용자 로그인 성공");
+				System.out.println(memberDTO.toString());
+			}
+		}
+		
+		return memberDTO;
+	}
 
 //	public void updateMem(MemberDTO _member) { // 회원 수정
 //		System.out.print("현재 비밀번호 : ");

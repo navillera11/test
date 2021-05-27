@@ -53,21 +53,50 @@ public class MemberController {
 		return "redirect:/member/login";
 	}
 
-	@GetMapping("/login")
-	public String member_login(Model model, @CookieValue(value = "storedId", required = false) Cookie storedIdCookie) {
-		String storedId = "";
-		boolean checked = false;
-
-		if (storedIdCookie != null) {
-			storedId = storedIdCookie.getValue();
-			checked = true;
-		}
-
-		model.addAttribute("storedId", storedId);
-		model.addAttribute("checked", checked);
-
+	// 로그인 페이지 이동
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String member_login(Model model) {
 		return "member_login";
 	}
+	
+	// 로그인 처리
+	@PostMapping(value = "/login")
+	public String member_login(HttpServletRequest request) {
+		try {
+			String inputEmail = request.getParameter("inputEmail");
+			String inputPassword = request.getParameter("inputPassword");
+			
+			MemberDTO memberDTO = memberService.loginMember(inputEmail, inputPassword);
+			
+			if(memberDTO == null) {
+				System.out.println("로그인 에러 in Controller");
+			} else if(memberDTO.getMemberEmail().equals("admin")) {
+				return "admin_index";
+			} else {
+				return "user_index";
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+		
+		return "redirect:/";
+	}
+
+//	@GetMapping("/login")
+//	public String member_login(Model model, @CookieValue(value = "storedId", required = false) Cookie storedIdCookie) {
+//		String storedId = "";
+//		boolean checked = false;
+//
+//		if (storedIdCookie != null) {
+//			storedId = storedIdCookie.getValue();
+//			checked = true;
+//		}
+//
+//		model.addAttribute("storedId", storedId);
+//		model.addAttribute("checked", checked);
+//
+//		return "member_login";
+//	}
 
 	@GetMapping("/forgotPwd")
 	public String member_forgotPwd() {

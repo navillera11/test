@@ -2,6 +2,10 @@ package com.libraryManage.DAO;
 
 import org.springframework.jdbc.core.*;
 import org.springframework.stereotype.*;
+import java.util.*;
+
+import java.sql.ResultSet;
+
 import javax.sql.*;
 
 import com.libraryManage.DTO.*;
@@ -14,6 +18,20 @@ public class MemberDAO {
 
 	public MemberDAO(DataSource dataSource) {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
+	}
+
+	public MemberDTO selectByEmail(String inputEmail) {
+		MemberDTO resultDTO = jdbcTemplate.queryForObject("SELECT * FROM MEMBER WHERE EMAIL = '" + inputEmail + "';",
+				(ResultSet rs, int rowNum) -> {
+					MemberDTO newMemberDTO = new MemberDTO(rs.getString("EMAIL"), rs.getString("PASSWORD"),
+							rs.getString("NAME"));
+
+					System.out.println(newMemberDTO.toString());
+
+					return newMemberDTO;
+				});
+
+		return resultDTO;
 	}
 
 	public void insertMember(MemberDTO _memberDTO) {
