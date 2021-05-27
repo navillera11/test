@@ -10,13 +10,18 @@ public class MainController {
 		return "index";
 	}
 	
-	@GetMapping("/signIn")
-	public String signIn() {
-		return "signIn";
+	@GetMapping("/user_login")
+	public String user_login() {
+		return "user_login";
 	}
 	
-	@GetMapping("/signUp")
-	public String signUp() {
-		return "signUp";
+	@GetMapping("/user_register")
+	public String user_register() {
+		return "user_register";
+	}
+	
+	@GetMapping("/user_forgotPwd")
+	public String user_forgotPwd() {
+		return "user_forgotPwd";
 	}
 }
