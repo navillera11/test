@@ -27,10 +27,16 @@ public class AdminController {
 //		return "member_forgotPwd";
 //	}
 	
-	//테스트용
+	//도서 추가용
 	@GetMapping("/book/add")
 	public String admin_book_add() {
 		return "admin_book_add";
+	}
+	
+	//도서 삭제용
+	@GetMapping("/book/delete")
+	public String admin_book_delete() {
+		return "admin_book_delete";
 	}
 	
 	@GetMapping("/logout")

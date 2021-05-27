@@ -76,7 +76,7 @@
                                         <h5 class="card-title">도서 추가/삭제</h5>
                                         <p class="card-text">MinGW's Library 의 도서 시스템에<br /> <b>도서를 추가/삭제</b>하는 기능을 이용합니다.</p>
                                         <a href="/admin/book/add" class="btn btn-primary">도서 추가</a>
-                                        <a href="#" class="btn btn-primary">도서 삭제</a>
+                                        <a href="/admin/book/delete" class="btn btn-primary">도서 삭제</a>
                                     </div>
                                 </div>
                                 <div class="card" style="width: 18rem;">

@@ -37,14 +37,14 @@
                 <div class="container-fluid px-4">
                     <h1 class="mt-4">도서</h1>
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item active">도서 추가</li>
-                        <li class="breadcrumb-item"><a href="/admin/book/delete">도서 삭제</a></li>
+                        <li class="breadcrumb-item active"><a href="/admin/book/add">도서 추가</a></li>
+                        <li class="breadcrumb-item">도서 삭제</li>
                     </ol>
 
                     <!--                    도서 목록-->
                     <div class="card mb-4">
                         <div class="card-body">
-                            현재 추가 하고자 하는 도서가 존재하는지 미리 확인하세요!
+                            현재 삭제 하고자 하는 도서가 존재하는지 미리 확인하세요!
                         </div>
                     </div>
                     <div class="card mb-4">
@@ -126,62 +126,36 @@
                     <div class="row justify-content-center">
                         <div class="card shadow-lg border-5 rounded-lg mt-5">
                             <div class="card-header">
-                                <h3 class="text-center font-weight-light my-4">도서 추가</h3>
+                                <h3 class="text-center font-weight-light my-4">도서 삭제</h3>
                             </div>
                             <div class="card-body">
                                 <form>
 
-                                    <!--                                    ISBN10 & 장르-->
-                                    <div class="row mb-3">
-                                        <div class="col-md-6">
-                                            <div class="form-floating mb-3 mb-md-0">
-                                                <input class="form-control" id="inputISBN" type="text" placeholder="ISBN 코드를 입력해주세요." />
-                                                <label for="inputISBN">ISBN10 코드</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-floating">
-                                                <input class="form-control" id="inputGenre" type="text" placeholder="장르를 입력해주세요." />
-                                                <label for="inputGenre">장르</label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    <!--                                    제목 저자 출판사-->
-                                    <div class="row mb-3">
-                                        <div class="col-md-4">
-                                            <div class="form-floating mb-3 mb-md-0">
-                                                <input class="form-control" id="inputBookTitle" type="text" placeholder="제목 명을 입력해주세요." />
-                                                <label for="inputFirstName">제목</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-floating mb-3 mb-md-0">
-                                                <input class="form-control" id="inputBookAuthor" type="text" placeholder="저자 명을 입력해주세요." />
-                                                <label for="inputLastName">저자</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-floating mb-3 mb-md-0">
-                                                <input class="form-control" id="inputBookPublisher" type="text" placeholder="출판사 명을 입력해주세요." />
-                                                <label for="inputLastName">출판사</label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!--                                    권수-->
+                                    <!--                                    ISBN10-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="inputBookCount" type="number" placeholder="권수를 입력해주세요." />
-                                        <label for="inputBookCount">권수</label>
+                                        <input class="form-control" id="inputISBN" type="text" placeholder="ISBN 코드를 입력하십시오." />
+                                        <label for="inputBookCount">ISBN10 코드</label>
                                     </div>
 
-                                    <!--                                    파일-->
-                                    <label class="form-label" for="inputBookImage">책의 이미지 파일을 삽입해주세요.</label>
-                                    <input class="form-control" id="inputBookImage" type="file" placeholder="이미지 파일을 선택해주세요." />
+
+                                    <!--                                    제목 제목확인-->
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <div class="form-floating mb-3 mb-md-0">
+                                                <input class="form-control" id="inputBookTitle" type="text" placeholder="제목 명을 입력하십시오." />
+                                                <label for="inputBookTitle">제목</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating mb-3 mb-md-0">
+                                                <input class="form-control" id="inputBookTitleConfirm" type="text" placeholder="제목이 맞는지 확인하십시오." />
+                                                <label for="inputBookTitleConfirm">제목 확인</label>
+                                            </div>
+                                        </div>
+                                    </div>
 
                                     <div class="mt-4 mb-0">
-                                        <div class="d-grid"><input type="submit" class="btn btn-primary btn-block" value="도서를 추가합니다." /></div>
+                                        <div class="d-grid"><input type="submit" class="btn btn-primary btn-block" value="도서를 삭제합니다." /></div>
                                     </div>
                                 </form>
                             </div>
