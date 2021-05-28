@@ -1,6 +1,5 @@
 package com.libraryManage.Controller;
 
-import javax.servlet.http.HttpSession;
 import javax.servlet.http.*;
 
 import org.mindrot.jbcrypt.BCrypt;
@@ -50,22 +49,6 @@ public class MemberController {
 
 		return "redirect:/member/login";
 	}
-
-//	@GetMapping("/login")
-//	public String member_login(Model model, @CookieValue(value = "storedId", required = false) Cookie storedIdCookie) {
-//		String storedId = "";
-//		boolean checked = false;
-//
-//		if (storedIdCookie != null) {
-//			storedId = storedIdCookie.getValue();
-//			checked = true;
-//		}
-//
-//		model.addAttribute("storedId", storedId);
-//		model.addAttribute("checked", checked);
-//
-//		return "member_login";
-//	}
 
 	@GetMapping("/forgotPwd")
 	public String member_forgotPwd() {
