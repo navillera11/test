@@ -45,6 +45,12 @@ public class AdminController {
 		return "admin_book_update";
 	}
 	
+	//공지사항 추가용
+	@GetMapping("/notice/noticeAdd")
+	public String admin_notice_noticeAdd() {
+		return "admin_notice_noticeAdd";
+	}
+	
 	@GetMapping("/logout")
 	public String member_logout(final HttpSession session) {
 		if(session.getAttribute("auth") != null)

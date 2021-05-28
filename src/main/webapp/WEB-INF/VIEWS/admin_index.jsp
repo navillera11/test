@@ -105,7 +105,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title">공지 사항</h5>
                                         <p class="card-text">MinGW's Library 의 도서 시스템의<br /> <b>공지사항 게시판</b>을 관리합니다.</p>
-                                        <a href="#" class="btn btn-primary">공지 사항 추가</a>
+                                        <a href="/admin/notice/noticeAdd" class="btn btn-primary">공지 사항 추가</a>
                                         <a href="#" class="btn btn-primary">공지 사항 삭제</a>
                                     </div>
 
@@ -115,8 +115,8 @@
                                     <div class="card-body">
                                         <h5 class="card-title">사서 추천 도서</h5>
                                         <p class="card-text">MinGW's Library 의 도서 시스템의<br /> <b>사서 추천 도서 게시판</b>을 관리합니다.</p>
-                                        <a href="#" class="btn btn-primary">사서 추천 도서 추가</a>
-                                        <a href="#" class="btn btn-primary">사서 추천 도서 삭제</a>
+                                        <a href="#" class="btn btn-primary">추천 도서 추가</a>
+                                        <a href="#" class="btn btn-primary">추천 도서 삭제</a>
                                     </div>
 
                                 </div>
