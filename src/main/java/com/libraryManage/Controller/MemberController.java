@@ -1,6 +1,5 @@
 package com.libraryManage.Controller;
 
-import javax.servlet.http.HttpSession;
 import javax.servlet.http.*;
 
 import org.mindrot.jbcrypt.BCrypt;

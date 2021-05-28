@@ -1,10 +1,9 @@
 package com.libraryManage.Controller;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
 
 import org.springframework.stereotype.*;
-import org.springframework.ui.Model;
+import org.springframework.ui.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.*;
 
@@ -22,13 +21,13 @@ public class MainController {
 	}
 
 	// 로그인 페이지 이동
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	@RequestMapping(value = "/member/login", method = RequestMethod.GET)
 	public String member_login(Model model) {
 		return "member_login";
 	}
 
 	// 로그인 처리
-	@PostMapping(value = "/login")
+	@PostMapping(value = "/member/login")
 	public String member_login(HttpServletRequest request) {
 		try {
 			String inputEmail = request.getParameter("inputEmail");
@@ -39,9 +38,9 @@ public class MainController {
 			if (memberDTO == null) {
 				System.out.println("로그인 에러 in Controller");
 			} else if (memberDTO.getMemberEmail().equals("admin@admin")) {
-				return "admin_index";
+				return "redirect:/admin_index";
 			} else {
-				return "member_index";
+				return "redirect:/member_index";
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
@@ -57,8 +56,8 @@ public class MainController {
 	}
 
 	// 회원 페이지 테스트용
-	@GetMapping("/user_index")
+	@GetMapping("/member_index")
 	public String user_index() {
-		return "user_index";
+		return "member_index";
 	}
 }
