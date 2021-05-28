@@ -35,7 +35,7 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">공지 사항</h1>
+                    <h1 class="mt-4">공지사항</h1>
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item active">공지 사항 추가</li>
                         <li class="breadcrumb-item"><a href="/admin/notice/noticeDelete">공지 사항 삭제</a></li>

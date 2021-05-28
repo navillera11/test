@@ -46,7 +46,7 @@ public class AdminController {
 	}
 	
 	//공지사항 추가용
-	@GetMapping("/notice/noticeAdd")
+	@GetMapping("/notice/noticeAddd")
 	public String admin_notice_noticeAdd() {
 		return "admin_notice_noticeAdd";
 	}
