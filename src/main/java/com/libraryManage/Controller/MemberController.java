@@ -50,22 +50,6 @@ public class MemberController {
 		return "redirect:/member/login";
 	}
 
-//	@GetMapping("/login")
-//	public String member_login(Model model, @CookieValue(value = "storedId", required = false) Cookie storedIdCookie) {
-//		String storedId = "";
-//		boolean checked = false;
-//
-//		if (storedIdCookie != null) {
-//			storedId = storedIdCookie.getValue();
-//			checked = true;
-//		}
-//
-//		model.addAttribute("storedId", storedId);
-//		model.addAttribute("checked", checked);
-//
-//		return "member_login";
-//	}
-
 	@GetMapping("/forgotPwd")
 	public String member_forgotPwd() {
 		return "member_forgotPwd";

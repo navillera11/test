@@ -31,7 +31,7 @@ public class MemberService {
 			System.out.println("비밀번호 에러");
 			return null;
 		} else {
-			if(memberDTO.getMemberEmail().equals("admin")) {
+			if(memberDTO.getMemberEmail().equals("admin@admin")) {
 				System.out.println("관리자 로그인 성공");
 				System.out.println(memberDTO.toString());
 			} else {

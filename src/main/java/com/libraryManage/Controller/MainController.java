@@ -30,6 +30,8 @@ public class MainController {
 	@PostMapping(value = "/member/login")
 	public String member_login(HttpServletRequest request) {
 		try {
+			HttpSession session = request.getSession(true);
+			
 			String inputEmail = request.getParameter("inputEmail");
 			String inputPassword = request.getParameter("inputPassword");
 
@@ -38,8 +40,10 @@ public class MainController {
 			if (memberDTO == null) {
 				System.out.println("로그인 에러 in Controller");
 			} else if (memberDTO.getMemberEmail().equals("admin@admin")) {
+				session.setAttribute("loginAdmin", memberDTO);
 				return "redirect:/admin_index";
 			} else {
+				session.setAttribute("loginMember", memberDTO);
 				return "redirect:/member_index";
 			}
 		} catch (Exception ex) {
