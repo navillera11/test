@@ -70,10 +70,10 @@ public class MemberController {
 			
 			if(memberDTO == null) {
 				System.out.println("로그인 에러 in Controller");
-			} else if(memberDTO.getMemberEmail().equals("admin")) {
+			} else if(memberDTO.getMemberEmail().equals("admin@admin")) {
 				return "admin_index";
 			} else {
-				return "user_index";
+				return "member_index";
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
