@@ -15,18 +15,8 @@ import com.libraryManage.Service.*;
 @RequestMapping(value = "/admin/*")
 public class AdminController {
 	@Autowired
-	MemberService memService;
-	
-//	@GetMapping("/register")
-//	public String member_register() {
-//		return "member_register";
-//	}
-//	
-//	@GetMapping("/forgotPwd")
-//	public String member_forgotPwd() {
-//		return "member_forgotPwd";
-//	}
-	
+	MemberService memberService;
+
 	//도서 추가용
 	@GetMapping("/book/add")
 	public String admin_book_add() {
@@ -46,9 +36,9 @@ public class AdminController {
 	}
 	
 	//공지사항 추가용
-	@GetMapping("/notice/noticeAddd")
-	public String admin_notice_noticeAdd() {
-		return "admin_notice_noticeAdd";
+	@GetMapping("/alarm/notice/notice_add")
+	public String admin_alarm_notice_add() {
+		return "admin_alarm_notice_add";
 	}
 	
 	@GetMapping("/logout")

@@ -58,7 +58,7 @@
                             <a class="nav-link active" href="#nav_Book" data-toggle="tab">도서</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#nav_Notice" data-toggle="tab">알림</a>
+                            <a class="nav-link" href="#nav_Alarm" data-toggle="tab">알림</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#nav_Member" data-toggle="tab">회원</a>
@@ -97,21 +97,21 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane" id="nav_Notice">
+                        <div class="tab-pane" id="nav_Alarm">
                             <!--                        알림-->
                             <div class="card-group">
                                 <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="assets/img/notice_notice.jpg" alt="Card image cap">
+                                    <img class="card-img-top" src="assets/img/alarm_notice.jpg" alt="Card image cap">
                                     <div class="card-body">
                                         <h5 class="card-title">공지사항</h5>
                                         <p class="card-text">MinGW's Library 의 도서 시스템의<br /> <b>공지사항 게시판</b>을 관리합니다.</p>
-                                        <a href="/admin/notice/noticeAdd" class="btn btn-primary">공지 사항 추가</a>
+                                        <a href="/admin/alarm/notice/notice_add" class="btn btn-primary">공지 사항 추가</a>
                                         <a href="#" class="btn btn-primary">공지 사항 삭제</a>
                                     </div>
 
                                 </div>
                                 <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="assets/img/notice_good.jpg" alt="Card image cap">
+                                    <img class="card-img-top" src="assets/img/alarm_good.jpg" alt="Card image cap">
                                     <div class="card-body">
                                         <h5 class="card-title">사서 추천 도서</h5>
                                         <p class="card-text">MinGW's Library 의 도서 시스템의<br /> <b>사서 추천 도서 게시판</b>을 관리합니다.</p>
@@ -121,7 +121,7 @@
 
                                 </div>
                                 <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="assets/img/notice_freeBoard.jpg" alt="Card image cap">
+                                    <img class="card-img-top" src="assets/img/alarm_freeBoard.jpg" alt="Card image cap">
                                     <div class="card-body">
                                         <h5 class="card-title">자유 게시판 관리</h5>
                                         <p class="card-text">MinGW's Library 의 도서 시스템의<br /> <b>자유 게시판 게시물</b>을 관리합니다.</p>
