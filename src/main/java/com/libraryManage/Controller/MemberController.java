@@ -1,13 +1,11 @@
 package com.libraryManage.Controller;
 
 import javax.servlet.http.HttpSession;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.*;
 
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import com.libraryManage.DTO.*;
@@ -51,35 +49,6 @@ public class MemberController {
 		}
 
 		return "redirect:/member/login";
-	}
-
-	// 로그인 페이지 이동
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String member_login(Model model) {
-		return "member_login";
-	}
-	
-	// 로그인 처리
-	@PostMapping(value = "/login")
-	public String member_login(HttpServletRequest request) {
-		try {
-			String inputEmail = request.getParameter("inputEmail");
-			String inputPassword = request.getParameter("inputPassword");
-			
-			MemberDTO memberDTO = memberService.loginMember(inputEmail, inputPassword);
-			
-			if(memberDTO == null) {
-				System.out.println("로그인 에러 in Controller");
-			} else if(memberDTO.getMemberEmail().equals("admin@admin")) {
-				return "admin_index";
-			} else {
-				return "member_index";
-			}
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-		
-		return "redirect:/";
 	}
 
 //	@GetMapping("/login")
