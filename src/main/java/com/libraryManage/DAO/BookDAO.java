@@ -1,49 +1,59 @@
 package com.libraryManage.DAO;
 
-import java.io.*;
-import java.util.*;
 import com.libraryManage.DTO.*;
 
 import org.springframework.stereotype.*;
+import org.springframework.jdbc.core.*;
+
+import javax.sql.*;
+import java.util.*;
 
 @Component
-public class BookDAO implements Serializable {
-//	public BookDTO selectById(String bookId) { // 일련번호로 데이터 받아오기
-//		return map.get(bookId);
-//	}
+public class BookDAO {
 
-//	public List<BookDTO> selectByTitle(String bookTitle) { // 책 이름으로 검색
-//		List<BookDTO> bookSearched = new ArrayList<BookDTO>();
-//
-//		for (Map.Entry<String, BookDTO> element : map.entrySet()) {
-//			String bookTitleFromMap = element.getValue().getBookTitle(); // 책 제목
-//			if (bookTitleFromMap.equals(bookTitle)) {
-//				bookSearched.add(element.getValue());
-//			}
-//		}
-//
-//		return bookSearched;
-//	}
+	private BookDTO bookDTO;
+	private JdbcTemplate jdbcTemplate;
 
-	public void insertBook(BookDTO book) {
-		
+	public BookDAO(DataSource dataSource) {
+		this.jdbcTemplate = new JdbcTemplate(dataSource);
+	}
+
+	public BookDTO selectByISBN(String inputISBN) {
+		try {
+			return jdbcTemplate.queryForObject("SELECT * FROM BOOK WHERE ISBN=?;",
+					(rs, rowNum) -> new BookDTO(rs.getString("ISBN"), rs.getString("TITLE"), rs.getString("AUTHOR"),
+							rs.getString("GENRE"), rs.getString("PUBLISHER"), rs.getBlob("IMAGE"), rs.getInt("COUNT")),
+					inputISBN);
+		} catch (Exception ex) {
+			return null;
+		}
+	}
+
+	public List<BookDTO> showAll() {
+		List<BookDTO> result = jdbcTemplate.query("SELECT * FROM BOOK;", (rs, rowNum) -> {
+			BookDTO bookDTO = new BookDTO(rs.getString("ISBN"), rs.getString("TITLE"), rs.getString("AUTHOR"),
+					rs.getString("GENRE"), rs.getString("PUBLISHER"), rs.getBlob("IMAGE"), rs.getInt("COUNT"));
+			return bookDTO;
+		});
+		return result;
+	}
+
+	public void insertBook(BookDTO _bookDTO) {
+		this.bookDTO = _bookDTO;
+
+		jdbcTemplate.update("INSERT INTO BOOK(ISBN, TITLE, AUTHOR, GENRE, PUBLISHER, IMAGE, COUNT) VALUES('"
+				+ bookDTO.getBookISBN() + "', '" + bookDTO.getBookTitle() + "', '" + bookDTO.getBookAuthor() + "', '"
+				+ bookDTO.getBookGenre() + "', '" + bookDTO.getBookPublisher() + "', '" + bookDTO.getBookImage()
+				+ "', '" + bookDTO.getBookCount() + "');");
+	}
+
+	public void deleteBook(BookDTO _bookDTO) {
+		this.bookDTO = _bookDTO;
+
+		jdbcTemplate.update("DELETE FROM BOOK WHERE ISBN=" + _bookDTO.getBookISBN() + ";");
 	}
 
 	public void updateBook(BookDTO book) {
-		
-	}
 
-	public void deleteBook(BookDTO book) {
 	}
-
-//	public void showAll() {
-//		System.out.println("책 일련번호\t\t책 제목\t\t책 저자\t\t책 출판사\t\t대여 여부\t\t대여한 사람");
-//		System.out.println("---------------------------------------------------------------------------------------");
-//
-//		for (Map.Entry<String, BookDTO> element : map.entrySet()) {
-//			// String bookIdFromMap = element.getKey();
-//			BookDTO valueFromMap = element.getValue();
-//			System.out.println(valueFromMap.toString());
-//		}
-//	}
 }
