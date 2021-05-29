@@ -45,7 +45,7 @@
                     <!--                    추천 도서 목록-->
                     <div class="card mb-4">
                         <div class="card-body">
-                            현재 추가 하고자 하는 추천 도서이 존재하는지 미리 확인하세요!
+                            현재 추가 하고자 하는 추천 도서가 존재하는지 미리 확인하세요!
                         </div>
                     </div>
                     <div class="card mb-4">
