@@ -11,7 +11,8 @@ public class JavaConfig {
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql://localhost:3306/spring5fs?autoReconnect=true");
+		dataSource.setUrl(
+				"jdbc:mysql://localhost:3306/spring5fs?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8");
 		dataSource.setUsername("root");
 		dataSource.setPassword("rootoor");
 		return dataSource;
