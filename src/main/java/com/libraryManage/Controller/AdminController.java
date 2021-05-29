@@ -156,13 +156,13 @@ public class AdminController {
 	}
 	
 	// 추천도서 추가용
-	@GetMapping("/alarm/notice/good_add")
+	@GetMapping("/alarm/good/good_add")
 	public String admin_alarm_good_add() {
 		return "admin_alarm_good_add";
 	}
 	
 	// 추천도서 삭제용
-	@GetMapping("/alarm/notice/good_delete")
+	@GetMapping("/alarm/good/good_delete")
 	public String admin_alarm_good_delete() {
 		return "admin_alarm_good_delete";
 	}

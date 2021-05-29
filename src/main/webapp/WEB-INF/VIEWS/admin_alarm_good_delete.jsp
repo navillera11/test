@@ -12,7 +12,6 @@
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="/css/styles2.css" rel="stylesheet" />
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -33,19 +32,18 @@
     <div class="container px-4 px-lg-5">
         <!-- Heading Row-->
 
-        <div id="layoutSidenav_content">
-            <main>
+            	<!-- 추천 도서 목록 -->
                 <div class="container-fluid px-4">
                     <h1 class="mt-4">사서 추천 도서</h1>
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item active">추천 도서 추가</li>
-                        <li class="breadcrumb-item"><a href="/admin/alarm/good/good_delete">추천 도서 삭제</a></li>
+                        <li class="breadcrumb-item"><a href="/admin/alarm/good/good_add">추천 도서 추가</a></li>
+                        <li class="breadcrumb-item active">추천 도서 삭제</li>
                     </ol>
 
                     <!--                    추천 도서 목록-->
                     <div class="card mb-4">
                         <div class="card-body">
-                            현재 추가 하고자 하는 추천 도서가 존재하는지 미리 확인하세요!
+                            현재 삭제 하고자 하는 추천 도서가 존재하는지 미리 확인하세요!
                         </div>
                     </div>
                     <div class="card mb-4">
@@ -57,7 +55,7 @@
                             <table id="datatablesSimple">
                                 <thead>
                                     <tr>
-                                    	<th>ID</th>
+                                        <th>ID</th>
                                         <th>ISBN</th>
                                         <th>제목</th>
                                         <th>날짜</th>
@@ -65,7 +63,7 @@
                                 </thead>
                                 <tfoot>
                                     <tr>
-                                    	<th>ID</th>
+                                        <th>ID</th>
                                         <th>ISBN</th>
                                         <th>제목</th>
                                         <th>날짜</th>
@@ -73,31 +71,31 @@
                                 </tfoot>
                                 <tbody>
                                     <tr>
-                                    	<td>0</td>
+                                        <td>0</td>
                                         <td>123123</td>
                                         <td>쏘공에 대한 책</td>
                                         <td>2020-02-30</td>
                                     </tr>
                                     <tr>
-                                    	<td>1</td>
+                                        <td>1</td>
                                         <td>123123</td>
                                         <td>호러관련 추천 도서</td>
                                         <td>2020-02-31</td>
                                     </tr>
                                     <tr>
-                                    	<td>2</td>
+                                        <td>2</td>
                                         <td>123123</td>
                                         <td>쏘공에 대한 책</td>
                                         <td>2020-02-30</td>
                                     </tr>
                                     <tr>
-                                    	<td>3</td>
+                                        <td>3</td>
                                         <td>123123</td>
                                         <td>호러관련 추천 도서</td>
                                         <td>2020-02-31</td>
                                     </tr>
                                     <tr>
-                                    	<td>4</td>
+                                        <td>4</td>
                                         <td>123123</td>
                                         <td>쏘공에 대한 책</td>
                                         <td>2020-02-30</td>
@@ -108,33 +106,39 @@
                     </div>
                 </div>
 
-                <!--                추천 도서 추가 파트-->
+                <!--                추천 도서 삭제 파트-->
                 <div class="container px-4 px-lg-5">
                     <div class="row justify-content-center">
                         <div class="card shadow-lg border-5 rounded-lg mt-5">
                             <div class="card-header">
-                                <h3 class="text-center font-weight-light my-4">추천 도서 추가</h3>
+                                <h3 class="text-center font-weight-light my-4">추천 도서 삭제</h3>
                             </div>
                             <div class="card-body">
                                 <form>
-									
-									<div class="form-floating mb-3">
-                                        <input class="form-control" id="inputGoodISBN" type="text" placeholder="추천할 책의 ISBN을 입력해주세요." />
-                                        <label for="inputGoodISBN">추천할 책의 ISBN</label>
+
+                                    <!--                                    ID-->
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="inputGoodID" type="text" placeholder="ISBN 코드를 입력하십시오." name="inputGoodID" /> <label for="inputGoodID">ID</label>
                                     </div>
-                                
-                                	<div class="form-floating mb-3">
-                                        <input class="form-control" id="inputGoodTitle" type="text" placeholder="추천 도서 제목을 입력해주세요." />
-                                        <label for="inputGoodTitle">추천 도서를 멋지게 설명할 주제 제목</label>
+
+                                    <!--                                    제목-->
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <div class="form-floating mb-3 mb-md-0">
+                                                <input class="form-control" id="inputGoodTitle" type="text" placeholder="제목 명을 입력하십시오." />
+                                                <label for="inputGoodTitle">제목</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating mb-3 mb-md-0">
+                                                <input class="form-control" id="inputGoodTitleConfirm" type="text" placeholder="제목이 맞는지 확인하십시오." />
+                                                <label for="inputGoodTitleConfirm">제목 확인</label>
+                                            </div>
+                                        </div>
                                     </div>
-                                    
-                                    <div class="form-group">
-                                    	<textarea class="form-control" id="inputGoodContent" placeholder="추천 도서 내용을 입력해주세요." rows="10"></textarea>
-                                    </div>
-                                    <div id="inputGoodContentCount">(0 / 1000)</div>
-                                    
+
                                     <div class="mt-4 mb-0">
-                                        <div class="d-grid"><input type="submit" class="btn btn-primary btn-block" value="추천 도서를 추가합니다." /></div>
+                                        <div class="d-grid"><input type="submit" class="btn btn-primary btn-block" value="추천 도서를 삭제합니다." /></div>
                                     </div>
                                 </form>
                             </div>
@@ -153,7 +157,7 @@
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
             <!-- Core theme JS-->
             <script src="/js/scripts.js"></script>
-            <!--    회원 정의 추가용-->
+            <!--    회원 정의 삭제용-->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
             <!--        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>-->
             <!--    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/css/bootstrap.min.css" rel="stylesheet" />-->
@@ -166,10 +170,6 @@
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
             <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
             <script src="/js/dataTables.js"></script>
-            
-            <!-- 글자제한 -->
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-            <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
         </div>
     </div>
 </body>
