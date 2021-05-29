@@ -21,17 +21,13 @@ public class MemberDAO {
 	}
 
 	public MemberDTO selectByEmail(String inputEmail) {
-		MemberDTO resultDTO = jdbcTemplate.queryForObject("SELECT * FROM MEMBER WHERE EMAIL = '" + inputEmail + "';",
-				(ResultSet rs, int rowNum) -> {
-					MemberDTO newMemberDTO = new MemberDTO(rs.getString("EMAIL"), rs.getString("PASSWORD"),
-							rs.getString("NAME"));
-
-					System.out.println(newMemberDTO.toString());
-
-					return newMemberDTO;
-				});
-
-		return resultDTO;
+		try {
+			return this.jdbcTemplate.queryForObject("SELECT * FROM MEMBER WHERE EMAIL=?;", (rs,
+					rowNum) -> new MemberDTO(rs.getString("EMAIL"), rs.getString("PASSWORD"), rs.getString("NAME")),
+					inputEmail);
+		} catch (Exception ex) {
+			return null;
+		}
 	}
 
 	public void insertMember(MemberDTO _memberDTO) {

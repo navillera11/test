@@ -7,7 +7,6 @@ import org.springframework.ui.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.*;
 
-import com.libraryManage.DTO.*;
 import com.libraryManage.Service.*;
 
 @Controller
@@ -18,39 +17,6 @@ public class MainController {
 	@GetMapping("/")
 	public String index(Model model, HttpServletRequest request) {
 		return "index";
-	}
-
-	// 로그인 페이지 이동
-	@RequestMapping(value = "/member/login", method = RequestMethod.GET)
-	public String member_login(Model model) {
-		return "member_login";
-	}
-
-	// 로그인 처리
-	@PostMapping(value = "/member/login")
-	public String member_login(HttpServletRequest request) {
-		try {
-			HttpSession session = request.getSession(true);
-			
-			String inputEmail = request.getParameter("inputEmail");
-			String inputPassword = request.getParameter("inputPassword");
-
-			MemberDTO memberDTO = memberService.loginMember(inputEmail, inputPassword);
-
-			if (memberDTO == null) {
-				System.out.println("로그인 에러 in Controller");
-			} else if (memberDTO.getMemberEmail().equals("admin@admin")) {
-				session.setAttribute("loginAdmin", memberDTO);
-				return "redirect:/admin_index";
-			} else {
-				session.setAttribute("loginMember", memberDTO);
-				return "redirect:/member_index";
-			}
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-
-		return "/";
 	}
 
 	// 관리자 페이지 테스트용

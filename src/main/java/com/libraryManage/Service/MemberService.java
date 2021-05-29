@@ -5,7 +5,6 @@ import org.springframework.stereotype.*;
 
 import com.libraryManage.DAO.*;
 import com.libraryManage.DTO.*;
-import java.util.*;
 
 @Service
 public class MemberService {
@@ -16,28 +15,43 @@ public class MemberService {
 		this.memberDAO = _memberDAO;
 	}
 
-	public void registMember(MemberDTO _memberDTO) { // 회원가입
-		memberDAO.insertMember(_memberDTO);
+	public MemberDTO registMember(MemberDTO _memberDTO) { // 회원가입
+		MemberDTO memberDTO = memberDAO.selectByEmail(_memberDTO.getMemberEmail());
+
+		if (memberDTO == null) { // 회원 존재하지 않음 --> 회원가입 진행
+			memberDAO.insertMember(_memberDTO);
+			
+			return _memberDTO; // 가입한 계정 반환
+		} else {
+			System.out.println("이미 존재하는 계정입니다.");
+			
+			return null; // 존재하는 계정 반환
+		}
 	}
-	
-	public MemberDTO loginMember(String inputEmail, String inputPassword) {
+
+	public MemberDTO loginMember(String inputEmail, String inputPassword) { // 로그인
 		MemberDTO memberDTO = memberDAO.selectByEmail(inputEmail);
 		
-		if(memberDTO == null) {
-			System.out.println("로그인 에러");
+		if (memberDTO == null) {
+			System.out.println("이메일 입력 에러");
 			return null;
 		} else if (!memberDTO.getMemberPassword().equals(inputPassword)) {
 			// 비밀번호 오류
 			System.out.println("비밀번호 에러");
 			return null;
+		}
+
+		return memberDTO;
+	}
+	
+	public MemberDTO forgotPassword(String inputEmail) {
+		MemberDTO memberDTO = memberDAO.selectByEmail(inputEmail);
+		
+		if(memberDTO == null) {
+			System.out.println("존재하지 않는 계정입니다.");
+			return null;
 		} else {
-			if(memberDTO.getMemberEmail().equals("admin@admin")) {
-				System.out.println("관리자 로그인 성공");
-				System.out.println(memberDTO.toString());
-			} else {
-				System.out.println("사용자 로그인 성공");
-				System.out.println(memberDTO.toString());
-			}
+			
 		}
 		
 		return memberDTO;
