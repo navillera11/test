@@ -83,11 +83,6 @@ public class MemberService {
 //	}
 //
 //	public void deleteMem() { // 회원 삭제
-//		memberDAO.showAll();
-//		
-//		System.out.println("\n삭제할 회원의 이메일을 입력하세요.\n");
-//		String inputEmail = sc.nextLine();
-//
 //		MemberDTO member = memberDAO.selectByEmail(inputEmail);
 //
 //		if (member == null) {

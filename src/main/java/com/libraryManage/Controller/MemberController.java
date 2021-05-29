@@ -37,9 +37,8 @@ public class MemberController {
 
 			if (inputPassword.equals(confirmPassword))
 				memberDTO = memberService.registMember(memberDTO);
-			else {
+			else
 				throw new PasswordNotMatchingException("확인 비밀번호와 맞지 않습니다.");
-			}
 
 			if (memberDTO == null) {
 				throw new AlreadyExistingMemberException("이미 존재하는 계정입니다.");
