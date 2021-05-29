@@ -41,6 +41,13 @@ public class AdminController {
 		return "admin_alarm_notice_add";
 	}
 	
+	
+	//회원 목록
+	@GetMapping("/member/show")
+	public String admin_member_show() {
+		return "admin_member_show";
+	}
+	
 	@GetMapping("/logout")
 	public String member_logout(final HttpSession session) {
 		if(session.getAttribute("auth") != null)

@@ -139,7 +139,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title">회원 목록</h5>
                                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                        <a href="#" class="btn btn-primary">회원 목록</a>
+                                        <a href="/admin/member/show" class="btn btn-primary">회원 목록</a>
                                     </div>
                                 </div>
                                 <div class="card" style="width: 18rem;">
