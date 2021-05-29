@@ -23,7 +23,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/admin_index">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/index">Logout</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/">Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -62,6 +62,7 @@
                                         <th>저자</th>
                                         <th>출판사</th>
                                         <th>장르</th>
+                                        <th>권수</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
@@ -71,6 +72,7 @@
                                         <th>저자</th>
                                         <th>출판사</th>
                                         <th>장르</th>
+                                        <th>권수</th>
                                     </tr>
                                 </tfoot>
                                 <tbody>
@@ -80,6 +82,7 @@
                                         <td>한화택</td>
                                         <td>더퀘스트</td>
                                         <td>자연과학</td>
+                                        <td>1</td>
                                     </tr>
                                     <tr>
                                         <td>1165215497</td>
@@ -87,6 +90,7 @@
                                         <td>한화택</td>
                                         <td>더퀘스트</td>
                                         <td>자연과학</td>
+                                        <td>1</td>
                                     </tr>
                                     <tr>
                                         <td>1165215497</td>
@@ -94,6 +98,7 @@
                                         <td>한화택</td>
                                         <td>더퀘스트</td>
                                         <td>자연과학</td>
+                                        <td>1</td>
                                     </tr>
                                     <tr>
                                         <td>1165215497</td>
@@ -101,6 +106,7 @@
                                         <td>한화택</td>
                                         <td>더퀘스트</td>
                                         <td>자연과학</td>
+                                        <td>1</td>
                                     </tr>
                                     <tr>
                                         <td>1165215497</td>
@@ -108,6 +114,7 @@
                                         <td>한화택</td>
                                         <td>더퀘스트</td>
                                         <td>자연과학</td>
+                                        <td>1</td>
                                     </tr>
                                     <tr>
                                         <td>1165215497</td>
@@ -115,6 +122,7 @@
                                         <td>한화택</td>
                                         <td>더퀘스트</td>
                                         <td>자연과학</td>
+                                        <td>1</td>
                                     </tr>
                                 </tbody>
                             </table>
