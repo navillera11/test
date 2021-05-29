@@ -116,9 +116,9 @@
                             <div class="card-body">
                                 <form>
 
-                                    <!--                                    ID-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="inputGoodID" type="text" placeholder="ISBN 코드를 입력하십시오." name="inputGoodID" /> <label for="inputGoodID">ID</label>
+                                        <input class="form-control" id="inputGoodID" type="text" placeholder="추천 도서 게시물의 ID 입력해주세요." />
+                                        <label for="inputGoodID">추천 도서 게시물의 ID</label>
                                     </div>
 
                                     <!--                                    제목-->
