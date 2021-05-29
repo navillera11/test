@@ -24,4 +24,13 @@ window.addEventListener('DOMContentLoaded', event => {
 			$('#inputNoticeContentCount').html("(100 / 100)");
 		}
 	});
+	
+	// 공지사항 글자 수 제한
+	$('#inputGoodContent').on('keyup', function() {
+		$('#inputGoodContentCount').html("("+$(this).val().length+" / 1000)");
+		if($(this).val().length > 1000) {
+			$(this).val($(this).val().substring(0, 1000));
+			$('#inputGoodContentCount').html("(100 / 100)");
+		}
+	});
 });

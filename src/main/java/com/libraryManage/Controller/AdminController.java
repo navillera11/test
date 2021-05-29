@@ -148,12 +148,26 @@ public class AdminController {
 	public String admin_alarm_notice_add() {
 		return "admin_alarm_notice_add";
 	}
-
+	
 	// 공지사항 삭제용
 	@GetMapping("/alarm/notice/notice_delete")
 	public String admin_alarm_notice_delete() {
 		return "admin_alarm_notice_delete";
-	}	
+	}
+	
+	// 추천도서 추가용
+	@GetMapping("/alarm/notice/good_add")
+	public String admin_alarm_good_add() {
+		return "admin_alarm_good_add";
+	}
+	
+	// 추천도서 삭제용
+	@GetMapping("/alarm/notice/good_delete")
+	public String admin_alarm_good_delete() {
+		return "admin_alarm_good_delete";
+	}
+	
+
 	// 회원 목록
 	@GetMapping("/member/show")
 	public String admin_member_show() {
