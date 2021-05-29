@@ -2,10 +2,11 @@ package com.libraryManage.DTO;
 
 import java.io.*;
 
-public class MemberDTO implements Serializable {
+public class MemberDTO {
 	private String memberEmail; // 사용자 이메일
 	private String memberPassword; // 사용자 비밀번호
 	private String memberName; // 사용자 이름
+	private int memberRank; // 사용자 랭크
 	// private List<BookDTO> memBook = new ArrayList<BookDTO>(); // 대여한 도서 리스트
 
 	public MemberDTO(String _memberEmail, String _memberPassword, String _memberName) {
