@@ -149,6 +149,11 @@ public class AdminController {
 		return "admin_alarm_notice_add";
 	}
 
+	// 공지사항 삭제용
+	@GetMapping("/alarm/notice/notice_delete")
+	public String admin_alarm_notice_delete() {
+		return "admin_alarm_notice_delete";
+	}	
 	// 회원 목록
 	@GetMapping("/member/show")
 	public String admin_member_show() {

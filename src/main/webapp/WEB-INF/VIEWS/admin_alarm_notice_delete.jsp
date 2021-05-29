@@ -132,7 +132,7 @@
                                     </div>
 
                                     <div class="mt-4 mb-0">
-                                        <div class="d-grid"><input type="submit" class="btn btn-primary btn-block" value="공지 사항를 삭제합니다." /></div>
+                                        <div class="d-grid"><input type="submit" class="btn btn-primary btn-block" value="공지 사항을 삭제합니다." /></div>
                                     </div>
                                 </form>
                             </div>
@@ -150,7 +150,7 @@
             <!-- Bootstrap core JS-->
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
             <!-- Core theme JS-->
-            <script src="js/scripts.js"></script>
+            <script src="/js/scripts.js"></script>
             <!--    회원 정의 추가용-->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
             <!--        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>-->
@@ -162,7 +162,6 @@
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
 
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-            <script src="js/scripts.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
             <script src="/js/dataTables.js"></script>
         </div>
