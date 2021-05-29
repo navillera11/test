@@ -35,16 +35,16 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">공지사항</h1>
+                    <h1 class="mt-4">공지 사항</h1>
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item active">공지 사항 추가</li>
-                        <li class="breadcrumb-item"><a href="/admin/alarm/notice/notice_delete">공지 사항 삭제</a></li>
+                        <li class="breadcrumb-item"><a href="/admin/alarm/notice/notice_add">공지 사항 추가</a></li>
+                        <li class="breadcrumb-item active">공지 사항 삭제</li>
                     </ol>
 
                     <!--                    공지 사항 목록-->
                     <div class="card mb-4">
                         <div class="card-body">
-                            현재 추가 하고자 하는 공지 사항이 존재하는지 미리 확인하세요!
+                            현재 삭제 하고자 하는 공지 사항이 존재하는지 미리 확인하세요!
                         </div>
                     </div>
                     <div class="card mb-4">
@@ -96,7 +96,7 @@
                                     </tr>
                                     <tr>
                                         <td>5</td>
-                                        <td>여섯째 공지입니까</td>
+                                        <td>첫번째 공지입니까</td>
                                         <td>2020-05-28</td>
                                     </tr>
                                 </tbody>
@@ -110,22 +110,29 @@
                     <div class="row justify-content-center">
                         <div class="card shadow-lg border-5 rounded-lg mt-5">
                             <div class="card-header">
-                                <h3 class="text-center font-weight-light my-4">공지 사항 추가</h3>
+                                <h3 class="text-center font-weight-light my-4">공지 사항 삭제</h3>
                             </div>
                             <div class="card-body">
                                 <form>
-                                
-                                	<div class="form-floating mb-3">
-                                        <input class="form-control" id="inputNoticeTitle" type="text" placeholder="공지 사항 제목을 입력해주세요." />
-                                        <label for="inputNoticeTitle">공지 사항 제목</label>
+
+                                    <!--                                    ID ID확인-->
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <div class="form-floating mb-3 mb-md-0">
+                                                <input class="form-control" id="inputNoticeID" type="text" placeholder="제목 명을 입력하십시오." />
+                                                <label for="inputNoticeID">ID</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating mb-3 mb-md-0">
+                                                <input class="form-control" id="inputNoticeIDConfirm" type="text" placeholder="제목이 맞는지 확인하십시오." />
+                                                <label for="inputNoticeIDConfirm">ID 확인</label>
+                                            </div>
+                                        </div>
                                     </div>
-                                    
-                                    <div class="form-group">
-                                    	<textarea class="form-control" id="inputNoticeContent" placeholder="공지 사항 내용을 입력해주세요." rows="10"></textarea>
-                                    </div>
-                                    
+
                                     <div class="mt-4 mb-0">
-                                        <div class="d-grid"><input type="submit" class="btn btn-primary btn-block" value="공지 사항을 추가합니다." /></div>
+                                        <div class="d-grid"><input type="submit" class="btn btn-primary btn-block" value="공지 사항를 삭제합니다." /></div>
                                     </div>
                                 </form>
                             </div>

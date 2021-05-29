@@ -106,7 +106,7 @@
                                         <h5 class="card-title">공지사항</h5>
                                         <p class="card-text">MinGW's Library 의 도서 시스템의<br /> <b>공지사항 게시판</b>을 관리합니다.</p>
                                         <a href="/admin/alarm/notice/notice_add" class="btn btn-primary">공지 사항 추가</a>
-                                        <a href="#" class="btn btn-primary">공지 사항 삭제</a>
+                                        <a href="/admin/alarm/notice/notice_delete" class="btn btn-primary">공지 사항 삭제</a>
                                     </div>
 
                                 </div>
