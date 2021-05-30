@@ -8,4 +8,10 @@ window.addEventListener('DOMContentLoaded', event => {
     if (datatablesSimple) {
         new simpleDatatables.DataTable(datatablesSimple);
     }
+
+	//추천 도서 게시물의 도서가 이미 존재하는지 확인하기 위해 도서 테이블을 시각화해주기 위해 테이블 하나 더 생성
+    const datatablesSimple2 = document.getElementById('datatablesSimple2');
+    if (datatablesSimple2) {
+        new simpleDatatables.DataTable(datatablesSimple2);
+    }
 });
