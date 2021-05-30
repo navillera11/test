@@ -65,13 +65,13 @@ public class AdminBookController {
 			bookDTO = bookService.addBook(bookDTO);
 
 			if (bookDTO == null) {
-				throw new AlreadyExistingBookException("이미 존재하는 도서입니다.");
+				throw new AlreadyExistingException("이미 존재하는 도서입니다.");
 			} else {
 				System.out.println(bookDTO.toString());
 
 				response.sendRedirect("/admin/book/add");
 			}
-		} catch (AlreadyExistingBookException ex) {
+		} catch (AlreadyExistingException ex) {
 			response.setContentType("text/html; charset=UTF-8");
 
 			PrintWriter out = response.getWriter();
@@ -111,7 +111,7 @@ public class AdminBookController {
 			BookDTO bookDTO = bookDAO.selectByISBN(inputBookISBN);
 
 			if (bookDTO == null)
-				throw new BookNotExistingException("존재하지 않는 도서입니다.");
+				throw new NotExistingException("존재하지 않는 도서입니다.");
 			else {
 				if (bookDTO.getBookTitle().equals(inputBookTitle)) {
 					if (inputBookTitle.equals(inputBookTitleConfirm)) {
@@ -119,11 +119,11 @@ public class AdminBookController {
 
 						response.sendRedirect("/admin/book/delete");
 					} else
-						throw new BookTitleNotMatchingException("확인 제목과 맞지 않습니다.");
+						throw new NotMatchingException("확인 제목과 맞지 않습니다.");
 				} else
-					throw new BookTitleNotExistingException("책의 제목이 맞지 않습니다.");
+					throw new NotExistingException("책의 제목이 맞지 않습니다.");
 			}
-		} catch (BookTitleNotMatchingException ex) {
+		} catch (NotMatchingException ex) {
 			response.setContentType("text/html; charset=UTF-8");
 
 			PrintWriter out = response.getWriter();
@@ -131,7 +131,7 @@ public class AdminBookController {
 			out.println("<script>alert('확인 제목과 맞지 않습니다.'); location.href='/admin/book/delete';</script>");
 
 			out.flush();
-		} catch (BookNotExistingException ex) {
+		} catch (NotExistingException ex) {
 			response.setContentType("text/html; charset=UTF-8");
 
 			PrintWriter out = response.getWriter();
@@ -139,7 +139,7 @@ public class AdminBookController {
 			out.println("<script>alert('존재하지 않는 도서입니다.'); location.href='/admin/book/delete';</script>");
 
 			out.flush();
-		} catch (BookTitleNotExistingException ex) {
+		} catch (ConfirmNotMatchingException ex) {
 			response.setContentType("text/html; charset=UTF-8");
 
 			PrintWriter out = response.getWriter();
@@ -191,7 +191,7 @@ public class AdminBookController {
 				bookDTO = bookService.updateBook(bookDTO);
 
 				if (bookDTO == null)
-					throw new BookNotExistingException("수정할 도서가 없습니다.");
+					throw new NotExistingException("수정할 도서가 없습니다.");
 				else
 					response.sendRedirect("/admin/book/update");
 			}
@@ -203,7 +203,7 @@ public class AdminBookController {
 			out.println("<script>alert('모든 정보를 입력해주세요.'); location.href='/admin/book/update';</script>");
 
 			out.flush();
-		} catch (BookNotExistingException ex) {
+		} catch (NotExistingException ex) {
 			response.setContentType("text/html; charset=UTF-8");
 
 			PrintWriter out = response.getWriter();

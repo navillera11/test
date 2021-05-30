@@ -104,13 +104,13 @@
 
 									<div class="form-floating mb-3">
 										<input class="form-control" id="inputNoticeTitle" type="text"
-											placeholder="공지 사항 제목을 입력해주세요." /> <label
+											placeholder="공지 사항 제목을 입력해주세요." name="inputNoticeTitle" /> <label
 											for="inputNoticeTitle">공지 사항 제목</label>
 									</div>
 
 									<div class="form-group">
 										<textarea class="form-control" id="inputNoticeContent"
-											placeholder="공지 사항 내용을 입력해주세요." rows="10"></textarea>
+											placeholder="공지 사항 내용을 입력해주세요." rows="10" name="inputNoticeContent"></textarea>
 									</div>
 									<div id="inputNoticeContentCount">(0 / 1000)</div>
 

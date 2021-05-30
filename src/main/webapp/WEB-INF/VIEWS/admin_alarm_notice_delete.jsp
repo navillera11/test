@@ -104,13 +104,13 @@
 										<div class="col-md-6">
 											<div class="form-floating mb-3 mb-md-0">
 												<input class="form-control" id="inputNoticeID" type="text"
-													placeholder="제목 명을 입력하십시오." /> <label for="inputNoticeID">ID</label>
+													placeholder="제목 명을 입력하십시오." name="inputNoticeID" /> <label for="inputNoticeID">ID</label>
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-floating mb-3 mb-md-0">
 												<input class="form-control" id="inputNoticeIDConfirm"
-													type="text" placeholder="제목이 맞는지 확인하십시오." /> <label
+													type="text" placeholder="제목이 맞는지 확인하십시오." name="inputNoticeIDConfirm" /> <label
 													for="inputNoticeIDConfirm">ID 확인</label>
 											</div>
 										</div>

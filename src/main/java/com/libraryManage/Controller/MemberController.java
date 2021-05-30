@@ -38,16 +38,16 @@ public class MemberController {
 			if (inputPassword.equals(confirmPassword))
 				memberDTO = memberService.registMember(memberDTO);
 			else
-				throw new PasswordNotMatchingException("확인 비밀번호와 맞지 않습니다.");
+				throw new NotMatchingException("확인 비밀번호와 맞지 않습니다.");
 
 			if (memberDTO == null) {
-				throw new AlreadyExistingMemberException("이미 존재하는 계정입니다.");
+				throw new AlreadyExistingException("이미 존재하는 계정입니다.");
 			} else {
 				System.out.println(memberDTO.toString());
 				
 				response.sendRedirect("/member/login");
 			}
-		} catch (PasswordNotMatchingException ex) {
+		} catch (NotMatchingException ex) {
 			response.setContentType("text/html; charset=UTF-8");
 
 			PrintWriter out = response.getWriter();
@@ -55,7 +55,7 @@ public class MemberController {
 			out.println("<script>alert('확인 비밀번호와 맞지 않습니다.'); location.href='/member/register';</script>");
 
 			out.flush();
-		} catch (AlreadyExistingMemberException ex) {
+		} catch (AlreadyExistingException ex) {
 			response.setContentType("text/html; charset=UTF-8");
 
 			PrintWriter out = response.getWriter();
