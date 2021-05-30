@@ -39,7 +39,17 @@ public class BookService {
 		}
 	}
 
-	public void updateBook() { // 책 수정
-
+	public BookDTO updateBook(BookDTO _bookDTO) { // 책 수정
+		BookDTO bookDTO = bookDAO.selectByISBN(_bookDTO.getBookISBN());
+		
+		if(bookDTO == null) { // 도서 존재하지 않음
+			System.out.println("수정할 도서가 없습니다.");
+			
+			return null;
+		} else { // 도서가 존재함
+			bookDAO.updateBook(_bookDTO);
+			
+			return _bookDTO;
+		}
 	}
 }

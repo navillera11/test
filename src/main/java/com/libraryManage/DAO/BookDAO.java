@@ -53,7 +53,12 @@ public class BookDAO {
 		jdbcTemplate.update("DELETE FROM BOOK WHERE ISBN=" + _bookDTO.getBookISBN() + ";");
 	}
 
-	public void updateBook(BookDTO book) {
+	public void updateBook(BookDTO _bookDTO) {
+		this.bookDTO = _bookDTO;
 
+		jdbcTemplate.update("UPDATE BOOK SET TITLE='" + bookDTO.getBookTitle() + "', AUTHOR='" + bookDTO.getBookAuthor()
+				+ "', GENRE='" + bookDTO.getBookGenre() + "', PUBLISHER='" + bookDTO.getBookPublisher() + "', IMAGE="
+				+ bookDTO.getBookImage() + ", COUNT=" + bookDTO.getBookCount() + " WHERE ISBN='"
+				+ bookDTO.getBookISBN() + "';");
 	}
 }
