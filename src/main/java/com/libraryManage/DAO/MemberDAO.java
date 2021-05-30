@@ -29,7 +29,18 @@ public class MemberDAO {
 	}
 
 	public List<MemberDTO> showAll() {
+		// 전체 회원 조회
 		List<MemberDTO> result = jdbcTemplate.query("SELECT * FROM MEMBER;", (rs, rowNum) -> {
+			MemberDTO memberDTO = new MemberDTO(rs.getString("EMAIL"), rs.getString("PASSWORD"), rs.getString("NAME"),
+					rs.getInt("RANK"));
+			return memberDTO;
+		});
+		return result;
+	}
+
+	public List<MemberDTO> showBlack() {
+		// 블랙리스트 조회
+		List<MemberDTO> result = jdbcTemplate.query("SELECT * FROM MEMBER WHERE RANK=1;", (rs, rowNum) -> {
 			MemberDTO memberDTO = new MemberDTO(rs.getString("EMAIL"), rs.getString("PASSWORD"), rs.getString("NAME"),
 					rs.getInt("RANK"));
 			return memberDTO;

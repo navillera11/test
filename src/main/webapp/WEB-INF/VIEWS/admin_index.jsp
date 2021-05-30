@@ -121,7 +121,7 @@
 
                                 </div>
                                 <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="assets/img/alarm_freeBoard.jpg" alt="Card image cap">
+                                    <img class="card-img-top" src="assets/img/alarm_free_board.jpg" alt="Card image cap">
                                     <div class="card-body">
                                         <h5 class="card-title">자유 게시판 관리</h5>
                                         <p class="card-text">MinGW's Library 의 도서 시스템의<br /> <b>자유 게시판 게시물</b>을 관리합니다.</p>
@@ -151,11 +151,11 @@
                                     </div>
                                 </div>
                                 <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="assets/img/member_blackList.jpg" alt="Card image cap">
+                                    <img class="card-img-top" src="assets/img/member_black_show.jpg" alt="Card image cap">
                                     <div class="card-body">
                                         <h5 class="card-title">회원 블랙리스트 관리</h5>
                                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                                        <a href="#" class="btn btn-primary">회원 블랙리스트 관리</a>
+                                        <a href="/admin/member/black_show" class="btn btn-primary">회원 블랙리스트 관리</a>
                                     </div>
                                 </div>
                             </div>

@@ -39,7 +39,7 @@
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item"><a href="/admin/member/show">회원 목록</a></li>
                         <li class="breadcrumb-item active">회원 초기화</li>
-                        <li class="breadcrumb-item"><a href="/admin/member/blackList">회원 블랙리스트</a></li>
+                        <li class="breadcrumb-item"><a href="/admin/member/black_show">회원 블랙리스트</a></li>
                     </ol>
 
                     <!--                    회원 목록-->

@@ -46,20 +46,20 @@
 				<div class="container-fluid px-4">
 					<h1 class="mt-4">회원</h1>
 					<ol class="breadcrumb mb-4">
-						<li class="breadcrumb-item active">회원 목록</li>
+						<li class="breadcrumb-item"><a href="/admin/member/show">회원 목록</a></li>
 						<li class="breadcrumb-item"><a href="/admin/member/reset">회원
 								초기화</a></li>
-						<li class="breadcrumb-item"><a href="/admin/member/black_show">회원
-								블랙리스트</a></li>
+						<li class="breadcrumb-item active">회원
+								블랙리스트</li>
 					</ol>
 
 					<!--                    회원 목록-->
 					<div class="card mb-4">
-						<div class="card-body">전체 회원 목록과 검색을 진행하실 수 있습니다.</div>
+						<div class="card-body">블랙리스트 회원 목록과 검색을 진행하실 수 있습니다.</div>
 					</div>
 					<div class="card mb-4">
 						<div class="card-header">
-							<i class="fas fa-table me-1"></i> 회원 목록
+							<i class="fas fa-table me-1"></i>블랙리스트 회원 목록
 						</div>
 						<div class="card-body">
 							<table id="datatablesSimple">
@@ -80,7 +80,7 @@
 									</tr>
 								</tfoot>
 								<tbody>
-									<c:forEach var="memberDTO" items="${memberList}">
+									<c:forEach var="memberDTO" items="${memberBlackList}">
 										<tr>
 											<td>${memberDTO.memberName}</td>
 											<td>${memberDTO.memberEmail}</td>

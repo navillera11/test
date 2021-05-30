@@ -30,4 +30,14 @@ public class AdminMemberController {
 
 		return "admin_member_show";
 	}
+
+	// 블랙리스트 회원 조회 페이지 이동
+	@RequestMapping(value = "/black_show", method = RequestMethod.GET)
+	public String admin_member_black_show(Model model) {
+		List<MemberDTO> memberBlackList = memberDAO.showBlack();
+
+		model.addAttribute("memberBlackList", memberBlackList);
+
+		return "admin_member_black_show";
+	}
 }
