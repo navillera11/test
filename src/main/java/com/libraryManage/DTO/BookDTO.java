@@ -3,7 +3,7 @@ package com.libraryManage.DTO;
 import java.io.*;
 import java.sql.*;
 
-public class BookDTO implements Serializable {
+public class BookDTO {
 	private String bookISBN; // 도서 ISBN -- Primary Key
 	private String bookTitle; // 도서 제목
 	private String bookAuthor; // 도서 저자
