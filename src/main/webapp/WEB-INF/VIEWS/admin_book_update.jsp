@@ -91,6 +91,7 @@
 											<td>${bookDTO.bookAuthor}</td>
 											<td>${bookDTO.bookPublisher}</td>
 											<td>${bookDTO.bookGenre}</td>
+											<td>${bookDTO.bookCount}</td>
 										</tr>
 									</c:forEach>
 								</tbody>
