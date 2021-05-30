@@ -77,3 +77,15 @@ CREATE TABLE `book` (
   PRIMARY KEY (`ISBN`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 ~~~~
+
+
+## PUSH 목록
+
+2020-05-31:
+  * databasesTable.md - 추천 도서 테이블 sql
+  * admin_alarm_good_add, delete.jsp - 추천 도서 목록 출력, 도서 목록 출력
+  * AdminGoodController.java - 추천 도서 추가, 삭제
+  * GoodDAO.java - 추천 도서 추가, 삭제
+  * GoodDTO.java - 추천 도서 DTO
+  * GoodService - 추천 도서 추가, 삭제
+  * CheckOutDTO.java - 대여 도서 DTO
