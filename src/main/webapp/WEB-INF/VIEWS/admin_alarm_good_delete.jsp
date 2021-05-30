@@ -43,7 +43,7 @@
                     <!--                    추천 도서 목록-->
                     <div class="card mb-4">
                         <div class="card-body">
-                            현재 삭제 하고자 하는 추천 도서가 존재하는지 미리 확인하세요!
+                            현재 삭제 하고자 하는 추천 도서 게시물이 존재하는지 미리 확인하세요!
                         </div>
                     </div>
                     <div class="card mb-4">
@@ -111,7 +111,7 @@
                     <div class="row justify-content-center">
                         <div class="card shadow-lg border-5 rounded-lg mt-5">
                             <div class="card-header">
-                                <h3 class="text-center font-weight-light my-4">추천 도서 삭제</h3>
+                                <h3 class="text-center font-weight-light my-4">추천 도서 게시물 삭제</h3>
                             </div>
                             <div class="card-body">
                                 <form>
@@ -138,7 +138,7 @@
                                     </div>
 
                                     <div class="mt-4 mb-0">
-                                        <div class="d-grid"><input type="submit" class="btn btn-primary btn-block" value="추천 도서를 삭제합니다." /></div>
+                                        <div class="d-grid"><input type="submit" class="btn btn-primary btn-block" value="추천 도서 게시물을 삭제합니다." /></div>
                                     </div>
                                 </form>
                             </div>
