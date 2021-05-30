@@ -50,7 +50,7 @@ public class BookDAO {
 	public void deleteBook(BookDTO _bookDTO) {
 		this.bookDTO = _bookDTO;
 
-		jdbcTemplate.update("DELETE FROM BOOK WHERE ISBN=" + _bookDTO.getBookISBN() + ";");
+		jdbcTemplate.update("DELETE FROM BOOK WHERE ISBN=" + bookDTO.getBookISBN() + ";");
 	}
 
 	public void updateBook(BookDTO _bookDTO) {
