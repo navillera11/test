@@ -30,6 +30,11 @@
 
 ## Member 기능
 
+    * 도서
+      * 도서 대여
+      * 도서 반납
+ 
+
 ## Database 구조
 
 [현재까지 구현한 Database Table 모음집](./src/main/resources/static/sql/databasesTable.md)
