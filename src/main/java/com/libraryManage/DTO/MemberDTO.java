@@ -15,6 +15,13 @@ public class MemberDTO {
 		this.memberName = _memberName;
 	}
 
+	public MemberDTO(String _memberEmail, String _memberPassword, String _memberName, int _memberRank) {
+		this.memberEmail = _memberEmail;
+		this.memberPassword = _memberPassword;
+		this.memberName = _memberName;
+		this.memberRank = _memberRank;
+	}
+
 	public String getMemberEmail() {
 		return memberEmail;
 	}
@@ -39,6 +46,14 @@ public class MemberDTO {
 		this.memberName = memberName;
 	}
 
+	public int getMemberRank() {
+		return memberRank;
+	}
+
+	public void setMemberRank(int memberRank) {
+		this.memberRank = memberRank;
+	}
+
 	public void changePassword(String oldPassword, String newPassword) {
 		if (!memberPassword.equals(oldPassword))
 			System.out.println("\n입력 정보를 확인하세요.\n");
@@ -47,6 +62,7 @@ public class MemberDTO {
 	}
 
 	public String toString() {
-		return "사용자 이메일: " + getMemberEmail() + "\t\t사용자 비밀번호: " + getMemberPassword() + "\t\t사용자 이름: " + getMemberName();
+		return "사용자 이메일: " + getMemberEmail() + "\t\t사용자 비밀번호: " + getMemberPassword() + "\t\t사용자 이름: "
+				+ getMemberName();
 	}
 }

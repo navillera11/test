@@ -1,6 +1,7 @@
 package com.libraryManage.DAO;
 
 import org.springframework.jdbc.core.*;
+import java.util.*;
 import org.springframework.stereotype.*;
 
 import javax.sql.*;
@@ -25,6 +26,15 @@ public class MemberDAO {
 		} catch (Exception ex) {
 			return null;
 		}
+	}
+
+	public List<MemberDTO> showAll() {
+		List<MemberDTO> result = jdbcTemplate.query("SELECT * FROM MEMBER;", (rs, rowNum) -> {
+			MemberDTO memberDTO = new MemberDTO(rs.getString("EMAIL"), rs.getString("PASSWORD"), rs.getString("NAME"),
+					rs.getInt("RANK"));
+			return memberDTO;
+		});
+		return result;
 	}
 
 	public void insertMember(MemberDTO _memberDTO) {
