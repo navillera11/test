@@ -1,5 +1,6 @@
 package com.libraryManage.Controller;
 
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Blob;
 
@@ -47,10 +48,14 @@ public class AdminController {
 
 			int inputBookCount;
 
-			if (inputBookCountString.equals(""))
-				inputBookCount = 1;
-			else
-				inputBookCount = Integer.parseInt(inputBookCountString);
+			if (inputBookISBN.equals("") || inputBookGenre.equals("") || inputBookTitle.equals("")
+					|| inputBookAuthor.equals("") || inputBookPublisher.equals(""))
+				throw new FillOutInformationException("모든 정보를 입력해주세요.");
+
+				if (inputBookCountString.equals(""))
+					inputBookCount = 1;
+				else
+					inputBookCount = Integer.parseInt(inputBookCountString);
 
 			Blob inputBookImage = null;
 			// request.getParameter("inputBookImage");
@@ -73,6 +78,14 @@ public class AdminController {
 			PrintWriter out = response.getWriter();
 
 			out.println("<script>alert('이미 존재하는 도서입니다.'); location.href='/admin/book/add';</script>");
+
+			out.flush();
+		} catch (FillOutInformationException ex) {
+			response.setContentType("text/html; charset=UTF-8");
+
+			PrintWriter out = response.getWriter();
+
+			out.println("<script>alert('모든 정보를 입력해주세요.'); location.href='/admin/book/add';</script>");
 
 			out.flush();
 		}
@@ -104,6 +117,7 @@ public class AdminController {
 				if (bookDTO.getBookTitle().equals(inputBookTitle)) {
 					if (inputBookTitle.equals(inputBookTitleConfirm)) {
 						bookService.deleteBook(bookDTO);
+
 						response.sendRedirect("/admin/book/delete");
 					} else
 						throw new BookTitleNotMatchingException("확인 제목과 맞지 않습니다.");
@@ -137,10 +151,68 @@ public class AdminController {
 		}
 	}
 
-	// 도서 수정
-	@GetMapping("/book/update")
-	public String admin_book_update() {
+	// 도서 수정 페이지 이동
+	@RequestMapping(value = "/book/update", method = RequestMethod.GET)
+	public String admin_book_update(Model model) {
+		List<BookDTO> bookList = bookDAO.showAll();
+
+		model.addAttribute("bookList", bookList);
+
 		return "admin_book_update";
+	}
+
+	// 도서 수정 처리
+	@PostMapping(value = "/book/update")
+	public void admin_book_update(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		try {
+			String inputBookISBN = request.getParameter("inputBookISBN");
+			String inputBookGenre = request.getParameter("inputBookGenre");
+			String inputBookTitle = request.getParameter("inputBookTitle");
+			String inputBookAuthor = request.getParameter("inputBookAuthor");
+			String inputBookPublisher = request.getParameter("inputBookPublisher");
+			String inputBookCountString = request.getParameter("inputBookCount");
+
+			int inputBookCount;
+
+			if (inputBookCountString.equals(""))
+				inputBookCount = 1;
+			else
+				inputBookCount = Integer.parseInt(inputBookCountString);
+
+			Blob inputBookImage = null;
+			// request.getParameter("inputBookImage");
+
+			BookDTO bookDTO = new BookDTO(inputBookISBN, inputBookTitle, inputBookAuthor, inputBookGenre,
+					inputBookPublisher, inputBookImage, inputBookCount);
+
+			if (inputBookISBN.equals("") || inputBookGenre.equals("") || inputBookTitle.equals("")
+					|| inputBookAuthor.equals("") || inputBookPublisher.equals("") || inputBookCountString.equals(""))
+				throw new FillOutInformationException("모든 정보를 입력해주세요.");
+			else {
+				bookDTO = bookService.updateBook(bookDTO);
+
+				if (bookDTO == null)
+					throw new BookNotExistingException("수정할 도서가 없습니다.");
+				else
+					response.sendRedirect("/admin/book/update");
+			}
+		} catch (FillOutInformationException ex) {
+			response.setContentType("text/html; charset=UTF-8");
+
+			PrintWriter out = response.getWriter();
+
+			out.println("<script>alert('모든 정보를 입력해주세요.'); location.href='/admin/book/update';</script>");
+
+			out.flush();
+		} catch (BookNotExistingException ex) {
+			response.setContentType("text/html; charset=UTF-8");
+
+			PrintWriter out = response.getWriter();
+
+			out.println("<script>alert('수정할 도서가 없습니다.'); location.href='/admin/book/update';</script>");
+
+			out.flush();
+		}
 	}
 
 	// 공지사항 추가용
@@ -148,25 +220,6 @@ public class AdminController {
 	public String admin_alarm_notice_add() {
 		return "admin_alarm_notice_add";
 	}
-	
-	// 공지사항 삭제용
-	@GetMapping("/alarm/notice/notice_delete")
-	public String admin_alarm_notice_delete() {
-		return "admin_alarm_notice_delete";
-	}
-	
-	// 추천도서 추가용
-	@GetMapping("/alarm/good/good_add")
-	public String admin_alarm_good_add() {
-		return "admin_alarm_good_add";
-	}
-	
-	// 추천도서 삭제용
-	@GetMapping("/alarm/good/good_delete")
-	public String admin_alarm_good_delete() {
-		return "admin_alarm_good_delete";
-	}
-	
 
 	// 회원 목록
 	@GetMapping("/member/show")
