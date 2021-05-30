@@ -9,8 +9,17 @@ public class NoticeDTO {
 	private String noticeContent; // 공지 콘텐츠
 
 	public NoticeDTO(String _noticeTitle, String _noticeContent) {
+		// 공지 새로 추가할 때
 		this.noticeTitle = _noticeTitle;
 		this.noticeDate = new Date(new java.util.Date().getTime());
+		this.noticeContent = _noticeContent;
+	}
+
+	public NoticeDTO(int _noticeID, String _noticeTitle, Date _noticeDate, String _noticeContent) {
+		// 공지 받아올 때
+		this.noticeID = _noticeID;
+		this.noticeTitle = _noticeTitle;
+		this.noticeDate = _noticeDate;
 		this.noticeContent = _noticeContent;
 	}
 
