@@ -71,44 +71,21 @@
 										<th>공지 날짜</th>
 									</tr>
 								</thead>
-								<tfoot>
+								<!-- <tfoot>
 									<tr>
 										<th>공지 ID</th>
 										<th>공지 제목</th>
 										<th>공지 날짜</th>
 									</tr>
-								</tfoot>
+								</tfoot> -->
 								<tbody>
-									<tr>
-										<td>0</td>
-										<td>첫번째 공지입니까</td>
-										<td>2020-05-28</td>
-									</tr>
-									<tr>
-										<td>1</td>
-										<td>두번째 공지입니까</td>
-										<td>2020-05-28</td>
-									</tr>
-									<tr>
-										<td>2</td>
-										<td>첫번째 공지입니까</td>
-										<td>2020-05-28</td>
-									</tr>
-									<tr>
-										<td>3</td>
-										<td>첫번째 공지입니까</td>
-										<td>2020-05-28</td>
-									</tr>
-									<tr>
-										<td>4</td>
-										<td>첫번째 공지입니까</td>
-										<td>2020-05-28</td>
-									</tr>
-									<tr>
-										<td>5</td>
-										<td>여섯째 공지입니까</td>
-										<td>2020-05-28</td>
-									</tr>
+									<c:forEach var="noticeDTO" items="${noticeList}">
+                                        <tr>
+                                            <td>${noticeDTO.noticeID}</td>
+                                            <td>${noticeDTO.noticeTitle}</td>
+                                            <td>${noticeDTO.noticeDate}</td>
+                                        </tr>
+                                    </c:forEach>
 								</tbody>
 							</table>
 						</div>
