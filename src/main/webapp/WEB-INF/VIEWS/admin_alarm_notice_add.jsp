@@ -84,6 +84,8 @@
                                             <td>${noticeDTO.noticeID}</td>
                                             <td>${noticeDTO.noticeTitle}</td>
                                             <td>${noticeDTO.noticeDate}</td>
+                                            <!-- <td><input type="button" value="클릭" onclick="location.href='/noticeId=${noticeDTO.noticeID}'"/></td> -->
+                                            <!-- 버튼으로 게시글 ID 가져오기 테스트 성공 -->
                                         </tr>
                                     </c:forEach>
 								</tbody>
