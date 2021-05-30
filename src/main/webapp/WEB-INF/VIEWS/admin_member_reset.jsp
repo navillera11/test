@@ -37,21 +37,21 @@
                 <div class="container-fluid px-4">
                     <h1 class="mt-4">회원</h1>
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item active">회원 목록</li>
-                        <li class="breadcrumb-item"><a href="/admin/member/reset">회원 초기화</a></li>
+                        <li class="breadcrumb-item"><a href="/admin/member/show">회원 목록</a></li>
+                        <li class="breadcrumb-item active">회원 초기화</li>
                         <li class="breadcrumb-item"><a href="/admin/member/blackList">회원 블랙리스트</a></li>
                     </ol>
 
                     <!--                    회원 목록-->
                     <div class="card mb-4">
                         <div class="card-body">
-                            전체 회원 목록과 검색을 진행하실 수 있습니다.
+                            요청 받은 초기화 요구 계정들의 목록입니다.
                         </div>
                     </div>
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
-                            회원 목록
+                            비밀번호 초기화 요구 회원 목록
                         </div>
                         <div class="card-body">
                             <table id="datatablesSimple">
@@ -60,7 +60,6 @@
                                         <th>이름</th>
                                         <th>E-mail</th>
                                         <th>비밀번호</th>
-                                        <th>랭크</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
@@ -68,7 +67,6 @@
                                         <th>이름</th>
                                         <th>E-mail</th>
                                         <th>비밀번호</th>
-                                        <th>랭크</th>
                                     </tr>
                                 </tfoot>
                                 <tbody>
@@ -76,40 +74,58 @@
                                         <td>김민지</td>
                                         <td>jee00609@naver.com</td>
                                         <td>Minjee315!!</td>
-                                        <td>0</td>
                                     </tr>
                                     <tr>
                                         <td>김민지</td>
                                         <td>jee00609@skuniv.com</td>
                                         <td>Minjee315!!</td>
-                                        <td>0</td>
                                     </tr>
                                     <tr>
                                         <td>이강은</td>
                                         <td>jee00609@naver.com</td>
                                         <td>Minjee315!!</td>
-                                        <td>0</td>
                                     </tr>
                                     <tr>
                                         <td>정민진</td>
                                         <td>jee00609@naver.com</td>
                                         <td>Minjee315!!</td>
-                                        <td>0</td>
                                     </tr>
                                     <tr>
                                         <td>박경림</td>
                                         <td>jee00609@naver.com</td>
                                         <td>Minjee315!!</td>
-                                        <td>0</td>
                                     </tr>
                                     <tr>
                                         <td>김가은</td>
                                         <td>jee00609@naver.com</td>
                                         <td>Minjee315!!</td>
-                                        <td>0</td>
                                     </tr>
                                 </tbody>
                             </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <!--                초기화 버튼 파트-->
+                <div class="container px-4 px-lg-5">
+                    <div class="row justify-content-center">
+                        <div class="card shadow-lg border-5 rounded-lg mt-5">
+                            <div class="card-header">
+                                <h3 class="text-center font-weight-light my-4">비밀번호 초기화</h3>
+                            </div>
+                            <div class="card-body">
+                                <form>
+
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="inputMemberEmail" type="text" placeholder="요청받은 회원의 E-mail 을 입력해주세요." />
+                                        <label for="inputMemberEmail">해당 회원의 E-mail</label>
+                                    </div>
+
+                                    <div class="mt-4 mb-0">
+                                        <div class="d-grid"><input type="submit" class="btn btn-primary btn-block" value="해당 계정의 비밀번호르 초기화합니다." /></div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -147,7 +147,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title">회원 정보 초기화</h5>
                                         <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                                        <a href="#" class="btn btn-primary">회원 정보 초기화</a>
+                                        <a href="/admin/member/reset" class="btn btn-primary">회원 정보 초기화</a>
                                     </div>
                                 </div>
                                 <div class="card" style="width: 18rem;">

@@ -26,9 +26,14 @@ public class AdminController {
 
 	// 회원 목록
 	@GetMapping("/member/show")
-
 	public String admin_member_show() {
 		return "admin_member_show";
+	}
+	
+	// 회원 목록 초기화
+	@GetMapping("/member/reset")
+	public String admin_member_reset() {
+		return "admin_member_reset";
 	}
 
 	@GetMapping("/logout")
