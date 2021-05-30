@@ -123,7 +123,7 @@
 								<h3 class="text-center font-weight-light my-4">공지 사항 추가</h3>
 							</div>
 							<div class="card-body">
-								<form>
+								<form action="/admin/alarm/notice/notice_add" method="POST">
 
 									<div class="form-floating mb-3">
 										<input class="form-control" id="inputNoticeTitle" type="text"

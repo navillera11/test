@@ -120,7 +120,7 @@
 								<h3 class="text-center font-weight-light my-4">공지 사항 삭제</h3>
 							</div>
 							<div class="card-body">
-								<form>
+								<form action="/admin/alarm/notice/notice_delete" method="POST">
 
 									<!--                                    ID ID확인-->
 									<div class="row mb-3">

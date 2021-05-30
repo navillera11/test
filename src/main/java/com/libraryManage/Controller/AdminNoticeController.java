@@ -14,7 +14,7 @@ import com.libraryManage.DTO.*;
 import com.libraryManage.Service.*;
 
 @Controller
-@RequestMapping(value = "/admin/notice/*")
+@RequestMapping(value = "/admin/alarm/notice/*")
 public class AdminNoticeController {
 	@Autowired
 	NoticeService noticeService;
@@ -22,7 +22,7 @@ public class AdminNoticeController {
 	NoticeDAO noticeDAO;
 
 	// 공지사항 추가 페이지 이동
-	@RequestMapping(value = "/alarm/notice/notice_add", method = RequestMethod.GET)
+	@RequestMapping(value = "/notice_add", method = RequestMethod.GET)
 	public String admin_alarm_notice_add(Model model) {
 		List<NoticeDTO> noticeList = noticeDAO.showAll();
 
@@ -32,13 +32,13 @@ public class AdminNoticeController {
 	}
 
 	// 공지사항 추가 처리
-	@PostMapping(value = "/alarm/notice/notice_add")
+	@PostMapping(value = "/notice_add")
 	public void admin_alarm_notice_add(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
+		
 	}
 
 	// 공지사항 삭제 페이지 이동
-	@RequestMapping(value = "/alarm/notice/notice_delete", method = RequestMethod.GET)
+	@RequestMapping(value = "/notice_delete", method = RequestMethod.GET)
 	public String admin_alarm_notice_delete(Model model) {
 		List<NoticeDTO> noticeList = noticeDAO.showAll();
 
@@ -48,7 +48,7 @@ public class AdminNoticeController {
 	}
 
 	// 공지사항 삭제 처리
-	@PostMapping(value = "/alarm/notice/notice_delete")
+	@PostMapping(value = "/notice_delete")
 	public void admin_alarm_notice_delete(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
 	}
