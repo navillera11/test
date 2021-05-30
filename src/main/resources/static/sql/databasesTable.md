@@ -38,3 +38,27 @@ CREATE TABLE `spring5fs`.`notice` (
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 ~~~~
+
+## 대여 테이블 
+
+~~~~sql
+CREATE TABLE spring5fs.`checkout`
+(
+   `ISBN`               VARCHAR(45) NULL,
+   `EMAIL`              VARCHAR(45) NULL,
+   `RENTAL_DATE`        DATE NULL,
+   `RETURN_DUE_DATE`    DATE NULL,
+   PRIMARY KEY(`ISBN`, `EMAIL`)
+)
+ENGINE = INNODB
+CHARACTER SET 'utf8'
+COLLATE 'utf8_general_ci';
+
+ALTER TABLE spring5fs.`checkout`
+   ADD CONSTRAINT `FK_checkout_1` FOREIGN KEY(`ISBN`)
+          REFERENCES spring5fs.book (`ISBN`);
+
+ALTER TABLE spring5fs.`checkout`
+   ADD CONSTRAINT `FK_checkout_2` FOREIGN KEY(`EMAIL`)
+          REFERENCES spring5fs.member (`EMAIL`)
+~~~~
