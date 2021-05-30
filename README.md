@@ -10,4 +10,4 @@
 
 ## Database 구조
 
-[현재까지 구현한 Database Table 모음](./sql/databasesTable.md)
+[현재까지 구현한 Database Table 모음](./src/main/resources/static/sql/databasesTable.md)
