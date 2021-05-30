@@ -10,7 +10,6 @@ import java.util.*;
 
 @Component
 public class BookDAO {
-
 	private BookDTO bookDTO;
 	private JdbcTemplate jdbcTemplate;
 
