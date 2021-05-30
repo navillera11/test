@@ -93,7 +93,7 @@ CREATE TABLE `book` (
   * MemberDAO.java - 모든/블랙리스트 회원 조회 기능
   * MemberDTO.java - Getter/Setter 추가
   * admin_member_show.jsp - 회원 목록 조회, 블랙리스트 회원 조회 페이지로 가는 링크 수정
-  * AdminMemberController.java - 회원 조회, 블랙리스트 회원 조회
+  * AdminMemberController.java - 회원 조회, 블랙리스트 회원 조회 페이지 매핑
   * admin_index.jsp - 이미지 이름 살짝 수정
   	* alarm_freeBoard -> alarm_free_board
   	* member_blackList -> member_black_show
