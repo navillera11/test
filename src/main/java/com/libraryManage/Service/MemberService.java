@@ -25,7 +25,7 @@ public class MemberService {
 		} else {
 			System.out.println("이미 존재하는 계정입니다.");
 			
-			return null; // 존재하는 계정 반환
+			return null; // null 반환
 		}
 	}
 
