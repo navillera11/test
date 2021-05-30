@@ -62,3 +62,18 @@ ALTER TABLE spring5fs.`checkout`
    ADD CONSTRAINT `FK_checkout_2` FOREIGN KEY(`EMAIL`)
           REFERENCES spring5fs.member (`EMAIL`)
 ~~~~
+
+## 추천 도서 테이블
+
+~~~~sql
+CREATE TABLE `book` (
+  `ISBN` varchar(45) NOT NULL DEFAULT '',
+  `TITLE` varchar(45) DEFAULT NULL,
+  `AUTHOR` varchar(45) DEFAULT NULL,
+  `GENRE` varchar(45) DEFAULT NULL,
+  `PUBLISHER` varchar(45) DEFAULT NULL,
+  `IMAGE` blob,
+  `COUNT` int(11) DEFAULT '1',
+  PRIMARY KEY (`ISBN`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+~~~~
