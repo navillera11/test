@@ -91,7 +91,7 @@
                                     <img class="card-img-top" src="assets/img/book_overdue.jpg" alt="Card image cap">
                                     <div class="card-body">
                                         <h5 class="card-title">연체 도서</h5>
-                                        <p class="card-text">MinGW's Library 의 도서 시스템에<br /> <b>연체된 도서 정보를 보는</b> 기능을 이용합니다.</p>
+                                        <p class="card-text">MinGW's Library 의 도서 시스템에<br /> <b>연체된 도서 정보를</b> 보는 기능을 이용합니다.</p>
                                         <a href="/admin/book/overdue" class="btn btn-primary">연체 도서</a>
                                     </div>
                                 </div>
@@ -138,7 +138,7 @@
                                     <img class="card-img-top" src="assets/img/member_list.jpg" alt="Card image cap">
                                     <div class="card-body">
                                         <h5 class="card-title">회원 목록</h5>
-                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        <p class="card-text">MinGW's Library 의 도서 시스템의<br /> <b>전체 회원 목록</b>을 확인합니다.</p>
                                         <a href="/admin/member/show" class="btn btn-primary">회원 목록</a>
                                     </div>
                                 </div>
@@ -146,7 +146,7 @@
                                     <img class="card-img-top" src="assets/img/member_update.jpg" alt="Card image cap">
                                     <div class="card-body">
                                         <h5 class="card-title">회원 희망 도서</h5>
-                                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                                        <p class="card-text">MinGW's Library 의 회원들이 신청한<br /> <b>희망 도서</b>를 확인합니다.</p>
                                         <a href="/admin/member/hope" class="btn btn-primary">회원 희망 도서</a>
                                     </div>
                                 </div>
@@ -154,7 +154,7 @@
                                     <img class="card-img-top" src="assets/img/member_black_show.jpg" alt="Card image cap">
                                     <div class="card-body">
                                         <h5 class="card-title">회원 블랙리스트 관리</h5>
-                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                                        <p class="card-text">MinGW's Library 의 도서 시스템의<br /> <b>블랙리스트 회원 정보</b>를 관리합니다.</p>
                                         <a href="/admin/member/black_show" class="btn btn-primary">회원 블랙리스트 관리</a>
                                     </div>
                                 </div>
