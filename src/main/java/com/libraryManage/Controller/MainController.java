@@ -1,19 +1,24 @@
 package com.libraryManage.Controller;
 
 import javax.servlet.http.*;
+import java.util.*;
 
 import org.springframework.stereotype.*;
 import org.springframework.ui.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.*;
 
+import com.libraryManage.DAO.*;
+import com.libraryManage.DTO.*;
 import com.libraryManage.Service.*;
 
 @Controller
 public class MainController {
 	@Autowired
-	MemberService memberService;
-	
+	BookService bookService;
+	@Autowired
+	BookDAO bookDAO;
+
 	@GetMapping("/")
 	public String index(Model model, HttpServletRequest request) {
 		return "index";
@@ -30,16 +35,5 @@ public class MainController {
 	public String user_index() {
 		return "member_index";
 	}
-	
-	// 도서 상세 페이지 테스트용
-	@GetMapping("/book_detail")
-	public String book_detail() {
-		return "book_detail";
-	}
-	
-	// 도서 상세 페이지 테스트용
-	@GetMapping("/library_unifiedSearch")
-	public String library_unifiedSearch() {
-		return "library_unifiedSearch";
-	}
+
 }

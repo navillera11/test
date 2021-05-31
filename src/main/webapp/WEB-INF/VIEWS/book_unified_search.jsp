@@ -83,7 +83,7 @@
                                             <td>${bookDTO.bookAuthor}</td>
                                             <td>${bookDTO.bookPublisher}</td>
                                             <td>${bookDTO.bookGenre}</td>
-                                            <td><input type="button" value="자세히" onclick="location.href='/book_detail=${bookDTO.bookISBN}'"/></td>
+                                            <td><input type="button" value="자세히" onclick="location.href='/book/book_detail?bookISBN=${bookDTO.bookISBN}'"/></td>
                                         </tr>
                                     </c:forEach>
                                 </tbody>
