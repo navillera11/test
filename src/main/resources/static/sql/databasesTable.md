@@ -2,7 +2,8 @@
 
 ## 도서 테이블
 
-   * 2021-05-31 이전 
+   * 2021-05-31 이전
+   
 ~~~~sql
 CREATE TABLE `spring5fs`.`book` (
   `ISBN` varchar(45) NOT NULL DEFAULT '',
@@ -17,7 +18,7 @@ CREATE TABLE `spring5fs`.`book` (
 ~~~~
 
    * 2020-05-31 이후
-   * 
+   
 ~~~~sql
 CREATE TABLE spring5fs.book
 (
