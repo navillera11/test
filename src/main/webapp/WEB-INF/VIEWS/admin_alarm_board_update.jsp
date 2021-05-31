@@ -98,7 +98,7 @@
                             <h3 class="text-center font-weight-light my-4">게시글 공개 여부 수정</h3>
                         </div>
                         <div class="card-body">
-                            <form action="/admin/member/black_show" method="POST">
+                            <form action="/admin/board/board_update" method="POST">
                             
                             	<div class="form-floating mb-3">
 										<input class="form-control" id="inputBoardID" type="text"
@@ -108,7 +108,7 @@
 									
 								<label for="inputBoardPublid">회원 랭크 관리</label>	
                                 <div class="">
-                                    <select class="form-control form-control-lg" id="inputMemberRank" name="inputBoardPublid">
+                                    <select class="form-control form-control-lg" id="inputMemberRank" name="inputBoardPublic">
                                         <option>Y</option>
                                         <option>N</option>
                                     </select>
