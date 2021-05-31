@@ -180,4 +180,4 @@
    * 게시판 공개 설정 여부
      * src/main/java/com/libraryManage/Controller/AdminBoardController.java
      * src/main/java/com/libraryManage/DAO/BoardDAO.java
-     * src/main/webapp/WEB-INF/VIEWS/admin_alarm_board_update.jsp
+     * src/main/webapp/WEB-INF/VIEWS/admin_alarm_board_update.jsp - 구현 완료
