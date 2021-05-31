@@ -110,3 +110,11 @@
       * src/main/webapp/WEB-INF/VIEWS/admin_member_hope.jsp - 희망 도서 페이지 생성
       * src/main/webapp/WEB-INF/VIEWS/admin_member_reset.jsp - 초기화 페이지 삭제
       * src/main/webapp/WEB-INF/VIEWS/admin_member_show.jsp - 경로 추가
+
+   * 연체 도서
+      * src/main/webapp/WEB-INF/VIEWS/admin_book_overdue.jsp - 연체 도서 페이지 생성
+      * src/main/webapp/WEB-INF/VIEWS/admin_book_add.jsp - 경로 추가
+      * src/main/webapp/WEB-INF/VIEWS/admin_book_delete.jsp - 경로 추가
+      * src/main/webapp/WEB-INF/VIEWS/admin_book_update.jsp - 경로 추가
+      * src/main/webapp/WEB-INF/VIEWS/admin_index.jsp -경로 추가
+      * src/main/java/com/libraryManage/Controller/AdminController.java - 경로 추가 
