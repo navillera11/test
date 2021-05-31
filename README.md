@@ -142,3 +142,18 @@
       * src/main/webapp/WEB-INF/VIEWS/admin_alarm_good_add.jsp
       * src/main/webapp/WEB-INF/VIEWS/admin_alarm_good_delete.jsp
       * **JSP bookDTO 파트 부분 변경 필요!**
+
+2021-05-31:
+
+   * 연체 도서
+      * src/main/java/com/libraryManage/DAO/CheckOutDAO.java - 연체 도서 데이터 가져오기
+      * src/main/webapp/WEB-INF/VIEWS/admin_book_overdue.jsp - 연체 도서 목록 출력
+   
+   * 주석 처리
+      * src/main/java/com/libraryManage/DTO/BookDTO.java - 빈 줄 삭제
+      * src/main/resources/static/sql/databasesTable.md - SQL 문단 처리
+   
+   * 주소 매핑
+      * src/main/java/com/libraryManage/Controller/AdminBookController.java - 주소 매핑
+      * src/main/java/com/libraryManage/Controller/AdminController.java - 주소 매핑
+      * src/main/java/com/libraryManage/Controller/AdminMemberController.java - 주소 
