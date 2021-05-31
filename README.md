@@ -136,4 +136,9 @@
       * src/main/webapp/WEB-INF/VIEWS/admin_book_update.jsp
       * src/main/java/com/libraryManage/Controller/AdminBookController.java
       * src/main/java/com/libraryManage/DAO/BookDAO.java - 현재 Update 가 안됨 고쳐주세요 
-src/main/java/com/libraryManage/DTO/BookDTO.java
+      * src/main/java/com/libraryManage/DTO/BookDTO.java
+
+   * 추천 도서 테이블 변경으로 인한 페이지 변경
+      * src/main/webapp/WEB-INF/VIEWS/admin_alarm_good_add.jsp
+      * src/main/webapp/WEB-INF/VIEWS/admin_alarm_good_delete.jsp
+      * **JSP bookDTO 파트 부분 변경 필요!**
