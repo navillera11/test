@@ -181,3 +181,15 @@
      * src/main/java/com/libraryManage/Controller/AdminBoardController.java
      * src/main/java/com/libraryManage/DAO/BoardDAO.java
      * src/main/webapp/WEB-INF/VIEWS/admin_alarm_board_update.jsp - 구현 완료
+
+   * 경로 지정 및 컨트롤러 분배
+     * src/main/java/com/libraryManage/Controller/MainController.java
+     * src/main/webapp/WEB-INF/VIEWS/index.jsp
+     * src/main/java/com/libraryManage/Controller/BookController.java
+     * src/main/webapp/WEB-INF/VIEWS/book_unified_search.jsp
+     * src/main/webapp/WEB-INF/VIEWS/book_detail.jsp
+
+   * 도서 상세 페이지 이미지 처리 막힘
+     * src/main/java/com/libraryManage/Controller/AdminBookController.java
+     * src/main/java/com/libraryManage/DAO/BookDAO.java
+     * src/main/java/com/libraryManage/DTO/BookDTO.java
