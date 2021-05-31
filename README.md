@@ -127,3 +127,6 @@
       * src/main/resources/static/assets/img/2.jpg - 테스트 이미지
       * src/main/webapp/WEB-INF/VIEWS/book_detail.jsp - 도서상세 페이지
       * src/main/java/com/libraryManage/Controller/MainController.java - 경로 추가
+
+   * 회원 블랙리스트 랭크 관리
+      * src/main/webapp/WEB-INF/VIEWS/admin_member_black_show.jsp - 계정 랭크 수정 기능 추가  
