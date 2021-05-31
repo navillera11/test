@@ -138,3 +138,27 @@ CREATE TABLE `board` (
   PRIMARY KEY (`FBID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 ~~~~
+
+## 댓글 테이블
+
+~~~~sql
+CREATE TABLE spring5fs.`comment`
+(
+   `CID`        INT(20) AUTO_INCREMENT NOT NULL,
+   `FBID`       INT(11) NULL,
+   `EMAIL`      VARCHAR(45) NULL,
+   `CONTENT`    VARCHAR(1000) NULL,
+   PRIMARY KEY(`CID`)
+)
+ENGINE = INNODB
+CHARACTER SET 'utf8'
+COLLATE 'utf8_general_ci';
+
+ALTER TABLE spring5fs.`comment`
+   ADD CONSTRAINT `FKID` FOREIGN KEY(`FBID`)
+          REFERENCES spring5fs.board (`FBID`);
+
+ALTER TABLE spring5fs.`comment`
+   ADD CONSTRAINT `EMAIL` FOREIGN KEY(`EMAIL`)
+          REFERENCES spring5fs.member (`EMAIL`)
+~~~~
