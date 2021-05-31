@@ -2,6 +2,7 @@
 
 ## 도서 테이블
 
+   * 2021-05-31 이전 
 ~~~~sql
 CREATE TABLE `spring5fs`.`book` (
   `ISBN` varchar(45) NOT NULL DEFAULT '',
@@ -15,6 +16,30 @@ CREATE TABLE `spring5fs`.`book` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 ~~~~
 
+   * 2020-05-31 이후
+   * 
+~~~~sql
+CREATE TABLE spring5fs.book
+(
+   `ISBN`         VARCHAR(45)
+                    CHARACTER SET utf8
+                    COLLATE utf8_general_ci
+                    NOT NULL
+                    DEFAULT '',
+   `TITLE`        VARCHAR(45) CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
+   `AUTHOR`       VARCHAR(45) CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
+   `GENRE`        VARCHAR(45) CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
+   `PUBLISHER`    VARCHAR(45) CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
+   `IMAGE`        BLOB NULL,
+   `COUNT`        INT(11) NULL DEFAULT 1,
+   `SUMMARY`      TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
+   `HIT`          TINYINT(100) NULL DEFAULT 0,
+   PRIMARY KEY(`ISBN`)
+)
+ENGINE INNODB
+COLLATE 'utf8_general_ci'
+ROW_FORMAT DEFAULT;
+~~~~
 ## 회원 테이블
 
 ~~~~sql
