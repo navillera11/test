@@ -52,8 +52,7 @@
 								삭제</a></li>
 						<li class="breadcrumb-item"><a href="/admin/book/update">도서
 								수정</a></li>
-						<li class="breadcrumb-item active">연체
-								도서</li>
+						<li class="breadcrumb-item active">연체 도서</li>
 					</ol>
 
 					<!--                    도서 목록-->
@@ -83,15 +82,15 @@
 									</tr>
 								</tfoot>
 								<tbody>
-									<%-- <c:forEach var="memberDTO" items="${memberList}">
+									<c:forEach var="checkOutDTO" items="${bookOverDueList}">
 										<tr>
-											<td>${memberDTO.memberName}</td>
-											<td>${memberDTO.memberEmail}</td>
-											<td>${memberDTO.memberPassword}</td>
-											<td>${memberDTO.memberRank}</td>
+											<td>${checkOutDTO.checkOutISBN}</td>
+											<td>${checkOutDTO.checkOutEmail}</td>
+											<td>${checkOutDTO.checkOutRentalDate}</td>
+											<td>${checkOutDTO.checkOutReturnDueDate}</td>
 										</tr>
-									</c:forEach> --%>
-									<tr>
+									</c:forEach>
+									<!-- <tr>
 										<td>1165215007</td>
 										<td>jee00609@naver.com</td>
 										<td>2020-03-01</td>
@@ -108,7 +107,7 @@
 										<td>jee00609@daum,net</td>
 										<td>2020-03-01</td>
 										<td>2020-04-01</td>
-									</tr>
+									</tr> -->
 								</tbody>
 							</table>
 						</div>
