@@ -163,3 +163,16 @@
       * src/main/java/com/libraryManage/Controller/AdminBookController.java - 주소 매핑
       * src/main/java/com/libraryManage/Controller/AdminController.java - 주소 매핑
       * src/main/java/com/libraryManage/Controller/AdminMemberController.java - 주소 
+
+   * 회원 랭크 수정
+      * src/main/webapp/WEB-INF/VIEWS/admin_member_black_show.jsp - 블랙리스트 회원 출력
+      * src/main/java/com/libraryManage/Controller/AdminMemberController.java - 블랙리스트 회원 랭크 변경 처리
+      * src/main/java/com/libraryManage/Controller/AdminGoodController.java - 블랙리스트 회원 랭크 변경 처리
+      * src/main/java/com/libraryManage/Service/MemberService.java - 블랙리스트 회원 랭크 변경 
+   
+   * BookDTO 파트 변경 때문에 일어난 오류 처리
+      * src/main/java/com/libraryManage/Controller/AdminGoodController.java
+      * src/main/java/com/libraryManage/DAO/GoodDAO.java
+      * src/main/java/com/libraryManage/DTO/GoodDTO.java
+      * src/main/webapp/WEB-INF/VIEWS/admin_alarm_good_add.jsp
+      * src/main/webapp/WEB-INF/VIEWS/admin_alarm_good_delete.jsp
