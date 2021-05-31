@@ -121,3 +121,9 @@
       * src/main/webapp/WEB-INF/VIEWS/admin_book_update.jsp - 경로 추가
       * src/main/webapp/WEB-INF/VIEWS/admin_index.jsp -경로 추가
       * src/main/java/com/libraryManage/Controller/AdminController.java - 경로 추가 
+
+   * 도서 상세 페이지
+      * src/main/resources/static/assets/img/1.jpg - 테스트 이미지
+      * src/main/resources/static/assets/img/2.jpg - 테스트 이미지
+      * src/main/webapp/WEB-INF/VIEWS/book_detail.jsp - 도서상세 페이지
+      * src/main/java/com/libraryManage/Controller/MainController.java - 경로 추가
