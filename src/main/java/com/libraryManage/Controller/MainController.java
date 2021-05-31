@@ -30,4 +30,10 @@ public class MainController {
 	public String user_index() {
 		return "member_index";
 	}
+	
+	// 도서 상세 페이지 테스트용
+	@GetMapping("/book_detail")
+	public String book_detail() {
+		return "book_detail";
+	}
 }
