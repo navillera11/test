@@ -32,7 +32,7 @@
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="/admin_index">Home</a></li>
-					<li class="nav-item"><a class="nav-link" href="/index">Logout</a></li>
+					<li class="nav-item"><a class="nav-link" href="/">Logout</a></li>
 				</ul>
 			</div>
 		</div>
@@ -48,118 +48,90 @@
 					<ol class="breadcrumb mb-4">
 						<li class="breadcrumb-item"><a href="/admin/book/add">도서
 								추가</a></li>
-						<li class="breadcrumb-item active">도서 삭제</li>
+						<li class="breadcrumb-item"><a href="/admin/book/delete">도서
+								삭제</a></li>
 						<li class="breadcrumb-item"><a href="/admin/book/update">도서
 								수정</a></li>
-						<li class="breadcrumb-item"><a href="/admin/book/overdue">연체
-								도서</a></li>
+						<li class="breadcrumb-item active">연체
+								도서</li>
 					</ol>
 
 					<!--                    도서 목록-->
 					<div class="card mb-4">
-						<div class="card-body">현재 삭제 하고자 하는 도서가 존재하는지 미리 확인하세요!</div>
+						<div class="card-body">연체된 도서들의 목록입니다.</div>
 					</div>
 					<div class="card mb-4">
 						<div class="card-header">
-							<i class="fas fa-table me-1"></i> 도서 목록
+							<i class="fas fa-table me-1"></i> 연체 도서 목록
 						</div>
 						<div class="card-body">
 							<table id="datatablesSimple">
 								<thead>
 									<tr>
-										<th>ISBN10</th>
-										<th>제목</th>
-										<th>저자</th>
-										<th>출판사</th>
-										<th>장르</th>
+										<th>ISBN</th>
+										<th>E-mail</th>
+										<th>대여 날짜</th>
+										<th>반납 만기 날짜</th>
 									</tr>
 								</thead>
-								<!-- <tfoot>
+								<tfoot>
 									<tr>
-										<th>ISBN10</th>
-										<th>제목</th>
-										<th>저자</th>
-										<th>출판사</th>
-										<th>장르</th>
+										<th>ISBN</th>
+										<th>E-mail</th>
+										<th>대여 날짜</th>
+										<th>반납 만기 날짜</th>
 									</tr>
-								</tfoot> -->
+								</tfoot>
 								<tbody>
-									<c:forEach var="bookDTO" items="${bookList}">
+									<%-- <c:forEach var="memberDTO" items="${memberList}">
 										<tr>
-											<td>${bookDTO.bookISBN}</td>
-											<td>${bookDTO.bookTitle}</td>
-											<td>${bookDTO.bookAuthor}</td>
-											<td>${bookDTO.bookPublisher}</td>
-											<td>${bookDTO.bookGenre}</td>
+											<td>${memberDTO.memberName}</td>
+											<td>${memberDTO.memberEmail}</td>
+											<td>${memberDTO.memberPassword}</td>
+											<td>${memberDTO.memberRank}</td>
 										</tr>
-									</c:forEach>
+									</c:forEach> --%>
+									<tr>
+										<td>1165215007</td>
+										<td>jee00609@naver.com</td>
+										<td>2020-03-01</td>
+										<td>2020-04-01</td>
+									</tr>
+									<tr>
+										<td>1165215007</td>
+										<td>jee00609@gmail.com</td>
+										<td>2020-03-01</td>
+										<td>2020-04-01</td>
+									</tr>
+									<tr>
+										<td>1165215007</td>
+										<td>jee00609@daum,net</td>
+										<td>2020-03-01</td>
+										<td>2020-04-01</td>
+									</tr>
 								</tbody>
 							</table>
 						</div>
 					</div>
 				</div>
 
-				<!--                도서 삭제 파트-->
-				<div class="container px-4 px-lg-5">
-					<div class="row justify-content-center">
-						<div class="card shadow-lg border-5 rounded-lg mt-5">
-							<div class="card-header">
-								<h3 class="text-center font-weight-light my-4">도서 삭제</h3>
-							</div>
-							<div class="card-body">
-								<form action="/admin/book/delete" method="POST">
-
-									<!--                                    ISBN10-->
-									<div class="form-floating mb-3">
-										<input class="form-control" id="inputBookISBN" type="text"
-											placeholder="ISBN 코드를 입력하십시오." name="inputBookISBN" /> <label
-											for="inputBookCount">ISBN10 코드</label>
-									</div>
-
-
-									<!--                                    제목 제목확인-->
-									<div class="row mb-3">
-										<div class="col-md-6">
-											<div class="form-floating mb-3 mb-md-0">
-												<input class="form-control" id="inputBookTitle" type="text"
-													placeholder="제목 명을 입력하십시오." name="inputBookTitle" /> <label for="inputBookTitle">제목</label>
-											</div>
-										</div>
-										<div class="col-md-6">
-											<div class="form-floating mb-3 mb-md-0">
-												<input class="form-control" id="inputBookTitleConfirm"
-													type="text" placeholder="제목이 맞는지 확인하십시오." name="inputBookTitleConfirm" /> <label
-													for="inputBookTitleConfirm">제목 확인</label>
-											</div>
-										</div>
-									</div>
-
-									<div class="mt-4 mb-0">
-										<div class="d-grid">
-											<input type="submit" class="btn btn-primary btn-block"
-												value="도서를 삭제합니다." />
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-
 			</main>
-			<!-- Footer-->
+
+
+			<!-- 안 예뻐 ...-->
 			<footer class="m-5 py-5 bg-dark">
 				<div class="container px-4 px-lg-5">
 					<p class="m-0 text-center text-white">Copyright &copy; MinGW's
 						Library 2021</p>
 				</div>
 			</footer>
+
 			<!-- Bootstrap core JS-->
 			<script
 				src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
 			<!-- Core theme JS-->
 			<script src="js/scripts.js"></script>
-			<!--    회원 정의 추가용-->
+			<!--    도서 정의 추가용-->
 			<script
 				src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 			<!--        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>-->
@@ -180,6 +152,7 @@
 			<script src="/js/dataTables.js"></script>
 		</div>
 	</div>
+
 </body>
 
 </html>

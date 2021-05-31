@@ -30,10 +30,15 @@ public class AdminController {
 //		return "admin_member_show";
 //	}
 	
-	// 회원 목록 초기화
+	// 희망 도서
 	@GetMapping("/member/hope")
 	public String admin_member_hope() {
 		return "admin_member_hope";
+	}
+	
+	@GetMapping("/book/overdue")
+	public String admin_book_overdue() {
+		return "admin_book_overdue";
 	}
 
 	@GetMapping("/logout")

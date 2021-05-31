@@ -92,7 +92,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title">연체 도서</h5>
                                         <p class="card-text">MinGW's Library 의 도서 시스템에<br /> <b>연체된 도서 정보를 보는</b> 기능을 이용합니다.</p>
-                                        <a href="#" class="btn btn-primary">연체 도서</a>
+                                        <a href="/admin/book/overdue" class="btn btn-primary">연체 도서</a>
                                     </div>
                                 </div>
                             </div>

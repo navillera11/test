@@ -46,6 +46,8 @@
                                 삭제</a></li>
                         <li class="breadcrumb-item"><a href="/admin/book/update">도서
                                 수정</a></li>
+                        <li class="breadcrumb-item"><a href="/admin/book/overdue">연체
+								도서</a></li>
                     </ol>
 
                     <!--                    도서 목록-->
