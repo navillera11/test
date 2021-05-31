@@ -11,7 +11,6 @@ public class BookDTO {
 	private String bookPublisher; // 도서 출판사
 	private Blob bookImage; // 도서 이미지
 	private int bookCount; // 도서 재고수
-	
 	private String bookSummary; // 도서 한줄 줄거리
 	private int bookHit; // 대여당한 횟수
 	

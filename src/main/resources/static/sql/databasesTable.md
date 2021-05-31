@@ -68,6 +68,7 @@ CREATE TABLE `spring5fs`.`notice` (
 ## 대여 테이블 
 
    * 2021-05-31 이전
+   
 ~~~~sql
 CREATE TABLE spring5fs.`checkout`
 (
@@ -93,17 +94,18 @@ ALTER TABLE spring5fs.`checkout`
 ## 추천 도서 테이블
 
 ~~~~sql
-CREATE TABLE `good` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `ISBN` varchar(45) DEFAULT NULL,
-  `TITLE` varchar(45) DEFAULT NULL,
-  `AUTHOR` varchar(45) DEFAULT NULL,
-  `GENRE` varchar(45) DEFAULT NULL,
-  `PUBLISHER` varchar(45) DEFAULT NULL,
-  `IMAGE` blob,
-  `CONTENT` varchar(1000) DEFAULT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8
+CREATE TABLE spring5fs.good
+(
+   `ID`         INT(11) NOT NULL AUTO_INCREMENT,
+   `ISBN`       VARCHAR(45) CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
+   `TITLE`      VARCHAR(45) CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
+   `CONTENT`    VARCHAR(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
+   `DATE`       DATE NULL,
+   PRIMARY KEY(`ID`)
+)
+ENGINE INNODB
+COLLATE 'utf8_general_ci'
+ROW_FORMAT DEFAULT;
 ~~~~
 
    * 2020-05-31 이후
