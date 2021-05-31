@@ -124,3 +124,17 @@ ENGINE INNODB
 COLLATE 'utf8_general_ci'
 ROW_FORMAT DEFAULT;
 ~~~~
+
+## 게시판 테이블
+
+~~~~sql
+CREATE TABLE `board` (
+  `FBID` int(11) NOT NULL AUTO_INCREMENT,
+  `EMAIL` varchar(45) DEFAULT NULL,
+  `TITLE` varchar(45) DEFAULT NULL,
+  `CONTENT` varchar(1000) DEFAULT NULL,
+  `DATE` varchar(45) DEFAULT NULL,
+  `PUBLIC` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`FBID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+~~~~
