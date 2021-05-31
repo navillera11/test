@@ -100,3 +100,13 @@
   * admin_member_black_show.jsp - 블랙리스트 회원 조회 페이지
   * admin_member_reset.jsp - 블랙리스트 회원 조회 페이지로 가는 링크 수정
   * admin_index.jsp - 블랙리스트 회원 조회 페이지로 가는 링크 수정 및 썸네일 이미지 이름 수정
+
+2020-05-31:
+
+   * 희망 도서
+      * src/main/java/com/libraryManage/Controller/AdminController.java - 경로 추가
+      * src/main/webapp/WEB-INF/VIEWS/admin_index.jsp - 경로 추가
+      * src/main/webapp/WEB-INF/VIEWS/admin_member_black_show.jsp - 경로 추가
+      * src/main/webapp/WEB-INF/VIEWS/admin_member_hope.jsp - 희망 도서 페이지 생성
+      * src/main/webapp/WEB-INF/VIEWS/admin_member_reset.jsp - 초기화 페이지 삭제
+      * src/main/webapp/WEB-INF/VIEWS/admin_member_show.jsp - 경로 추가
