@@ -20,8 +20,7 @@ public class GoodDAO {
 		try {
 			return jdbcTemplate.queryForObject("SELECT * FROM GOOD WHERE ID=?;",
 					(rs, rowNum) -> new GoodDTO(rs.getInt("ID"), rs.getString("ISBN"), rs.getString("TITLE"),
-							rs.getString("AUTHOR"), rs.getString("GENRE"), rs.getString("PUBLISHER"),
-							rs.getBlob("IMAGE"), rs.getString("CONTENT")),
+							rs.getString("CONTENT"), rs.getDate("DATE")),
 					inputID);
 		} catch (Exception ex) {
 			return null;
@@ -31,8 +30,7 @@ public class GoodDAO {
 	public List<GoodDTO> showAll() {
 		List<GoodDTO> result = jdbcTemplate.query("SELECT * FROM GOOD;", (rs, rowNum) -> {
 			GoodDTO goodDTO = new GoodDTO(rs.getInt("ID"), rs.getString("ISBN"), rs.getString("TITLE"),
-					rs.getString("AUTHOR"), rs.getString("GENRE"), rs.getString("PUBLISHER"), rs.getBlob("IMAGE"),
-					rs.getString("CONTENT"));
+					rs.getString("CONTENT"), rs.getDate("DATE"));
 			return goodDTO;
 		});
 		return result;
@@ -41,10 +39,8 @@ public class GoodDAO {
 	public void insertGood(GoodDTO _goodDTO) {
 		this.goodDTO = _goodDTO;
 
-		jdbcTemplate.update("INSERT INTO GOOD(ISBN, TITLE, AUTHOR, GENRE, PUBLISHER, IMAGE, CONTENT) VALUES('"
-				+ goodDTO.getGoodISBN() + "', '" + goodDTO.getGoodTitle() + "', '" + goodDTO.getGoodAuthor() + "', '"
-				+ goodDTO.getGoodGenre() + "', '" + goodDTO.getGoodPublisher() + "', '" + goodDTO.getGoodImage()
-				+ "', '" + goodDTO.getGoodContent() + "');");
+		jdbcTemplate.update("INSERT INTO GOOD(ISBN, TITLE, CONTENT, DATE) VALUES('" + goodDTO.getGoodISBN() + "', '"
+				+ goodDTO.getGoodTitle() + "', '" + goodDTO.getGoodContent() + "', NOW());");
 	}
 
 	public void deleteGood(GoodDTO _goodDTO) {

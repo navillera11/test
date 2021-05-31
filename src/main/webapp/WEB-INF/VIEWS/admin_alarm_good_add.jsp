@@ -133,6 +133,7 @@
 											<td>${goodDTO.goodID}</td>
 											<td>${goodDTO.goodISBN}</td>
 											<td>${goodDTO.goodTitle}</td>
+											<td>${goodDTO.goodDate}</td>
 <%-- 											<td>${goodDTO.goodAuthor}</td>
 											<td>${goodDTO.goodPublisher}</td>
 											<td>${goodDTO.goodGenre}</td> --%>

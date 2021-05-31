@@ -3,35 +3,25 @@ package com.libraryManage.DTO;
 import java.sql.*;
 
 public class GoodDTO {
-	private int goodID;
-	private String goodISBN;
-	private String goodTitle;
-	private String goodAuthor;
-	private String goodGenre;
-	private String goodPublisher;
-	private Blob goodImage;
-	private String goodContent;
+	private int goodID; // 사서 추천 도서 아이디
+	private String goodISBN; // 사서 추천 도서 ISBN
+	private String goodTitle; // 사서 추천 도서 게시글 제목
+	private String goodContent; // 사서 추천 도서 게시글 내용
+	private Date goodDate; // 사소 추천 도서 게시글 날짜
 
-	public GoodDTO(int _goodID, String _goodISBN, String _goodTitle, String _goodAuthor, String _goodGenre,
-			String _goodPublisher, Blob _goodImage, String _goodContent) { // 불러올 시
+	public GoodDTO(int _goodID, String _goodISBN, String _goodTitle, String _goodContent, Date _goodDate) {
+		// 대여 도서 데이터 받아올 때
 		this.goodID = _goodID;
 		this.goodISBN = _goodISBN;
 		this.goodTitle = _goodTitle;
-		this.goodAuthor = _goodAuthor;
-		this.goodGenre = _goodGenre;
-		this.goodPublisher = _goodPublisher;
-		this.goodImage = null;
 		this.goodContent = _goodContent;
+		this.goodDate = _goodDate;
 	}
-	
-	public GoodDTO(String _goodISBN, String _goodTitle, String _goodAuthor, String _goodGenre,
-			String _goodPublisher, Blob _goodImage, String _goodContent) { // 추가할 시
+
+	public GoodDTO(String _goodISBN, String _goodTitle, String _goodContent) {
+		// 대여 도서 데이터 추가할 때
 		this.goodISBN = _goodISBN;
 		this.goodTitle = _goodTitle;
-		this.goodAuthor = _goodAuthor;
-		this.goodGenre = _goodGenre;
-		this.goodPublisher = _goodPublisher;
-		this.goodImage = null;
 		this.goodContent = _goodContent;
 	}
 
@@ -59,43 +49,19 @@ public class GoodDTO {
 		this.goodTitle = goodTitle;
 	}
 
-	public String getGoodAuthor() {
-		return goodAuthor;
-	}
-
-	public void setGoodAuthor(String goodAuthor) {
-		this.goodAuthor = goodAuthor;
-	}
-
-	public String getGoodGenre() {
-		return goodGenre;
-	}
-
-	public void setGoodGenre(String goodGenre) {
-		this.goodGenre = goodGenre;
-	}
-
-	public String getGoodPublisher() {
-		return goodPublisher;
-	}
-
-	public void setGoodPublisher(String goodPublisher) {
-		this.goodPublisher = goodPublisher;
-	}
-
-	public Blob getGoodImage() {
-		return goodImage;
-	}
-
-	public void setGoodImage(Blob goodImage) {
-		this.goodImage = goodImage;
-	}
-
 	public String getGoodContent() {
 		return goodContent;
 	}
 
 	public void setGoodContent(String goodContent) {
 		this.goodContent = goodContent;
+	}
+
+	public Date getGoodDate() {
+		return goodDate;
+	}
+
+	public void setGoodDate(Date goodDate) {
+		this.goodDate = goodDate;
 	}
 }

@@ -55,8 +55,7 @@ public class AdminGoodController {
 			if (bookDTO == null)
 				throw new NotExistingException("존재하지 않는 도서입니다.");
 
-			GoodDTO goodDTO = new GoodDTO(inputGoodISBN, inputGoodTitle, bookDTO.getBookAuthor(),
-					bookDTO.getBookGenre(), bookDTO.getBookPublisher(), null, inputGoodContent);
+			GoodDTO goodDTO = new GoodDTO(inputGoodISBN, inputGoodTitle, inputGoodContent);
 
 			goodDTO = goodService.uploadGood(goodDTO);
 
