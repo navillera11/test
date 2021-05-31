@@ -103,6 +103,9 @@
 
 2020-05-31:
 
+   * 관리자 페이지
+      * 각 기능 설명 세팅 완료  
+
    * 희망 도서
       * src/main/java/com/libraryManage/Controller/AdminController.java - 경로 추가
       * src/main/webapp/WEB-INF/VIEWS/admin_index.jsp - 경로 추가
