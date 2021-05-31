@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
 import org.springframework.ui.*;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.libraryManage.DAO.*;
 import com.libraryManage.DTO.*;
@@ -42,7 +43,8 @@ public class AdminBookController {
 
 	// 도서 추가 처리
 	@PostMapping(value = "/add")
-	public void admin_book_add(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public void admin_book_add(HttpServletRequest request, HttpServletResponse response,
+			@RequestParam("inputBookImage") MultipartFile _inputBookImage) throws Exception {
 		try {
 			String inputBookISBN = request.getParameter("inputBookISBN");
 			String inputBookGenre = request.getParameter("inputBookGenre");
@@ -50,7 +52,7 @@ public class AdminBookController {
 			String inputBookAuthor = request.getParameter("inputBookAuthor");
 			String inputBookPublisher = request.getParameter("inputBookPublisher");
 			String inputBookCountString = request.getParameter("inputBookCount");
-			String inputBookImage = request.getParameter("inputBookImage");
+			String inputBookImage = Base64.getEncoder().encodeToString(_inputBookImage.getBytes());
 			///
 			String inputBookSummary = request.getParameter("inputBookSummary");
 			int inputBookHit = 0;
@@ -169,7 +171,8 @@ public class AdminBookController {
 
 	// 도서 수정 처리
 	@PostMapping(value = "/update")
-	public void admin_book_update(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public void admin_book_update(HttpServletRequest request, HttpServletResponse response,
+			@RequestParam("inputBookImage") MultipartFile _inputBookImage) throws Exception {
 		try {
 			String inputBookISBN = request.getParameter("inputBookISBN");
 			String inputBookGenre = request.getParameter("inputBookGenre");
@@ -177,7 +180,7 @@ public class AdminBookController {
 			String inputBookAuthor = request.getParameter("inputBookAuthor");
 			String inputBookPublisher = request.getParameter("inputBookPublisher");
 			String inputBookCountString = request.getParameter("inputBookCount");
-			String inputBookImage = request.getParameter("inputBookImage");
+			String inputBookImage = Base64.getEncoder().encodeToString(_inputBookImage.getBytes());
 			//
 			String inputBookSummary = request.getParameter("inputBookSummary");
 			int inputBookHit = 0;

@@ -150,7 +150,7 @@
 
                                     <!--                                    파일-->
                                     <label class="form-label" for="inputBookImage">책의 이미지
-                                        파일을 삽입해주세요.</label> <input class="form-control" id="inputBookImage" type="file" placeholder="이미지 파일을 선택해주세요." name="inputBookImage" />
+                                        파일을 삽입해주세요.</label> <input class="form-control" id="inputBookImage" type="file" placeholder="이미지 파일을 선택해주세요." name="inputBookImage" enctype="multipart/form-data" />
 
                                     <div class="mt-4 mb-0">
                                         <div class="d-grid">
