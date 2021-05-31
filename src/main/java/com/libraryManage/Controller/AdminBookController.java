@@ -23,6 +23,9 @@ public class AdminBookController {
 	BookService bookService;
 	@Autowired
 	BookDAO bookDAO;
+	
+	@Autowired
+	CheckOutDAO checkOutDAO;
 
 	// 도서 추가 페이지 이동
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
@@ -47,7 +50,6 @@ public class AdminBookController {
 			///
 			String inputBookSummary = request.getParameter("inputBookSummary");
 			int inputBookHit = 0;
-			
 
 			int inputBookCount;
 
@@ -64,7 +66,7 @@ public class AdminBookController {
 			// request.getParameter("inputBookImage");
 
 			BookDTO bookDTO = new BookDTO(inputBookISBN, inputBookTitle, inputBookAuthor, inputBookGenre,
-					inputBookPublisher, inputBookImage, inputBookCount,inputBookSummary,inputBookHit);
+					inputBookPublisher, inputBookImage, inputBookCount, inputBookSummary, inputBookHit);
 
 			bookDTO = bookService.addBook(bookDTO);
 
@@ -188,10 +190,11 @@ public class AdminBookController {
 			Blob inputBookImage = null;
 
 			BookDTO bookDTO = new BookDTO(inputBookISBN, inputBookTitle, inputBookAuthor, inputBookGenre,
-					inputBookPublisher, inputBookImage, inputBookCount,inputBookSummary);
+					inputBookPublisher, inputBookImage, inputBookCount, inputBookSummary);
 
 			if (inputBookISBN.equals("") || inputBookGenre.equals("") || inputBookTitle.equals("")
-					|| inputBookAuthor.equals("") || inputBookPublisher.equals("") || inputBookCountString.equals("")|| inputBookSummary.equals(""))
+					|| inputBookAuthor.equals("") || inputBookPublisher.equals("") || inputBookCountString.equals("")
+					|| inputBookSummary.equals(""))
 				throw new FillOutInformationException("모든 정보를 입력해주세요.");
 			else {
 				bookDTO = bookService.updateBook(bookDTO);
@@ -219,4 +222,22 @@ public class AdminBookController {
 			out.flush();
 		}
 	}
+
+	// 연체 도서 페이지 이동
+	@RequestMapping(value = "/overdue", method = RequestMethod.GET)
+	public String admin_book_overdue(Model model) {
+		List<CheckOutDTO> bookOverDueList = checkOutDAO.selectOverDue();
+
+		model.addAttribute("bookOverDueList", bookOverDueList);
+
+		return "admin_book_overdue";
+	}
+
+//	// 연체 도서 처리
+//	@PostMapping(value = "/overdue")
+//	public void admin_book_overdue(HttpServletRequest request, HttpServletResponse response) {
+//		try {
+//			String 
+//		}
+//	}
 }

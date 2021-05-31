@@ -40,4 +40,10 @@ public class AdminMemberController {
 
 		return "admin_member_black_show";
 	}
+	
+	// 회원 희망 도서 페이지 이동
+	@RequestMapping(value = "/hope", method = RequestMethod.GET)
+	public String admin_member_hope(Model model) {
+		return "admin_member_hope";
+	}
 }
