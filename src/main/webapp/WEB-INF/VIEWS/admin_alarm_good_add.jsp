@@ -109,13 +109,12 @@
 						<div class="card-body">
 							<table id="datatablesSimple2">
 								<thead>
+								<!-- 사서 추천 도서를 추가하는 게시물에 기존에 이미 올라간 내용을 보여줄 필요는 없는 것 같아서 CONTENT 속성의 값들을 안보여주도록 뺌  -->
 									<tr>
 										<th>ID</th>
 										<th>ISBN</th>
 										<th>제목</th>
-										<th>저자</th>
-										<th>출판사</th>
-										<th>장르</th>
+										<th>게시 날짜</th>
 									</tr>
 								</thead>
 								<tfoot>
@@ -123,20 +122,20 @@
 										<th>ID</th>
 										<th>ISBN</th>
 										<th>제목</th>
-										<th>저자</th>
-										<th>출판사</th>
-										<th>장르</th>
+										<th>게시 날짜</th>
 									</tr>
 								</tfoot>
 								<tbody>
 									<c:forEach var="goodDTO" items="${goodList}">
+									
+									<!-- goodDTO 변경하면 여기도 바뀌어야 합니다아.  -->
 										<tr>
 											<td>${goodDTO.goodID}</td>
 											<td>${goodDTO.goodISBN}</td>
 											<td>${goodDTO.goodTitle}</td>
-											<td>${goodDTO.goodAuthor}</td>
+<%-- 											<td>${goodDTO.goodAuthor}</td>
 											<td>${goodDTO.goodPublisher}</td>
-											<td>${goodDTO.goodGenre}</td>
+											<td>${goodDTO.goodGenre}</td> --%>
 										</tr>
 									</c:forEach>
 								</tbody>
