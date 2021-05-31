@@ -15,23 +15,25 @@ public class MemberService {
 		this.memberDAO = _memberDAO;
 	}
 
-	public MemberDTO registMember(MemberDTO _memberDTO) { // 회원가입
+	public MemberDTO registMember(MemberDTO _memberDTO) {
+		// 회원가입
 		MemberDTO memberDTO = memberDAO.selectByEmail(_memberDTO.getMemberEmail());
 
 		if (memberDTO == null) { // 회원 존재하지 않음 --> 회원가입 진행
 			memberDAO.insertMember(_memberDTO);
-			
+
 			return _memberDTO; // 가입한 계정 반환
 		} else {
 			System.out.println("이미 존재하는 계정입니다.");
-			
+
 			return null; // null 반환
 		}
 	}
 
-	public MemberDTO loginMember(String inputEmail, String inputPassword) { // 로그인
+	public MemberDTO loginMember(String inputEmail, String inputPassword) {
+		// 로그인
 		MemberDTO memberDTO = memberDAO.selectByEmail(inputEmail);
-		
+
 		if (memberDTO == null) {
 			System.out.println("이메일 입력 에러");
 			return null;
@@ -43,45 +45,26 @@ public class MemberService {
 
 		return memberDTO;
 	}
-	
+
 	public MemberDTO forgotPassword(String inputEmail) {
+		// 비밀번호 수정
 		MemberDTO memberDTO = memberDAO.selectByEmail(inputEmail);
-		
-		if(memberDTO == null) {
+
+		if (memberDTO == null) {
 			System.out.println("존재하지 않는 계정입니다.");
 			return null;
 		} else {
-			
+
 		}
-		
+
 		return memberDTO;
 	}
 
-//	public void updateMem(MemberDTO _member) { // 회원 수정
-//		System.out.print("현재 비밀번호 : ");
-//		String oldPwd = sc.nextLine();
-//
-//		System.out.print("새 비밀번호 : ");
-//		String newPwd = sc.nextLine();
-//
-//		System.out.print("새 비밀번호 확인 : ");
-//		String newConfirmPwd = sc.nextLine();
-//
-//		MemberDTO member = memberDAO.selectByEmail(_member.getMemEmail());
-//
-//		if (member == null) { // 계정이 존재하지 않을 때
-//			System.out.println("\n계정이 존재하지 않습니다.\n");
-//		} else if (newPwd.equals(newConfirmPwd) && member.getMemPwd().equals(oldPwd)) {
-//			// 확인할 비밀번호와 입력한 비밀번호가 같을 시
-//			member.changePassword(oldPwd, newPwd);
-//			memberDAO.updateMem(member);
-//			System.out.println("\n비밀번호가 변경되었습니다.\n");
-//		} else
-//			System.out.println("\n입력 정보를 확인하세요.\n");
-//
-//		memberDAO.showAll();
-//	}
-//
+	public void updateRank(MemberDTO memberDTO, int inputMemberRank) {
+		// 회원 랭크 수정
+		memberDAO.updateRank(memberDTO, inputMemberRank);
+	}
+
 //	public void deleteMem() { // 회원 삭제
 //		MemberDTO member = memberDAO.selectByEmail(inputEmail);
 //
