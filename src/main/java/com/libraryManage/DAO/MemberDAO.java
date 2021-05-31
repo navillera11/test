@@ -40,7 +40,7 @@ public class MemberDAO {
 
 	public List<MemberDTO> showBlack() {
 		// 블랙리스트 조회
-		List<MemberDTO> result = jdbcTemplate.query("SELECT * FROM MEMBER WHERE RANK=1;", (rs, rowNum) -> {
+		List<MemberDTO> result = jdbcTemplate.query("SELECT * FROM MEMBER WHERE RANK=-1;", (rs, rowNum) -> {
 			MemberDTO memberDTO = new MemberDTO(rs.getString("EMAIL"), rs.getString("PASSWORD"), rs.getString("NAME"),
 					rs.getInt("RANK"));
 			return memberDTO;
@@ -55,7 +55,11 @@ public class MemberDAO {
 				+ memberDTO.getMemberPassword() + "', '" + memberDTO.getMemberName() + "');");
 	}
 
-	public void updateMember(MemberDTO member) {
+	public void updatePassword(MemberDTO member) {
+	}
+
+	public void updateRank(MemberDTO memberDTO, int newRank) {
+		jdbcTemplate.update("UPDATE MEMBER SET RANK=" + newRank + " WHERE EMAIL='" + memberDTO.getMemberEmail() + "';");
 	}
 
 	public void deleteMember(MemberDTO member) {

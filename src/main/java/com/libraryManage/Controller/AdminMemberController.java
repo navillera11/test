@@ -3,6 +3,9 @@ package com.libraryManage.Controller;
 import org.springframework.ui.*;
 import java.io.*;
 import java.util.*;
+
+import javax.servlet.http.*;
+
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.ui.*;
 import org.springframework.stereotype.*;
@@ -19,7 +22,7 @@ public class AdminMemberController {
 	// 관리자 페이지 중
 	// 알림 부분 중
 	// 회원 부분
-	
+
 	@Autowired
 	MemberService memberService;
 	@Autowired
@@ -49,5 +52,32 @@ public class AdminMemberController {
 		model.addAttribute("memberBlackList", memberBlackList);
 
 		return "admin_member_black_show";
+	}
+
+	// 블랙리스트 회원 랭크 변경 처리
+	@PostMapping(value = "/black_show")
+	public void admin_member_black_show(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		try {
+			String inputMemberEmail = request.getParameter("inputMemberEmail");
+			String inputMemberRank = request.getParameter("inputMemberRank");
+
+			MemberDTO memberDTO = memberDAO.selectByEmail(inputMemberEmail);
+
+			if (memberDTO == null)
+				throw new NotExistingException("존재하지 않는 계정입니다.");
+			else {
+				memberService.updateRank(memberDTO, Integer.parseInt(inputMemberRank));
+
+				response.sendRedirect("/admin/member/black_show");
+			}
+		} catch (NotExistingException ex) {
+			response.setContentType("text/html; charset=UTF-8");
+
+			PrintWriter out = response.getWriter();
+
+			out.println("<script>alert('존재하지 않는 계정입니다.'); location.href='/admin/member/black_show';</script>");
+
+			out.flush();
+		}
 	}
 }

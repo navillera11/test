@@ -98,7 +98,7 @@
                             <h3 class="text-center font-weight-light my-4">회원 랭크 수정</h3>
                         </div>
                         <div class="card-body">
-                            <form action="/admin/member/black_show" method="GET">
+                            <form action="/admin/member/black_show" method="POST">
                             
                             	<div class="form-floating mb-3">
 										<input class="form-control" id="inputMemberEmail" type="text"
@@ -108,7 +108,7 @@
 									
 								<label for="inputMemberRank">회원 랭크 관리</label>	
                                 <div class="">
-                                    <select class="form-control form-control-lg" id="inputMemberRank">
+                                    <select class="form-control form-control-lg" id="inputMemberRank" name="inputMemberRank">
                                         <option>-1</option>
                                         <option>0</option>
                                         <option>1</option>
