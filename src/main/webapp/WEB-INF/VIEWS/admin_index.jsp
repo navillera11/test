@@ -125,7 +125,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title">자유 게시판 관리</h5>
                                         <p class="card-text">MinGW's Library 의 도서 시스템의<br /> <b>자유 게시판 게시물</b>을 관리합니다.</p>
-                                        <a href="#" class="btn btn-primary">게시물 비공개 설정</a>
+                                        <a href="/admin/alarm/board/board_update" class="btn btn-primary">게시물 비공개 설정</a>
                                     </div>
 
                                 </div>
