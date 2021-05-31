@@ -142,6 +142,11 @@
                                     <div class="form-floating mb-3">
                                         <input class="form-control" id="inputBookCount" type="number" placeholder="권수를 입력해주세요." name="inputBookCount" /> <label for="inputBookCount">권수</label>
                                     </div>
+                                    
+                                    <!--                                    줄거리-->
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="inputBookSummary" type="text" placeholder="줄거리를 입력해주세요." name="inputBookSummary" /> <label for="inputBookSummary">한줄 줄거리</label>
+                                    </div>
 
                                     <!--                                    파일-->
                                     <label class="form-label" for="inputBookImage">책의 이미지
