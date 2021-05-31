@@ -44,6 +44,10 @@ public class AdminBookController {
 			String inputBookAuthor = request.getParameter("inputBookAuthor");
 			String inputBookPublisher = request.getParameter("inputBookPublisher");
 			String inputBookCountString = request.getParameter("inputBookCount");
+			///
+			String inputBookSummary = request.getParameter("inputBookSummary");
+			int inputBookHit = 0;
+			
 
 			int inputBookCount;
 
@@ -60,7 +64,7 @@ public class AdminBookController {
 			// request.getParameter("inputBookImage");
 
 			BookDTO bookDTO = new BookDTO(inputBookISBN, inputBookTitle, inputBookAuthor, inputBookGenre,
-					inputBookPublisher, inputBookImage, inputBookCount);
+					inputBookPublisher, inputBookImage, inputBookCount,inputBookSummary,inputBookHit);
 
 			bookDTO = bookService.addBook(bookDTO);
 
@@ -170,6 +174,9 @@ public class AdminBookController {
 			String inputBookAuthor = request.getParameter("inputBookAuthor");
 			String inputBookPublisher = request.getParameter("inputBookPublisher");
 			String inputBookCountString = request.getParameter("inputBookCount");
+			//
+			String inputBookSummary = request.getParameter("inputBookSummary");
+			int inputBookHit = 0;
 
 			int inputBookCount;
 
@@ -179,13 +186,12 @@ public class AdminBookController {
 				inputBookCount = Integer.parseInt(inputBookCountString);
 
 			Blob inputBookImage = null;
-			// request.getParameter("inputBookImage");
 
 			BookDTO bookDTO = new BookDTO(inputBookISBN, inputBookTitle, inputBookAuthor, inputBookGenre,
-					inputBookPublisher, inputBookImage, inputBookCount);
+					inputBookPublisher, inputBookImage, inputBookCount,inputBookSummary);
 
 			if (inputBookISBN.equals("") || inputBookGenre.equals("") || inputBookTitle.equals("")
-					|| inputBookAuthor.equals("") || inputBookPublisher.equals("") || inputBookCountString.equals(""))
+					|| inputBookAuthor.equals("") || inputBookPublisher.equals("") || inputBookCountString.equals("")|| inputBookSummary.equals(""))
 				throw new FillOutInformationException("모든 정보를 입력해주세요.");
 			else {
 				bookDTO = bookService.updateBook(bookDTO);
