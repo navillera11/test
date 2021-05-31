@@ -31,9 +31,9 @@ public class AdminController {
 //	}
 	
 	// 회원 목록 초기화
-	@GetMapping("/member/reset")
-	public String admin_member_reset() {
-		return "admin_member_reset";
+	@GetMapping("/member/hope")
+	public String admin_member_hope() {
+		return "admin_member_hope";
 	}
 
 	@GetMapping("/logout")
