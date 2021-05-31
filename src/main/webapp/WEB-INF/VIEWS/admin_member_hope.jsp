@@ -46,48 +46,56 @@
 				<div class="container-fluid px-4">
 					<h1 class="mt-4">회원</h1>
 					<ol class="breadcrumb mb-4">
-						<li class="breadcrumb-item"><a href="/admin/member/show">회원 목록</a></li>
-						<li class="breadcrumb-item"><a href="/admin/member/hope">회원
-								희망 도서</a></li>
+						<li class="breadcrumb-item active"><a href="/admin/member/show">회원 목록</a></li>
 						<li class="breadcrumb-item active">회원
-								블랙리스트</li>
+								희망 도서</li>
+						<li class="breadcrumb-item"><a href="/admin/member/black_show">회원
+								블랙리스트</a></li>
 					</ol>
 
 					<!--                    회원 목록-->
 					<div class="card mb-4">
-						<div class="card-body">블랙리스트 회원 목록과 검색을 진행하실 수 있습니다.</div>
+						<div class="card-body">회원들이 도서관에 들어오길 원하는 도서들의 목록입니다.</div>
 					</div>
 					<div class="card mb-4">
 						<div class="card-header">
-							<i class="fas fa-table me-1"></i>블랙리스트 회원 목록
+							<i class="fas fa-table me-1"></i> 희망 도서 목록
 						</div>
 						<div class="card-body">
 							<table id="datatablesSimple">
 								<thead>
 									<tr>
-										<th>이름</th>
-										<th>E-mail</th>
-										<th>비밀번호</th>
-										<th>랭크</th>
+										<th>ISBN</th>
+										<th>희망 신청 인원 수</th>
 									</tr>
 								</thead>
 								<tfoot>
 									<tr>
-										<th>이름</th>
-										<th>E-mail</th>
-										<th>비밀번호</th>
-										<th>랭크</th>
+										<th>ISBN</th>
+										<th>희망 신청 인원 수</th>
 									</tr>
 								</tfoot>
 								<tbody>
-									<c:forEach var="memberDTO" items="${memberBlackList}">
+									<%-- <c:forEach var="memberDTO" items="${memberList}">
 										<tr>
 											<td>${memberDTO.memberName}</td>
 											<td>${memberDTO.memberEmail}</td>
 											<td>${memberDTO.memberPassword}</td>
 											<td>${memberDTO.memberRank}</td>
 										</tr>
-									</c:forEach>
+									</c:forEach> --%>
+									<tr>
+										<td>1165215007</td>
+										<td>1</td>
+									</tr>
+									<tr>
+										<td>1165244007</td>
+										<td>2</td>
+									</tr>
+									<tr>
+										<td>1100215007</td>
+										<td>5</td>
+									</tr>
 								</tbody>
 							</table>
 						</div>

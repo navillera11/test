@@ -47,8 +47,8 @@
 					<h1 class="mt-4">회원</h1>
 					<ol class="breadcrumb mb-4">
 						<li class="breadcrumb-item active">회원 목록</li>
-						<li class="breadcrumb-item"><a href="/admin/member/reset">회원
-								초기화</a></li>
+						<li class="breadcrumb-item"><a href="/admin/member/hope">회원
+								희망 도서</a></li>
 						<li class="breadcrumb-item"><a href="/admin/member/black_show">회원
 								블랙리스트</a></li>
 					</ol>

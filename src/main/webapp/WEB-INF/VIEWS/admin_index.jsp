@@ -145,9 +145,9 @@
                                 <div class="card" style="width: 18rem;">
                                     <img class="card-img-top" src="assets/img/member_update.jpg" alt="Card image cap">
                                     <div class="card-body">
-                                        <h5 class="card-title">회원 정보 초기화</h5>
+                                        <h5 class="card-title">회원 희망 도서</h5>
                                         <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                                        <a href="/admin/member/reset" class="btn btn-primary">회원 정보 초기화</a>
+                                        <a href="/admin/member/hope" class="btn btn-primary">회원 희망 도서</a>
                                     </div>
                                 </div>
                                 <div class="card" style="width: 18rem;">
