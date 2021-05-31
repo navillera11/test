@@ -36,4 +36,10 @@ public class MainController {
 	public String book_detail() {
 		return "book_detail";
 	}
+	
+	// 도서 상세 페이지 테스트용
+	@GetMapping("/library_unifiedSearch")
+	public String library_unifiedSearch() {
+		return "library_unifiedSearch";
+	}
 }
