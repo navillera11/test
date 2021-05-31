@@ -16,7 +16,7 @@
       * 도서 추가 - 이미지 제외
       * 도서 삭제 - 구현 완료
       * 도서 수정 - 이미지 제외
-      * 연체 도서 - 페이지 미완성
+      * 연체 도서 - 구현 완료
       
     * **공지 사항**
       * 공지 사항 추가 - 공지 사항 내용 기능 미완성
@@ -37,7 +37,7 @@
     * **회원**
       * 회원 목록 - 구현 완료
       * 회원 블랙리스트 - 구현 완료
-      * 회원 신청 도서 목록 조회 - 구현 완료(2020-05-31)
+      * 회원 신청 도서 목록 조회 - 구현 완료(2021-05-31)
    
 
 ## Member 기능
@@ -152,6 +152,12 @@
    * 주석 처리
       * src/main/java/com/libraryManage/DTO/BookDTO.java - 빈 줄 삭제
       * src/main/resources/static/sql/databasesTable.md - SQL 문단 처리
+      * src/main/java/com/libraryManage/Controller/AdminBookController.java - 어떤 부분인지 주석 추가
+      * src/main/java/com/libraryManage/Controller/AdminBoardController.java - 관리자 게시판 부분 
+      * src/main/java/com/libraryManage/Controller/AdminController.java - 어떤 부분인지 주석 추가
+      * src/main/java/com/libraryManage/Controller/AdminGoodController.java - 어떤 부분인지 주석 추가
+      * src/main/java/com/libraryManage/Controller/AdminMemberController.java - 어떤 부분인지 주석 추가
+      * src/main/java/com/libraryManage/Controller/AdminNoticeController.java - 어떤 부분인지 주석 추가
    
    * 주소 매핑
       * src/main/java/com/libraryManage/Controller/AdminBookController.java - 주소 매핑
