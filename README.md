@@ -130,3 +130,10 @@
 
    * 회원 블랙리스트 랭크 관리
       * src/main/webapp/WEB-INF/VIEWS/admin_member_black_show.jsp - 계정 랭크 수정 기능 추가  
+      
+   * 도서 추가 페이지 기능 추가
+      * src/main/webapp/WEB-INF/VIEWS/admin_book_add.jsp
+      * src/main/webapp/WEB-INF/VIEWS/admin_book_update.jsp
+      * src/main/java/com/libraryManage/Controller/AdminBookController.java
+      * src/main/java/com/libraryManage/DAO/BookDAO.java - 현재 Update 가 안됨 고쳐주세요 
+src/main/java/com/libraryManage/DTO/BookDTO.java
