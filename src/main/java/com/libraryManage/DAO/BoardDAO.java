@@ -13,11 +13,11 @@ import com.libraryManage.DTO.*;
 public class BoardDAO {
 	private BoardDTO boardDTO;
 	private JdbcTemplate jdbcTemplate;
-	
+
 	public BoardDAO(DataSource dataSource) {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
-	
+
 	public BoardDTO selectByFBID(String inputFBID) {
 		try {
 			return jdbcTemplate.queryForObject("SELECT * FROM BOARD WHERE FBID=?;",
@@ -28,7 +28,7 @@ public class BoardDAO {
 			return null;
 		}
 	}
-	
+
 	public List<BoardDTO> showAll() {
 		List<BoardDTO> result = jdbcTemplate.query("SELECT * FROM BOARD;", (rs, rowNum) -> {
 			BoardDTO boardDTO = new BoardDTO(rs.getInt("FBID"), rs.getString("EMAIL"), rs.getString("TITLE"),
@@ -37,7 +37,7 @@ public class BoardDAO {
 		});
 		return result;
 	}
-	
+
 	public void updatePublic(BoardDTO boardDTO, String newPublic) {
 		jdbcTemplate.update("UPDATE BOARD SET PUBLIC='" + newPublic + "' WHERE FBID=" + boardDTO.getBoardID() + ";");
 	}
