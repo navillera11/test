@@ -70,6 +70,7 @@
 										<th>제목</th>
 										<th>작성 날짜</th>
 										<th>공개 여부</th>
+										<th>게시글 링크</th>
 									</tr>
 								</thead>
 								<!-- <tfoot>
@@ -88,6 +89,8 @@
 											<td>${boardDTO.boardTitle}</td>
 											<td>${boardDTO.boardDate}</td>
 											<td>${boardDTO.boardPublic}</td>
+											<td><input type="button" value="자세히" onclick="location.href='/boardId=${boardDTO.boardID}'"/></td>
+                                            <!-- 버튼으로 게시글 ID 가져오기 테스트 성공 -->
 										</tr>
 									</c:forEach>
 								</tbody>
