@@ -21,7 +21,7 @@ import com.libraryManage.Service.*;
 public class AdminBookController {
 	// 관리자 페이지 중
 	// 도서 부분
-	
+
 	@Autowired
 	BookService bookService;
 	@Autowired
@@ -50,6 +50,7 @@ public class AdminBookController {
 			String inputBookAuthor = request.getParameter("inputBookAuthor");
 			String inputBookPublisher = request.getParameter("inputBookPublisher");
 			String inputBookCountString = request.getParameter("inputBookCount");
+			String inputBookImage = request.getParameter("inputBookImage");
 			///
 			String inputBookSummary = request.getParameter("inputBookSummary");
 			int inputBookHit = 0;
@@ -64,9 +65,6 @@ public class AdminBookController {
 				inputBookCount = 1;
 			else
 				inputBookCount = Integer.parseInt(inputBookCountString);
-
-			Blob inputBookImage = null;
-			// request.getParameter("inputBookImage");
 
 			BookDTO bookDTO = new BookDTO(inputBookISBN, inputBookTitle, inputBookAuthor, inputBookGenre,
 					inputBookPublisher, inputBookImage, inputBookCount, inputBookSummary, inputBookHit);
@@ -179,6 +177,7 @@ public class AdminBookController {
 			String inputBookAuthor = request.getParameter("inputBookAuthor");
 			String inputBookPublisher = request.getParameter("inputBookPublisher");
 			String inputBookCountString = request.getParameter("inputBookCount");
+			String inputBookImage = request.getParameter("inputBookImage");
 			//
 			String inputBookSummary = request.getParameter("inputBookSummary");
 			int inputBookHit = 0;
@@ -189,8 +188,6 @@ public class AdminBookController {
 				inputBookCount = 1;
 			else
 				inputBookCount = Integer.parseInt(inputBookCountString);
-
-			Blob inputBookImage = null;
 
 			BookDTO bookDTO = new BookDTO(inputBookISBN, inputBookTitle, inputBookAuthor, inputBookGenre,
 					inputBookPublisher, inputBookImage, inputBookCount, inputBookSummary);

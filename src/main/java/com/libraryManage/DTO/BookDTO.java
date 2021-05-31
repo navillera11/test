@@ -9,13 +9,13 @@ public class BookDTO {
 	private String bookAuthor; // 도서 저자
 	private String bookGenre; // 도서 장르
 	private String bookPublisher; // 도서 출판사
-	private Blob bookImage; // 도서 이미지
+	private String bookImage; // 도서 이미지
 	private int bookCount; // 도서 재고수
 	private String bookSummary; // 도서 한줄 줄거리
 	private int bookHit; // 대여당한 횟수
 
 	public BookDTO(String _bookISBN, String _bookTitle, String _bookAuthor, String _bookGenre, String _bookPublisher,
-			Blob _bookImage, int _bookCount, String _bookSummary, int _bookHit) {
+			String _bookImage, int _bookCount, String _bookSummary, int _bookHit) {
 		// 도서 데이터 받아올 때
 		this.bookISBN = _bookISBN;
 		this.bookTitle = _bookTitle;
@@ -29,7 +29,7 @@ public class BookDTO {
 	}
 
 	public BookDTO(String _bookISBN, String _bookTitle, String _bookAuthor, String _bookGenre, String _bookPublisher,
-			Blob _bookImage, int _bookCount, String _bookSummary) {
+			String _bookImage, int _bookCount, String _bookSummary) {
 		// 도서 데이터 추가할 때
 		this.bookISBN = _bookISBN;
 		this.bookTitle = _bookTitle;
@@ -81,11 +81,11 @@ public class BookDTO {
 		this.bookPublisher = bookPublisher;
 	}
 
-	public Blob getBookImage() {
+	public String getBookImage() {
 		return bookImage;
 	}
 
-	public void setBookImage(Blob bookImage) {
+	public void setBookImage(String bookImage) {
 		this.bookImage = bookImage;
 	}
 

@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.*;
 
 import javax.sql.*;
 import java.util.*;
+import java.util.Base64.*;
 
 @Component
 public class BookDAO {
@@ -21,7 +22,8 @@ public class BookDAO {
 		try {
 			return jdbcTemplate.queryForObject("SELECT * FROM BOOK WHERE ISBN=?;",
 					(rs, rowNum) -> new BookDTO(rs.getString("ISBN"), rs.getString("TITLE"), rs.getString("AUTHOR"),
-							rs.getString("GENRE"), rs.getString("PUBLISHER"), rs.getBlob("IMAGE"), rs.getInt("COUNT"),
+							rs.getString("GENRE"), rs.getString("PUBLISHER"),
+							new String(Base64.getEncoder().encode(rs.getBytes("IMAGE"))), rs.getInt("COUNT"),
 							rs.getString("SUMMARY"), rs.getInt("HIT")),
 					inputISBN);
 		} catch (Exception ex) {
@@ -32,7 +34,8 @@ public class BookDAO {
 	public List<BookDTO> showAll() {
 		List<BookDTO> result = jdbcTemplate.query("SELECT * FROM BOOK;", (rs, rowNum) -> {
 			BookDTO bookDTO = new BookDTO(rs.getString("ISBN"), rs.getString("TITLE"), rs.getString("AUTHOR"),
-					rs.getString("GENRE"), rs.getString("PUBLISHER"), rs.getBlob("IMAGE"), rs.getInt("COUNT"),
+					rs.getString("GENRE"), rs.getString("PUBLISHER"),
+					new String(Base64.getEncoder().encode(rs.getBytes("IMAGE"))), rs.getInt("COUNT"),
 					rs.getString("SUMMARY"), rs.getInt("HIT"));
 			return bookDTO;
 		});
