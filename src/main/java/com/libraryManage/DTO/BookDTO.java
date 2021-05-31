@@ -13,9 +13,10 @@ public class BookDTO {
 	private int bookCount; // 도서 재고수
 	private String bookSummary; // 도서 한줄 줄거리
 	private int bookHit; // 대여당한 횟수
-	
+
 	public BookDTO(String _bookISBN, String _bookTitle, String _bookAuthor, String _bookGenre, String _bookPublisher,
 			Blob _bookImage, int _bookCount, String _bookSummary, int _bookHit) {
+		// 도서 데이터 받아올 때
 		this.bookISBN = _bookISBN;
 		this.bookTitle = _bookTitle;
 		this.bookAuthor = _bookAuthor;
@@ -26,9 +27,10 @@ public class BookDTO {
 		this.bookSummary = _bookSummary;
 		this.bookHit = _bookHit;
 	}
-	
+
 	public BookDTO(String _bookISBN, String _bookTitle, String _bookAuthor, String _bookGenre, String _bookPublisher,
 			Blob _bookImage, int _bookCount, String _bookSummary) {
+		// 도서 데이터 추가할 때
 		this.bookISBN = _bookISBN;
 		this.bookTitle = _bookTitle;
 		this.bookAuthor = _bookAuthor;
@@ -38,7 +40,7 @@ public class BookDTO {
 		this.bookCount = _bookCount;
 		this.bookSummary = _bookSummary;
 	}
-	
+
 	public String getBookISBN() {
 		return bookISBN;
 	}
@@ -94,8 +96,7 @@ public class BookDTO {
 	public void setBookCount(int bookCount) {
 		this.bookCount = bookCount;
 	}
-	
-	///
+
 	public String getBookSummary() {
 		return bookSummary;
 	}
@@ -118,12 +119,4 @@ public class BookDTO {
 				+ ", bookGenre=" + bookGenre + ", bookPublisher=" + bookPublisher + ", bookImage=" + bookImage
 				+ ", bookCount=" + bookCount + ", bookSummary=" + bookSummary + ", bookHit=" + bookHit + "]";
 	}
-
-//	public String toString() {
-//		return "책 번호: " + getBookISBN() + "\t\t책 제목: " + getBookTitle() + "\t\t책 저자: " + getBookAuthor() + "\t\t책 출판사: "
-//				+ getBookPublisher() + "\t\t책 권수: " + getBookCount();
-//	}
-	
-	
-
 }

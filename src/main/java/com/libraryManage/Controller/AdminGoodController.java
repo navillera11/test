@@ -18,6 +18,10 @@ import com.libraryManage.Exception.*;
 @Controller
 @RequestMapping(value = "/admin/alarm/good/*")
 public class AdminGoodController {
+	// 관리자 페이지 중
+	// 알림 부분 중
+	// 사서 추천 도서 부분
+	
 	@Autowired
 	GoodService goodService;
 	@Autowired

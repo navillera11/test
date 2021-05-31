@@ -18,6 +18,10 @@ import com.libraryManage.Exception.*;
 @Controller
 @RequestMapping(value = "/admin/alarm/notice/*")
 public class AdminNoticeController {
+	// 관리자 페이지 중
+	// 알림 부분 중
+	// 공지 사항 부분
+
 	@Autowired
 	NoticeService noticeService;
 	@Autowired
@@ -104,7 +108,8 @@ public class AdminNoticeController {
 
 			PrintWriter out = response.getWriter();
 
-			out.println("<script>alert('확인 아이디가 맞지 않습니다.'); location.href='/admin/alarm/notice/notice_delete';</script>");
+			out.println(
+					"<script>alert('확인 아이디가 맞지 않습니다.'); location.href='/admin/alarm/notice/notice_delete';</script>");
 
 			out.flush();
 		}

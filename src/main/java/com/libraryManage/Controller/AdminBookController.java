@@ -19,11 +19,14 @@ import com.libraryManage.Service.*;
 @Controller
 @RequestMapping(value = "/admin/book/*")
 public class AdminBookController {
+	// 관리자 페이지 중
+	// 도서 부분
+	
 	@Autowired
 	BookService bookService;
 	@Autowired
 	BookDAO bookDAO;
-	
+
 	@Autowired
 	CheckOutDAO checkOutDAO;
 
@@ -232,12 +235,4 @@ public class AdminBookController {
 
 		return "admin_book_overdue";
 	}
-
-//	// 연체 도서 처리
-//	@PostMapping(value = "/overdue")
-//	public void admin_book_overdue(HttpServletRequest request, HttpServletResponse response) {
-//		try {
-//			String 
-//		}
-//	}
 }
