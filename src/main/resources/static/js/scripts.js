@@ -33,4 +33,13 @@ window.addEventListener('DOMContentLoaded', event => {
 			$('#inputGoodContentCount').html("(100 / 100)");
 		}
 	});
+	
+	// 댓글 글자 수 제한 - 제대로 안됨
+	$('#inputCommentContent').on('keyup', function() {
+		$('#inputCommentContentCount').html("("+$(this).val().length+" / 1000)");
+		if($(this).val().length > 1000) {
+			$(this).val($(this).val().substring(0, 1000));
+			$('#inputCommentContentCount').html("(100 / 100)");
+		}
+	});
 });
