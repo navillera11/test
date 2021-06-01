@@ -39,7 +39,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
         <div class="container">
-            <a class="btn" style="background-color: #e3f2fd; color: dodgerblue;" href="#library_unifiedSearch">자료 검색</a>
+            <a class="btn" style="background-color: #e3f2fd; color: dodgerblue;" href="library_unified_search">자료 검색</a>
             <a class="btn" style="background-color: #e3f2fd; color: dodgerblue;" href="#library_register">신청 / 참여</a>
             <a class="btn" style="background-color: #e3f2fd; color: dodgerblue;" href="#library_use">도서관 이용</a>
             <a class="btn" style="background-color: #e3f2fd; color: dodgerblue;" href="#library_info">도서관 정보</a>
