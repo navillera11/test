@@ -44,7 +44,7 @@ public class MemberController {
 				throw new AlreadyExistingException("이미 존재하는 계정입니다.");
 			} else {
 				System.out.println(memberDTO.toString());
-				
+
 				response.sendRedirect("/member/login");
 			}
 		} catch (NotMatchingException ex) {
@@ -61,7 +61,7 @@ public class MemberController {
 			PrintWriter out = response.getWriter();
 
 			out.println("<script>alert('이미 존재하는 계정입니다.'); location.href='/member/register';</script>");
-			
+
 			out.flush();
 		}
 	}
@@ -86,10 +86,11 @@ public class MemberController {
 			if (memberDTO == null) {
 				System.out.println("로그인 에러 in Controller");
 			} else if (memberDTO.getMemberEmail().equals("admin@admin")) {
-				session.setAttribute("loginAdmin", memberDTO);
+				session.setAttribute("loginMemberName", memberDTO.getMemberName());
+				// session.setAttribute("loginMemberDTO", memberDTO);
 				return "redirect:/admin_index";
 			} else {
-				session.setAttribute("loginMember", memberDTO);
+				session.setAttribute("loginMemberName", memberDTO.getMemberName());
 				return "redirect:/member_index";
 			}
 		} catch (Exception ex) {
@@ -106,11 +107,8 @@ public class MemberController {
 
 	@GetMapping("/logout")
 	public String member_logout(final HttpSession session) {
-		if (session.getAttribute("loginAdmin") != null)
-			session.removeAttribute("loginAdmin");
-
-		if (session.getAttribute("loginMember") != null)
-			session.removeAttribute("loginMember");
+		if (session.getAttribute("loginMemberName") != null)
+			session.removeAttribute("loginMemberName");
 
 		return "index";
 	}
