@@ -228,3 +228,9 @@
       * src/main/java/com/libraryManage/Service/BookService.java
       * src/main/webapp/WEB-INF/VIEWS/book_detail.jsp
       * src/main/java/com/libraryManage/Exception/NotLoginException.java
+
+   * 도서관 소개 페이지
+      * src/main/webapp/WEB-INF/VIEWS/library_introduce.jsp - 도서관 소개 페이지
+      * src/main/webapp/WEB-INF/VIEWS/book_detail.jsp - 도서관 소개 페이지 생성하면서 소개 문구 미세 변경
+      * src/main/java/com/libraryManage/Controller/MainController.java - 경로 설정
+      * src/main/webapp/WEB-INF/VIEWS/index.jsp - 디자인 변경
