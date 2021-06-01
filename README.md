@@ -101,7 +101,7 @@
   * admin_member_reset.jsp - 블랙리스트 회원 조회 페이지로 가는 링크 수정
   * admin_index.jsp - 블랙리스트 회원 조회 페이지로 가는 링크 수정 및 썸네일 이미지 이름 수정
 
-2020-05-31:
+2021-05-31:
 
    * 관리자 페이지
       * 각 기능 설명 세팅 완료  
@@ -200,3 +200,18 @@
       * src/main/webapp/WEB-INF/VIEWS/board_detail.jsp
       * src/main/webapp/WEB-INF/VIEWS/board_unified_search.jsp
  
+2021-06-01:
+   * 줄바꿈 문자 살려서 저장하고 출력
+      * src/main/java/com/libraryManage/Controller/AdminBookController.java
+      * src/main/java/com/libraryManage/Controller/AdminGoodController.java
+      * src/main/java/com/libraryManage/Controller/AdminNoticeController.java
+      * src/main/webapp/WEB-INF/VIEWS/board_detail.jsp
+
+   * 메인 페이지로 경로 지정
+      * src/main/webapp/WEB-INF/VIEWS/admin_book_add.jsp
+
+   * 경로 저장하는 게 너무 길다고 해서 이름만 저장
+      * src/main/java/com/libraryManage/Controller/AdminBookController.java
+
+   * 이미지 이름 출력
+      * src/main/webapp/WEB-INF/VIEWS/book_detail.jsp
