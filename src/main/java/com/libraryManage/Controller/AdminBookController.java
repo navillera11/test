@@ -52,12 +52,29 @@ public class AdminBookController {
 			String inputBookAuthor = request.getParameter("inputBookAuthor");
 			String inputBookPublisher = request.getParameter("inputBookPublisher");
 			String inputBookCountString = request.getParameter("inputBookCount");
-			String inputBookImage = Base64.getEncoder().encodeToString(_inputBookImage.getBytes());
+			String inputBookImage = null;
 			///
 			String inputBookSummary = request.getParameter("inputBookSummary");
 			int inputBookHit = 0;
-
+	
 			int inputBookCount;
+
+			if (!_inputBookImage.isEmpty()) {
+				try {
+					String uploadDir = "/bookImageStorage/";
+					String realPathUpload = request.getServletContext().getRealPath(uploadDir);
+
+					String fileName = _inputBookImage.getOriginalFilename();
+					String filePath = realPathUpload + fileName;
+
+					File files = new File(filePath);
+					_inputBookImage.transferTo(files);
+					
+					inputBookImage = filePath;
+				} catch (Exception ex) {
+					ex.printStackTrace();
+				}
+			}
 
 			if (inputBookISBN.equals("") || inputBookGenre.equals("") || inputBookTitle.equals("")
 					|| inputBookAuthor.equals("") || inputBookPublisher.equals(""))
@@ -180,10 +197,26 @@ public class AdminBookController {
 			String inputBookAuthor = request.getParameter("inputBookAuthor");
 			String inputBookPublisher = request.getParameter("inputBookPublisher");
 			String inputBookCountString = request.getParameter("inputBookCount");
-			String inputBookImage = Base64.getEncoder().encodeToString(_inputBookImage.getBytes());
-			//
 			String inputBookSummary = request.getParameter("inputBookSummary");
+			String inputBookImage = null;
 			int inputBookHit = 0;
+
+			if (!_inputBookImage.isEmpty()) {
+				try {
+					String uploadDir = "/bookImageStorage/";
+					String realPathUpload = request.getServletContext().getRealPath(uploadDir);
+
+					String fileName = _inputBookImage.getOriginalFilename();
+					String filePath = realPathUpload + fileName;
+
+					File files = new File(filePath);
+					_inputBookImage.transferTo(files);
+					
+					inputBookImage = filePath;
+				} catch (Exception ex) {
+					ex.printStackTrace();
+				}
+			}
 
 			int inputBookCount;
 

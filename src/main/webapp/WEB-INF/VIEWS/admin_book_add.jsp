@@ -102,7 +102,7 @@
                                 <h3 class="text-center font-weight-light my-4">도서 추가</h3>
                             </div>
                             <div class="card-body">
-                                <form action="/admin/book/add" method="POST">
+                                <form action="/admin/book/add" method="POST" enctype="multipart/form-data">
 
                                     <!--                                    ISBN10 & 장르-->
                                     <div class="row mb-3">

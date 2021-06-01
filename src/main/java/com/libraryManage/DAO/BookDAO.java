@@ -22,7 +22,7 @@ public class BookDAO {
 		try {
 			return jdbcTemplate.queryForObject("SELECT * FROM BOOK WHERE ISBN=?;",
 					(rs, rowNum) -> new BookDTO(rs.getString("ISBN"), rs.getString("TITLE"), rs.getString("AUTHOR"),
-							rs.getString("GENRE"), rs.getString("PUBLISHER"), new String(rs.getBytes("IMAGE")),
+							rs.getString("GENRE"), rs.getString("PUBLISHER"), rs.getString("IMAGE"),
 							rs.getInt("COUNT"), rs.getString("SUMMARY"), rs.getInt("HIT")),
 					inputISBN);
 		} catch (Exception ex) {
@@ -33,7 +33,7 @@ public class BookDAO {
 	public List<BookDTO> showAll() {
 		List<BookDTO> result = jdbcTemplate.query("SELECT * FROM BOOK;", (rs, rowNum) -> {
 			BookDTO bookDTO = new BookDTO(rs.getString("ISBN"), rs.getString("TITLE"), rs.getString("AUTHOR"),
-					rs.getString("GENRE"), rs.getString("PUBLISHER"), new String(rs.getBytes("IMAGE")),
+					rs.getString("GENRE"), rs.getString("PUBLISHER"), rs.getString("IMAGE"),
 					rs.getInt("COUNT"), rs.getString("SUMMARY"), rs.getInt("HIT"));
 			return bookDTO;
 		});
