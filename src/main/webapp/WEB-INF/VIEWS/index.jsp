@@ -98,7 +98,7 @@
 		<div class="card text-white bg-primary my-5 py-10 text-center">
 			<div class="card-body">
 				<!--                    <p class="text-white m-0">자유 게시판</p>-->
-				<a href="#freeBoard" class="btn btn-primary btn-lg">자유 게시판</a>
+				<a href="/board/unified_search" class="btn btn-primary btn-lg">자유 게시판</a>
 			</div>
 		</div>
 		<!-- Content Row-->
