@@ -22,11 +22,10 @@ public class AdminController {
 	// 관리자 로그아웃
 	@GetMapping("/logout")
 	public String member_logout(final HttpSession session) {
-		if (session.getAttribute("auth") != null)
-			session.removeAttribute("auth");
+		if (session.getAttribute("loginMemberName") != null)
+			session.removeAttribute("loginMemberName");
 
-		if (session.getAttribute("memberId") != null)
-			session.removeAttribute("memberId");
+		session.invalidate();
 
 		return "index";
 	}
