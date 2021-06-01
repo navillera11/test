@@ -74,7 +74,7 @@
 						<!-- Page heading-->
 						<h1 class="mb-5">Welcome to MinGW's Library</h1>
 						<!-- Signup form-->
-						<h1 class="mb-5"><%=session.getAttribute("loginMember")%>
+						<h1 class="mb-5"><%=session.getAttribute("loginMemberName")%>
 							님 안녕하세요!
 						</h1>
 						<!-- <form>
