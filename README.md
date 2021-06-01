@@ -215,3 +215,8 @@
 
    * 이미지 이름 출력
       * src/main/webapp/WEB-INF/VIEWS/book_detail.jsp
+
+   * 자유 게시판 경로 세팅 및 목록 창과 세부창 구현
+      * src/main/webapp/WEB-INF/VIEWS/board_detail.jsp
+      * src/main/webapp/WEB-INF/VIEWS/board_unified_search.jsp
+      * src/main/webapp/WEB-INF/VIEWS/index.jsp 
