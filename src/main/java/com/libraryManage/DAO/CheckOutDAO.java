@@ -37,4 +37,15 @@ public class CheckOutDAO {
 		});
 		return result;
 	}
+
+	public void insertCheckOut(String memberEmail, String bookISBN) {
+		// 도서 대여
+		jdbcTemplate.update("INSERT INTO CHECKOUT(ISBN, EMAIL, RENTAL_DATE, RETURN_DUE_DATE) VALUES('" + bookISBN
+				+ "', '" + memberEmail + "', NOW(), DATE_ADD(NOW(), INTERVAL 7 DAY));");
+	}
+
+	public void returnCheckOut(String memberEmail, String bookISBN) {
+		// 도서 반납
+		jdbcTemplate.update("DELETE FROM CHECKOUT WHERE ISBN='" + bookISBN + "' AND EMAIL='" + memberEmail + "';");
+	}
 }

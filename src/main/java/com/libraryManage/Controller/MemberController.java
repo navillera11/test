@@ -91,6 +91,7 @@ public class MemberController {
 				return "redirect:/admin_index";
 			} else {
 				session.setAttribute("loginMemberName", memberDTO.getMemberName());
+				session.setAttribute("loginMemberDTO", memberDTO);
 				return "redirect:/member_index";
 			}
 		} catch (Exception ex) {

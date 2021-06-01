@@ -63,32 +63,31 @@
 		</div>
 	</nav>
 	<!-- Product section-->
-	<section class="py-5">
-		<div class="container px-4 px-lg-5 my-5">
-			<div class="row gx-4 gx-lg-5 align-items-center">
-				<div class="col-md-6">
-					<img class="card-img-top mb-5 mb-md-0"
-						src="/bookImageStorage/${bookDTO.bookImage}" alt="..." />
-				</div>
-				<div class="col-md-6">
-					<div class="small mb-1">${bookDTO.bookGenre}</div>
-					<h1 class="display-5 fw-bolder">${bookDTO.bookTitle}</h1>
-					<div class="fs-5 mb-5">
-						<span class="">도서 재고 : </span> <span>${bookDTO.bookCount}</span>
+	<form action="/book/book_detail?bookISBN=${bookDTO.bookISBN}" method="POST">
+		<section class="py-5">
+			<div class="container px-4 px-lg-5 my-5">
+				<div class="row gx-4 gx-lg-5 align-items-center">
+					<div class="col-md-6">
+						<img class="card-img-top mb-5 mb-md-0"
+							src="/bookImageStorage/${bookDTO.bookImage}" alt="..." />
 					</div>
-					<p class="lead">
-						저자 : ${bookDTO.bookAuthor}<br /> 출판사 : ${bookDTO.bookPublisher}<br />${bookDTO.bookSummary}
-					</p>
-					<div class="d-flex">
-
-						<button class="btn btn-outline-dark flex-shrink-0" type="button">
-							<i class="bi-cart-fill me-1"></i> 대여 하기
-						</button>
+					<div class="col-md-6">
+						<div class="small mb-1">${bookDTO.bookGenre}</div>
+						<h1 class="display-5 fw-bolder">${bookDTO.bookTitle}</h1>
+						<div class="fs-5 mb-5">
+							<span class="">도서 재고 : </span> <span>${bookDTO.bookCount}</span>
+						</div>
+						<p class="lead">
+							저자 : ${bookDTO.bookAuthor}<br /> 출판사 : ${bookDTO.bookPublisher}<br />${bookDTO.bookSummary}
+						</p>
+						<div class="d-flex">
+							<input class="btn btn-outline-dark flex-shrink-0" type="submit" value="대여하기" />
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
+	</form>
 	<!-- Related items section-->
 	<section class="py-5 bg-light">
 		<div class="container px-4 px-lg-5 mt-5">
