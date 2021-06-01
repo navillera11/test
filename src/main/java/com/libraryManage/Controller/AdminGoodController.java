@@ -48,7 +48,7 @@ public class AdminGoodController {
 		try {
 			String inputGoodISBN = request.getParameter("inputGoodISBN");
 			String inputGoodTitle = request.getParameter("inputGoodTitle");
-			String inputGoodContent = request.getParameter("inputGoodContent");
+			String inputGoodContent = request.getParameter("inputGoodContent").replaceAll("\r\n", "<br />");;
 
 			BookDTO bookDTO = bookDAO.selectByISBN(inputGoodISBN);
 

@@ -42,8 +42,8 @@ public class AdminNoticeController {
 	public void admin_alarm_notice_add(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		try {
 			String inputNoticeTitle = request.getParameter("inputNoticeTitle");
-			String inputNoticeContent = request.getParameter("inputNoticeContent");
-
+			String inputNoticeContent = request.getParameter("inputNoticeContent").replaceAll("\r\n", "<br />");			
+			
 			NoticeDTO noticeDTO = new NoticeDTO(inputNoticeTitle, inputNoticeContent);
 
 			noticeDTO = noticeService.uploadNotice(noticeDTO);

@@ -54,7 +54,7 @@ public class AdminBookController {
 			String inputBookCountString = request.getParameter("inputBookCount");
 			String inputBookImage = null;
 			///
-			String inputBookSummary = request.getParameter("inputBookSummary");
+			String inputBookSummary = request.getParameter("inputBookSummary").replaceAll("\r\n", "<br />");;
 			int inputBookHit = 0;
 	
 			int inputBookCount;
@@ -197,27 +197,12 @@ public class AdminBookController {
 			String inputBookAuthor = request.getParameter("inputBookAuthor");
 			String inputBookPublisher = request.getParameter("inputBookPublisher");
 			String inputBookCountString = request.getParameter("inputBookCount");
-			String inputBookSummary = request.getParameter("inputBookSummary");
+			String inputBookSummary = request.getParameter("inputBookSummary").replaceAll("\r\n", "<br />");;
 			String inputBookImage = null;
 			int inputBookHit = 0;
 
-			if (!_inputBookImage.isEmpty()) {
-				try {
-					String uploadDir = "/bookImageStorage/";
-					String realPathUpload = request.getServletContext().getRealPath(uploadDir);
-
-					String fileName = _inputBookImage.getOriginalFilename();
-					String filePath = realPathUpload + fileName;
-
-					File files = new File(filePath);
-					_inputBookImage.transferTo(files);
-					
-					inputBookImage = filePath;
-				} catch (Exception ex) {
-					ex.printStackTrace();
-				}
-			}
-
+			
+			
 			int inputBookCount;
 
 			if (inputBookCountString.equals(""))
