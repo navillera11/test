@@ -193,3 +193,10 @@
      * src/main/java/com/libraryManage/Controller/AdminBookController.java
      * src/main/java/com/libraryManage/DAO/BookDAO.java
      * src/main/java/com/libraryManage/DTO/BookDTO.java
+
+   * 공지사항 목록 페이지 및 공지 사항 디테일 간단 구현
+      * src/main/java/com/libraryManage/Controller/BoardController.java
+      * src/main/resources/static/js/scripts.js
+      * src/main/webapp/WEB-INF/VIEWS/board_detail.jsp
+      * src/main/webapp/WEB-INF/VIEWS/board_unified_search.jsp
+ 
