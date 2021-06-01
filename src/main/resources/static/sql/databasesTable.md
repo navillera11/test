@@ -41,6 +41,24 @@ ENGINE INNODB
 COLLATE 'utf8_general_ci'
 ROW_FORMAT DEFAULT;
 ~~~~
+
+   * 2020-06-01
+   
+~~~~sql
+CREATE TABLE `book` (
+  `ISBN` varchar(45) NOT NULL DEFAULT '',
+  `TITLE` varchar(45) DEFAULT NULL,
+  `AUTHOR` varchar(45) DEFAULT NULL,
+  `GENRE` varchar(45) DEFAULT NULL,
+  `PUBLISHER` varchar(45) DEFAULT NULL,
+  `IMAGE` longblob,
+  `COUNT` int(11) DEFAULT '1',
+  `SUMMARY` text,
+  `HIT` tinyint(100) DEFAULT '0',
+  PRIMARY KEY (`ISBN`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+~~~~
+
 ## 회원 테이블
 
 ~~~~sql
