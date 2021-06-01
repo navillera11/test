@@ -35,5 +35,11 @@ public class MainController {
 	public String user_index() {
 		return "member_index";
 	}
+	
+	// 도서관 소개 페이지
+	@GetMapping("/library_introduce")
+	public String library_introduce() {
+		return "library_introduce";
+	}
 
 }
