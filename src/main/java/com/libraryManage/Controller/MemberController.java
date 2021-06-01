@@ -110,6 +110,8 @@ public class MemberController {
 		if (session.getAttribute("loginMemberName") != null)
 			session.removeAttribute("loginMemberName");
 
+		session.invalidate();
+
 		return "index";
 	}
 }
