@@ -42,4 +42,15 @@ window.addEventListener('DOMContentLoaded', event => {
 			$('#inputCommentContentCount').html("(100 / 100)");
 		}
 	});
+	
+	// 댓글 글자 수 제한 - 제대로 안됨
+	$('#inputBookSummary').on('keyup', function() {
+		$('#inputBookSummaryCount').html("("+$(this).val().length+" / 1000)");
+		if($(this).val().length > 1000) {
+			$(this).val($(this).val().substring(0, 1000));
+			$('#inputBookSummaryCount').html("(100 / 100)");
+		}
+	});
+	
+	
 });
