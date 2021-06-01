@@ -48,7 +48,7 @@
       * 비밀번호 수정
       
     * **도서**
-      * 도서 대여
+      * 도서 대여 - 구현 완료
       * 도서 반납
       * 도서 검색 - 구현 완료
       * 도서 신청
@@ -220,3 +220,11 @@
       * src/main/webapp/WEB-INF/VIEWS/board_detail.jsp
       * src/main/webapp/WEB-INF/VIEWS/board_unified_search.jsp
       * src/main/webapp/WEB-INF/VIEWS/index.jsp 
+
+   * 도서 대여 기능
+      * src/main/java/com/libraryManage/Controller/BookController.java
+      * src/main/java/com/libraryManage/Controller/MemberController.java
+      * src/main/java/com/libraryManage/DAO/CheckOutDAO.java
+      * src/main/java/com/libraryManage/Service/BookService.java
+      * src/main/webapp/WEB-INF/VIEWS/book_detail.jsp
+      * src/main/java/com/libraryManage/Exception/NotLoginException.java
