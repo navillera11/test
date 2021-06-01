@@ -20,7 +20,7 @@ public class MainController {
 	BookDAO bookDAO;
 
 	@GetMapping("/")
-	public String index(Model model, HttpServletRequest request) {
+	public String index() {
 		return "index";
 	}
 

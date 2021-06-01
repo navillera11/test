@@ -17,7 +17,7 @@ CREATE TABLE `spring5fs`.`book` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 ~~~~
 
-   * 2020-05-31 이후
+   * 2021-05-31 이후
    
 ~~~~sql
 CREATE TABLE spring5fs.book
@@ -42,7 +42,7 @@ COLLATE 'utf8_general_ci'
 ROW_FORMAT DEFAULT;
 ~~~~
 
-   * 2020-06-01
+   * 2021-06-01
    
 ~~~~sql
 CREATE TABLE `book` (
@@ -59,7 +59,7 @@ CREATE TABLE `book` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 ~~~~
 
-   * 2020-06-01 신간도서를 위해 속성 추가
+   * 2021-06-01 신간도서를 위해 속성 추가
 
 ~~~~sql
 CREATE TABLE spring5fs.book
