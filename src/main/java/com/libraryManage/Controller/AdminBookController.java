@@ -70,7 +70,7 @@ public class AdminBookController {
 					File files = new File(filePath);
 					_inputBookImage.transferTo(files);
 					
-					inputBookImage = filePath;
+					inputBookImage = fileName;
 				} catch (Exception ex) {
 					ex.printStackTrace();
 				}
