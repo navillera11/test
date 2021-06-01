@@ -68,7 +68,7 @@
 			<div class="row gx-4 gx-lg-5 align-items-center">
 				<div class="col-md-6">
 					<img class="card-img-top mb-5 mb-md-0"
-						src="/bookImage/${bookDTO.bookImage}" alt="..." />
+						src="/bookImageStorage/${bookDTO.bookImage}" alt="..." />
 				</div>
 				<div class="col-md-6">
 					<div class="small mb-1">${bookDTO.bookGenre}</div>
