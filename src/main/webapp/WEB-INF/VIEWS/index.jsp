@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +17,7 @@
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
+    <link href="../css/styles.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -24,7 +25,7 @@
     <!-- Responsive navbar-->
     <nav class="navbar navbar-expand-lg bg-light static-top ">
         <div class="container px-5">
-            <a class="navbar-brand" href="/">MINGW's Library</a>
+            <a class="navbar-brand" href="/member_index">MINGW's Library</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -48,17 +49,18 @@
     </nav>
 
     <!-- Navigation-->
-        <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-            <div class="container">
-                <a class="btn" style="background-color: #e3f2fd; color: dodgerblue;" href="/book/unified_search">자료 검색</a>
+    <!-- Navigation-->
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+        <div class="container">
+            <a class="btn" style="background-color: #e3f2fd; color: dodgerblue;" href="/book/unified_search">자료 검색</a>
 
-                <div class="dropdown show">
-                    <a class="btn dropdown-toggle" style="background-color: #e3f2fd; color: dodgerblue;" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        신청 / 참여
-                    </a>
+            <div class="dropdown show">
+                <a class="btn dropdown-toggle" style="background-color: #e3f2fd; color: dodgerblue;" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    신청 / 참여
+                </a>
 
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    	<%
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <%
 						// 세션값 가져오기
 						if (id == null){%>
 							<a class="dropdown-item disabled" href="/member/member_hope">희망 도서 신청</a>
@@ -68,34 +70,36 @@
 							<a class="dropdown-item" href="/board/unified_search">자유 게시판</a>
 						<%}
 						%>
-                    </div>
-                </div>
-
-                <div class="dropdown show">
-                    <a class="btn dropdown-toggle" style="background-color: #e3f2fd; color: dodgerblue;" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        도서관 이용
-                    </a>
-
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">사서 추천 도서</a>
-                        <a class="dropdown-item" href="#">신작 도서</a>
-                    </div>
-                </div>
-
-                <div class="dropdown show">
-                    <a class="btn dropdown-toggle" style="background-color: #e3f2fd; color: dodgerblue;" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        도서관 정보
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="/library_introduce">도서관 소개</a>
-                        <a class="dropdown-item" href="/notice/unified_search">공지 사항</a>
-                    </div>
                 </div>
             </div>
-        </nav>
+
+            <div class="dropdown show">
+                <a class="btn dropdown-toggle" style="background-color: #e3f2fd; color: dodgerblue;" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    도서관 이용
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="#">사서 추천 도서</a>
+                    <a class="dropdown-item" href="#">신작 도서</a>
+                </div>
+            </div>
+
+            <div class="dropdown show">
+                <a class="btn dropdown-toggle" style="background-color: #e3f2fd; color: dodgerblue;" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    도서관 정보
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="/library_introduce">도서관 소개</a>
+                    <a class="dropdown-item" href="/notice/unified_search">공지 사항</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
 
 
+
+    <!--    검색 파트-->
     <!-- Masthead-->
     <header class="masthead">
         <div class="container position-relative">
@@ -104,6 +108,19 @@
                     <div class="text-center text-white">
                         <!-- Page heading-->
                         <h1 class="mb-5">Welcome to MinGW's Library</h1>
+                        <!-- Signup form-->
+                        <!-- <form>
+							<div class="input-group input-group-lg">
+								<input class="form-control" type="text"
+									placeholder="제목을 입력해주세요..." aria-label="Enter Book Title..."
+									aria-describedby="button-submit" />
+								<button class="btn btn-primary" id="button-submit" type="button"
+									onclick="location.href='#bookSearch' ">검색</button>
+								<button class="btn btn-primary" id="button-detail-submit"
+									type="button" onclick="location.href='#bookDetailSearch' ">상세
+									검색</button>
+							</div>
+						</form> -->
                     </div>
                 </div>
             </div>
@@ -122,50 +139,23 @@
         </div>
         <!-- Content Row-->
         <div class="row gx-4 gx-lg-5">
+        	<c:forEach var="boardDTO" items="${boardList}">
             <div class="col-md-4 mb-5">
                 <div class="card h-100">
                     <div class="card-body">
-                        <h2 class="card-title">Card One</h2>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit. Rem magni quas ex numquam, maxime minus quam
-                            molestias corporis quod, ea minima accusamus.</p>
+                        <h2 class="card-title">${boardDTO.boardTitle}</h2>
+                        <p class="card-text">${boardDTO.boardContent}</p>
                     </div>
                     <div class="card-footer">
-                        <a class="btn btn-primary btn-sm" href="#!">More Info</a>
+                        <a class="btn btn-primary btn-sm" href="/board/board_detail?boardID=${boardDTO.boardID}">More Info</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-5">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h2 class="card-title">Card Two</h2>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt
-                            pariatur voluptatem sunt quam eaque, vel, non in id dolore
-                            voluptates quos eligendi labore.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a class="btn btn-primary btn-sm" href="#!">More Info</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-5">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h2 class="card-title">Card Three</h2>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit. Rem magni quas ex numquam, maxime minus quam
-                            molestias corporis quod, ea minima accusamus.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a class="btn btn-primary btn-sm" href="#!">More Info</a>
-                    </div>
-                </div>
-            </div>
+            </c:forEach>
         </div>
     </div>
 
-    <!--    사서 추천 도서 / 인기 도서 섹션 -->
+   <!--    사서 추천 도서 / 인기 도서 섹션 -->
     <section class="bg-light py-5 border-bottom">
         <div class="container px-4 px-lg-5">
             <div class="card text-center">
@@ -308,25 +298,14 @@
 
                             </div>
                             <ul class="list-unstyled mb-4">
-                                <li class="mb-2"><i class="bi bi-check text-primary"></i> <strong>1
-                                        users</strong></li>
-                                <li class="mb-2"><i class="bi bi-check text-primary"></i>
-                                    5GB storage</li>
-                                <li class="mb-2"><i class="bi bi-check text-primary"></i>
-                                    Unlimited public projects</li>
-                                <li class="mb-2"><i class="bi bi-check text-primary"></i>
-                                    Community access</li>
-                                <li class="mb-2 text-muted"><i class="bi bi-x"></i>
-                                    Unlimited private projects</li>
-                                <li class="mb-2 text-muted"><i class="bi bi-x"></i>
-                                    Dedicated support</li>
-                                <li class="mb-2 text-muted"><i class="bi bi-x"></i> Free
-                                    linked domain</li>
-                                <li class="text-muted"><i class="bi bi-x"></i> Monthly
-                                    status reports</li>
+                                <!-- <li class="mb-2"><i class="bi bi-check text-primary"></i> <strong>1 users</strong></li>
+                                <li class="mb-2"><i class="bi bi-check text-primary"></i>5GB storage</li> -->
+                                <c:forEach var="noticeDTO" items="${noticeList}">
+                                	<li class="mb-2"><i class="bi bi-check text-primary"></i><a href="/notice/notice_detail?noticeID=${noticeDTO.noticeID}">${noticeDTO.noticeTitle}</a></li>
+                                </c:forEach>
                             </ul>
                             <div class="d-grid">
-                                <a class="btn btn-outline-primary" href="/notice/unified_search">전체 공지사항을 보려면...</a>
+                                <a class="btn btn-outline-primary" href="/notice/unified_search">더보기</a>
                             </div>
                         </div>
                     </div>
@@ -336,31 +315,21 @@
                     <div class="card mb-5 mb-xl-0">
                         <div class="card-body p-10">
                             <div class="mb-3">
-                                <span class="display-4 fw-bold"> <i class="bi bi-star-fill text-warning"></i> 신간 도서
+                                <span class="display-4 fw-bold"> <i class="bi bi-star-fill text-warning"></i>신간 도서
                                 </span>
                             </div>
                             <ul class="list-unstyled mb-4">
-                                <li class="mb-2"><i class="bi bi-check text-primary"></i> <strong>
-                                        <a class="bi text-primary" href="#!"> 이제 대충 여따가 링크 박는 것 처럼
-                                            제목 뙇! </a>
-                                    </strong></li>
-                                <li class="mb-2"><i class="text-primary"></i> 체크 없애는 거 테스트
+                            	<c:forEach var="bookDTO" items="${bookList}">
+                                <li class="mb-2"><i class="bi bi-check text-primary"></i> 
+                                    <strong>
+                                        <a class="bi text-primary" href="/book/book_detail?bookISBN=${bookDTO.bookISBN}">${bookDTO.bookTitle}</a>
+                                    </strong>
                                 </li>
-                                <li class="mb-2"><i class="bi bi-check text-primary"></i>
-                                    Unlimited public projects</li>
-                                <li class="mb-2"><i class="bi bi-check text-primary"></i>
-                                    Community access</li>
-                                <li class="mb-2"><i class="bi bi-check text-primary"></i>
-                                    Unlimited private projects</li>
-                                <li class="mb-2"><i class="bi bi-check text-primary"></i>
-                                    Dedicated support</li>
-                                <li class="mb-2"><a class="text-primary" href="#!"> 체크
-                                        없이 링크 </a></li>
-                                <li class="text-muted"><i class="bi bi-x"></i> Monthly
-                                    status reports</li>
+                                </c:forEach>
+
                             </ul>
                             <div class="d-grid">
-                                <a class="btn btn-outline-primary" href="#!">Choose plan</a>
+                                <a class="btn btn-outline-primary" href="/book/unified_search">더보기</a>
                             </div>
                         </div>
                     </div>
@@ -369,45 +338,26 @@
         </div>
     </section>
 
-    <!-- Testimonials-->
-    <section class="testimonials text-center bg-light">
-        <div class="container">
-            <h2 class="mb-5">Spring Project 를 함께한 전우</h2>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                        <img class="img-fluid rounded-circle mb-3" src="assets/img/MJC.jpg" alt="..." />
-                        <h5>MJ.C</h5>
-                        <p class="font-weight-light mb-0">"취업하고 싶어요!"</p>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                        <img class="img-fluid rounded-circle mb-3" src="assets/img/MJK.png" alt="..." />
-                        <h5>MJ.K</h5>
-                        <p class="font-weight-light mb-0">"The cake is a lie!"</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    
+    
     <!-- Footer-->
-    <footer class="footer">
+    <footer class="footer bg-light">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
                     <ul class="list-inline mb-2">
-                        <li class="list-inline-item"><a href="/library_introduce">About</a></li>
-
-                     
+                        <li class="list-inline-item"><a href="#!">About</a></li>
+                        <li class="list-inline-item">⋅</li>
+                        <li class="list-inline-item"><a href="#!">Contact</a></li>
                     </ul>
-                    <p class="text-muted small mb-4 mb-lg-0">&copy; MinGW's Library 2021. All Rights Reserved.</p>
+                    <p class="text-muted small mb-4 mb-lg-0">&copy; MinGW's
+                        Library 2021. All Rights Reserved.</p>
                 </div>
                 <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
                     <ul class="list-inline mb-0">
-                        <li class="list-inline-item"><a href="https://github.com/17mirinae/LibraryManage"><img class="app-badge" src="assets/img/git.png" alt="..."  height="50" width="50"/></a></li>
-                        <li class="list-inline-item"><a href="https://github.com/jee00609/LibraryManage"><img class="app-badge" src="assets/img/git2.png" alt="..." height="50" width="50"/></a></li>
+                        <li class="list-inline-item me-4"><a href="#!"><i class="bi-facebook fs-3"></i></a></li>
+                        <li class="list-inline-item me-4"><a href="#!"><i class="bi-twitter fs-3"></i></a></li>
+                        <li class="list-inline-item"><a href="#!"><i class="bi-instagram fs-3"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -416,7 +366,7 @@
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
-    <script type="text/javascript" src="js/scripts.js"></script>
+    <script type="text/javascript" src="../js/scripts.js"></script>
     <!--    사용자 정의 추가용-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
