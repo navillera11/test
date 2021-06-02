@@ -29,15 +29,15 @@
     * **게시물 비공개 설정**
       * 게시글 테이블 생성하기 - 구현 완료
       * 댓글 테이블 생성하기 - 구현 완료
-      * 게시글 목록 페이지 생성하기
-      * 게시글 세부 페이지 생성하기 (With 댓글)
-      * 게시글 작성 페이지 생성하기
+      * 게시글 목록 페이지 생성하기 - 구현 완료
+      * 게시글 세부 페이지 생성하기 (With 댓글) - 구현 완료
+      * 게시글 작성 페이지 생성하기 - 구현 완료
       * 관리자 게시물 비공개 페이지 - 구현 완료
     
     * **회원**
       * 회원 목록 - 구현 완료
       * 회원 블랙리스트 - 구현 완료
-      * 회원 신청 도서 목록 조회 - 미완성
+      * 회원 신청 도서 목록 조회 - 구현 완료
    
 
 ## Member 기능
@@ -51,15 +51,14 @@
       * 도서 대여 - 구현 완료
       * 도서 반납
       * 도서 검색 - 구현 완료
-      * 도서 신청
+      * 도서 신청 - 구현 완료
       * 도서 예약 - 보류
-      * 대여 기간 연장
       
     * **내 서재**
       * 연체 도서 확인
+      * 대여 기간 연장
     
     * **신간 도서 조회**
-      * 도서 상세 페이지
       
     * **사서 추천 도서 조회**
     
@@ -75,7 +74,7 @@
     * 공지 사항 - 완성
     * 추천 도서 - 완성
     * 대여 도서 - 완성
-    * 신청 도서
+    * 신청 도서 - 
     * 게시판 - 완성
     * 댓글 - 완성
 
@@ -259,3 +258,21 @@
       * src/main/java/com/libraryManage/Controller/BoardController.java - 경로 세팅
       * src/main/webapp/WEB-INF/VIEWS/member_hope.jsp - 경로 지정
       * src/main/resources/static/js/scripts.js  - 글자 제한 제대로 안됨(기능은 추가)
+
+   * 댓글 작성 기능 구현
+      * src/main/java/com/libraryManage/Controller/AdminBookController.java
+      * src/main/java/com/libraryManage/Controller/BoardController.java
+      * src/main/java/com/libraryManage/DAO/BookDAO.java
+      * src/main/java/com/libraryManage/DTO/BookDTO.java
+      * src/main/java/com/libraryManage/Service/BoardService.java
+      * src/main/webapp/WEB-INF/VIEWS/board_detail.jsp
+      * src/main/java/com/libraryManage/DAO/CommentDAO.java
+      * src/main/java/com/libraryManage/DTO/CommentDTO.java
+
+   * 도서 신청 기능 구현 및 관리자 측 신청 도서 조회
+      * src/main/java/com/libraryManage/DTO/HopeDTO.java
+      * src/main/java/com/libraryManage/Controller/AdminMemberController.java
+      * src/main/java/com/libraryManage/Controller/MemberController.java
+      * src/main/java/com/libraryManage/DAO/HopeDAO.java
+      * src/main/webapp/WEB-INF/VIEWS/admin_member_hope.jsp
+      * src/main/webapp/WEB-INF/VIEWS/member_hope.jsp
