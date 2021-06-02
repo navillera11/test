@@ -2,12 +2,14 @@ package com.libraryManage.Controller;
 
 import javax.servlet.http.*;
 import java.io.*;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import com.libraryManage.DAO.BookDAO;
 import com.libraryManage.DTO.*;
 import com.libraryManage.Service.*;
 import com.libraryManage.Exception.*;
@@ -17,6 +19,9 @@ import com.libraryManage.Exception.*;
 public class MemberController {
 	@Autowired
 	MemberService memberService;
+	
+	@Autowired
+	BookDAO bookDAO;
 
 	// 회원가입 페이지 이동
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
@@ -114,5 +119,14 @@ public class MemberController {
 		session.invalidate();
 
 		return "index";
+	}
+	
+	@GetMapping("/member_hope")
+	public String member_hope(Model model) {
+		List<BookDTO> bookList = bookDAO.showAll();
+
+		model.addAttribute("bookList", bookList);
+		
+		return "member_hope";
 	}
 }
