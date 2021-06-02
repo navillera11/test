@@ -242,3 +242,9 @@
       * src/main/webapp/WEB-INF/VIEWS/index.jsp - 경로 추가
       * src/main/webapp/WEB-INF/VIEWS/member_index.jsp - 조금의 코드 디자인 변경
       * src/main/java/com/libraryManage/Controller/MemberController.java  - 경로 세팅
+
+   * 공지사항 페이지
+      * src/main/webapp/WEB-INF/VIEWS/notice_unified_search.jsp - 공지사항 목차 페이지 생성
+      * src/main/java/com/libraryManage/Controller/NoticeController.java - 콘트롤러 작성 및 경로 세팅
+      * src/main/webapp/WEB-INF/VIEWS/index.jsp - 경로 지정
+      * src/main/webapp/WEB-INF/VIEWS/member_index.jsp - 경로 지정
