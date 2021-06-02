@@ -109,9 +109,35 @@ public class MemberController {
 		return "/";
 	}
 
-	@GetMapping("/forgotPwd")
+	@RequestMapping(value = "/forgotPwd", method = RequestMethod.GET)
 	public String member_forgotPwd() {
 		return "member_forgotPwd";
+	}
+
+	@PostMapping("/forgotPwd")
+	public void member_forgotPwd(HttpServletRequest request, HttpServletResponse response) {
+		String inputEmail = request.getParameter("inputEmail");
+	}
+
+	@RequestMapping(value = "/my_page", method = RequestMethod.GET)
+	public void member_my_page(Model model, HttpSession session, HttpServletResponse response) throws Exception {
+		try {
+			MemberDTO memberDTO = (MemberDTO) session.getAttribute("loginMemberDTO");
+
+			if (memberDTO == null) {
+				throw new NotExistingException("로그인 먼저 해주세요.");
+			} else {
+				
+			}
+		} catch (NotExistingException ex) {
+			response.setContentType("text/html; charset=UTF-8");
+
+			PrintWriter out = response.getWriter();
+
+			out.println("<script>alert('로그인 먼저 해주세요.'); location.href='/member/member_login';</script>");
+
+			out.flush();
+		}
 	}
 
 	@GetMapping("/logout")
@@ -124,6 +150,7 @@ public class MemberController {
 		return "index";
 	}
 
+	// 희망 도서 신청 페이지 이동
 	@RequestMapping(value = "/member_hope", method = RequestMethod.GET)
 	public String member_hope(Model model) {
 		List<BookDTO> bookList = bookDAO.showAll();
@@ -133,6 +160,7 @@ public class MemberController {
 		return "member_hope";
 	}
 
+	// 희망 도서 신청 처리
 	@PostMapping(value = "/member_hope")
 	public void member_hope(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		try {
@@ -147,7 +175,7 @@ public class MemberController {
 				if (hopeDTO == null) { // 희망 도서 신청 내역이 없을 때
 					hopeDTO = new HopeDTO(inputBookISBN, inputBookTitle, 1, inputBookLink);
 					hopeDAO.insertHope(hopeDTO);
-					
+
 					response.sendRedirect("/member/member_hope");
 				} else {
 					hopeDAO.updateHope(hopeDTO);
