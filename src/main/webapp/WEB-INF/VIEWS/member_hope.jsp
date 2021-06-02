@@ -155,7 +155,7 @@
 
                                     <!--                                    링크-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="inputBookLink" type="number" placeholder="해당 도서에 대한 링크를 입력해주세요." name="inputBookLink" /> <label for="inputBookLink">도서 링크</label>
+                                        <input class="form-control" id="inputBookLink" type="text" placeholder="해당 도서에 대한 링크를 입력해주세요." name="inputBookLink" /> <label for="inputBookLink">도서 링크</label>
                                     </div>
                                     
 
