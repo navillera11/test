@@ -79,7 +79,7 @@
                 </a>
 
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="#">사서 추천 도서</a>
+                    <a class="dropdown-item" href="/good/unified_search">사서 추천 도서</a>
                     <a class="dropdown-item" href="#">신작 도서</a>
                 </div>
             </div>
@@ -169,46 +169,20 @@
                     <div class="tab-content">
                         <div class="tab-pane active" id="librarianNominate">
                             <!--                        사서 추천 도서-->
-                            <div class="card-group">
-                                <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="assets/img/testimonials-1.jpg" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">사서 추천 대충 Card title</h5>
-                                        <p class="card-text">This is a wider card with supporting
-                                            text below as a natural lead-in to additional content. This
-                                            content is a little bit longer.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                    <div class="card-footer">
-                                        <small class="text-muted">Last updated 3 mins ago</small>
-                                    </div>
-                                </div>
-                                <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="assets/img/testimonials-1.jpg" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">사서 추천 대충 Card title</h5>
-                                        <p class="card-text">This card has supporting text below
-                                            as a natural lead-in to additional content.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                    <div class="card-footer">
-                                        <small class="text-muted">Last updated 3 mins ago</small>
-                                    </div>
-                                </div>
-                                <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="assets/img/testimonials-1.jpg" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">사서 추천 대충 Card title</h5>
-                                        <p class="card-text">This is a wider card with supporting
-                                            text below as a natural lead-in to additional content. This
-                                            card has even longer content than the first to show that
-                                            equal height action.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                    <div class="card-footer">
-                                        <small class="text-muted">Last updated 3 mins ago</small>
-                                    </div>
-                                </div>
+                            <div class="card-group col-sm-auto">
+                               <c:forEach var="goodDTO" items="${goodList}">
+                                   <div class="card" style="width: 18rem;">
+                                       <img class="card-img-top" src="/bookImageStorage/${goodDTO.goodImage}" alt="Card image cap">
+                                       <div class="card-body">
+                                           <h5 class="card-title">${goodDTO.goodTitle}</h5>
+<%--                                            <p class="card-text">${goodDTO.goodContent}</p> --%>
+                                           <a href="/good/good_detail?goodID=${goodDTO.goodID}" class="btn btn-primary">자세히 보기</a>
+                                       </div>
+                                       <div class="card-footer">
+                                           <small class="text-muted">${goodDTO.goodDate}</small>
+                                       </div>
+                                   </div>
+                               </c:forEach>
                             </div>
                             <div class="card text-white bg-primary my-5 py-10 text-center">
                                 <div class="card-body">
