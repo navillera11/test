@@ -34,7 +34,6 @@
 						<li class="nav-item"><a class="nav-link" href="/member/my_page">MyPage</a></li>
                     <li class="nav-item"><a class="nav-link" href="/member/logout">Logout</a></li>
 					<%}
-					
 					%>
    
                 </ul>
