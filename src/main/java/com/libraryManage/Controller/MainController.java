@@ -34,14 +34,23 @@ public class MainController {
 	@Autowired
 	GoodDAO goodDAO;
 
-	@GetMapping("/")
-	public String index() {
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String index(Model model) {
+		List<NoticeDTO> noticeList = noticeDAO.showThree();
+		List<BoardDTO> boardList = boardDAO.showThree();
+		List<BookDTO> bookList = bookDAO.showThree();
+		
+		model.addAttribute("noticeList", noticeList);
+		model.addAttribute("boardList", boardList);
+		model.addAttribute("bookList", bookList);
+		
 		return "index";
 	}
 
 	// 관리자 페이지 테스트용
 	@GetMapping("/admin_index")
 	public String admin_index() {
+		
 		return "admin_index";
 	}
 

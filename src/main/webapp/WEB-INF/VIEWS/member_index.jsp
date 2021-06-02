@@ -312,20 +312,7 @@
                                     </strong>
                                 </li>
                                 </c:forEach>
-                                <!-- <li class="mb-2"><i class="text-primary"></i> 체크 없애는 거 테스트
-                                </li>
-                                <li class="mb-2"><i class="bi bi-check text-primary"></i>
-                                    Unlimited public projects</li>
-                                <li class="mb-2"><i class="bi bi-check text-primary"></i>
-                                    Community access</li>
-                                <li class="mb-2"><i class="bi bi-check text-primary"></i>
-                                    Unlimited private projects</li>
-                                <li class="mb-2"><i class="bi bi-check text-primary"></i>
-                                    Dedicated support</li>
-                                <li class="mb-2"><a class="text-primary" href="#!">
-                                        체크 없이 링크 </a></li>
-                                <li class="text-muted"><i class="bi bi-x"></i>
-                                    Monthly status reports</li> -->
+
                             </ul>
                             <div class="d-grid">
                                 <a class="btn btn-outline-primary" href="/book/unified_search">더보기</a>
