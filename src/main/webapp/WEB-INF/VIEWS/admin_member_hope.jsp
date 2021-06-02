@@ -65,8 +65,10 @@
 							<table id="datatablesSimple">
 								<thead>
 									<tr>
-										<th>ISBN</th>
+										<th>희망 도서 ISBN</th>
+										<th>희망 도서 제목</th>
 										<th>희망 신청 인원 수</th>
+										<th>희망 도서 링크</th>
 									</tr>
 								</thead>
 								<tfoot>
@@ -76,26 +78,14 @@
 									</tr>
 								</tfoot>
 								<tbody>
-									<%-- <c:forEach var="memberDTO" items="${memberList}">
+									<c:forEach var="hopeDTO" items="${hopeList}">
 										<tr>
-											<td>${memberDTO.memberName}</td>
-											<td>${memberDTO.memberEmail}</td>
-											<td>${memberDTO.memberPassword}</td>
-											<td>${memberDTO.memberRank}</td>
+											<td>${hopeDTO.hopeISBN}</td>
+											<td>${hopeDTO.hopeTitle}</td>
+											<td>${hopeDTO.hopeNumber}</td>
+											<td>${hopeDTO.hopeLink}</td>
 										</tr>
-									</c:forEach> --%>
-									<tr>
-										<td>1165215007</td>
-										<td>1</td>
-									</tr>
-									<tr>
-										<td>1165244007</td>
-										<td>2</td>
-									</tr>
-									<tr>
-										<td>1100215007</td>
-										<td>5</td>
-									</tr>
+									</c:forEach>
 								</tbody>
 							</table>
 						</div>

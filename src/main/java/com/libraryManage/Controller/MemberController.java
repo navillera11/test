@@ -9,7 +9,7 @@ import org.springframework.stereotype.*;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import com.libraryManage.DAO.BookDAO;
+import com.libraryManage.DAO.*;
 import com.libraryManage.DTO.*;
 import com.libraryManage.Service.*;
 import com.libraryManage.Exception.*;
@@ -19,9 +19,12 @@ import com.libraryManage.Exception.*;
 public class MemberController {
 	@Autowired
 	MemberService memberService;
-	
+
 	@Autowired
 	BookDAO bookDAO;
+
+	@Autowired
+	HopeDAO hopeDAO;
 
 	// 회원가입 페이지 이동
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
@@ -120,13 +123,47 @@ public class MemberController {
 
 		return "index";
 	}
-	
-	@GetMapping("/member_hope")
+
+	@RequestMapping(value = "/member_hope", method = RequestMethod.GET)
 	public String member_hope(Model model) {
 		List<BookDTO> bookList = bookDAO.showAll();
 
 		model.addAttribute("bookList", bookList);
-		
+
 		return "member_hope";
+	}
+
+	@PostMapping(value = "/member_hope")
+	public void member_hope(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		try {
+			String inputBookISBN = request.getParameter("inputBookISBN");
+			String inputBookTitle = request.getParameter("inputBookTitle");
+			String inputBookLink = request.getParameter("inputBookLink");
+
+			BookDTO bookDTO = bookDAO.selectByISBN(inputBookISBN);
+
+			if (bookDTO == null) { // 도서 없을 때
+				HopeDTO hopeDTO = hopeDAO.selectByISBN(inputBookISBN);
+				if (hopeDTO == null) { // 희망 도서 신청 내역이 없을 때
+					hopeDTO = new HopeDTO(inputBookISBN, inputBookTitle, 1, inputBookLink);
+					hopeDAO.insertHope(hopeDTO);
+					
+					response.sendRedirect("/member/member_hope");
+				} else {
+					hopeDAO.updateHope(hopeDTO);
+
+					response.sendRedirect("/member/member_hope");
+				}
+			} else
+				throw new AlreadyExistingException("이미 존재하는 도서입니다.");
+		} catch (AlreadyExistingException ex) {
+			response.setContentType("text/html; charset=UTF-8");
+
+			PrintWriter out = response.getWriter();
+
+			out.println("<script>alert('이미 존재하는 도서입니다.'); location.href='/member/member_hope';</script>");
+
+			out.flush();
+		}
 	}
 }

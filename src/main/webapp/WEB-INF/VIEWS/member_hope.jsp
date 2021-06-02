@@ -136,13 +136,13 @@
                                 <h3 class="text-center font-weight-light my-4">희망 도서 신청</h3>
                             </div>
                             <div class="card-body">
-                                <form action="/admin/book/add" method="POST" enctype="multipart/form-data">
+                                <form action="/member/member_hope" method="POST">
 
                                     <!--                                    ISBN10 & 제목-->
                                     <div class="row mb-3">
                                         <div class="col-md-6">
                                             <div class="form-floating mb-3 mb-md-0">
-                                                <input class="form-control" id="inputBookISBN" type="text" placeholder="ISBN 코드를 입력해주세요." name="inputBookISBN" /> <label for="inputISBN">ISBN10 코드</label>
+                                                <input class="form-control" id="inputBookISBN" type="text" placeholder="ISBN 코드를 입력해주세요." name="inputBookISBN" /> <label for="inputBookISBN">ISBN10 코드</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -155,7 +155,7 @@
 
                                     <!--                                    링크-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="inputBookLink" type="number" placeholder="해당 도서에 대한 링크를 입력해주세요." name="inputBookLink" /> <label for="iinputBookLink">도서 링크</label>
+                                        <input class="form-control" id="inputBookLink" type="number" placeholder="해당 도서에 대한 링크를 입력해주세요." name="inputBookLink" /> <label for="inputBookLink">도서 링크</label>
                                     </div>
                                     
 

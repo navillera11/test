@@ -27,6 +27,9 @@ public class AdminMemberController {
 	MemberService memberService;
 	@Autowired
 	MemberDAO memberDAO;
+	
+	@Autowired
+	HopeDAO hopeDAO;
 
 	// 회원 목록 페이지 이동
 	@RequestMapping(value = "/show", method = RequestMethod.GET)
@@ -41,6 +44,10 @@ public class AdminMemberController {
 	// 회원 희망 도서 페이지 이동
 	@RequestMapping(value = "/hope", method = RequestMethod.GET)
 	public String admin_member_hope(Model model) {
+		List<HopeDTO> hopeList = hopeDAO.showAll();
+		
+		model.addAttribute("hopeList", hopeList);
+		
 		return "admin_member_hope";
 	}
 
