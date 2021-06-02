@@ -28,6 +28,9 @@ public class MemberController {
 
 	@Autowired
 	HopeDAO hopeDAO;
+	
+	@Autowired
+	CheckOutDAO checkOutDAO;
 
 	// 회원가입 페이지 이동
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
@@ -162,27 +165,37 @@ public class MemberController {
 		}
 	}
 
-	@RequestMapping(value = "/my_page", method = RequestMethod.GET)
-	public void member_my_page(Model model, HttpSession session, HttpServletResponse response) throws Exception {
-		try {
-			MemberDTO memberDTO = (MemberDTO) session.getAttribute("loginMemberDTO");
+	@GetMapping("/my_page")
+	public String member_my_page(Model model){
+//		try {
+//			MemberDTO memberDTO = (MemberDTO) session.getAttribute("loginMemberDTO");
+//
+//			if (memberDTO == null) {
+//				throw new NotExistingException("로그인 먼저 해주세요.");
+//			} else {
+//
+//			}
+//			
+//			response.sendRedirect("/member/my_page");
+//		} catch (NotExistingException ex) {
+//			response.setContentType("text/html; charset=UTF-8");
+//
+//			PrintWriter out = response.getWriter();
+//
+//			out.println("<script>alert('로그인 먼저 해주세요.'); location.href='/member/login';</script>");
+//
+//			out.flush();
+//		}
+		
+		List<CheckOutDTO> checkOutList = checkOutDAO.showAll();
 
-			if (memberDTO == null) {
-				throw new NotExistingException("로그인 먼저 해주세요.");
-			} else {
-
-			}
-		} catch (NotExistingException ex) {
-			response.setContentType("text/html; charset=UTF-8");
-
-			PrintWriter out = response.getWriter();
-
-			out.println("<script>alert('로그인 먼저 해주세요.'); location.href='/member/member_login';</script>");
-
-			out.flush();
-		}
+		model.addAttribute("checkOutList", checkOutList);
+		
+		return "member_my_page";
 	}
+	
 
+	
 	@GetMapping("/logout")
 	public String member_logout(final HttpSession session) {
 		if (session.getAttribute("loginMemberName") != null)
