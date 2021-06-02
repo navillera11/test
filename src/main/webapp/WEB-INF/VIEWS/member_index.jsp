@@ -141,15 +141,14 @@
         </div>
     </div>
 
-    <!--    사서 추천 도서 / 신간 도서 / 컬렉션 모음집 섹션 -->
+   <!--    사서 추천 도서 / 인기 도서 섹션 -->
     <section class="bg-light py-5 border-bottom">
         <div class="container px-4 px-lg-5">
             <div class="card text-center">
                 <div class="card-header">
                     <ul class="nav nav-tabs card-header-tabs" id="tabs">
                         <li class="nav-item"><a class="nav-link active" href="#librarianNominate" data-toggle="tab">사서 추천 도서</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#newBook" data-toggle="tab">신간 도서</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#collection" data-toggle="tab">컬렉션</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#newBook" data-toggle="tab">인기 도서</a></li>
                     </ul>
                 </div>
                 <div class="card-body">
@@ -157,19 +156,45 @@
                         <div class="tab-pane active" id="librarianNominate">
                             <!--                        사서 추천 도서-->
                             <div class="card-group">
-                            	<c:forEach var="goodDTO" items="${goodList}">
-	                                <div class="card" style="width: 18rem;">
-	                                    <img class="card-img-top" src="assets/img/testimonials-1.jpg" alt="Card image cap">
-	                                    <div class="card-body">
-	                                        <h5 class="card-title">${goodDTO.goodTitle}</h5>
-	                                        <p class="card-text">${goodDTO.goodContent}</p>
-	                                        <a href="/${goodDTO}" class="btn btn-primary">자세히 보기</a>
-	                                    </div>
-	                                    <div class="card-footer">
-	                                        <small class="text-muted">Last updated 3 mins ago</small>
-	                                    </div>
-	                                </div>
-                                </c:forEach>
+                                <div class="card" style="width: 18rem;">
+                                    <img class="card-img-top" src="assets/img/testimonials-1.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">사서 추천 대충 Card title</h5>
+                                        <p class="card-text">This is a wider card with supporting
+                                            text below as a natural lead-in to additional content. This
+                                            content is a little bit longer.</p>
+                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    </div>
+                                    <div class="card-footer">
+                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                    </div>
+                                </div>
+                                <div class="card" style="width: 18rem;">
+                                    <img class="card-img-top" src="assets/img/testimonials-1.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">사서 추천 대충 Card title</h5>
+                                        <p class="card-text">This card has supporting text below
+                                            as a natural lead-in to additional content.</p>
+                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    </div>
+                                    <div class="card-footer">
+                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                    </div>
+                                </div>
+                                <div class="card" style="width: 18rem;">
+                                    <img class="card-img-top" src="assets/img/testimonials-1.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">사서 추천 대충 Card title</h5>
+                                        <p class="card-text">This is a wider card with supporting
+                                            text below as a natural lead-in to additional content. This
+                                            card has even longer content than the first to show that
+                                            equal height action.</p>
+                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    </div>
+                                    <div class="card-footer">
+                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                    </div>
+                                </div>
                             </div>
                             <div class="card text-white bg-primary my-5 py-10 text-center">
                                 <div class="card-body">
@@ -179,12 +204,12 @@
                             </div>
                         </div>
                         <div class="tab-pane" id="newBook">
-                            <!--                        신간 도서-->
+                            <!--                        인기 도서-->
                             <div class="card-group">
                                 <div class="card" style="width: 18rem;">
                                     <img class="card-img-top" src="assets/img/testimonials-2.jpg" alt="Card image cap">
                                     <div class="card-body">
-                                        <h5 class="card-title">신간 도서 Card title</h5>
+                                        <h5 class="card-title">인기 도서 Card title</h5>
                                         <p class="card-text">This is a wider card with supporting
                                             text below as a natural lead-in to additional content. This
                                             content is a little bit longer.</p>
@@ -197,7 +222,7 @@
                                 <div class="card" style="width: 18rem;">
                                     <img class="card-img-top" src="assets/img/testimonials-2.jpg" alt="Card image cap">
                                     <div class="card-body">
-                                        <h5 class="card-title">신간 도서 Card title</h5>
+                                        <h5 class="card-title">인기 도서 Card title</h5>
                                         <p class="card-text">This card has supporting text below
                                             as a natural lead-in to additional content.</p>
                                         <a href="#" class="btn btn-primary">Go somewhere</a>
@@ -209,7 +234,7 @@
                                 <div class="card" style="width: 18rem;">
                                     <img class="card-img-top" src="assets/img/testimonials-2.jpg" alt="Card image cap">
                                     <div class="card-body">
-                                        <h5 class="card-title">신간 도서 Card title</h5>
+                                        <h5 class="card-title">인기 도서 Card title</h5>
                                         <p class="card-text">This is a wider card with supporting
                                             text below as a natural lead-in to additional content. This
                                             card has even longer content than the first to show that
@@ -223,58 +248,8 @@
                             </div>
                             <div class="card text-white bg-primary my-5 py-10 text-center">
                                 <div class="card-body">
-                                    <a href="#newBookFreeBoard" class="btn btn-primary btn-lg">신간
+                                    <a href="#newBookFreeBoard" class="btn btn-primary btn-lg">인기
                                         도서 게시판</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane" id="collection">
-                            <!--                        컬렉션컬렉션컬렉션컬렉션-->
-                            <div class="card-group">
-                                <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="assets/img/testimonials-3.jpg" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">컬렉션 Card title</h5>
-                                        <p class="card-text">This is a wider card with supporting
-                                            text below as a natural lead-in to additional content. This
-                                            content is a little bit longer.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                    <div class="card-footer">
-                                        <small class="text-muted">Last updated 3 mins ago</small>
-                                    </div>
-                                </div>
-                                <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="assets/img/testimonials-3.jpg" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">컬렉션 Card title</h5>
-                                        <p class="card-text">This card has supporting text below
-                                            as a natural lead-in to additional content.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                    <div class="card-footer">
-                                        <small class="text-muted">Last updated 3 mins ago</small>
-                                    </div>
-                                </div>
-                                <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="assets/img/testimonials-3.jpg" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">컬렉션 Card title</h5>
-                                        <p class="card-text">This is a wider card with supporting
-                                            text below as a natural lead-in to additional content. This
-                                            card has even longer content than the first to show that
-                                            equal height action.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                    <div class="card-footer">
-                                        <small class="text-muted">Last updated 3 mins ago</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card text-white bg-primary my-5 py-10 text-center">
-                                <div class="card-body">
-                                    <a href="#collectionFreeBoard" class="btn btn-primary btn-lg">컬렉션
-                                        게시판</a>
                                 </div>
                             </div>
                         </div>
@@ -362,128 +337,8 @@
         </div>
     </section>
 
-    <!-- Icons Grid-->
-    <section class="features-icons bg-light text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                        <div class="features-icons-icon d-flex">
-                            <i class="bi-window m-auto text-primary"></i>
-                        </div>
-                        <h3>Fully Responsive</h3>
-                        <p class="lead mb-0">This theme will look great on any device,
-                            no matter the size!</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                        <div class="features-icons-icon d-flex">
-                            <i class="bi-layers m-auto text-primary"></i>
-                        </div>
-                        <h3>Bootstrap 5 Ready</h3>
-                        <p class="lead mb-0">Featuring the latest build of the new
-                            Bootstrap 5 framework!</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-                        <div class="features-icons-icon d-flex">
-                            <i class="bi-terminal m-auto text-primary"></i>
-                        </div>
-                        <h3>Easy to Use</h3>
-                        <p class="lead mb-0">Ready to use with your own content, or
-                            customize the source files!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Image Showcases-->
-    <section class="showcase">
-        <div class="container-fluid p-0">
-            <div class="row g-0">
-                <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('assets/img/bg-showcase-1.jpg')"></div>
-                <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                    <h2>Fully Responsive Design</h2>
-                    <p class="lead mb-0">When you use a theme created by Start
-                        Bootstrap, you know that the theme will look great on any device,
-                        whether it's a phone, tablet, or desktop the page will behave
-                        responsively!</p>
-                </div>
-            </div>
-            <div class="row g-0">
-                <div class="col-lg-6 text-white showcase-img" style="background-image: url('assets/img/bg-showcase-2.jpg')"></div>
-                <div class="col-lg-6 my-auto showcase-text">
-                    <h2>Updated For Bootstrap 5</h2>
-                    <p class="lead mb-0">Newly improved, and full of great utility
-                        classes, Bootstrap 5 is leading the way in mobile responsive web
-                        development! All of the themes on Start Bootstrap are now using
-                        Bootstrap 5!</p>
-                </div>
-            </div>
-            <div class="row g-0">
-                <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('assets/img/bg-showcase-3.jpg')"></div>
-                <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                    <h2>Easy to Use & Customize</h2>
-                    <p class="lead mb-0">Landing Page is just HTML and CSS with a
-                        splash of SCSS for users who demand some deeper customization
-                        options. Out of the box, just add your content and images, and
-                        your new landing page will be ready to go!</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Testimonials-->
-    <section class="testimonials text-center bg-light">
-        <div class="container">
-            <h2 class="mb-5">What people are saying...</h2>
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                        <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-1.jpg" alt="..." />
-                        <h5>Margaret E.</h5>
-                        <p class="font-weight-light mb-0">"This is fantastic! Thanks
-                            so much guys!"</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                        <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-2.jpg" alt="..." />
-                        <h5>Fred S.</h5>
-                        <p class="font-weight-light mb-0">"Bootstrap is amazing. I've
-                            been using it to create lots of super nice landing pages."</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                        <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-3.jpg" alt="..." />
-                        <h5>Sarah W.</h5>
-                        <p class="font-weight-light mb-0">"Thanks so much for making
-                            these free resources available to us!"</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Call to Action-->
-    <section class="call-to-action text-white text-center" id="signup">
-        <div class="container position-relative">
-            <div class="row justify-content-center">
-                <div class="col-xl-6">
-                    <h2 class="mb-4">Ready to get started? Sign up now!</h2>
-                    <!-- Signup form-->
-                    <form>
-                        <div class="input-group input-group-lg">
-                            <input class="form-control" type="text" placeholder="Enter your email..." aria-label="Enter your email..." aria-describedby="button-submit" />
-                            <button class="btn btn-primary" id="button-submit" type="button">Sign
-                                up!</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+    
+    
     <!-- Footer-->
     <footer class="footer bg-light">
         <div class="container">
