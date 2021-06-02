@@ -174,7 +174,7 @@
                                 <div class="col-sm-6">
                                     <ul class="list-unstyled mb-0">
                                         <li><a href="/board/unified_search">게시판 목록</a></li>
-                                        <li><a href="#!">게시판 글쓰기</a></li>
+                                        <li><a href="/board/board_write">게시판 글쓰기</a></li>
                                         <li><a href="#!">현재 게시글 삭제</a></li>
                                     </ul>
                                 </div>
