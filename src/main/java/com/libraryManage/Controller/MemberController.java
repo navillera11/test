@@ -89,7 +89,7 @@ public class MemberController {
 
 	// 로그인 처리
 	@PostMapping(value = "/login")
-	public String member_login(HttpServletRequest request) {
+	public void member_login(HttpServletRequest request, HttpServletResponse response) {
 		try {
 			HttpSession session = request.getSession(true);
 
@@ -100,20 +100,20 @@ public class MemberController {
 
 			if (memberDTO == null) {
 				System.out.println("로그인 에러 in Controller");
+				
+				response.sendRedirect("/member/login");
 			} else if (memberDTO.getMemberEmail().equals("admin@admin")) {
 				session.setAttribute("loginMemberName", memberDTO.getMemberName());
 				// session.setAttribute("loginMemberDTO", memberDTO);
-				return "redirect:/admin_index";
+				response.sendRedirect("/admin_index");
 			} else {
 				session.setAttribute("loginMemberName", memberDTO.getMemberName());
 				session.setAttribute("loginMemberDTO", memberDTO);
-				return "redirect:/member_index";
+				response.sendRedirect("/member_index");
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
-
-		return "/";
 	}
 
 	@RequestMapping(value = "/forgotPwd", method = RequestMethod.GET)
@@ -230,7 +230,22 @@ public class MemberController {
 	public void member_change_password(HttpSession session, HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 		try {
-			
+			MemberDTO memberDTO = (MemberDTO) session.getAttribute("loginMemberDTO");
+
+			String inputOldPassword = request.getParameter("inputOldPassword");
+			String inputNewPassword = request.getParameter("inputNewPassword");
+			String inputNewPasswordConfirm = request.getParameter("inputNewPasswordConfirm");
+
+			if (memberDTO.getMemberPassword().equals(inputOldPassword)) {
+				if (inputNewPassword.equals(inputNewPasswordConfirm)) {
+					memberDAO.updatePassword(memberDTO, inputNewPassword);
+
+					response.sendRedirect("/member/my_page");
+				} else
+					throw new NotMatchingException("비밀번호가 맞지 않습니다.");
+			} else
+				throw new NotMatchingException("비밀번호가 맞지 않습니다.");
+
 		} catch (NotMatchingException ex) {
 			response.setContentType("text/html; charset=UTF-8");
 
