@@ -27,6 +27,26 @@ public class GoodDAO {
 		}
 	}
 
+	public GoodDTO showDetail(int inputID) {
+		try {
+			GoodDTO goodResult = jdbcTemplate.queryForObject("SELECT * FROM GOOD WHERE ID=?;",
+					(rs, rowNum) -> new GoodDTO(rs.getInt("ID"), rs.getString("ISBN"), rs.getString("TITLE"),
+							rs.getString("CONTENT"), rs.getDate("DATE")),
+					inputID);
+
+			BookDTO bookDTO = jdbcTemplate.queryForObject("SELECT * FROM BOOK WHERE ISBN=?;",
+					(rs, rowNum) -> new BookDTO(rs.getString("ISBN"), rs.getString("TITLE"), rs.getString("AUTHOR"),
+							rs.getString("GENRE"), rs.getString("PUBLISHER"), rs.getString("IMAGE"), rs.getInt("COUNT"),
+							rs.getString("SUMMARY"), rs.getInt("HIT"), rs.getDate("DATE")),
+					goodResult.getGoodISBN());
+
+			return new GoodDTO(goodResult.getGoodID(), goodResult.getGoodISBN(), goodResult.getGoodTitle(),
+					goodResult.getGoodContent(), bookDTO.getBookImage(), goodResult.getGoodDate());
+		} catch (Exception ex) {
+			return null;
+		}
+	}
+
 	public List<GoodDTO> showAll() {
 		List<GoodDTO> result = jdbcTemplate.query("SELECT * FROM GOOD;", (rs, rowNum) -> {
 			GoodDTO goodDTO = new GoodDTO(rs.getInt("ID"), rs.getString("ISBN"), rs.getString("TITLE"),
@@ -51,7 +71,7 @@ public class GoodDAO {
 							rs.getString("GENRE"), rs.getString("PUBLISHER"), rs.getString("IMAGE"), rs.getInt("COUNT"),
 							rs.getString("SUMMARY"), rs.getInt("HIT"), rs.getDate("DATE")),
 					goodDTO.getGoodISBN());
-			
+
 			result.add(new GoodDTO(goodDTO.getGoodID(), goodDTO.getGoodISBN(), goodDTO.getGoodTitle(),
 					goodDTO.getGoodContent(), bookDTO.getBookImage(), goodDTO.getGoodDate()));
 		}

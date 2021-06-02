@@ -42,5 +42,13 @@ public class GoodController {
 		return "good_unified_search";
 	}	
 
+	@RequestMapping(value = "/good_detail", method = RequestMethod.GET)
+	public String good_detail(Model model, @RequestParam int goodID) {
+		GoodDTO goodDTO = goodDAO.showDetail(goodID);
 
+		model.addAttribute("goodDTO", goodDTO);
+
+		return "good_detail";
+	}
+	
 }
