@@ -36,13 +36,15 @@ public class MainController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String index(Model model) {
-		List<NoticeDTO> noticeList = noticeDAO.showThree();
+		List<NoticeDTO> noticeList = noticeDAO.showFive();
 		List<BoardDTO> boardList = boardDAO.showThree();
-		List<BookDTO> bookList = bookDAO.showThree();
+		List<BookDTO> bookList = bookDAO.showFive();
+		List<GoodDTO> goodList = goodDAO.showThree();
 		
 		model.addAttribute("noticeList", noticeList);
 		model.addAttribute("boardList", boardList);
 		model.addAttribute("bookList", bookList);
+		model.addAttribute("goodList", goodList);
 		
 		return "index";
 	}
