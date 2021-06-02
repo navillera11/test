@@ -18,6 +18,21 @@ public class MainController {
 	BookService bookService;
 	@Autowired
 	BookDAO bookDAO;
+	
+	@Autowired
+	BoardService boardService;
+	@Autowired
+	BoardDAO boardDAO;
+	
+	@Autowired
+	NoticeService noticeService;
+	@Autowired
+	NoticeDAO noticeDAO;
+	
+	@Autowired
+	GoodService goodService;
+	@Autowired
+	GoodDAO goodDAO;
 
 	@GetMapping("/")
 	public String index() {
@@ -31,8 +46,16 @@ public class MainController {
 	}
 
 	// 회원 페이지 테스트용
-	@GetMapping("/member_index")
-	public String user_index() {
+	@RequestMapping(value = "/member_index", method = RequestMethod.GET)
+	public String member_index(Model model) {
+		List<NoticeDTO> noticeList = noticeDAO.showThree();
+		List<BoardDTO> boardList = boardDAO.showThree();
+		List<BookDTO> bookList = bookDAO.showThree();
+		
+		model.addAttribute("noticeList", noticeList);
+		model.addAttribute("boardList", boardList);
+		model.addAttribute("bookList", bookList);
+		
 		return "member_index";
 	}
 	

@@ -120,51 +120,24 @@
         <div class="card text-white bg-primary my-5 py-10 text-center">
             <div class="card-body">
                 <!--                    <p class="text-white m-0">자유 게시판</p>-->
-                <a href="#freeBoard" class="btn btn-primary btn-lg">자유 게시판</a>
+                <a href="/board/unified_search" class="btn btn-primary btn-lg">자유 게시판</a>
             </div>
         </div>
         <!-- Content Row-->
         <div class="row gx-4 gx-lg-5">
+        	<c:forEach var="boardDTO" items="${boardList}">
             <div class="col-md-4 mb-5">
                 <div class="card h-100">
                     <div class="card-body">
-                        <h2 class="card-title">Card One</h2>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit. Rem magni quas ex numquam, maxime minus quam
-                            molestias corporis quod, ea minima accusamus.</p>
+                        <h2 class="card-title">${boardDTO.boardTitle}</h2>
+                        <p class="card-text">${boardDTO.boardContent}</p>
                     </div>
                     <div class="card-footer">
-                        <a class="btn btn-primary btn-sm" href="#!">More Info</a>
+                        <a class="btn btn-primary btn-sm" href="/board/board_detail?boardID=${boardDTO.boardID}">More Info</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-5">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h2 class="card-title">Card Two</h2>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt
-                            pariatur voluptatem sunt quam eaque, vel, non in id dolore
-                            voluptates quos eligendi labore.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a class="btn btn-primary btn-sm" href="#!">More Info</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-5">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h2 class="card-title">Card Three</h2>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit. Rem magni quas ex numquam, maxime minus quam
-                            molestias corporis quod, ea minima accusamus.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a class="btn btn-primary btn-sm" href="#!">More Info</a>
-                    </div>
-                </div>
-            </div>
+            </c:forEach>
         </div>
     </div>
 
@@ -184,45 +157,19 @@
                         <div class="tab-pane active" id="librarianNominate">
                             <!--                        사서 추천 도서-->
                             <div class="card-group">
-                                <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="assets/img/testimonials-1.jpg" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">사서 추천 대충 Card title</h5>
-                                        <p class="card-text">This is a wider card with supporting
-                                            text below as a natural lead-in to additional content. This
-                                            content is a little bit longer.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                    <div class="card-footer">
-                                        <small class="text-muted">Last updated 3 mins ago</small>
-                                    </div>
-                                </div>
-                                <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="assets/img/testimonials-1.jpg" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">사서 추천 대충 Card title</h5>
-                                        <p class="card-text">This card has supporting text below
-                                            as a natural lead-in to additional content.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                    <div class="card-footer">
-                                        <small class="text-muted">Last updated 3 mins ago</small>
-                                    </div>
-                                </div>
-                                <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="assets/img/testimonials-1.jpg" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">사서 추천 대충 Card title</h5>
-                                        <p class="card-text">This is a wider card with supporting
-                                            text below as a natural lead-in to additional content. This
-                                            card has even longer content than the first to show that
-                                            equal height action.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                    <div class="card-footer">
-                                        <small class="text-muted">Last updated 3 mins ago</small>
-                                    </div>
-                                </div>
+                            	<c:forEach var="goodDTO" items="${goodList}">
+	                                <div class="card" style="width: 18rem;">
+	                                    <img class="card-img-top" src="assets/img/testimonials-1.jpg" alt="Card image cap">
+	                                    <div class="card-body">
+	                                        <h5 class="card-title">${goodDTO.goodTitle}</h5>
+	                                        <p class="card-text">${goodDTO.goodContent}</p>
+	                                        <a href="/${goodDTO}" class="btn btn-primary">자세히 보기</a>
+	                                    </div>
+	                                    <div class="card-footer">
+	                                        <small class="text-muted">Last updated 3 mins ago</small>
+	                                    </div>
+	                                </div>
+                                </c:forEach>
                             </div>
                             <div class="card text-white bg-primary my-5 py-10 text-center">
                                 <div class="card-body">
@@ -362,25 +309,14 @@
 
                             </div>
                             <ul class="list-unstyled mb-4">
-                                <li class="mb-2"><i class="bi bi-check text-primary"></i> <strong>1
-                                        users</strong></li>
-                                <li class="mb-2"><i class="bi bi-check text-primary"></i>
-                                    5GB storage</li>
-                                <li class="mb-2"><i class="bi bi-check text-primary"></i>
-                                    Unlimited public projects</li>
-                                <li class="mb-2"><i class="bi bi-check text-primary"></i>
-                                    Community access</li>
-                                <li class="mb-2 text-muted"><i class="bi bi-x"></i>
-                                    Unlimited private projects</li>
-                                <li class="mb-2 text-muted"><i class="bi bi-x"></i>
-                                    Dedicated support</li>
-                                <li class="mb-2 text-muted"><i class="bi bi-x"></i> Free
-                                    linked domain</li>
-                                <li class="text-muted"><i class="bi bi-x"></i> Monthly
-                                    status reports</li>
+                                <!-- <li class="mb-2"><i class="bi bi-check text-primary"></i> <strong>1 users</strong></li>
+                                <li class="mb-2"><i class="bi bi-check text-primary"></i>5GB storage</li> -->
+                                <c:forEach var="noticeDTO" items="${noticeList}">
+                                	<li class="mb-2"><i class="bi bi-check text-primary"></i><a href="/notice/notice_detail?noticeID=${noticeDTO.noticeID}">${noticeDTO.noticeTitle}</a></li>
+                                </c:forEach>
                             </ul>
                             <div class="d-grid">
-                                <a class="btn btn-outline-primary" href="#!">Choose plan</a>
+                                <a class="btn btn-outline-primary" href="/notice/unified_search">더보기</a>
                             </div>
                         </div>
                     </div>
@@ -390,18 +326,18 @@
                     <div class="card mb-5 mb-xl-0">
                         <div class="card-body p-10">
                             <div class="mb-3">
-                                <span class="display-4 fw-bold"> <i class="bi bi-star-fill text-warning"></i> 발간 자료
+                                <span class="display-4 fw-bold"> <i class="bi bi-star-fill text-warning"></i>신간 도서
                                 </span>
                             </div>
                             <ul class="list-unstyled mb-4">
+                            	<c:forEach var="bookDTO" items="${bookList}">
                                 <li class="mb-2"><i class="bi bi-check text-primary"></i> 
                                     <strong>
-                                        <a class="bi text-primary" href="#!">
-                                            이제 대충 여따가 링크 박는 것 처럼 제목 뙇! 
-                                        </a>
+                                        <a class="bi text-primary" href="/book/book_detail?bookISBN=${bookDTO.bookISBN}">${bookDTO.bookTitle}</a>
                                     </strong>
                                 </li>
-                                <li class="mb-2"><i class="text-primary"></i> 체크 없애는 거 테스트
+                                </c:forEach>
+                                <!-- <li class="mb-2"><i class="text-primary"></i> 체크 없애는 거 테스트
                                 </li>
                                 <li class="mb-2"><i class="bi bi-check text-primary"></i>
                                     Unlimited public projects</li>
@@ -414,10 +350,10 @@
                                 <li class="mb-2"><a class="text-primary" href="#!">
                                         체크 없이 링크 </a></li>
                                 <li class="text-muted"><i class="bi bi-x"></i>
-                                    Monthly status reports</li>
+                                    Monthly status reports</li> -->
                             </ul>
                             <div class="d-grid">
-                                <a class="btn btn-outline-primary" href="#!">Choose plan</a>
+                                <a class="btn btn-outline-primary" href="/book/unified_search">더보기</a>
                             </div>
                         </div>
                     </div>

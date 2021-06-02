@@ -37,6 +37,15 @@ public class BoardDAO {
 		});
 		return result;
 	}
+	
+	public List<BoardDTO> showThree() {
+		List<BoardDTO> result = jdbcTemplate.query("SELECT * FROM BOARD ORDER BY FBID DESC LIMIT 3;", (rs, rowNum) -> {
+			BoardDTO boardDTO = new BoardDTO(rs.getInt("FBID"), rs.getString("EMAIL"), rs.getString("TITLE"),
+					rs.getString("CONTENT"), rs.getDate("DATE"), rs.getString("PUBLIC"));
+			return boardDTO;
+		});
+		return result;
+	}
 
 	public void updatePublic(BoardDTO boardDTO, String newPublic) {
 		jdbcTemplate.update("UPDATE BOARD SET PUBLIC='" + newPublic + "' WHERE FBID=" + boardDTO.getBoardID() + ";");
