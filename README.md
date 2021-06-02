@@ -252,3 +252,10 @@
    * 공지사항 상세 페이지 및 자유 게시판 상세 페이지
       * src/main/webapp/WEB-INF/VIEWS/board_detail.jsp - 자유게시판 상세 페이지 네비게이션 디자인 변경
       * src/main/webapp/WEB-INF/VIEWS/notice_detail.jsp - 공지 사항 상세 페이지 생성
+
+   * 게시판 글쓰기 페이지
+      * src/main/webapp/WEB-INF/VIEWS/board_write.jsp - 게시판 글쓰기 페이지
+      * src/main/webapp/WEB-INF/VIEWS/board_detail.jsp - 경로 지정
+      * src/main/java/com/libraryManage/Controller/BoardController.java - 경로 세팅
+      * src/main/webapp/WEB-INF/VIEWS/member_hope.jsp - 경로 지정
+      * src/main/resources/static/js/scripts.js  - 글자 제한 제대로 안됨(기능은 추가)
