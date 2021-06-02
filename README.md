@@ -38,6 +38,7 @@
       * 회원 목록 - 구현 완료
       * 회원 블랙리스트 - 구현 완료
       * 회원 신청 도서 목록 조회 - 구현 완료
+      * 임시 비밀번호 이메일로 전송 - 구현 완료
    
 
 ## Member 기능
@@ -46,13 +47,13 @@
       * 회원가입 - 구현 완료
       * 로그인 - 구현 완료
       * 비밀번호 수정
+      * 비밀번호 잊어버렸을 시 임시 비밀번호 요청 - 구현 완료
       
     * **도서**
       * 도서 대여 - 구현 완료
       * 도서 반납
       * 도서 검색 - 구현 완료
       * 도서 신청 - 구현 완료
-      * 도서 예약 - 보류
       
     * **내 서재**
       * 연체 도서 확인
@@ -282,3 +283,8 @@
       * src/main/webapp/WEB-INF/VIEWS/index.jsp - 변수 변경
       * src/main/webapp/WEB-INF/VIEWS/member_index.jsp - 경로 지정
       * src/main/webapp/WEB-INF/VIEWS/member_my_page.jsp - 마이 페이지 생성
+
+   * 비밀번호 잊어버렸을 시 이메일을 입력했을 때, 해당하는 계정이 있다면 이메일로 임시 비밀번호 문자열을 생성해 전송
+      * pom.xml - 의존성 추가
+      * src/main/java/com/libraryManage/DAO/MemberDAO.java - 비밀번호 변경 쿼리문 추가
+      * src/main/java/com/libraryManage/Service/MemberService.java - 이메일 보내는 기능 
