@@ -46,24 +46,24 @@
     * **회원**
       * 회원가입 - 구현 완료
       * 로그인 - 구현 완료
-      * 비밀번호 수정
+      * 비밀번호 수정 - 구현 완료
       * 비밀번호 잊어버렸을 시 임시 비밀번호 요청 - 구현 완료
       
     * **도서**
       * 도서 대여 - 구현 완료
-      * 도서 반납
+      * 도서 반납 - 구현 완료
       * 도서 검색 - 구현 완료
       * 도서 신청 - 구현 완료
       
     * **내 서재**
       * 연체 도서 확인
-      * 대여 기간 연장
+      * 대여 기간 연장 - 구현 완료
     
-    * **신간 도서 조회**
+    * **신간 도서 조회** - 구현 완료
       
     * **사서 추천 도서 조회**
     
-    * **공지사항 조회**
+    * **공지사항 조회** - 구현 완료
  
 
 ## Database 구조
@@ -75,7 +75,7 @@
     * 공지 사항 - 완성
     * 추천 도서 - 완성
     * 대여 도서 - 완성
-    * 신청 도서 - 
+    * 신청 도서 - 완성
     * 게시판 - 완성
     * 댓글 - 완성
 
@@ -330,3 +330,10 @@
       * src/main/webapp/WEB-INF/VIEWS/member_hope.jsp
       * src/main/webapp/WEB-INF/VIEWS/notice_detail.jsp
       * src/main/webapp/WEB-INF/VIEWS/notice_unified_search.jsp
+
+   * 인덱스 페이지에 공지사항 최신 5개 조회, 신간 도서 5권 조회, 사서 추천 도서 3권 조회 가능, 게시글 최근 3개 조회 가능, 링크도 걸어놨음
+      * src/main/java/com/libraryManage/Controller/MainController.java - 주소 매핑 및 각 데이터 개수 출력
+      * src/main/java/com/libraryManage/DAO/BoardDAO.java - 게시글 최근 3권
+      * src/main/java/com/libraryManage/DAO/BookDAO.java - 신간 도서 5권
+      * src/main/java/com/libraryManage/DAO/GoodDAO.java - 사서 추천 도서 3권 (도서 측에서 ISBN 으로 이미지도 가져옴)
+      * src/main/java/com/libraryManage/DAO/NoticeDAO.java - 공지사항 최신 5개
