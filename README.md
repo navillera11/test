@@ -276,3 +276,9 @@
       * src/main/java/com/libraryManage/DAO/HopeDAO.java
       * src/main/webapp/WEB-INF/VIEWS/admin_member_hope.jsp
       * src/main/webapp/WEB-INF/VIEWS/member_hope.jsp
+
+   * 마이 페이지 생성
+      * src/main/java/com/libraryManage/Controller/MemberController.java - 경로 세팅
+      * src/main/webapp/WEB-INF/VIEWS/index.jsp - 변수 변경
+      * src/main/webapp/WEB-INF/VIEWS/member_index.jsp - 경로 지정
+      * src/main/webapp/WEB-INF/VIEWS/member_my_page.jsp - 마이 페이지 생성
