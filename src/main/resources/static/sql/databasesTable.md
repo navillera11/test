@@ -153,6 +153,36 @@ ALTER TABLE spring5fs.`checkout`
           REFERENCES spring5fs.member (`EMAIL`)
 ~~~~
 
+   * 221-06-03
+   
+~~~~sql
+CREATE TABLE spring5fs.checkout
+(
+   `ISBN`               VARCHAR(45)
+                          CHARACTER SET utf8
+                          COLLATE utf8_general_ci
+                          NOT NULL
+                          DEFAULT '',
+   `TITLE`              VARCHAR(45) CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
+   `EMAIL`              VARCHAR(45)
+                          CHARACTER SET utf8
+                          COLLATE utf8_general_ci
+                          NOT NULL
+                          DEFAULT '',
+   `RENTAL_DATE`        DATETIME NULL,
+   `RETURN_DUE_DATE`    DATETIME NULL,
+   `EXTENSION_COUNT`    INT(45) NULL DEFAULT 0,
+   PRIMARY KEY(`ISBN`, `EMAIL`),
+   CONSTRAINT `FK_checkout_1` FOREIGN KEY(`ISBN`)
+      REFERENCES book (`ISBN`) ON UPDATE RESTRICT ON DELETE RESTRICT,
+   CONSTRAINT `FK_checkout_2` FOREIGN KEY(`EMAIL`)
+      REFERENCES member (`EMAIL`) ON UPDATE RESTRICT ON DELETE RESTRICT
+)
+ENGINE INNODB
+COLLATE 'utf8_general_ci'
+ROW_FORMAT DEFAULT;
+~~~~
+
 ## 추천 도서 테이블
 
 ~~~~sql
