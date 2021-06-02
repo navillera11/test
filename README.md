@@ -297,3 +297,9 @@
       * src/main/java/com/libraryManage/DAO/CheckOutDAO.java
       * src/main/java/com/libraryManage/DTO/CheckOutDTO.java
       * src/main/webapp/WEB-INF/VIEWS/member_my_page.jsp
+
+   * 비밀 번호 변경 페이지 구현
+      * src/main/webapp/WEB-INF/VIEWS/member_change_password.jsp - 비밀 번호 변경 페이지 생성
+      * src/main/webapp/WEB-INF/VIEWS/member_forgotPwd.jsp - 잘못된 경로 고침
+      * src/main/webapp/WEB-INF/VIEWS/member_login.jsp - 필요없는 버튼 삭제
+      * src/main/webapp/WEB-INF/VIEWS/member_my_page.jsp - 잘못된 경로 고침
