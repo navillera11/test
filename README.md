@@ -307,3 +307,26 @@
    * 비밀번호 변경 기능 완성 및 로그인 시 오류 처리
       * src/main/webapp/WEB-INF/VIEWS/member_change_password.jsp
       * src/main/java/com/libraryManage/Controller/MemberController.java
+
+   * 세션 로그인에 따른 메인 네비게이션 바 기능 처리
+      * src/main/webapp/WEB-INF/VIEWS/board_detail.jsp
+      * src/main/webapp/WEB-INF/VIEWS/board_unified_search.jsp
+      * src/main/webapp/WEB-INF/VIEWS/board_write.jsp
+      * src/main/webapp/WEB-INF/VIEWS/book_detail.jsp
+      * src/main/webapp/WEB-INF/VIEWS/book_unified_search.jsp
+      * src/main/webapp/WEB-INF/VIEWS/index.jsp
+      * src/main/webapp/WEB-INF/VIEWS/library_introduce.jsp
+      * src/main/webapp/WEB-INF/VIEWS/member_hope.jsp
+      * src/main/webapp/WEB-INF/VIEWS/notice_detail.jsp
+      * src/main/webapp/WEB-INF/VIEWS/notice_unified_search.jsp 
+
+   * 세션 로그인에 따른 서브 네비게이션 바 기능 처리
+      * src/main/webapp/WEB-INF/VIEWS/board_detail.jsp
+      * src/main/webapp/WEB-INF/VIEWS/board_unified_search.jsp
+      * src/main/webapp/WEB-INF/VIEWS/board_write.jsp
+      * src/main/webapp/WEB-INF/VIEWS/book_detail.jsp
+      * src/main/webapp/WEB-INF/VIEWS/book_unified_search.jsp
+      * src/main/webapp/WEB-INF/VIEWS/index.jsp
+      * src/main/webapp/WEB-INF/VIEWS/member_hope.jsp
+      * src/main/webapp/WEB-INF/VIEWS/notice_detail.jsp
+      * src/main/webapp/WEB-INF/VIEWS/notice_unified_search.jsp
