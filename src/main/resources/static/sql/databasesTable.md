@@ -97,6 +97,24 @@ CREATE TABLE `spring5fs`.`member` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 ~~~~
 
+   * 2021-06-03 
+   
+~~~~sql
+CREATE TABLE spring5fs.member
+(
+   `EMAIL`               VARCHAR(45) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+   `PASSWORD`            VARCHAR(45) CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
+   `NAME`                VARCHAR(45) CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
+   `RANK`                INT(11) NULL DEFAULT 0,
+   `NORMAL_RETURN`       INT(45) NULL DEFAULT 0,
+   `RETURN_AVAILABLE`    INT(45) NULL DEFAULT 3,
+   PRIMARY KEY(`EMAIL`)
+)
+ENGINE INNODB
+COLLATE 'utf8_general_ci'
+ROW_FORMAT DEFAULT;
+~~~~
+
 ## 공지사항 테이블 
 
 ~~~~sql
