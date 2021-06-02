@@ -86,7 +86,7 @@ public class AdminBookController {
 				inputBookCount = Integer.parseInt(inputBookCountString);
 
 			BookDTO bookDTO = new BookDTO(inputBookISBN, inputBookTitle, inputBookAuthor, inputBookGenre,
-					inputBookPublisher, inputBookImage, inputBookCount, inputBookSummary, inputBookHit);
+					inputBookPublisher, inputBookImage, inputBookCount, inputBookSummary);
 
 			bookDTO = bookService.addBook(bookDTO);
 

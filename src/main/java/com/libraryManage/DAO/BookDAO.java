@@ -23,7 +23,7 @@ public class BookDAO {
 			return jdbcTemplate.queryForObject("SELECT * FROM BOOK WHERE ISBN=?;",
 					(rs, rowNum) -> new BookDTO(rs.getString("ISBN"), rs.getString("TITLE"), rs.getString("AUTHOR"),
 							rs.getString("GENRE"), rs.getString("PUBLISHER"), rs.getString("IMAGE"),
-							rs.getInt("COUNT"), rs.getString("SUMMARY"), rs.getInt("HIT")),
+							rs.getInt("COUNT"), rs.getString("SUMMARY"), rs.getInt("HIT"), rs.getDate("DATE")),
 					inputISBN);
 		} catch (Exception ex) {
 			return null;
@@ -34,7 +34,7 @@ public class BookDAO {
 		List<BookDTO> result = jdbcTemplate.query("SELECT * FROM BOOK;", (rs, rowNum) -> {
 			BookDTO bookDTO = new BookDTO(rs.getString("ISBN"), rs.getString("TITLE"), rs.getString("AUTHOR"),
 					rs.getString("GENRE"), rs.getString("PUBLISHER"), rs.getString("IMAGE"),
-					rs.getInt("COUNT"), rs.getString("SUMMARY"), rs.getInt("HIT"));
+					rs.getInt("COUNT"), rs.getString("SUMMARY"), rs.getInt("HIT"), rs.getDate("DATE"));
 			return bookDTO;
 		});
 		return result;
@@ -44,11 +44,11 @@ public class BookDAO {
 		this.bookDTO = _bookDTO;
 
 		jdbcTemplate
-				.update("INSERT INTO BOOK(ISBN, TITLE, AUTHOR, GENRE, PUBLISHER, IMAGE, COUNT, SUMMARY, HIT) VALUES('"
+				.update("INSERT INTO BOOK(ISBN, TITLE, AUTHOR, GENRE, PUBLISHER, IMAGE, COUNT, SUMMARY, HIT, DATE) VALUES('"
 						+ bookDTO.getBookISBN() + "', '" + bookDTO.getBookTitle() + "', '" + bookDTO.getBookAuthor()
 						+ "', '" + bookDTO.getBookGenre() + "', '" + bookDTO.getBookPublisher() + "', '"
 						+ bookDTO.getBookImage() + "', " + bookDTO.getBookCount() + ", '" + bookDTO.getBookSummary()
-						+ "', " + bookDTO.getBookHit() + ");");
+						+ "', " + bookDTO.getBookHit() + ", NOW());");
 	}
 
 	public void deleteBook(BookDTO _bookDTO) {

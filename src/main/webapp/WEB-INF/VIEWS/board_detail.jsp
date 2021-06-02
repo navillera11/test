@@ -121,7 +121,7 @@
                                             <h3 class="text-center font-weight-light my-2">댓글</h3>
                                         </div>
                                         <div class="card-body">
-                                            <form action="#" method="POST">
+                                            <form action="/board/board_detail?boardID=${boardDTO.boardID}" method="POST">
 
                                                 <div class="form-group">
                                                     <textarea class="form-control" id="inputCommentContent" placeholder="댓글을 입력해주세요." rows="3" name="inputCommentContent"></textarea>
@@ -139,25 +139,16 @@
                                 </div>
 
                                 <!--                             댓글 나오는 창-->
+                                <c:forEach var="commentDTO" items="${commentDTOList}">
                                 <div class="d-flex mb-4 ">
                                     <!-- Parent comment-->
                                     <div class="ms-3">
-                                        <div class="fw-bold">Commenter Name</div>
-                                        If you're going to lead a space frontier, it has to be
-                                        government; it'll never be private enterprise. Because the
-                                        space frontier is dangerous, and it's expensive, and it has
-                                        unquantified risks.
+                                        <div class="fw-bold">${commentDTO.commentEmail}</div>
+                                        ${commentDTO.commentContent}
                                     </div>
                                 </div>
+                                </c:forEach>
                                 <!-- Single comment-->
-                                <div class="d-flex">
-                                    <div class="ms-3">
-                                        <div class="fw-bold">Commenter Name</div>
-                                        When I look at the universe and all the ways the universe wants
-                                        to kill us, I find it hard to reconcile that with statements of
-                                        beneficence.
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </section>

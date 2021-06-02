@@ -13,9 +13,10 @@ public class BookDTO {
 	private int bookCount; // 도서 재고수
 	private String bookSummary; // 도서 한줄 줄거리
 	private int bookHit; // 대여당한 횟수
+	private Date bookDate; // 도서 추가 날짜
 
 	public BookDTO(String _bookISBN, String _bookTitle, String _bookAuthor, String _bookGenre, String _bookPublisher,
-			String _bookImage, int _bookCount, String _bookSummary, int _bookHit) {
+			String _bookImage, int _bookCount, String _bookSummary, int _bookHit, Date _bookDate) {
 		// 도서 데이터 받아올 때
 		this.bookISBN = _bookISBN;
 		this.bookTitle = _bookTitle;
@@ -26,6 +27,7 @@ public class BookDTO {
 		this.bookCount = _bookCount;
 		this.bookSummary = _bookSummary;
 		this.bookHit = _bookHit;
+		this.bookDate = _bookDate;
 	}
 
 	public BookDTO(String _bookISBN, String _bookTitle, String _bookAuthor, String _bookGenre, String _bookPublisher,
@@ -39,6 +41,7 @@ public class BookDTO {
 		this.bookImage = _bookImage;
 		this.bookCount = _bookCount;
 		this.bookSummary = _bookSummary;
+		this.bookHit = 0;
 	}
 
 	public String getBookISBN() {
