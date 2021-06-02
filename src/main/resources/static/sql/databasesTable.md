@@ -207,6 +207,26 @@ ALTER TABLE spring5fs.`comment`
           REFERENCES spring5fs.member (`EMAIL`)
 ~~~~
 
+   * 2021-06-22
+ 
+~~~~sql
+CREATE TABLE spring5fs.`comment`
+(
+   `CID`        INT(20) NOT NULL,
+   `FBID`       INT(11) NULL,
+   `EMAIL`      VARCHAR(45) NULL,
+   `CONTENT`    VARCHAR(1100) NULL,
+   PRIMARY KEY(`CID`, `FBID`)
+)
+ENGINE = INNODB
+CHARACTER SET 'utf8'
+COLLATE 'utf8_general_ci';
+
+ALTER TABLE spring5fs.`comment`
+   ADD CONSTRAINT `FK_comment_1` FOREIGN KEY(`FBID`)
+          REFERENCES spring5fs.board (`FBID`)
+~~~~
+
 ## 희망 도서 테이블
 
 ~~~~sql
