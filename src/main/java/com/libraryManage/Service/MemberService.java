@@ -1,5 +1,6 @@
 package com.libraryManage.Service;
 
+import org.apache.commons.mail.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
 
@@ -46,18 +47,11 @@ public class MemberService {
 		return memberDTO;
 	}
 
-	public MemberDTO forgotPassword(String inputEmail) {
+	public MemberDTO changePassword(MemberDTO _memberDTO, StringBuffer newPassword) {
 		// 비밀번호 수정
-		MemberDTO memberDTO = memberDAO.selectByEmail(inputEmail);
+		memberDAO.updatePassword(_memberDTO, newPassword.toString());
 
-		if (memberDTO == null) {
-			System.out.println("존재하지 않는 계정입니다.");
-			return null;
-		} else {
-
-		}
-
-		return memberDTO;
+		return memberDAO.selectByEmail(_memberDTO.getMemberEmail());
 	}
 
 	public void updateRank(MemberDTO memberDTO, int inputMemberRank) {
@@ -65,16 +59,47 @@ public class MemberService {
 		memberDAO.updateRank(memberDTO, inputMemberRank);
 	}
 
-//	public void deleteMem() { // 회원 삭제
-//		MemberDTO member = memberDAO.selectByEmail(inputEmail);
-//
-//		if (member == null) {
-//			System.out.println("\n계정이 존재하지 않습니다.\n");
-//		} else {
-//			memberDAO.deleteMem(member);
-//			System.out.println("\n회원이 삭제되었습니다.");
-//		}
-//
-//		memberDAO.showAll();
-//	}
+	public void sendEmail(MemberDTO memberDTO, String div) throws Exception {
+		// Mail Server 설정
+		String charSet = "utf-8";
+		String hostSMTP = "smtp.naver.com"; // 지메일 이용시 smtp.gmail.com
+		String hostSMTPid = "hargeon@naver.com"; // "서버 이메일 주소(보내는 사람 이메일 주소)";
+		String hostSMTPpwd = "1q2w3e4r!!"; // "서버 이메일 비번(보내는 사람 이메일 비번)";
+
+		// 보내는 사람 EMail, 제목, 내용
+		String fromEmail = "admin@admin"; // "보내는 사람 이메일주소(받는 사람 이메일에 표시됨)";
+		String fromName = "MinGW"; // "프로젝트이름 또는 보내는 사람 이름";
+		String subject = "";
+		String msg = "";
+
+		if (div.equals("forgotPwd")) {
+			subject = "MinGW's Library 임시 비밀번호 입니다.";
+			msg += "<div align='center' style='border:1px solid black; font-family:verdana'>";
+			msg += "<h3 style='color: blue;'>";
+			msg += memberDTO.getMemberName() + "님의 임시 비밀번호 입니다. 비밀번호를 변경하여 사용하세요.</h3>";
+			msg += "<p>임시 비밀번호 : ";
+			msg += memberDTO.getMemberPassword() + "</p></div>";
+		}
+
+		// 받는 사람 E-Mail 주소
+		String mail = memberDTO.getMemberEmail();
+		try {
+			HtmlEmail email = new HtmlEmail();
+			email.setDebug(true);
+			email.setCharset(charSet);
+			email.setSSL(true);
+			email.setHostName(hostSMTP);
+			email.setSmtpPort(587); // 지메일 이용시 465
+
+			email.setAuthentication(hostSMTPid, hostSMTPpwd);
+			email.setTLS(true);
+			email.addTo(mail, charSet);
+			email.setFrom(fromEmail, fromName, charSet);
+			email.setSubject(subject);
+			email.setHtmlMsg(msg);
+			email.send();
+		} catch (Exception e) {
+			System.out.println("메일발송 실패 : " + e);
+		}
+	}
 }

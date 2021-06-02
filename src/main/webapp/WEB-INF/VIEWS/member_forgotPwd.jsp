@@ -30,17 +30,16 @@
 								<div class="card-body">
 									<div class="small mb-3 text-muted">Enter your email
 										address and we will send you a link to reset your password.</div>
-									<form>
+									<form action="/member/forgotPwd" method="POST">
 										<div class="form-floating mb-3">
 											<input class="form-control" id="inputEmail" type="email"
-												placeholder="name@example.com" /> <label for="inputEmail">Email
+												placeholder="name@example.com" name="inputEmail" /> <label for="inputEmail">Email
 												address</label>
 										</div>
 										<div
 											class="d-flex align-items-center justify-content-between mt-4 mb-0">
 											<a class="small" href="/member_login">Return to login</a>
-											<a class="btn btn-primary" href="/member_login">Reset
-												Password</a>
+											<input type="submit" class="btn btn-primary" value="Reset Password" />
 										</div>
 									</form>
 								</div>

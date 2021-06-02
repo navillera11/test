@@ -3,6 +3,7 @@ package com.libraryManage.Controller;
 import javax.servlet.http.*;
 import java.io.*;
 import java.util.List;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
@@ -19,6 +20,8 @@ import com.libraryManage.Exception.*;
 public class MemberController {
 	@Autowired
 	MemberService memberService;
+	@Autowired
+	MemberDAO memberDAO;
 
 	@Autowired
 	BookDAO bookDAO;
@@ -115,8 +118,48 @@ public class MemberController {
 	}
 
 	@PostMapping("/forgotPwd")
-	public void member_forgotPwd(HttpServletRequest request, HttpServletResponse response) {
-		String inputEmail = request.getParameter("inputEmail");
+	public void member_forgotPwd(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		try {
+			String inputEmail = request.getParameter("inputEmail");
+
+			MemberDTO memberDTO = memberDAO.selectByEmail(inputEmail);
+
+			if (memberDTO == null) { // 존재하지 않는 계정
+				throw new NotExistingException("존재하지 않는 계정입니다.");
+			} else { // 계정이 존재한다면 
+				StringBuffer newPassword = new StringBuffer();
+
+				Random rand = new Random();
+
+				for (int i = 0; i < 10; i++) {
+					int index = rand.nextInt(3);
+					switch (index) {
+					case 0:
+						newPassword.append((char) ((int) (rand.nextInt(26)) + 97));
+						break;
+					case 1:
+						newPassword.append((char) ((int) (rand.nextInt(26)) + 65));
+						break;
+					case 2:
+						newPassword.append((rand.nextInt(10)));
+						break;
+					}
+				}
+				memberDTO = memberService.changePassword(memberDTO, newPassword);
+
+				memberService.sendEmail(memberDTO, "forgotPwd");
+				
+				response.sendRedirect("/member/login");
+			}
+		} catch (NotExistingException ex) {
+			response.setContentType("text/html; charset=UTF-8");
+
+			PrintWriter out = response.getWriter();
+
+			out.println("<script>alert('존재하지 않는 계정입니다.'); location.href='/member/register';</script>");
+
+			out.flush();
+		}
 	}
 
 	@RequestMapping(value = "/my_page", method = RequestMethod.GET)
@@ -127,7 +170,7 @@ public class MemberController {
 			if (memberDTO == null) {
 				throw new NotExistingException("로그인 먼저 해주세요.");
 			} else {
-				
+
 			}
 		} catch (NotExistingException ex) {
 			response.setContentType("text/html; charset=UTF-8");

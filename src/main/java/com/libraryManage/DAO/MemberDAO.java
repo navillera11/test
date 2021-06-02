@@ -55,7 +55,9 @@ public class MemberDAO {
 				+ memberDTO.getMemberPassword() + "', '" + memberDTO.getMemberName() + "');");
 	}
 
-	public void updatePassword(MemberDTO member) {
+	public void updatePassword(MemberDTO _memberDTO, String newPassword) {
+		jdbcTemplate.update(
+				"UPDATE MEMBER SET PASSWORD='" + newPassword + "' WHERE EMAIL='" + memberDTO.getMemberEmail() + "';");
 	}
 
 	public void updateRank(MemberDTO memberDTO, int newRank) {
