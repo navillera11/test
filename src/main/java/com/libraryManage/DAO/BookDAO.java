@@ -41,8 +41,8 @@ public class BookDAO {
 		return result;
 	}
 	
-	public List<BookDTO> showThree() {
-		List<BookDTO> result = jdbcTemplate.query("SELECT * FROM BOOK ORDER BY ISBN DESC LIMIT 3;", (rs, rowNum) -> {
+	public List<BookDTO> showFive() {
+		List<BookDTO> result = jdbcTemplate.query("SELECT * FROM BOOK ORDER BY ISBN DESC LIMIT 5;", (rs, rowNum) -> {
 			BookDTO bookDTO = new BookDTO(rs.getString("ISBN"), rs.getString("TITLE"), rs.getString("AUTHOR"),
 					rs.getString("GENRE"), rs.getString("PUBLISHER"), rs.getString("IMAGE"),
 					rs.getInt("COUNT"), rs.getString("SUMMARY"), rs.getInt("HIT"), rs.getDate("DATE"));

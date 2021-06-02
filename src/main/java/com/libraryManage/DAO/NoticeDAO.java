@@ -36,8 +36,8 @@ public class NoticeDAO {
 		return result;
 	}
 	
-	public List<NoticeDTO> showThree() {
-		List<NoticeDTO> result = jdbcTemplate.query("SELECT * FROM NOTICE ORDER BY ID DESC LIMIT 3;", (rs, rowNum) -> {
+	public List<NoticeDTO> showFive() {
+		List<NoticeDTO> result = jdbcTemplate.query("SELECT * FROM NOTICE ORDER BY ID DESC LIMIT 5;", (rs, rowNum) -> {
 			NoticeDTO noticeDTO = new NoticeDTO(rs.getInt("ID"), rs.getString("TITLE"), rs.getDate("DATE"),
 					rs.getString("CONTENT"));
 			return noticeDTO;
