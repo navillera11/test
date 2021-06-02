@@ -34,7 +34,7 @@ window.addEventListener('DOMContentLoaded', event => {
 		}
 	});
 	
-	// 댓글 글자 수 제한 - 제대로 안됨
+	// 댓글 글자 수 제한
 	$('#inputCommentContent').on('keyup', function() {
 		$('#inputCommentContentCount').html("("+$(this).val().length+" / 1000)");
 		if($(this).val().length > 1000) {
@@ -43,12 +43,12 @@ window.addEventListener('DOMContentLoaded', event => {
 		}
 	});
 	
-	// 댓글 글자 수 제한 - 제대로 안됨
-	$('#inputBookSummary').on('keyup', function() {
-		$('#inputBookSummaryCount').html("("+$(this).val().length+" / 1000)");
+	// 댓글 글자 수 제한
+	$('#inputBoardContent').on('keyup', function() {
+		$('#inputBoardContentCount').html("("+$(this).val().length+" / 1000)");
 		if($(this).val().length > 1000) {
 			$(this).val($(this).val().substring(0, 1000));
-			$('#inputBookSummaryCount').html("(100 / 100)");
+			$('#inputBoardContentCount').html("(100 / 100)");
 		}
 	});
 	

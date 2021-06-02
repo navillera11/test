@@ -45,7 +45,7 @@
                 </a>
 
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="#">희망 도서 신청</a>
+                    <a class="dropdown-item" href="/member/member_hope">희망 도서 신청</a>
                     <a class="dropdown-item" href="/board/unified_search">자유 게시판</a>
                 </div>
             </div>

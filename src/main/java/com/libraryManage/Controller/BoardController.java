@@ -40,4 +40,12 @@ public class BoardController {
 
 		return "board_unified_search";
 	}
+	
+	// 게시판 글쓰기
+	@GetMapping("/board_write")
+	public String board_write() {
+
+		return "board_write";
+	}
+	
 }
