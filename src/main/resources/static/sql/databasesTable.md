@@ -206,3 +206,14 @@ ALTER TABLE spring5fs.`comment`
    ADD CONSTRAINT `EMAIL` FOREIGN KEY(`EMAIL`)
           REFERENCES spring5fs.member (`EMAIL`)
 ~~~~
+
+## 희망 도서 테이블
+
+~~~~sql
+CREATE TABLE `spring5fs`.`request` (
+  `ISBN` VARCHAR(45) NOT NULL,
+  `TITLE` VARCHAR(45) NULL,
+  `NUMBER` INT NULL,
+  `LINK` VARCHAR(100) NULL,
+  PRIMARY KEY (`ISBN`));
+  ~~~~
