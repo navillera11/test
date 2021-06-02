@@ -56,6 +56,8 @@ public class MemberDAO {
 	}
 
 	public void updatePassword(MemberDTO _memberDTO, String newPassword) {
+		this.memberDTO = _memberDTO;
+		
 		jdbcTemplate.update(
 				"UPDATE MEMBER SET PASSWORD='" + newPassword + "' WHERE EMAIL='" + memberDTO.getMemberEmail() + "';");
 	}

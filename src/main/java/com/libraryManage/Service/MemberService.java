@@ -62,9 +62,9 @@ public class MemberService {
 	public void sendEmail(MemberDTO memberDTO, String div) throws Exception {
 		// Mail Server 설정
 		String charSet = "utf-8";
-		String hostSMTP = "smtp.naver.com"; // 지메일 이용시 smtp.gmail.com
-		String hostSMTPid = "hargeon@naver.com"; // "서버 이메일 주소(보내는 사람 이메일 주소)";
-		String hostSMTPpwd = "1q2w3e4r!!"; // "서버 이메일 비번(보내는 사람 이메일 비번)";
+		String hostSMTP = "smtp.gmail.com"; // 지메일 이용시 smtp.gmail.com
+		String hostSMTPid = "hargeon305@gmail.com"; // "서버 이메일 주소(보내는 사람 이메일 주소)";
+		String hostSMTPpwd = "helloHAPPYworld!"; // "서버 이메일 비번(보내는 사람 이메일 비번)";
 
 		// 보내는 사람 EMail, 제목, 내용
 		String fromEmail = "admin@admin"; // "보내는 사람 이메일주소(받는 사람 이메일에 표시됨)";
@@ -89,7 +89,7 @@ public class MemberService {
 			email.setCharset(charSet);
 			email.setSSL(true);
 			email.setHostName(hostSMTP);
-			email.setSmtpPort(587); // 지메일 이용시 465
+			email.setSmtpPort(465); // 지메일 이용시 587
 
 			email.setAuthentication(hostSMTPid, hostSMTPpwd);
 			email.setTLS(true);
