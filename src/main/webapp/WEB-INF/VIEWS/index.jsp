@@ -385,8 +385,7 @@
 
                      
                     </ul>
-                    <p class="text-muted small mb-4 mb-lg-0">&copy; MinGW's
-						Library 2021. All Rights Reserved.</p>
+                    <p class="text-muted small mb-4 mb-lg-0">&copy; MinGW's Library 2021. All Rights Reserved.</p>
                 </div>
                 <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
                     <ul class="list-inline mb-0">
