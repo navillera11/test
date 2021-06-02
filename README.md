@@ -288,3 +288,12 @@
       * pom.xml - 의존성 추가
       * src/main/java/com/libraryManage/DAO/MemberDAO.java - 비밀번호 변경 쿼리문 추가
       * src/main/java/com/libraryManage/Service/MemberService.java - 이메일 보내는 기능 
+
+2021-06-03:
+   * 도서 반납 및 연장 기능 구현 완료
+      * src/main/java/com/libraryManage/Controller/BooKController.java
+      * src/main/java/com/libraryManage/Controller/MemberController.java
+      * src/main/java/com/libraryManage/DAO/BookDAO.java
+      * src/main/java/com/libraryManage/DAO/CheckOutDAO.java
+      * src/main/java/com/libraryManage/DTO/CheckOutDTO.java
+      * src/main/webapp/WEB-INF/VIEWS/member_my_page.jsp
