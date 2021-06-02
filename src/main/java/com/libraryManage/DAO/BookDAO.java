@@ -3,6 +3,7 @@ package com.libraryManage.DAO;
 import com.libraryManage.DTO.*;
 
 import org.springframework.stereotype.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.*;
 
 import javax.sql.*;

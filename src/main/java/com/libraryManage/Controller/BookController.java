@@ -48,10 +48,12 @@ public class BookController {
 		try {
 			MemberDTO sessionMemberDTO = (MemberDTO) session.getAttribute("loginMemberDTO");
 
+			BookDTO bookDTO = bookDAO.selectByISBN(bookISBN);
+			
 			if (sessionMemberDTO == null)
 				throw new NotLoginException("로그인 먼저 해주세요.");
 			else {
-				checkOutDAO.insertCheckOut(sessionMemberDTO.getMemberEmail(), bookISBN);
+				checkOutDAO.insertCheckOut(sessionMemberDTO.getMemberEmail(), bookDTO);
 
 				response.sendRedirect("/member_index");
 			}

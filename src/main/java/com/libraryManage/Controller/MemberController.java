@@ -2,6 +2,7 @@ package com.libraryManage.Controller;
 
 import javax.servlet.http.*;
 import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -28,7 +29,7 @@ public class MemberController {
 
 	@Autowired
 	HopeDAO hopeDAO;
-	
+
 	@Autowired
 	CheckOutDAO checkOutDAO;
 
@@ -129,7 +130,7 @@ public class MemberController {
 
 			if (memberDTO == null) { // 존재하지 않는 계정
 				throw new NotExistingException("존재하지 않는 계정입니다.");
-			} else { // 계정이 존재한다면 
+			} else { // 계정이 존재한다면
 				StringBuffer newPassword = new StringBuffer();
 
 				Random rand = new Random();
@@ -151,7 +152,7 @@ public class MemberController {
 				memberDTO = memberService.changePassword(memberDTO, newPassword);
 
 				memberService.sendEmail(memberDTO, "forgotPwd");
-				
+
 				response.sendRedirect("/member/login");
 			}
 		} catch (NotExistingException ex) {
@@ -165,37 +166,18 @@ public class MemberController {
 		}
 	}
 
-	@GetMapping("/my_page")
-	public String member_my_page(Model model){
-//		try {
-//			MemberDTO memberDTO = (MemberDTO) session.getAttribute("loginMemberDTO");
-//
-//			if (memberDTO == null) {
-//				throw new NotExistingException("로그인 먼저 해주세요.");
-//			} else {
-//
-//			}
-//			
-//			response.sendRedirect("/member/my_page");
-//		} catch (NotExistingException ex) {
-//			response.setContentType("text/html; charset=UTF-8");
-//
-//			PrintWriter out = response.getWriter();
-//
-//			out.println("<script>alert('로그인 먼저 해주세요.'); location.href='/member/login';</script>");
-//
-//			out.flush();
-//		}
-		
-		List<CheckOutDTO> checkOutList = checkOutDAO.showAll();
+	// 마이 페이지
+	@RequestMapping(value = "/my_page", method = RequestMethod.GET)
+	public String member_my_page(Model model, HttpSession session) {
+		MemberDTO memberDTO = (MemberDTO) session.getAttribute("loginMemberDTO");
+
+		List<CheckOutDTO> checkOutList = checkOutDAO.selectByEmail(memberDTO.getMemberEmail());
 
 		model.addAttribute("checkOutList", checkOutList);
-		
+
 		return "member_my_page";
 	}
-	
 
-	
 	@GetMapping("/logout")
 	public String member_logout(final HttpSession session) {
 		if (session.getAttribute("loginMemberName") != null)
@@ -204,6 +186,60 @@ public class MemberController {
 		session.invalidate();
 
 		return "index";
+	}
+
+	// 도서 반납
+	@PostMapping("/my_page/return_book")
+	public void member_return(HttpServletRequest request, HttpServletResponse response, HttpSession session)
+			throws Exception {
+		String inputISBN = request.getParameter("inputReturnISBN");
+
+		MemberDTO memberDTO = (MemberDTO) session.getAttribute("loginMemberDTO");
+
+		BookDTO bookDTO = bookDAO.selectByISBN(inputISBN);
+
+		checkOutDAO.returnCheckOut(memberDTO.getMemberEmail(), inputISBN); // 반납 처리
+		// 도서 재고 수 + 1 해야됨
+
+		response.sendRedirect("/member/my_page");
+	}
+
+	// 도서 연장
+	@PostMapping("/my_page/extend_date")
+	public void member_extension(HttpServletRequest request, HttpServletResponse response, HttpSession session)
+			throws Exception {
+		String inputISBN = request.getParameter("inputExtensionISBN");
+
+		MemberDTO memberDTO = (MemberDTO) session.getAttribute("loginMemberDTO");
+
+		BookDTO bookDTO = bookDAO.selectByISBN(inputISBN);
+
+		checkOutDAO.extendCheckOut(memberDTO.getMemberEmail(), inputISBN); // 연장 처리
+
+		response.sendRedirect("/member/my_page");
+	}
+
+	// 비밀번호 수정 페이지 이동
+	@RequestMapping(value = "/change_password", method = RequestMethod.GET)
+	public String member_change_password() {
+		return "member_change_password";
+	}
+
+	// 비밀번호 수정 처리
+	@PostMapping("/change_password")
+	public void member_change_password(HttpSession session, HttpServletRequest request, HttpServletResponse response)
+			throws Exception {
+		try {
+			
+		} catch (NotMatchingException ex) {
+			response.setContentType("text/html; charset=UTF-8");
+
+			PrintWriter out = response.getWriter();
+
+			out.println("<script>alert('비밀번호가 맞지 않습니다.'); location.href='/member/change_password';</script>");
+
+			out.flush();
+		}
 	}
 
 	// 희망 도서 신청 페이지 이동

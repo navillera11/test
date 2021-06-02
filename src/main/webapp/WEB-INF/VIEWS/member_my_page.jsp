@@ -1,4 +1,6 @@
-<%@page import="com.libraryManage.DTO.MemberDTO"%>
+<%@page import="com.libraryManage.Service.*"%>
+<%@page import="com.libraryManage.DAO.*"%>
+<%@page import="com.libraryManage.DTO.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -27,7 +29,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link active" href="#/member/chage_password">Change Password</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/member/chage_password">Change Password</a></li>
                     <li class="nav-item"><a class="nav-link" href="/member/member_index">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="/member/logout">Logout</a></li>
                 </ul>
@@ -107,6 +109,7 @@
                                 <thead>
                                     <tr>
                                         <th>ISBN</th>
+                                        <th>해당 도서 제목</th>
                                         <th>해당 도서 페이지</th>
                                         <th>대여 날짜</th>
                                         <th>반납 만기 날짜</th>
@@ -125,6 +128,7 @@
                                     <c:forEach var="checkOutDTO" items="${checkOutList}">
                                         <tr>
                                             <td>${checkOutDTO.checkOutISBN}</td>
+                                            <td>${checkOutDTO.checkOutTitle}</td>
                                             <td><input type="button" value="자세히" onclick="location.href='/book/book_detail?bookISBN=${checkOutDTO.checkOutISBN}'" /></td>
                                             <td>${checkOutDTO.checkOutRentalDate}</td>
                                             <td>${checkOutDTO.checkOutReturnDueDate}</td>
@@ -149,7 +153,7 @@
                             </div>
                             
                             
-                            <form action="/member/my_page" method="POST">
+                            <form action="/member/my_page/return_book" method="POST">
                           		
 								<label for="inputReturnEmail"><!--<c var="checkOutDTO">-->
 								<%
@@ -193,7 +197,7 @@
                             </div>
                             
                             
-                            <form action="/member/my_page" method="POST">
+                            <form action="/member/my_page/extend_date" method="POST">
                           		
 								<label for="inputReturnEmail"><!--<c var="checkOutDTO">-->
 								<%
@@ -203,7 +207,7 @@
 								님 안녕하세요.<br/><br/>
 								<label for="">연장하고자 하는 책의 ISBN</label>	
                                 <div class="">
-                                    <select class="form-control form-control-lg" id="inputReturnISBN" name="inputReturnISBN">
+                                    <select class="form-control form-control-lg" id="inputExtensionISBN" name="inputExtensionISBN">
                                     
 	                                    <c:forEach var="checkOutDTO" items="${checkOutList}">
 	                                		<option>${checkOutDTO.checkOutISBN}</option>
