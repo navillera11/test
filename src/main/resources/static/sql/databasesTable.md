@@ -207,7 +207,7 @@ ALTER TABLE spring5fs.`comment`
           REFERENCES spring5fs.member (`EMAIL`)
 ~~~~
 
-   * 2021-06-22
+   * 2021-06-22 이후
  
 ~~~~sql
 CREATE TABLE spring5fs.`comment`
