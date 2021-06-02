@@ -30,9 +30,18 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <!--                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>-->
-                    <li class="nav-item"><a class="nav-link" href="/member/register">Register</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/member/login">Login</a></li>
+                    <%
+					// 세션값 가져오기
+					String id = (String) session.getAttribute("loginMemberName"); // Object 타입이므로 다운캐스팅
+					if (id == null){%>
+						<li class="nav-item"><a class="nav-link" href="/member/register">Register</a></li>
+	                    <li class="nav-item"><a class="nav-link" href="/member/login">Login</a></li>
+					<%}else{%>
+						<li class="nav-item"><a class="nav-link" href="/member/my_page">MyPage</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/member/logout">Logout</a></li>
+					<%}
+					%>
+   
                 </ul>
             </div>
         </div>
