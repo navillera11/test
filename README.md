@@ -234,3 +234,11 @@
       * src/main/webapp/WEB-INF/VIEWS/book_detail.jsp - 도서관 소개 페이지 생성하면서 소개 문구 미세 변경
       * src/main/java/com/libraryManage/Controller/MainController.java - 경로 설정
       * src/main/webapp/WEB-INF/VIEWS/index.jsp - 디자인 변경
+
+2021-06-02:
+
+   * 희망 도서 페이지
+      * src/main/webapp/WEB-INF/VIEWS/member_hope.jsp - 희망 도서 페이지 생성
+      * src/main/webapp/WEB-INF/VIEWS/index.jsp - 경로 추가
+      * src/main/webapp/WEB-INF/VIEWS/member_index.jsp - 조금의 코드 디자인 변경
+      * src/main/java/com/libraryManage/Controller/MemberController.java  - 경로 세팅
