@@ -71,7 +71,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                     <a class="dropdown-item" href="/library_introduce">도서관 소개</a>
-                    <a class="dropdown-item" href="#">공지 사항</a>
+                    <a class="dropdown-item" href="/notice/unified_search">공지 사항</a>
                 </div>
             </div>
         </div>

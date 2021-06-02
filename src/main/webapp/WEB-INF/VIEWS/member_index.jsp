@@ -40,11 +40,11 @@
     </nav>
 
     <!-- Navigation-->
-   <!-- Navigation-->
+    <!-- Navigation-->
     <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
         <div class="container">
             <a class="btn" style="background-color: #e3f2fd; color: dodgerblue;" href="/book/unified_search">자료 검색</a>
-            
+
             <div class="dropdown show">
                 <a class="btn dropdown-toggle" style="background-color: #e3f2fd; color: dodgerblue;" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     신청 / 참여
@@ -55,7 +55,7 @@
                     <a class="dropdown-item" href="/board/unified_search">자유 게시판</a>
                 </div>
             </div>
-            
+
             <div class="dropdown show">
                 <a class="btn dropdown-toggle" style="background-color: #e3f2fd; color: dodgerblue;" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     도서관 이용
@@ -66,14 +66,14 @@
                     <a class="dropdown-item" href="#">신작 도서</a>
                 </div>
             </div>
-            
+
             <div class="dropdown show">
                 <a class="btn dropdown-toggle" style="background-color: #e3f2fd; color: dodgerblue;" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     도서관 정보
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                     <a class="dropdown-item" href="/library_introduce">도서관 소개</a>
-                    <a class="dropdown-item" href="#">공지 사항</a>
+                    <a class="dropdown-item" href="/notice/unified_search">공지 사항</a>
                 </div>
             </div>
         </div>
@@ -394,10 +394,13 @@
                                 </span>
                             </div>
                             <ul class="list-unstyled mb-4">
-                                <li class="mb-2"><i class="bi bi-check text-primary"></i> <strong>
-                                        <a class="bi text-primary" href="#!"> 이제 대충 여따가 링크 박는 것 처럼
-                                            제목 뙇! </a>
-                                    </strong></li>
+                                <li class="mb-2"><i class="bi bi-check text-primary"></i> 
+                                    <strong>
+                                        <a class="bi text-primary" href="#!">
+                                            이제 대충 여따가 링크 박는 것 처럼 제목 뙇! 
+                                        </a>
+                                    </strong>
+                                </li>
                                 <li class="mb-2"><i class="text-primary"></i> 체크 없애는 거 테스트
                                 </li>
                                 <li class="mb-2"><i class="bi bi-check text-primary"></i>
@@ -408,10 +411,10 @@
                                     Unlimited private projects</li>
                                 <li class="mb-2"><i class="bi bi-check text-primary"></i>
                                     Dedicated support</li>
-                                <li class="mb-2"><a class="text-primary" href="#!"> 체크
-                                        없이 링크 </a></li>
-                                <li class="text-muted"><i class="bi bi-x"></i> Monthly
-                                    status reports</li>
+                                <li class="mb-2"><a class="text-primary" href="#!">
+                                        체크 없이 링크 </a></li>
+                                <li class="text-muted"><i class="bi bi-x"></i>
+                                    Monthly status reports</li>
                             </ul>
                             <div class="d-grid">
                                 <a class="btn btn-outline-primary" href="#!">Choose plan</a>
@@ -555,8 +558,8 @@
                         <li class="list-inline-item">⋅</li>
                         <li class="list-inline-item"><a href="#!">Contact</a></li>
                     </ul>
-                    <p class="text-muted small mb-4 mb-lg-0">&copy; YMinGW's
-						Library 2021. All Rights Reserved.</p>
+                    <p class="text-muted small mb-4 mb-lg-0">&copy; MinGW's
+                        Library 2021. All Rights Reserved.</p>
                 </div>
                 <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
                     <ul class="list-inline mb-0">
