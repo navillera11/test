@@ -337,3 +337,16 @@
       * src/main/java/com/libraryManage/DAO/BookDAO.java - 신간 도서 5권
       * src/main/java/com/libraryManage/DAO/GoodDAO.java - 사서 추천 도서 3권 (도서 측에서 ISBN 으로 이미지도 가져옴)
       * src/main/java/com/libraryManage/DAO/NoticeDAO.java - 공지사항 최신 5개
+
+   * 사서 추천 도서 목록 페이지 구현
+      * src/main/webapp/bookImageStorage/800x0_2.jpg - 도서 추가하면서 넣어진 이미지
+      * src/main/webapp/WEB-INF/VIEWS/good_unified_search.jsp - 추천 도서 목록 페이지
+      * src/main/java/com/libraryManage/Controller/GoodController.java - 경로 세팅
+      * src/main/webapp/WEB-INF/VIEWS/index.jsp - 경로 지정 및 추천 도서 목록 섹션 사이즈 변경
+      * src/main/java/com/libraryManage/Controller/MainController.java - 경로 세팅
+      * src/main/webapp/WEB-INF/VIEWS/member_index.jsp
+
+   * 사서 추천 도서 상세 페이지 구현
+      * src/main/webapp/WEB-INF/VIEWS/good_detail.jsp - 추천 도서 상세 페이지 작성
+      * src/main/java/com/libraryManage/Controller/GoodController.java - 경로 세팅
+      * src/main/java/com/libraryManage/DAO/GoodDAO.java - 추천 도서 상세 페이지에 이미지까지 따오도록 조정하는 함수 구현
