@@ -21,7 +21,7 @@ window.addEventListener('DOMContentLoaded', event => {
 		$('#inputNoticeContentCount').html("("+$(this).val().length+" / 1000)");
 		if($(this).val().length > 1000) {
 			$(this).val($(this).val().substring(0, 1000));
-			$('#inputNoticeContentCount').html("(100 / 100)");
+			$('#inputNoticeContentCount').html("(1000 / 1000)");
 		}
 	});
 	
@@ -30,7 +30,7 @@ window.addEventListener('DOMContentLoaded', event => {
 		$('#inputGoodContentCount').html("("+$(this).val().length+" / 1000)");
 		if($(this).val().length > 1000) {
 			$(this).val($(this).val().substring(0, 1000));
-			$('#inputGoodContentCount').html("(100 / 100)");
+			$('#inputGoodContentCount').html("(1000 / 1000)");
 		}
 	});
 	
@@ -39,16 +39,16 @@ window.addEventListener('DOMContentLoaded', event => {
 		$('#inputCommentContentCount').html("("+$(this).val().length+" / 1000)");
 		if($(this).val().length > 1000) {
 			$(this).val($(this).val().substring(0, 1000));
-			$('#inputCommentContentCount').html("(100 / 100)");
+			$('#inputCommentContentCount').html("1000 / 1000)");
 		}
 	});
 	
-	// 댓글 글자 수 제한
+	// 게시글 글자 수 제한
 	$('#inputBoardContent').on('keyup', function() {
 		$('#inputBoardContentCount').html("("+$(this).val().length+" / 1000)");
 		if($(this).val().length > 1000) {
 			$(this).val($(this).val().substring(0, 1000));
-			$('#inputBoardContentCount').html("(100 / 100)");
+			$('#inputBoardContentCount').html("(1000 / 1000)");
 		}
 	});
 	
