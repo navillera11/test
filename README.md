@@ -248,3 +248,7 @@
       * src/main/java/com/libraryManage/Controller/NoticeController.java - 콘트롤러 작성 및 경로 세팅
       * src/main/webapp/WEB-INF/VIEWS/index.jsp - 경로 지정
       * src/main/webapp/WEB-INF/VIEWS/member_index.jsp - 경로 지정
+
+   * 공지사항 상세 페이지 및 자유 게시판 상세 페이지
+      * src/main/webapp/WEB-INF/VIEWS/board_detail.jsp - 자유게시판 상세 페이지 네비게이션 디자인 변경
+      * src/main/webapp/WEB-INF/VIEWS/notice_detail.jsp - 공지 사항 상세 페이지 생성
