@@ -38,14 +38,14 @@
 										</div>
 										<div
 											class="d-flex align-items-center justify-content-between mt-4 mb-0">
-											<a class="small" href="/member_login">Return to login</a>
+											<a class="small" href="/member/login">Return to login</a>
 											<input type="submit" class="btn btn-primary" value="Reset Password" />
 										</div>
 									</form>
 								</div>
 								<div class="card-footer text-center py-3">
 									<div class="small">
-										<a href="/member_register">Need an account? Sign up!</a>
+										<a href="/member/register">Need an account? Sign up!</a>
 									</div>
 								</div>
 							</div>
@@ -59,7 +59,7 @@
 				<div class="container-fluid px-4">
 					<div
 						class="d-flex align-items-center justify-content-between small">
-						<div class="text-muted">Copyright &copy; Your Website 2021</div>
+						<div class="text-muted">Copyright &copy;  MinGW's Library 2021</div>
 						<div>
 							<a href="#">Privacy Policy</a> &middot; <a href="#">Terms
 								&amp; Conditions</a>
