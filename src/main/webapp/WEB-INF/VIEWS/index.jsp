@@ -148,14 +148,14 @@
         </div>
     </div>
 
-    <!--    사서 추천 도서 / 신간 도서 섹션 -->
+    <!--    사서 추천 도서 / 인기 도서 섹션 -->
     <section class="bg-light py-5 border-bottom">
         <div class="container px-4 px-lg-5">
             <div class="card text-center">
                 <div class="card-header">
                     <ul class="nav nav-tabs card-header-tabs" id="tabs">
                         <li class="nav-item"><a class="nav-link active" href="#librarianNominate" data-toggle="tab">사서 추천 도서</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#newBook" data-toggle="tab">신간 도서</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#newBook" data-toggle="tab">인기 도서</a></li>
                     </ul>
                 </div>
                 <div class="card-body">
@@ -211,12 +211,12 @@
                             </div>
                         </div>
                         <div class="tab-pane" id="newBook">
-                            <!--                        신간 도서-->
+                            <!--                        인기 도서-->
                             <div class="card-group">
                                 <div class="card" style="width: 18rem;">
                                     <img class="card-img-top" src="assets/img/testimonials-2.jpg" alt="Card image cap">
                                     <div class="card-body">
-                                        <h5 class="card-title">신간 도서 Card title</h5>
+                                        <h5 class="card-title">인기 도서 Card title</h5>
                                         <p class="card-text">This is a wider card with supporting
                                             text below as a natural lead-in to additional content. This
                                             content is a little bit longer.</p>
@@ -229,7 +229,7 @@
                                 <div class="card" style="width: 18rem;">
                                     <img class="card-img-top" src="assets/img/testimonials-2.jpg" alt="Card image cap">
                                     <div class="card-body">
-                                        <h5 class="card-title">신간 도서 Card title</h5>
+                                        <h5 class="card-title">인기 도서 Card title</h5>
                                         <p class="card-text">This card has supporting text below
                                             as a natural lead-in to additional content.</p>
                                         <a href="#" class="btn btn-primary">Go somewhere</a>
@@ -241,7 +241,7 @@
                                 <div class="card" style="width: 18rem;">
                                     <img class="card-img-top" src="assets/img/testimonials-2.jpg" alt="Card image cap">
                                     <div class="card-body">
-                                        <h5 class="card-title">신간 도서 Card title</h5>
+                                        <h5 class="card-title">인기 도서 Card title</h5>
                                         <p class="card-text">This is a wider card with supporting
                                             text below as a natural lead-in to additional content. This
                                             card has even longer content than the first to show that
@@ -255,7 +255,7 @@
                             </div>
                             <div class="card text-white bg-primary my-5 py-10 text-center">
                                 <div class="card-body">
-                                    <a href="#newBookFreeBoard" class="btn btn-primary btn-lg">신간
+                                    <a href="#newBookFreeBoard" class="btn btn-primary btn-lg">인기
                                         도서 게시판</a>
                                 </div>
                             </div>
@@ -309,7 +309,7 @@
                                     status reports</li>
                             </ul>
                             <div class="d-grid">
-                                <a class="btn btn-outline-primary" href="#!">Choose plan</a>
+                                <a class="btn btn-outline-primary" href="/notice/unified_search">전체 공지사항을 보려면...</a>
                             </div>
                         </div>
                     </div>
@@ -319,7 +319,7 @@
                     <div class="card mb-5 mb-xl-0">
                         <div class="card-body p-10">
                             <div class="mb-3">
-                                <span class="display-4 fw-bold"> <i class="bi bi-star-fill text-warning"></i> 발간 자료
+                                <span class="display-4 fw-bold"> <i class="bi bi-star-fill text-warning"></i> 신간 도서
                                 </span>
                             </div>
                             <ul class="list-unstyled mb-4">
@@ -381,18 +381,17 @@
             <div class="row">
                 <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
                     <ul class="list-inline mb-2">
-                        <li class="list-inline-item"><a href="#!">About</a></li>
-                        <li class="list-inline-item">⋅</li>
-                        <li class="list-inline-item"><a href="#!">Contact</a></li>
+                        <li class="list-inline-item"><a href="/library_introduce">About</a></li>
+
+                     
                     </ul>
                     <p class="text-muted small mb-4 mb-lg-0">&copy; MinGW's
 						Library 2021. All Rights Reserved.</p>
                 </div>
                 <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
                     <ul class="list-inline mb-0">
-                        <li class="list-inline-item me-4"><a href="#!"><i class="bi-facebook fs-3"></i></a></li>
-                        <li class="list-inline-item me-4"><a href="#!"><i class="bi-twitter fs-3"></i></a></li>
-                        <li class="list-inline-item"><a href="#!"><i class="bi-instagram fs-3"></i></a></li>
+                        <li class="list-inline-item"><a href="https://github.com/17mirinae/LibraryManage"><img class="app-badge" src="assets/img/git.png" alt="..."  height="50" width="50"/></a></li>
+                        <li class="list-inline-item"><a href="https://github.com/jee00609/LibraryManage"><img class="app-badge" src="assets/img/git2.png" alt="..." height="50" width="50"/></a></li>
                     </ul>
                 </div>
             </div>
