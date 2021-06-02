@@ -38,11 +38,6 @@
 												type="password" placeholder="Password" name="inputPassword" />
 											<label for="inputPassword">Password</label>
 										</div>
-										<div class="form-check mb-3">
-											<input class="form-check-input" id="inputRememberPassword"
-												type="checkbox" value="" /> <label class="form-check-label"
-												for="inputRememberPassword">Remember Password</label>
-										</div>
 										<div
 											class="d-flex align-items-center justify-content-between mt-4 mb-0">
 											<a class="small" href="/member/forgotPwd">Forgot
@@ -67,7 +62,7 @@
 				<div class="container-fluid px-4">
 					<div
 						class="d-flex align-items-center justify-content-between small">
-						<div class="text-muted">Copyright &copy; Your Website 2021</div>
+						<div class="text-muted">Copyright &copy;  MinGW's Library 2021</div>
 						<div>
 							<a href="#">Privacy Policy</a> &middot; <a href="#">Terms
 								&amp; Conditions</a>

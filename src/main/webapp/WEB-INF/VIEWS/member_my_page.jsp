@@ -29,7 +29,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link active" href="/member/chage_password">Change Password</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/member/change_password">Change Password</a></li>
                     <li class="nav-item"><a class="nav-link" href="/member/member_index">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="/member/logout">Logout</a></li>
                 </ul>
