@@ -97,7 +97,13 @@
 				<div class="container-fluid px-4">
 					<h1 class="mt-4">자유 게시판</h1>
 					<ol class="breadcrumb mb-4">
-						<li class="breadcrumb-item"><a href="/board/board_write">게시판에 글 작성하기</a></li>
+						<%
+							// 세션값 가져오기
+							if (id != null){%>
+	                    <li class="breadcrumb-item"><a href="/board/board_write">게시판에 글 작성하기</a></li>
+	                    <%}
+						%>
+
 					</ol>
 
 

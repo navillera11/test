@@ -10,7 +10,7 @@
     <meta name="author" content="" />
     <title>MINGW's Library</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="/css/styles2.css" rel="stylesheet" />
 </head>
