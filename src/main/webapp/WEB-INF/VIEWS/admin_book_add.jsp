@@ -148,10 +148,10 @@
                                         <input class="form-control" id="inputBookSummary" type="text" placeholder="줄거리를 입력해주세요." name="inputBookSummary" /> <label for="inputBookSummary">한줄 줄거리</label>
                                     </div> -->
                                     <div class="form-group">
-										<textarea class="form-control" id="inputBookSummary"
-											placeholder="추천 도서 내용을 입력해주세요." rows="10" name="inputBookSummary"></textarea>
+										<textarea class="form-control" id="inputNoticeContent"
+											placeholder="줄거리를 입력해주세요." rows="10" name="inputBookSummary"></textarea>
 									</div>
-									<div id="inputBookSummaryCount">(0 / 1000)</div>
+									<div id="inputNoticeContentCount">(0 / 1000)</div>
 
                                     <!--                                    파일-->
                                     <label class="form-label" for="inputBookImage">책의 이미지
@@ -176,35 +176,12 @@
                         Library 2021</p>
                 </div>
             </footer>
-            <!-- <!-- Bootstrap core JS
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
-            Core theme JS
-            <script src="js/scripts.js"></script>
-               회원 정의 추가용
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
-
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-            <script src="js/scripts.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-            <script src="/js/dataTables.js"></script>
-            
-            <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-			<script
-				src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
-			<script
-				src="https://cdn.datatables.net/fixedheader/3.1.8/js/dataTables.fixedHeader.min.js"></script>
-			<script
-				src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-				crossorigin="anonymous"></script> --> -->
-				
-				<!-- Bootstrap core JS-->
+ 
+			<!-- Bootstrap core JS-->
 			<script
 				src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
 			<!-- Core theme JS-->
-			<script src="js/scripts.js"></script>
+			<script src="/js/scripts.js"></script>
 			<!--    회원 정의 추가용-->
 			<script
 				src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -220,17 +197,15 @@
 			<script
 				src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
 				crossorigin="anonymous"></script>
-			<script src="/js/scripts.js"></script>
 			<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest"
 				crossorigin="anonymous"></script>
 			<script src="/js/dataTables.js"></script>
-			<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+			<!-- 글자제한 -->
 			<script
-				src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
-			<script
-				src="https://cdn.datatables.net/fixedheader/3.1.8/js/dataTables.fixedHeader.min.js"></script>
-			<script
-				src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+				src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+			<script src="https://code.jquery.com/jquery-3.5.1.js"
+				integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
 				crossorigin="anonymous"></script>
 				
 				
