@@ -18,101 +18,99 @@ import com.libraryManage.Exception.*;
 @Controller
 @RequestMapping(value = "/book/*")
 public class BookController {
-   @Autowired
-   BookService bookService;
-   @Autowired
-   BookDAO bookDAO;
+	@Autowired
+	BookService bookService;
+	@Autowired
+	BookDAO bookDAO;
 
-   @Autowired
-   MemberService memberService;
-   @Autowired
-   MemberDAO memberDAO;
+	@Autowired
+	MemberService memberService;
+	@Autowired
+	MemberDAO memberDAO;
 
-   @Autowired
-   CheckOutDAO checkOutDAO;
+	@Autowired
+	CheckOutDAO checkOutDAO;
 
-   // 도서 상세 페이지 이동
-   @RequestMapping(value = "/book_detail", method = RequestMethod.GET)
-   public String book_detail(Model model, @RequestParam String bookISBN) {
-      BookDTO bookDTO = bookDAO.selectByISBN(bookISBN);
+	// 도서 상세 페이지 이동
+	@RequestMapping(value = "/book_detail", method = RequestMethod.GET)
+	public String book_detail(Model model, @RequestParam String bookISBN) {
+		BookDTO bookDTO = bookDAO.selectByISBN(bookISBN);
 
-      model.addAttribute("bookDTO", bookDTO);
+		model.addAttribute("bookDTO", bookDTO);
 
-      return "book_detail";
-   }
+		return "book_detail";
+	}
 
-   // 도서 대여
-   @PostMapping("/book_detail")
-   public void book_detail(HttpSession session, @RequestParam String bookISBN, HttpServletResponse response)
-         throws Exception {
-      try {
-         MemberDTO sessionMemberDTO = (MemberDTO) session.getAttribute("loginMemberDTO");
+	// 도서 대여
+	@PostMapping("/book_detail")
+	public void book_detail(HttpSession session, @RequestParam String bookISBN, HttpServletResponse response)
+			throws Exception {
+		try {
+			MemberDTO sessionMemberDTO = (MemberDTO) session.getAttribute("loginMemberDTO");
 
-         BookDTO bookDTO = bookDAO.selectByISBN(bookISBN);
+			BookDTO bookDTO = bookDAO.selectByISBN(bookISBN);
 
-         if (sessionMemberDTO == null)
-            throw new NotLoginException("로그인 먼저 해주세요.");
-         else {
-            if (sessionMemberDTO.getMemberRank() == -1)
-               throw new BlackListException("대여하지 못하는 등급입니다.");
-            else {
-               if (sessionMemberDTO.getMemberReturnAvailable() > 0 && bookDTO.getBookCount() > 0) {
-                  checkOutDAO.insertCheckOut(sessionMemberDTO.getMemberEmail(), bookDTO);
+			CheckOutDTO checkOutDTO = checkOutDAO.getOneCheckOut(sessionMemberDTO.getMemberEmail(), bookISBN);
 
-                  bookDTO.setBookCount(bookDTO.getBookCount() - 1); // 재고 수 - 1
-                  bookDTO.setBookHit(bookDTO.getBookHit() + 1); // 대여 횟수 + 1
+			if (checkOutDTO != null) // 이미 대여한 도서이면
+				throw new NotAvailableException("대여할 수 없습니다.");
+			else {
+				if (sessionMemberDTO.getMemberRank() == -1)
+					throw new BlackListException("대여하지 못하는 등급입니다.");
+				else {
+					if (sessionMemberDTO.getMemberReturnAvailable() > 0 && bookDTO.getBookCount() > 0) {
+						checkOutDAO.insertCheckOut(sessionMemberDTO.getMemberEmail(), bookDTO); // 대여 처리
 
-                  bookDAO.updateBook(bookDTO); // 도서 정보 업데이트
+						bookDTO.setBookCount(bookDTO.getBookCount() - 1); // 재고 수 - 1
+						bookDTO.setBookHit(bookDTO.getBookHit() + 1); // 대여 횟수 + 1
 
-                  response.sendRedirect("/book/book_detail?bookISBN=" + bookISBN);
-               } else
-                  throw new NotAvailableException("더 이상 대여할 수 없습니다.");
-            }
-         }
-      } catch (NotLoginException ex) {
-         response.setContentType("text/html; charset=UTF-8");
+						// 대여 가능 수 -1
+						sessionMemberDTO.setMemberReturnAvailable(sessionMemberDTO.getMemberReturnAvailable() - 1);
+						memberDAO.updateMemberReturnAvailable(sessionMemberDTO);
 
-         PrintWriter out = response.getWriter();
+						bookDAO.updateBook(bookDTO); // 도서 정보 업데이트
 
-         out.println("<script>alert('로그인 먼저 해주세요.'); location.href='/member/login';</script>");
+						response.sendRedirect("/book/book_detail?bookISBN=" + bookISBN);
+					} else
+						throw new NotAvailableException("대여할 수 없습니다.");
+				}
+			}
+		} catch (BlackListException ex) {
+			response.setContentType("text/html; charset=UTF-8");
 
-         out.flush();
-      } catch (BlackListException ex) {
-         response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
 
-         PrintWriter out = response.getWriter();
+			out.println("<script>alert('대여하지 못하는 등급입니다.'); location.href='/member/my_page';</script>");
 
-         out.println("<script>alert('대여하지 못하는 등급입니다.'); location.href='/member/my_page';</script>");
+			out.flush();
+		} catch (NotAvailableException ex) {
+			response.setContentType("text/html; charset=UTF-8");
 
-         out.flush();
-      } catch (NotAvailableException ex) {
-         response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
 
-         PrintWriter out = response.getWriter();
+			out.println("<script>alert('대여할 수 없습니다.'); location.href='/member/my_page';</script>");
 
-         out.println("<script>alert('더 이상 대여할 수 없습니다.'); location.href='/member/my_page';</script>");
+			out.flush();
+		}
+	}
 
-         out.flush();
-      }
-   }
+	// 도서 전체 검색
+	@RequestMapping(value = "/unified_search", method = RequestMethod.GET)
+	public String book_unified_search(Model model) {
+		List<BookDTO> bookList = bookDAO.showAll();
 
-   // 도서 전체 검색
-   @RequestMapping(value = "/unified_search", method = RequestMethod.GET)
-   public String book_unified_search(Model model) {
-      List<BookDTO> bookList = bookDAO.showAll();
+		model.addAttribute("bookList", bookList);
 
-      model.addAttribute("bookList", bookList);
+		return "book_unified_search";
+	}
 
-      return "book_unified_search";
-   }
-   
-   // 인기 도서 목록
-   @RequestMapping(value = "/hit_unified_search", method = RequestMethod.GET)
-   public String hit_book_unified_search(Model model) {
-      List<BookDTO> hitBookList = bookDAO.hitBook();
-      
-      model.addAttribute("hitBookList", hitBookList);
-      
-      return "hit_book_unified_search";
-   }
+	// 인기 도서 목록
+	@RequestMapping(value = "/hit_unified_search", method = RequestMethod.GET)
+	public String hit_book_unified_search(Model model) {
+		List<BookDTO> hitBookList = bookDAO.hitBook();
+
+		model.addAttribute("hitBookList", hitBookList);
+
+		return "hit_book_unified_search";
+	}
 }

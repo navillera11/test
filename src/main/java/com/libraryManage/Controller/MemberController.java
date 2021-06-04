@@ -188,7 +188,7 @@ public class MemberController {
 
 		session.invalidate();
 
-		return "index";
+		return "redirect:/";
 	}
 
 	// 도서 반납
@@ -206,18 +206,24 @@ public class MemberController {
 
 		// 날짜 확인
 		Date nowDate = new Date(new java.util.Date().getTime());
+		System.out.println(nowDate);
 
 		if (nowDate.before(checkOutDTO.getCheckOutReturnDueDate())) // 연체 중이면
-			memberDTO.setMemberNormalReturn(memberDTO.getMemberNormalReturn() - 1); // 정상 반납 - 1
+			memberDTO.setMemberNormalReturn(memberDTO.getMemberNormalReturn() + 1); // 정상 반납 - 1
 		else
-			memberDTO.setMemberNormalReturn(memberDTO.getMemberNormalReturn() + 1); // 정상 반납 + 1
+			memberDTO.setMemberNormalReturn(memberDTO.getMemberNormalReturn() - 1); // 정상 반납 + 1
+
+		memberDAO.updateMemberNormalReturn(memberDTO);
+		// 대여 가능 횟수 + 1
+		memberDTO.setMemberReturnAvailable(memberDTO.getMemberReturnAvailable() + 1);
+		memberDAO.updateMemberReturnAvailable(memberDTO);
 
 		bookDTO.setBookCount(bookDTO.getBookCount() + 1);
 		bookDAO.updateBook(bookDTO); // 도서 재고 수 + 1
 
-		if (memberDTO.getMemberNormalReturn() > 5) // VIP 조건 달성
+		if (memberDTO.getMemberNormalReturn() >= 5) // VIP 조건 달성
 			memberDAO.updateRank(memberDTO, 1);
-		else if (memberDTO.getMemberNormalReturn() < -3) // 블랙리스트 조건 달성
+		else if (memberDTO.getMemberNormalReturn() <= -3) // 블랙리스트 조건 달성
 			memberDAO.updateRank(memberDTO, -1);
 
 		response.sendRedirect("/member/my_page");

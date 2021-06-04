@@ -74,7 +74,7 @@ public class CheckOutDAO {
 	public CheckOutDTO getOneCheckOut(String memberEmail, String bookISBN) {
 		// 하나 가져오기
 		try {
-			return jdbcTemplate.queryForObject("SELECT * FROM BOOK WHERE EMAIL=? AND ISBN=?;",
+			return jdbcTemplate.queryForObject("SELECT * FROM CHECKOUT WHERE EMAIL=? AND ISBN=?;",
 					(rs, rowNum) -> new CheckOutDTO(rs.getString("ISBN"), rs.getString("TITLE"), rs.getString("EMAIL"),
 							rs.getDate("RENTAL_DATE"), rs.getDate("RETURN_DUE_DATE"), rs.getInt("EXTENSION_COUNT")),
 					memberEmail, bookISBN);

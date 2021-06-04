@@ -79,6 +79,20 @@ public class MemberDAO {
 					+ memberDTO.getMemberEmail() + "';");
 	}
 
+	public void updateMemberReturnAvailable(MemberDTO _memberDTO) {
+		this.memberDTO = _memberDTO;
+
+		jdbcTemplate.update("UPDATE MEMBER SET RETURN_AVAILABLE=" + memberDTO.getMemberReturnAvailable()
+				+ " WHERE EMAIL='" + memberDTO.getMemberEmail() + "';");
+	}
+
+	public void updateMemberNormalReturn(MemberDTO _memberDTO) {
+		this.memberDTO = _memberDTO;
+
+		jdbcTemplate.update("UPDATE MEMBER SET NORMAL_RETURN=" + memberDTO.getMemberNormalReturn() + " WHERE EMAIL='"
+				+ memberDTO.getMemberEmail() + "';");
+	}
+
 	public void deleteMember(MemberDTO member) {
 
 	}
