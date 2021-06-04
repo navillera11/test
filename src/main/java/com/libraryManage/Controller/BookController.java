@@ -72,9 +72,22 @@ public class BookController {
 	@RequestMapping(value = "/unified_search", method = RequestMethod.GET)
 	public String book_unified_search(Model model) {
 		List<BookDTO> bookList = bookDAO.showAll();
-
+		
 		model.addAttribute("bookList", bookList);
-
+		
 		return "book_unified_search";
 	}
+	
+	@RequestMapping(value = "/hit_unified_search", method = RequestMethod.GET)
+	public String hit_book_unified_search(Model model) {
+		List<BookDTO> hitBookLists = bookDAO.hitBook();
+		
+
+		model.addAttribute("hitBookLists",hitBookLists);
+		
+		return "hit_book_unified_search";
+	}
+	
+	
+	
 }

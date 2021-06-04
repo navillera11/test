@@ -35,14 +35,14 @@
 					// 세션값 가져오기
 					String id = (String) session.getAttribute("loginMemberName"); // Object 타입이므로 다운캐스팅
 					if (id == null){%>
-						<li class="nav-item"><a class="nav-link" href="/member/register">Register</a></li>
-	                    <li class="nav-item"><a class="nav-link" href="/member/login">Login</a></li>
-					<%}else{%>
-						<li class="nav-item"><a class="nav-link" href="/member/my_page">MyPage</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/member/register">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/member/login">Login</a></li>
+                    <%}else{%>
+                    <li class="nav-item"><a class="nav-link" href="/member/my_page">MyPage</a></li>
                     <li class="nav-item"><a class="nav-link" href="/member/logout">Logout</a></li>
-					<%}
+                    <%}
 					%>
-   
+
                 </ul>
             </div>
         </div>
@@ -63,12 +63,12 @@
                     <%
 						// 세션값 가져오기
 						if (id == null){%>
-							<a class="dropdown-item disabled" href="/member/member_hope">희망 도서 신청</a>
-							<a class="dropdown-item" href="/board/unified_search">자유 게시판</a>
-						<%}else{%>
-							<a class="dropdown-item" href="/member/member_hope">희망 도서 신청</a>
-							<a class="dropdown-item" href="/board/unified_search">자유 게시판</a>
-						<%}
+                    <a class="dropdown-item disabled" href="/member/member_hope">희망 도서 신청</a>
+                    <a class="dropdown-item" href="/board/unified_search">자유 게시판</a>
+                    <%}else{%>
+                    <a class="dropdown-item" href="/member/member_hope">희망 도서 신청</a>
+                    <a class="dropdown-item" href="/board/unified_search">자유 게시판</a>
+                    <%}
 					%>
                 </div>
             </div>
@@ -108,7 +108,7 @@
                     <div class="text-center text-white">
                         <!-- Page heading-->
                         <h1 class="mb-5">Welcome to MinGW's Library</h1>
-						</form> -->
+                        </form> -->
                     </div>
                 </div>
             </div>
@@ -127,30 +127,30 @@
         </div>
         <!-- Content Row-->
         <div class="row gx-4 gx-lg-5">
-        	<c:forEach var="boardDTO" items="${boardList}">
-            <div class="col-md-4 mb-5">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h2 class="card-title">${boardDTO.boardTitle}</h2>
-                        <p class="card-text">${boardDTO.boardContent}</p>
-                    </div>
-                    <div class="card-footer">
-                        <a class="btn btn-primary btn-sm" href="/board/board_detail?boardID=${boardDTO.boardID}">More Info</a>
+            <c:forEach var="boardDTO" items="${boardList}">
+                <div class="col-md-4 mb-5">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h2 class="card-title">${boardDTO.boardTitle}</h2>
+                            <p class="card-text">${boardDTO.boardContent}</p>
+                        </div>
+                        <div class="card-footer">
+                            <a class="btn btn-primary btn-sm" href="/board/board_detail?boardID=${boardDTO.boardID}">More Info</a>
+                        </div>
                     </div>
                 </div>
-            </div>
             </c:forEach>
         </div>
     </div>
 
-   <!--    사서 추천 도서 / 인기 도서 섹션 -->
+    <!--    사서 추천 도서 / 인기 도서 섹션 -->
     <section class="bg-light py-5 border-bottom">
         <div class="container px-4 px-lg-5">
             <div class="card text-center">
                 <div class="card-header">
                     <ul class="nav nav-tabs card-header-tabs" id="tabs">
-                        <li class="nav-item"><a class="nav-link active" href="/good/unified_search" data-toggle="tab">사서 추천 도서</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#newBook" data-toggle="tab">인기 도서</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#librarianNominate" data-toggle="tab">사서 추천 도서</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#hitBook" data-toggle="tab">인기 도서</a></li>
                     </ul>
                 </div>
                 <div class="card-body">
@@ -158,19 +158,19 @@
                         <div class="tab-pane active" id="librarianNominate">
                             <!--                        사서 추천 도서-->
                             <div class="card-group col-sm-auto">
-                               <c:forEach var="goodDTO" items="${goodList}">
-                                   <div class="card" style="width: 18rem;">
-                                       <img class="card-img-top" src="/bookImageStorage/${goodDTO.goodImage}" alt="Card image cap">
-                                       <div class="card-body">
-                                           <h5 class="card-title">${goodDTO.goodTitle}</h5>
-<%--                                            <p class="card-text">${goodDTO.goodContent}</p> --%>
-                                           <a href="/good/good_detail?goodID=${goodDTO.goodID}" class="btn btn-primary">자세히 보기</a>
-                                       </div>
-                                       <div class="card-footer">
-                                           <small class="text-muted">${goodDTO.goodDate}</small>
-                                       </div>
-                                   </div>
-                               </c:forEach>
+                                <c:forEach var="goodDTO" items="${goodList}">
+                                    <div class="card" style="width: 18rem;">
+                                        <img class="card-img-top" src="/bookImageStorage/${goodDTO.goodImage}" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title">${goodDTO.goodTitle}</h5>
+                                            <%--                                            <p class="card-text">${goodDTO.goodContent}</p> --%>
+                                            <a href="/good/good_detail?goodID=${goodDTO.goodID}" class="btn btn-primary">자세히 보기</a>
+                                        </div>
+                                        <div class="card-footer">
+                                            <small class="text-muted">${goodDTO.goodDate}</small>
+                                        </div>
+                                    </div>
+                                </c:forEach>
                             </div>
                             <div class="card text-white bg-primary my-5 py-10 text-center">
                                 <div class="card-body">
@@ -179,52 +179,27 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane" id="newBook">
+                        <div class="tab-pane" id="hitBook">
                             <!--                        인기 도서-->
-                            <div class="card-group">
-                                <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="assets/img/testimonials-2.jpg" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">인기 도서 Card title</h5>
-                                        <p class="card-text">This is a wider card with supporting
-                                            text below as a natural lead-in to additional content. This
-                                            content is a little bit longer.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <div class="card-group col-sm-auto">
+                                <c:forEach var="bookDTO2" items="${hitBookList}">
+                                    <div class="card" style="width: 18rem;">
+                                        <img class="card-img-top" src="/bookImageStorage/${bookDTO2.bookImage}" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title">${bookDTO2.bookTitle}</h5>
+                                            <%--                                            <p class="card-text">${goodDTO.goodContent}</p> --%>
+                                            <a href="/book/book_detail?bookISBN=${bookDTO2.bookISBN}" class="btn btn-primary">자세히 보기</a>
+                                        </div>
+                                        <%-- <div class="card-footer">
+                                           <small class="text-muted">${bookDTO2.bookDate}</small>
+                                       </div> --%>
                                     </div>
-                                    <div class="card-footer">
-                                        <small class="text-muted">Last updated 3 mins ago</small>
-                                    </div>
-                                </div>
-                                <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="assets/img/testimonials-2.jpg" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">인기 도서 Card title</h5>
-                                        <p class="card-text">This card has supporting text below
-                                            as a natural lead-in to additional content.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                    <div class="card-footer">
-                                        <small class="text-muted">Last updated 3 mins ago</small>
-                                    </div>
-                                </div>
-                                <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="assets/img/testimonials-2.jpg" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">인기 도서 Card title</h5>
-                                        <p class="card-text">This is a wider card with supporting
-                                            text below as a natural lead-in to additional content. This
-                                            card has even longer content than the first to show that
-                                            equal height action.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                    <div class="card-footer">
-                                        <small class="text-muted">Last updated 3 mins ago</small>
-                                    </div>
-                                </div>
+                                </c:forEach>
+
                             </div>
                             <div class="card text-white bg-primary my-5 py-10 text-center">
                                 <div class="card-body">
-                                    <a href="#newBookFreeBoard" class="btn btn-primary btn-lg">인기
+                                    <a href="/book/hit_unified_search" class="btn btn-primary btn-lg">인기
                                         도서 게시판</a>
                                 </div>
                             </div>
@@ -263,7 +238,7 @@
                                 <!-- <li class="mb-2"><i class="bi bi-check text-primary"></i> <strong>1 users</strong></li>
                                 <li class="mb-2"><i class="bi bi-check text-primary"></i>5GB storage</li> -->
                                 <c:forEach var="noticeDTO" items="${noticeList}">
-                                	<li class="mb-2"><i class="bi bi-check text-primary"></i><a href="/notice/notice_detail?noticeID=${noticeDTO.noticeID}">${noticeDTO.noticeTitle}</a></li>
+                                    <li class="mb-2"><i class="bi bi-check text-primary"></i><a href="/notice/notice_detail?noticeID=${noticeDTO.noticeID}">${noticeDTO.noticeTitle}</a></li>
                                 </c:forEach>
                             </ul>
                             <div class="d-grid">
@@ -281,12 +256,12 @@
                                 </span>
                             </div>
                             <ul class="list-unstyled mb-4">
-                            	<c:forEach var="bookDTO" items="${bookList}">
-                                <li class="mb-2"><i class="bi bi-check text-primary"></i> 
-                                    <strong>
-                                        <a class="bi text-primary" href="/book/book_detail?bookISBN=${bookDTO.bookISBN}">${bookDTO.bookTitle}</a>
-                                    </strong>
-                                </li>
+                                <c:forEach var="bookDTO" items="${bookList}">
+                                    <li class="mb-2"><i class="bi bi-check text-primary"></i>
+                                        <strong>
+                                            <a class="bi text-primary" href="/book/book_detail?bookISBN=${bookDTO.bookISBN}">${bookDTO.bookTitle}</a>
+                                        </strong>
+                                    </li>
                                 </c:forEach>
 
                             </ul>
@@ -300,8 +275,8 @@
         </div>
     </section>
 
-    
-    
+
+
     <!-- Footer-->
     <footer class="footer bg-light">
         <div class="container">
