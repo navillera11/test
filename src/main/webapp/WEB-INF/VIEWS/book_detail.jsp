@@ -150,6 +150,10 @@
 			
 				<c:forEach var="bookDTO2" items="${genreBookList}">
 					<div class="card h-100">
+						<!-- 히트작이면 히트작이라고 태그 띄워주기 -->
+						<c:if test="${bookDTO2.bookHit>='5'}">
+							<div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">HIT!</div>
+						</c:if>
 						<img class="card-img-top" src="../bookImageStorage/${bookDTO2.bookImage}" alt="..." />
 						<div class="card-body p-4">
 							<div class="text-center">
@@ -158,7 +162,7 @@
 						</div>
 						<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
 							<div class="text-center">
-								<a class="btn btn-outline-dark mt-auto" href="#">도서 상세</a>
+								<a class="btn btn-outline-dark mt-auto" href="/book/book_detail?bookISBN=${bookDTO2.bookISBN}&bookGenre=${bookDTO2.bookGenre}">도서 상세</a>
 							</div>
 						</div>
 					</div>
