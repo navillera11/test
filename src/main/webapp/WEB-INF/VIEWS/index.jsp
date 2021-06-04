@@ -108,7 +108,7 @@
                     <div class="text-center text-white">
                         <!-- Page heading-->
                         <h1 class="mb-5">Welcome to MinGW's Library</h1>
-                        </form> -->
+                        </form>
                     </div>
                 </div>
             </div>
@@ -184,6 +184,7 @@
                             <div class="card-group col-sm-auto">
                                 <c:forEach var="bookDTO2" items="${hitBookList}">
                                     <div class="card" style="width: 18rem;">
+                                    	<div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">HIT!</div>
                                         <img class="card-img-top" src="/bookImageStorage/${bookDTO2.bookImage}" alt="Card image cap">
                                         <div class="card-body">
                                             <h5 class="card-title">${bookDTO2.bookTitle}</h5>
