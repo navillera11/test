@@ -49,7 +49,6 @@
     </nav>
 
     <!-- Navigation-->
-    <!-- Navigation-->
     <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
         <div class="container">
             <a class="btn" style="background-color: #e3f2fd; color: dodgerblue;" href="/book/unified_search">자료 검색</a>
@@ -80,7 +79,7 @@
 
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                     <a class="dropdown-item" href="/good/unified_search">사서 추천 도서</a>
-                    <a class="dropdown-item" href="#">신작 도서</a>
+                    <a class="dropdown-item" href="/book/new_unified_search">신간 도서</a>
                 </div>
             </div>
 

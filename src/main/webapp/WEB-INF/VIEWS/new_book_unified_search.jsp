@@ -62,7 +62,7 @@
                     <a class="dropdown-item" href="/member/member_hope">희망 도서 신청</a>
                     <a class="dropdown-item" href="/board/unified_search">자유 게시판</a>
                     <%}
-						%>
+					%>
                 </div>
             </div>
 
@@ -72,8 +72,8 @@
                 </a>
 
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="#">사서 추천 도서</a>
-                    <a class="dropdown-item" href="#">신작 도서</a>
+                    <a class="dropdown-item" href="/good/unified_search">사서 추천 도서</a>
+                    <a class="dropdown-item" href="/book/new_unified_search">신간 도서</a>
                 </div>
             </div>
 
@@ -96,7 +96,7 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">신간도서 검색</h1>
+                    <h1 class="mt-4">신간 도서</h1>
 
 
                     <div class="card mb-4">
@@ -182,11 +182,6 @@
             <script src="js/scripts.js"></script>
             <!--    회원 정의 추가용-->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-            <!--        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>-->
-            <!--    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/css/bootstrap.min.css" rel="stylesheet" />-->
-
-            <!--        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">-->
-            <!--        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
 
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
 

@@ -40,7 +40,6 @@
     </nav>
 
     <!-- Navigation-->
-    <!-- Navigation-->
     <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
         <div class="container">
             <a class="btn" style="background-color: #e3f2fd; color: dodgerblue;" href="/book/unified_search">자료 검색</a>
@@ -51,8 +50,16 @@
                 </a>
 
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <%
+						// 세션값 가져오기
+						if (id == null){%>
+                    <a class="dropdown-item disabled" href="/member/member_hope">희망 도서 신청</a>
+                    <a class="dropdown-item" href="/board/unified_search">자유 게시판</a>
+                    <%}else{%>
                     <a class="dropdown-item" href="/member/member_hope">희망 도서 신청</a>
                     <a class="dropdown-item" href="/board/unified_search">자유 게시판</a>
+                    <%}
+					%>
                 </div>
             </div>
 
@@ -63,7 +70,7 @@
 
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                     <a class="dropdown-item" href="/good/unified_search">사서 추천 도서</a>
-                    <a class="dropdown-item" href="#">신작 도서</a>
+                    <a class="dropdown-item" href="/book/new_unified_search">신간 도서</a>
                 </div>
             </div>
 

@@ -44,51 +44,51 @@
     </nav>
 
     <!-- Navigation-->
-        <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-            <div class="container">
-                <a class="btn" style="background-color: #e3f2fd; color: dodgerblue;" href="/book/unified_search">자료 검색</a>
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+        <div class="container">
+            <a class="btn" style="background-color: #e3f2fd; color: dodgerblue;" href="/book/unified_search">자료 검색</a>
 
-                <div class="dropdown show">
-                    <a class="btn dropdown-toggle" style="background-color: #e3f2fd; color: dodgerblue;" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        신청 / 참여
-                    </a>
+            <div class="dropdown show">
+                <a class="btn dropdown-toggle" style="background-color: #e3f2fd; color: dodgerblue;" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    신청 / 참여
+                </a>
 
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    	<%
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <%
 						// 세션값 가져오기
 						if (id == null){%>
-							<a class="dropdown-item disabled" href="/member/member_hope">희망 도서 신청</a>
-							<a class="dropdown-item" href="/board/unified_search">자유 게시판</a>
-						<%}else{%>
-							<a class="dropdown-item" href="/member/member_hope">희망 도서 신청</a>
-							<a class="dropdown-item" href="/board/unified_search">자유 게시판</a>
-						<%}
-						%>
-                    </div>
-                </div>
-
-                <div class="dropdown show">
-                    <a class="btn dropdown-toggle" style="background-color: #e3f2fd; color: dodgerblue;" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        도서관 이용
-                    </a>
-
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">사서 추천 도서</a>
-                        <a class="dropdown-item" href="#">신작 도서</a>
-                    </div>
-                </div>
-
-                <div class="dropdown show">
-                    <a class="btn dropdown-toggle" style="background-color: #e3f2fd; color: dodgerblue;" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        도서관 정보
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="/library_introduce">도서관 소개</a>
-                        <a class="dropdown-item" href="/notice/unified_search">공지 사항</a>
-                    </div>
+                    <a class="dropdown-item disabled" href="/member/member_hope">희망 도서 신청</a>
+                    <a class="dropdown-item" href="/board/unified_search">자유 게시판</a>
+                    <%}else{%>
+                    <a class="dropdown-item" href="/member/member_hope">희망 도서 신청</a>
+                    <a class="dropdown-item" href="/board/unified_search">자유 게시판</a>
+                    <%}
+					%>
                 </div>
             </div>
-        </nav>
+
+            <div class="dropdown show">
+                <a class="btn dropdown-toggle" style="background-color: #e3f2fd; color: dodgerblue;" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    도서관 이용
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="/good/unified_search">사서 추천 도서</a>
+                    <a class="dropdown-item" href="/book/new_unified_search">신간 도서</a>
+                </div>
+            </div>
+
+            <div class="dropdown show">
+                <a class="btn dropdown-toggle" style="background-color: #e3f2fd; color: dodgerblue;" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    도서관 정보
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="/library_introduce">도서관 소개</a>
+                    <a class="dropdown-item" href="/notice/unified_search">공지 사항</a>
+                </div>
+            </div>
+        </div>
+    </nav>
     
     
     
