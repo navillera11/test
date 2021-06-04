@@ -77,4 +77,24 @@ public class BookDAO {
 				+ bookDTO.getBookSummary() + "', HIT=" + bookDTO.getBookHit() + " WHERE ISBN='" + bookDTO.getBookISBN()
 				+ "';");
 	}
+	
+	public List<BookDTO> hitBook3() {
+		List<BookDTO> result = jdbcTemplate.query("SELECT * FROM `book` WHERE `HIT` >= 5 ORDER BY `HIT` DESC LIMIT 3;", (rs, rowNum) -> {
+			BookDTO bookDTO = new BookDTO(rs.getString("ISBN"), rs.getString("TITLE"), rs.getString("AUTHOR"),
+					rs.getString("GENRE"), rs.getString("PUBLISHER"), rs.getString("IMAGE"),
+					rs.getInt("COUNT"), rs.getString("SUMMARY"), rs.getInt("HIT"), rs.getDate("DATE"));
+			return bookDTO;
+		});
+		return result;
+	}
+	
+	public List<BookDTO> hitBook() {
+		List<BookDTO> result = jdbcTemplate.query("SELECT * FROM `book` WHERE `HIT` >= 5 ORDER BY `HIT` DESC;", (rs, rowNum) -> {
+			BookDTO bookDTO = new BookDTO(rs.getString("ISBN"), rs.getString("TITLE"), rs.getString("AUTHOR"),
+					rs.getString("GENRE"), rs.getString("PUBLISHER"), rs.getString("IMAGE"),
+					rs.getInt("COUNT"), rs.getString("SUMMARY"), rs.getInt("HIT"), rs.getDate("DATE"));
+			return bookDTO;
+		});
+		return result;
+	}
 }

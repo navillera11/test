@@ -41,10 +41,17 @@ public class MainController {
 		List<BookDTO> bookList = bookDAO.showFive();
 		List<GoodDTO> goodList = goodDAO.showThree();
 		
+		//hit 작 3개만
+		List<BookDTO> hitBookList = bookDAO.hitBook3();
+		//모든 hit 작
+		List<BookDTO> hitBookLists = bookDAO.hitBook();
+		
 		model.addAttribute("noticeList", noticeList);
 		model.addAttribute("boardList", boardList);
 		model.addAttribute("bookList", bookList);
 		model.addAttribute("goodList", goodList);
+		model.addAttribute("hitBookList",hitBookList);
+		model.addAttribute("hitBookLists",hitBookLists);
 		
 		return "index";
 	}
@@ -63,11 +70,18 @@ public class MainController {
 		List<BoardDTO> boardList = boardDAO.showThree();
 		List<BookDTO> bookList = bookDAO.showFive();
 		List<GoodDTO> goodList = goodDAO.showThree();
+		//hit 작 3개만
+		List<BookDTO> hitBookList = bookDAO.hitBook3();
+		//모든 hit 작
+		List<BookDTO> hitBookLists = bookDAO.hitBook();
 		
 		model.addAttribute("noticeList", noticeList);
 		model.addAttribute("boardList", boardList);
 		model.addAttribute("bookList", bookList);
 		model.addAttribute("goodList", goodList);
+		
+		model.addAttribute("hitBookList",hitBookList);
+		model.addAttribute("hitBookLists",hitBookLists);
 		
 		return "member_index";
 	}
