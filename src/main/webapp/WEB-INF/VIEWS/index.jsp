@@ -260,14 +260,14 @@
                                 <c:forEach var="bookDTO" items="${bookList}">
                                     <li class="mb-2"><i class="bi bi-check text-primary"></i>
                                         <strong>
-                                            <a class="bi text-primary" href="/book/book_detail?bookISBN=${bookDTO2.bookISBN}&bookGenre=${bookDTO2.bookGenre}">${bookDTO.bookTitle}</a>
+                                            <a class="bi text-primary" href="/book/book_detail?bookISBN=${bookDTO.bookISBN}&bookGenre=${bookDTO.bookGenre}">${bookDTO.bookTitle}</a>
                                         </strong>
                                     </li>
                                 </c:forEach>
 
                             </ul>
                             <div class="d-grid">
-                                <a class="btn btn-outline-primary" href="/book/unified_search">더보기</a>
+                                <a class="btn btn-outline-primary" href="/book/new_unified_search">더보기</a>
                             </div>
                         </div>
                     </div>

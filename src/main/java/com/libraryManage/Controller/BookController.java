@@ -115,4 +115,14 @@ public class BookController {
 
 		return "hit_book_unified_search";
 	}
+	
+	// 인기 도서 목록
+	@RequestMapping(value = "/new_unified_search", method = RequestMethod.GET)
+	public String new_book_unified_search(Model model) {
+		List<BookDTO> newBookList = bookDAO.newBook();
+
+		model.addAttribute("newBookList", newBookList);
+
+		return "new_book_unified_search";
+	}
 }

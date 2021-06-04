@@ -251,23 +251,10 @@
                                     </strong>
                                 </li>
                                 </c:forEach>
-                                <!-- <li class="mb-2"><i class="text-primary"></i> 체크 없애는 거 테스트
-                                </li>
-                                <li class="mb-2"><i class="bi bi-check text-primary"></i>
-                                    Unlimited public projects</li>
-                                <li class="mb-2"><i class="bi bi-check text-primary"></i>
-                                    Community access</li>
-                                <li class="mb-2"><i class="bi bi-check text-primary"></i>
-                                    Unlimited private projects</li>
-                                <li class="mb-2"><i class="bi bi-check text-primary"></i>
-                                    Dedicated support</li>
-                                <li class="mb-2"><a class="text-primary" href="#!">
-                                        체크 없이 링크 </a></li>
-                                <li class="text-muted"><i class="bi bi-x"></i>
-                                    Monthly status reports</li> -->
                             </ul>
+                            
                             <div class="d-grid">
-                                <a class="btn btn-outline-primary" href="/book/unified_search">더보기</a>
+                                <a class="btn btn-outline-primary" href="/book/new_unified_search">더보기</a>
                             </div>
                         </div>
                     </div>
@@ -285,17 +272,15 @@
                 <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
                     <ul class="list-inline mb-2">
                         <li class="list-inline-item"><a href="#!">About</a></li>
-                        <li class="list-inline-item">⋅</li>
-                        <li class="list-inline-item"><a href="#!">Contact</a></li>
                     </ul>
                     <p class="text-muted small mb-4 mb-lg-0">&copy; MinGW's
                         Library 2021. All Rights Reserved.</p>
                 </div>
                 <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
                     <ul class="list-inline mb-0">
-                        <li class="list-inline-item me-4"><a href="#!"><i class="bi-facebook fs-3"></i></a></li>
+<!--                         <li class="list-inline-item me-4"><a href="#!"><i class="bi-facebook fs-3"></i></a></li>
                         <li class="list-inline-item me-4"><a href="#!"><i class="bi-twitter fs-3"></i></a></li>
-                        <li class="list-inline-item"><a href="#!"><i class="bi-instagram fs-3"></i></a></li>
+                        <li class="list-inline-item"><a href="#!"><i class="bi-instagram fs-3"></i></a></li> -->
                     </ul>
                 </div>
             </div>
