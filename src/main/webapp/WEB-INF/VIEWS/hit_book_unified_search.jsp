@@ -108,8 +108,8 @@
                                         <th>ISBN10</th>
                                         <th>제목</th>
                                         <th>저자</th>
-                                        <th>출판사</th>
                                         <th>장르</th>
+                                        <th>히트수</th>
                                         <th>해당 도서 페이지</th>
                                     </tr>
                                 </thead>
@@ -128,8 +128,8 @@
                                             <td>${bookDTO.bookISBN}</td>
                                             <td>${bookDTO.bookTitle}</td>
                                             <td>${bookDTO.bookAuthor}</td>
-                                            <td>${bookDTO.bookPublisher}</td>
                                             <td>${bookDTO.bookGenre}</td>
+                                            <td>${bookDTO.bookHit}</td>
                                             <td><input type="button" value="자세히" onclick="location.href='/book/book_detail?bookISBN=${bookDTO.bookISBN}&bookGenre=${bookDTO.bookGenre}'" /></td>
                                         </tr>
                                     </c:forEach>
