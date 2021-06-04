@@ -62,7 +62,7 @@
                 </a>
 
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="#">사서 추천 도서</a>
+                    <a class="dropdown-item" href="/good/unified_search">사서 추천 도서</a>
                     <a class="dropdown-item" href="#">신작 도서</a>
                 </div>
             </div>
@@ -94,19 +94,8 @@
                         <!-- Signup form-->
                         <h1 class="mb-5"><%=session.getAttribute("loginMemberName")%>
                             님 안녕하세요!
-                        </h1>
-                        <!-- <form>
-                     <div class="input-group input-group-lg">
-                        <input class="form-control" type="text"
-                           placeholder="제목을 입력해주세요..." aria-label="Enter Book Title..."
-                           aria-describedby="button-submit" />
-                        <button class="btn btn-primary" id="button-submit" type="button"
-                           onclick="location.href='#bookSearch' ">검색</button>
-                        <button class="btn btn-primary" id="button-detail-submit"
-                           type="button" onclick="location.href='#bookDetailSearch' ">상세
-                           검색</button>
-                     </div>
-                  </form> -->
+
+                  </form>
                     </div>
                 </div>
             </div>
@@ -147,7 +136,7 @@
             <div class="card text-center">
                 <div class="card-header">
                     <ul class="nav nav-tabs card-header-tabs" id="tabs">
-                        <li class="nav-item"><a class="nav-link active" href="#librarianNominate" data-toggle="tab">사서 추천 도서</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="/good/unified_search" data-toggle="tab">사서 추천 도서</a></li>
                         <li class="nav-item"><a class="nav-link" href="#newBook" data-toggle="tab">인기 도서</a></li>
                     </ul>
                 </div>
@@ -172,7 +161,7 @@
                             </div>
                             <div class="card text-white bg-primary my-5 py-10 text-center">
                                 <div class="card-body">
-                                    <a href="#libralianFreeBoard" class="btn btn-primary btn-lg">사서
+                                    <a href="/good/unified_search" class="btn btn-primary btn-lg">사서
                                         추천 도서 게시판</a>
                                 </div>
                             </div>
