@@ -123,7 +123,17 @@
 							저자 : ${bookDTO.bookAuthor}<br /> 출판사 : ${bookDTO.bookPublisher}<br />${bookDTO.bookSummary}
 						</p>
 						<div class="d-flex">
-							<input class="btn btn-outline-dark flex-shrink-0" type="submit" value="대여하기" />
+						
+						<%
+							//대여는 무조건 로그인 했을 때만 떠라!
+							if (id != null){%>
+								<button type="submit" value="대여하기"  class="btn btn-outline-dark flex-shrink-0">
+								  <i class="bi-cart-fill me-1">대여 하기</i>
+								</button>
+								
+							<%}
+						%>
+							<!-- <input class="btn btn-outline-dark flex-shrink-0" type="submit" value="대여하기" /> -->
 							<!-- 이거 작은 카트 모양 이미지인데 input 태그 안에 어떻게 넣는지 모르겠어용 -->
 							<!-- <i class="bi-cart-fill me-1"></i> 대여 하기 </input> -->
 						</div>

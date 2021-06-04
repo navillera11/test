@@ -69,7 +69,7 @@
 							<a class="dropdown-item" href="/member/member_hope">희망 도서 신청</a>
 							<a class="dropdown-item" href="/board/unified_search">자유 게시판</a>
 						<%}
-						%>
+					%>
                 </div>
             </div>
 
@@ -108,18 +108,6 @@
                     <div class="text-center text-white">
                         <!-- Page heading-->
                         <h1 class="mb-5">Welcome to MinGW's Library</h1>
-                        <!-- Signup form-->
-                        <!-- <form>
-							<div class="input-group input-group-lg">
-								<input class="form-control" type="text"
-									placeholder="제목을 입력해주세요..." aria-label="Enter Book Title..."
-									aria-describedby="button-submit" />
-								<button class="btn btn-primary" id="button-submit" type="button"
-									onclick="location.href='#bookSearch' ">검색</button>
-								<button class="btn btn-primary" id="button-detail-submit"
-									type="button" onclick="location.href='#bookDetailSearch' ">상세
-									검색</button>
-							</div>
 						</form> -->
                     </div>
                 </div>
@@ -161,7 +149,7 @@
             <div class="card text-center">
                 <div class="card-header">
                     <ul class="nav nav-tabs card-header-tabs" id="tabs">
-                        <li class="nav-item"><a class="nav-link active" href="#librarianNominate" data-toggle="tab">사서 추천 도서</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="/good/unified_search" data-toggle="tab">사서 추천 도서</a></li>
                         <li class="nav-item"><a class="nav-link" href="#newBook" data-toggle="tab">인기 도서</a></li>
                     </ul>
                 </div>
@@ -186,7 +174,7 @@
                             </div>
                             <div class="card text-white bg-primary my-5 py-10 text-center">
                                 <div class="card-body">
-                                    <a href="#libralianFreeBoard" class="btn btn-primary btn-lg">사서
+                                    <a href="/good/unified_search" class="btn btn-primary btn-lg">사서
                                         추천 도서 게시판</a>
                                 </div>
                             </div>
