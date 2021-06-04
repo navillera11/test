@@ -28,7 +28,7 @@ public class PhraseDAO {
 	}
 
 	public List<PhraseDTO> showAll() {
-		List<PhraseDTO> result = jdbcTemplate.query("SELECT * FROM PHRASE WHERE ID=0;", (rs, rowNum) -> {
+		List<PhraseDTO> result = jdbcTemplate.query("SELECT * FROM PHRASE ORDER BY RAND() LIMIT 1;", (rs, rowNum) -> {
 			this.phraseDTO = new PhraseDTO(rs.getInt("ID"), rs.getString("PHRASE"));
 			return phraseDTO;
 		});
