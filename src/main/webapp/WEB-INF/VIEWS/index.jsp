@@ -189,7 +189,7 @@
                                         <div class="card-body">
                                             <h5 class="card-title">${bookDTO2.bookTitle}</h5>
                                             <%--                                            <p class="card-text">${goodDTO.goodContent}</p> --%>
-                                            <a href="/book/book_detail?bookISBN=${bookDTO2.bookISBN}" class="btn btn-primary">자세히 보기</a>
+                                            <a href="/book/book_detail?bookISBN=${bookDTO2.bookISBN}&bookGenre=${bookDTO2.bookGenre}" class="btn btn-primary">자세히 보기</a>
                                         </div>
                                         <%-- <div class="card-footer">
                                            <small class="text-muted">${bookDTO2.bookDate}</small>
@@ -260,7 +260,7 @@
                                 <c:forEach var="bookDTO" items="${bookList}">
                                     <li class="mb-2"><i class="bi bi-check text-primary"></i>
                                         <strong>
-                                            <a class="bi text-primary" href="/book/book_detail?bookISBN=${bookDTO.bookISBN}">${bookDTO.bookTitle}</a>
+                                            <a class="bi text-primary" href="/book/book_detail?bookISBN=${bookDTO2.bookISBN}&bookGenre=${bookDTO2.bookGenre}">${bookDTO.bookTitle}</a>
                                         </strong>
                                     </li>
                                 </c:forEach>

@@ -146,117 +146,24 @@
 	<section class="py-5 bg-light">
 		<div class="container px-4 px-lg-5 mt-5">
 			<h2 class="fw-bolder mb-4">관련 장르 도서</h2>
-			<div
-				class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-				<div class="col mb-5">
+			<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+			
+				<c:forEach var="bookDTO2" items="${genreBookList}">
 					<div class="card h-100">
-						<!-- Product image-->
-						<img class="card-img-top" src="/assets/img/2.jpg" alt="..." />
-						<!-- Product details-->
+						<img class="card-img-top" src="../bookImageStorage/${bookDTO2.bookImage}" alt="..." />
 						<div class="card-body p-4">
 							<div class="text-center">
-								<!-- Product name-->
-								<h5 class="fw-bolder">도서 제목</h5>
-								<!-- Product price-->
-								재고 : 1권
+								<h5 class="fw-bolder">${bookDTO2.bookTitle}</h5>
 							</div>
 						</div>
-						<!-- Product actions-->
 						<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
 							<div class="text-center">
 								<a class="btn btn-outline-dark mt-auto" href="#">도서 상세</a>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col mb-5">
-					<div class="card h-100">
-						<!-- 대여 횟수가 많을 경우 이렇게 해보는게 어떨까-->
-						<div class="badge bg-dark text-white position-absolute"
-							style="top: 0.5rem; right: 0.5rem">HIT!</div>
-						<!-- Product image-->
-						<img class="card-img-top" src="/assets/img/2.jpg" alt="..." />
-						<!-- Product details-->
-						<div class="card-body p-4">
-							<div class="text-center">
-								<!-- Product name-->
-								<h5 class="fw-bolder">도서 제목 2</h5>
-								<!--                                 Product reviews
-                                <div class="d-flex justify-content-center small text-warning mb-2">
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                </div>-->
-								<!-- Product price-->
-								<!--                                <span class="text-muted text-decoration-line-through">$20.00</span>-->
-								재고 : 1권
-							</div>
-						</div>
-						<!-- Product actions-->
-						<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-							<div class="text-center">
-								<a class="btn btn-outline-dark mt-auto" href="#">도서 상세</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col mb-5">
-					<div class="card h-100">
-						<!--                         Sale badge
-                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>-->
-						<!-- Product image-->
-						<img class="card-img-top" src="/assets/img/2.jpg" alt="..." />
-						<!-- Product details-->
-						<div class="card-body p-4">
-							<div class="text-center">
-								<!-- Product name-->
-								<h5 class="fw-bolder">도서 제목 3</h5>
-								<!-- Product price-->
-								<!--                                <span class="text-muted text-decoration-line-through">$50.00</span>-->
-								재고 : 1권
-							</div>
-						</div>
-						<!-- Product actions-->
-						<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-							<div class="text-center">
-								<a class="btn btn-outline-dark mt-auto" href="#">도서 상세</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col mb-5">
-					<div class="card h-100">
-						<!-- Product image-->
-						<img class="card-img-top" src="/assets/img/2.jpg" alt="..." />
-						<!-- Product details-->
-						<div class="card-body p-4">
-							<div class="text-center">
-								<!-- Product name-->
-								<h5 class="fw-bolder">도서 제목 4</h5>
-								<!-- 도서 평점 기능은 시간이 많이 남으면 해보자-->
-								<!--
-                                <div class="d-flex justify-content-center small text-warning mb-2">
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                </div>
--->
-								<!-- Product 설명-->
-								<!--대충 여따 뭐 다른 거 박아도 되긴함-->
-								재고 : 1권
-							</div>
-						</div>
-						<!-- Product actions-->
-						<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-							<div class="text-center">
-								<a class="btn btn-outline-dark mt-auto" href="#">도서 상세</a>
-							</div>
-						</div>
-					</div>
+                </c:forEach>
+					
 				</div>
 			</div>
 		</div>
