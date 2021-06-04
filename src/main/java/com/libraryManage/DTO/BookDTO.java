@@ -115,6 +115,14 @@ public class BookDTO {
 	public void setBookHit(int bookHit) {
 		this.bookHit = bookHit;
 	}
+	
+	public Date getBookDate() {
+		return bookDate;
+	}
+
+	public void setBookDate(Date bookDate) {
+		this.bookDate = bookDate;
+	}
 
 	@Override
 	public String toString() {
