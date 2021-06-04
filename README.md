@@ -382,3 +382,7 @@
       * src/main/java/com/libraryManage/DTO/BookDTO.java
       * src/main/webapp/WEB-INF/VIEWS/index.jsp
       * src/main/webapp/WEB-INF/VIEWS/member_index.jsp 
+
+   * 마이 페이지 명언 기능 제공
+      * src/main/java/com/libraryManage/DAO/PhraseDAO.java
+      * src/main/webapp/WEB-INF/VIEWS/member_my_page.jsp 
