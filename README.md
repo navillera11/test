@@ -350,3 +350,27 @@
       * src/main/webapp/WEB-INF/VIEWS/good_detail.jsp - 추천 도서 상세 페이지 작성
       * src/main/java/com/libraryManage/Controller/GoodController.java - 경로 세팅
       * src/main/java/com/libraryManage/DAO/GoodDAO.java - 추천 도서 상세 페이지에 이미지까지 따오도록 조정하는 함수 구현
+
+2020-06-05 :
+
+   * 인기 도서 섹션 추가
+      * src/main/webapp/WEB-INF/VIEWS/hit_book_unified_search.jsp - 인기 도서(대여 5번 이상) 인 도서 목록만 가져오는 페이지 생성
+      * src/main/java/com/libraryManage/Controller/BookController.java - 경로 세팅
+      * src/main/java/com/libraryManage/DAO/BookDAO.java - SQL 작성
+      * src/main/webapp/WEB-INF/VIEWS/index.jsp - 인기 도서 섹션 구현
+      * src/main/java/com/libraryManage/Controller/MainController.java - 경로 세팅
+
+   * 상세 페이지 밑단 관련 장르 도서 출력
+      * src/main/webapp/bookImageStorage/800x3.jpg - 테스팅 이미지
+      * src/main/webapp/WEB-INF/VIEWS/book_detail.jsp - 상세 페이지 밑단 관련 장르 도서 출력 구현
+      * src/main/webapp/WEB-INF/VIEWS/book_unified_search.jsp - URL 경로 변수 추가
+      * src/main/java/com/libraryManage/Controller/BookController.java - 경로 세팅
+      * src/main/java/com/libraryManage/DAO/BookDAO.java - SQL 작성
+      * src/main/webapp/WEB-INF/VIEWS/index.jsp - URL 경로 변수 추가
+
+   * 상세 페이지 밑단 관련 업데이트 (현재 설명하는 도서를 제외한 관련 장르 도서 소개 및 5번 이상 빌린 도서일 경우 히트 태그 추가)
+      * src/main/webapp/WEB-INF/VIEWS/book_detail.jsp
+      * src/main/java/com/libraryManage/Controller/BookController.java
+      * src/main/java/com/libraryManage/DAO/BookDAO.java
+      * src/main/webapp/WEB-INF/VIEWS/hit_book_unified_search.jsp
+      * src/main/webapp/WEB-INF/VIEWS/member_index.jsp 
