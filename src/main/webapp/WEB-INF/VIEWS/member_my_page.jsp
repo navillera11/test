@@ -1,9 +1,13 @@
 <%@page import="com.libraryManage.Service.*"%>
 <%@page import="com.libraryManage.DAO.*"%>
 <%@page import="com.libraryManage.DTO.*"%>
+<%@page import="java.sql.*"%>
+<%@page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -90,7 +94,12 @@
         <div class="card text-white bg-primary my-5 py-4 text-center">
             <div class="card-body">
                 <h3>
-                    <p class="text-white m-0">FACE THE FEAR, MAKE THE FUTURE.</p>
+                <!-- <p class="text-white m-0">FACE THE FEAR, MAKE THE FUTURE.</p> -->
+                <!-- 명언 랜덤 출력 -->
+                	<c:forEach var="phraseDTO" items="${phraseList}">
+                		<p class="text-white m-0">${phraseDTO.phraseString}</p>
+                	</c:forEach>
+                    
                 </h3>
             </div>
         </div>
@@ -265,7 +274,7 @@
             <!-- Bootstrap core JS-->
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
             <!-- Core theme JS-->
-            <script src="js/scripts.js"></script>
+            <!-- <script src="js/scripts.js"></script> -->
             <!--    회원 정의 추가용-->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
             <!--        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>-->
@@ -277,7 +286,7 @@
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
 
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-            <script src="js/scripts.js"></script>
+            <script src="/js/scripts.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
             <script src="/js/dataTables.js"></script>
         </div>
