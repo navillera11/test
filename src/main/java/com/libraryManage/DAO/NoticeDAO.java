@@ -35,7 +35,7 @@ public class NoticeDAO {
 		});
 		return result;
 	}
-	
+
 	public List<NoticeDTO> showFive() {
 		List<NoticeDTO> result = jdbcTemplate.query("SELECT * FROM NOTICE ORDER BY ID DESC LIMIT 5;", (rs, rowNum) -> {
 			NoticeDTO noticeDTO = new NoticeDTO(rs.getInt("ID"), rs.getString("TITLE"), rs.getDate("DATE"),
@@ -48,8 +48,8 @@ public class NoticeDAO {
 	public void insertNotice(NoticeDTO _noticeDTO) {
 		this.noticeDTO = _noticeDTO;
 
-		jdbcTemplate.update("INSERT INTO NOTICE(TITLE, DATE, CONTENT) VALUES('" + noticeDTO.getNoticeTitle() + "', '"
-				+ noticeDTO.getNoticeDate() + "', '" + noticeDTO.getNoticeContent() + "');");
+		jdbcTemplate.update("INSERT INTO NOTICE(TITLE, DATE, CONTENT) VALUES('" + noticeDTO.getNoticeTitle()
+				+ "', NOW(), '" + noticeDTO.getNoticeContent() + "');");
 	}
 
 	public void deleteNotice(NoticeDTO _noticeDTO) {

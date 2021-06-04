@@ -2,6 +2,7 @@ package com.libraryManage.Controller;
 
 import javax.servlet.http.*;
 import java.io.*;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -100,7 +101,7 @@ public class MemberController {
 
 			if (memberDTO == null) {
 				System.out.println("로그인 에러 in Controller");
-				
+
 				response.sendRedirect("/member/login");
 			} else if (memberDTO.getMemberEmail().equals("admin@admin")) {
 				session.setAttribute("loginMemberName", memberDTO.getMemberName());
@@ -135,6 +136,7 @@ public class MemberController {
 
 				Random rand = new Random();
 
+				// 임시 비밀번호 생성
 				for (int i = 0; i < 10; i++) {
 					int index = rand.nextInt(3);
 					switch (index) {
@@ -149,6 +151,7 @@ public class MemberController {
 						break;
 					}
 				}
+
 				memberDTO = memberService.changePassword(memberDTO, newPassword);
 
 				memberService.sendEmail(memberDTO, "forgotPwd");
@@ -198,8 +201,24 @@ public class MemberController {
 
 		BookDTO bookDTO = bookDAO.selectByISBN(inputISBN);
 
+		CheckOutDTO checkOutDTO = checkOutDAO.getOneCheckOut(memberDTO.getMemberEmail(), inputISBN);
 		checkOutDAO.returnCheckOut(memberDTO.getMemberEmail(), inputISBN); // 반납 처리
-		// 도서 재고 수 + 1 해야됨
+
+		// 날짜 확인
+		Date nowDate = new Date(new java.util.Date().getTime());
+
+		if (nowDate.before(checkOutDTO.getCheckOutReturnDueDate())) // 연체 중이면
+			memberDTO.setMemberNormalReturn(memberDTO.getMemberNormalReturn() - 1); // 정상 반납 - 1
+		else
+			memberDTO.setMemberNormalReturn(memberDTO.getMemberNormalReturn() + 1); // 정상 반납 + 1
+
+		bookDTO.setBookCount(bookDTO.getBookCount() + 1);
+		bookDAO.updateBook(bookDTO); // 도서 재고 수 + 1
+
+		if (memberDTO.getMemberNormalReturn() > 5) // VIP 조건 달성
+			memberDAO.updateRank(memberDTO, 1);
+		else if (memberDTO.getMemberNormalReturn() < -3) // 블랙리스트 조건 달성
+			memberDAO.updateRank(memberDTO, -1);
 
 		response.sendRedirect("/member/my_page");
 	}
@@ -208,15 +227,34 @@ public class MemberController {
 	@PostMapping("/my_page/extend_date")
 	public void member_extension(HttpServletRequest request, HttpServletResponse response, HttpSession session)
 			throws Exception {
-		String inputISBN = request.getParameter("inputExtensionISBN");
+		try {
+			String inputISBN = request.getParameter("inputExtensionISBN");
 
-		MemberDTO memberDTO = (MemberDTO) session.getAttribute("loginMemberDTO");
+			MemberDTO memberDTO = (MemberDTO) session.getAttribute("loginMemberDTO");
 
-		BookDTO bookDTO = bookDAO.selectByISBN(inputISBN);
+			CheckOutDTO checkOutDTO = checkOutDAO.getOneCheckOut(memberDTO.getMemberEmail(), inputISBN);
 
-		checkOutDAO.extendCheckOut(memberDTO.getMemberEmail(), inputISBN); // 연장 처리
+			// 연장 최대 횟수는 3
+			if (checkOutDTO.getCheckOutExtensionCount() >= 3)
+				throw new NotAvailableException("연장하실 수 없습니다.");
 
-		response.sendRedirect("/member/my_page");
+			// 날짜 확인
+			Date nowDate = new Date(new java.util.Date().getTime());
+			if (nowDate.after(checkOutDTO.getCheckOutReturnDueDate())) // 연체 중이면
+				throw new NotAvailableException("연장하실 수 없습니다.");
+
+			checkOutDAO.extendCheckOut(memberDTO.getMemberEmail(), inputISBN); // 연장 처리
+
+			response.sendRedirect("/member/my_page");
+		} catch (NotAvailableException ex) {
+			response.setContentType("text/html; charset=UTF-8");
+
+			PrintWriter out = response.getWriter();
+
+			out.println("<script>alert('연장하실 수 없습니다.'); location.href='/member/my_page';</script>");
+
+			out.flush();
+		}
 	}
 
 	// 비밀번호 수정 페이지 이동

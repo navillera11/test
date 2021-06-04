@@ -11,7 +11,6 @@ public class NoticeDTO {
 	public NoticeDTO(String _noticeTitle, String _noticeContent) {
 		// 공지 새로 추가할 때
 		this.noticeTitle = _noticeTitle;
-		this.noticeDate = new Date(new java.util.Date().getTime());
 		this.noticeContent = _noticeContent;
 	}
 

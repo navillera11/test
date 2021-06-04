@@ -7,19 +7,25 @@ public class MemberDTO {
 	private String memberPassword; // 사용자 비밀번호
 	private String memberName; // 사용자 이름
 	private int memberRank; // 사용자 랭크
-	// private List<BookDTO> memBook = new ArrayList<BookDTO>(); // 대여한 도서 리스트
+	private int memberNormalReturn; // 사용자 정상 반납 숫자
+	private int memberReturnAvailable; // 사용자 대여 가능 숫자
 
 	public MemberDTO(String _memberEmail, String _memberPassword, String _memberName) {
+		// 데이터 추가할 때
 		this.memberEmail = _memberEmail;
 		this.memberPassword = _memberPassword;
 		this.memberName = _memberName;
 	}
 
-	public MemberDTO(String _memberEmail, String _memberPassword, String _memberName, int _memberRank) {
+	public MemberDTO(String _memberEmail, String _memberPassword, String _memberName, int _memberRank,
+			int _memberNormalReturn, int _memberReturnAvailable) {
+		// 데이터 받아올 때
 		this.memberEmail = _memberEmail;
 		this.memberPassword = _memberPassword;
 		this.memberName = _memberName;
 		this.memberRank = _memberRank;
+		this.memberNormalReturn = _memberNormalReturn;
+		this.memberReturnAvailable = _memberReturnAvailable;
 	}
 
 	public String getMemberEmail() {
@@ -54,15 +60,26 @@ public class MemberDTO {
 		this.memberRank = memberRank;
 	}
 
-	public void changePassword(String oldPassword, String newPassword) {
-		if (!memberPassword.equals(oldPassword))
-			System.out.println("\n입력 정보를 확인하세요.\n");
-		else
-			this.memberPassword = newPassword;
+	public int getMemberNormalReturn() {
+		return memberNormalReturn;
 	}
 
-	public String toString() {
-		return "사용자 이메일: " + getMemberEmail() + "\t\t사용자 비밀번호: " + getMemberPassword() + "\t\t사용자 이름: "
-				+ getMemberName();
+	public void setMemberNormalReturn(int memberNormalReturn) {
+		this.memberNormalReturn = memberNormalReturn;
 	}
+
+	public int getMemberReturnAvailable() {
+		return memberReturnAvailable;
+	}
+
+	public void setMemberReturnAvailable(int memberReturnAvailable) {
+		this.memberReturnAvailable = memberReturnAvailable;
+	}
+
+	@Override
+	public String toString() {
+		return "MemberDTO [memberEmail=" + memberEmail + ", memberPassword=" + memberPassword + ", memberName="
+				+ memberName + ", memberRank=" + memberRank + "]";
+	}
+
 }

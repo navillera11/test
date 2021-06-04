@@ -8,14 +8,24 @@ public class CheckOutDTO {
 	private String checkOutEmail;
 	private Date checkOutRentalDate;
 	private Date checkOutReturnDueDate;
+	private int checkOutExtensionCount;
 
-	public CheckOutDTO(String _inputCheckOutISBN, String _inputCheckOutTitle, String _inputCheckOutEmail,
-			Date _inputCheckOutRentalDate, Date _inputCheckOutReturnDueDate) {
+	public CheckOutDTO(String _inputCheckOutISBN, String _inputCheckOutEmail) {
+		// 데이터 추가 때
 		this.checkOutISBN = _inputCheckOutISBN;
-		this.checkOutTitle = _inputCheckOutTitle;
 		this.checkOutEmail = _inputCheckOutEmail;
-		this.checkOutRentalDate = _inputCheckOutRentalDate;
-		this.checkOutReturnDueDate = _inputCheckOutReturnDueDate;
+	}
+
+	public CheckOutDTO(String _checkOutISBN, String _checkOutTitle, String _checkOutEmail, Date _checkOutRentalDate,
+			Date _checkOutReturnDueDate, int _checkOutExtensionCount) {
+		// 데이터 받아올 때
+		super();
+		this.checkOutISBN = _checkOutISBN;
+		this.checkOutTitle = _checkOutTitle;
+		this.checkOutEmail = _checkOutEmail;
+		this.checkOutRentalDate = _checkOutRentalDate;
+		this.checkOutReturnDueDate = _checkOutReturnDueDate;
+		this.checkOutExtensionCount = _checkOutExtensionCount;
 	}
 
 	public String getCheckOutISBN() {
@@ -56,6 +66,14 @@ public class CheckOutDTO {
 
 	public void setCheckOutReturnDueDate(Date checkOutReturnDueDate) {
 		this.checkOutReturnDueDate = checkOutReturnDueDate;
+	}
+
+	public int getCheckOutExtensionCount() {
+		return checkOutExtensionCount;
+	}
+
+	public void setCheckOutExtensionCount(int checkOutExtensionCount) {
+		this.checkOutExtensionCount = checkOutExtensionCount;
 	}
 
 	@Override
