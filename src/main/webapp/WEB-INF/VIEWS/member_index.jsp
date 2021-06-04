@@ -252,6 +252,7 @@
                                 </li>
                                 </c:forEach>
                             </ul>
+                            
                             <div class="d-grid">
                                 <a class="btn btn-outline-primary" href="/book/new_unified_search">더보기</a>
                             </div>
@@ -271,8 +272,6 @@
                 <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
                     <ul class="list-inline mb-2">
                         <li class="list-inline-item"><a href="#!">About</a></li>
-                        <li class="list-inline-item">⋅</li>
-                        <li class="list-inline-item"><a href="#!">Contact</a></li>
                     </ul>
                     <p class="text-muted small mb-4 mb-lg-0">&copy; MinGW's
                         Library 2021. All Rights Reserved.</p>
