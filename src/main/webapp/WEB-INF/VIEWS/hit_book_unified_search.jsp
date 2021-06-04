@@ -62,7 +62,7 @@
                     <a class="dropdown-item" href="/member/member_hope">희망 도서 신청</a>
                     <a class="dropdown-item" href="/board/unified_search">자유 게시판</a>
                     <%}
-						%>
+					%>
                 </div>
             </div>
 
@@ -72,8 +72,8 @@
                 </a>
 
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="#">사서 추천 도서</a>
-                    <a class="dropdown-item" href="#">신작 도서</a>
+                    <a class="dropdown-item" href="/good/unified_search">사서 추천 도서</a>
+                    <a class="dropdown-item" href="/book/new_unified_search">신간 도서</a>
                 </div>
             </div>
 
