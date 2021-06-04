@@ -386,3 +386,9 @@
    * 마이 페이지 명언 기능 제공
       * src/main/java/com/libraryManage/DAO/PhraseDAO.java
       * src/main/webapp/WEB-INF/VIEWS/member_my_page.jsp 
+
+
+현재 문제
+
+   * 도서 수정 안됨
+   * 댓글 
