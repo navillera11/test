@@ -31,8 +31,9 @@ public class BookDAO {
 		}
 	}
 	
-	public List<BookDTO> genreBook(String inputGenre) {
-		List<BookDTO> result = jdbcTemplate.query("SELECT *  FROM BOOK WHERE GENRE='"+inputGenre+"' LIMIT 4;", (rs, rowNum) -> {
+	public List<BookDTO> genreBook(String inputISBN,String inputGenre) {
+		//같은 ISBN 의 책(현재 상세 페이지로 설명이 된 책)을 제외한 관련 장르 책에 대하여 랜덤으로 네개를 받아온다.
+		List<BookDTO> result = jdbcTemplate.query("SELECT *  FROM BOOK WHERE ISBN != '"+inputISBN+"' AND GENRE='"+inputGenre+"' ORDER BY RAND() LIMIT 4;", (rs, rowNum) -> {
 			BookDTO bookDTO = new BookDTO(rs.getString("ISBN"), rs.getString("TITLE"), rs.getString("AUTHOR"),
 					rs.getString("GENRE"), rs.getString("PUBLISHER"), rs.getString("IMAGE"), rs.getInt("COUNT"),
 					rs.getString("SUMMARY"), rs.getInt("HIT"), rs.getDate("DATE"));

@@ -131,62 +131,65 @@
     </div>
 
    <!--    사서 추천 도서 / 인기 도서 섹션 -->
-   <section class="py-5 border-bottom">
-        <div class="container px-5 my-5">
-
-
-            <!--
-            <div class="text-center mb-5">
-                <h2 class="fw-bolder">Pay as you grow</h2>
-                <p class="lead mb-0">With our no hassle pricing plans</p>
-            </div>
--->
-
-
-            <div class="row gx-5 justify-content-center">
-                <!-- Pricing card free-->
-                <div class="col-lg-6 col-xl-6">
-                    <div class="card mb-5 mb-xl-0">
-                        <div class="card-body p-10">
-
-                            <div class="mb-3">
-                                <span class="display-4 fw-bold"> <i class="bi bi-star-fill text-warning"></i> 공지 사항
-                                </span>
-
-                            </div>
-                            <ul class="list-unstyled mb-4">
-                                <!-- <li class="mb-2"><i class="bi bi-check text-primary"></i> <strong>1 users</strong></li>
-                                <li class="mb-2"><i class="bi bi-check text-primary"></i>5GB storage</li> -->
-                                <c:forEach var="noticeDTO" items="${noticeList}">
-                                    <li class="mb-2"><i class="bi bi-check text-primary"></i><a href="/notice/notice_detail?noticeID=${noticeDTO.noticeID}">${noticeDTO.noticeTitle}</a></li>
+    <section class="bg-light py-5 border-bottom">
+        <div class="container px-4 px-lg-5">
+            <div class="card text-center">
+                <div class="card-header">
+                    <ul class="nav nav-tabs card-header-tabs" id="tabs">
+                        <li class="nav-item"><a class="nav-link active" href="#librarianNominate" data-toggle="tab">사서 추천 도서</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#hitBook" data-toggle="tab">인기 도서</a></li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="librarianNominate">
+                            <!--                        사서 추천 도서-->
+                            <div class="card-group col-sm-auto">
+                                <c:forEach var="goodDTO" items="${goodList}">
+                                    <div class="card" style="width: 18rem;">
+                                        <img class="card-img-top" src="/bookImageStorage/${goodDTO.goodImage}" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title">${goodDTO.goodTitle}</h5>
+                                            <%--                                            <p class="card-text">${goodDTO.goodContent}</p> --%>
+                                            <a href="/good/good_detail?goodID=${goodDTO.goodID}" class="btn btn-primary">자세히 보기</a>
+                                        </div>
+                                        <div class="card-footer">
+                                            <small class="text-muted">${goodDTO.goodDate}</small>
+                                        </div>
+                                    </div>
                                 </c:forEach>
-                            </ul>
-                            <div class="d-grid">
-                                <a class="btn btn-outline-primary" href="/notice/unified_search">더보기</a>
+                            </div>
+                            <div class="card text-white bg-primary my-5 py-10 text-center">
+                                <div class="card-body">
+                                    <a href="/good/unified_search" class="btn btn-primary btn-lg">사서
+                                        추천 도서 게시판</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <!-- Pricing card pro-->
-                <div class="col-lg-6 col-xl-6">
-                    <div class="card mb-5 mb-xl-0">
-                        <div class="card-body p-10">
-                            <div class="mb-3">
-                                <span class="display-4 fw-bold"> <i class="bi bi-star-fill text-warning"></i>신간 도서
-                                </span>
-                            </div>
-                            <ul class="list-unstyled mb-4">
-                                <c:forEach var="bookDTO" items="${bookList}">
-                                    <li class="mb-2"><i class="bi bi-check text-primary"></i>
-                                        <strong>
-                                            <a class="bi text-primary" href="/book/book_detail?bookISBN=${bookDTO.bookISBN}">${bookDTO.bookTitle}</a>
-                                        </strong>
-                                    </li>
+                        <div class="tab-pane" id="hitBook">
+                            <!--                        인기 도서-->
+                            <div class="card-group col-sm-auto">
+                                <c:forEach var="bookDTO2" items="${hitBookList}">
+                                    <div class="card" style="width: 18rem;">
+                                    	<div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">HIT!</div>
+                                        <img class="card-img-top" src="/bookImageStorage/${bookDTO2.bookImage}" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title">${bookDTO2.bookTitle}</h5>
+                                            <%--                                            <p class="card-text">${goodDTO.goodContent}</p> --%>
+                                            <a href="/book/book_detail?bookISBN=${bookDTO2.bookISBN}&bookGenre=${bookDTO2.bookGenre}" class="btn btn-primary">자세히 보기</a>
+                                        </div>
+                                        <%-- <div class="card-footer">
+                                           <small class="text-muted">${bookDTO2.bookDate}</small>
+                                       </div> --%>
+                                    </div>
                                 </c:forEach>
 
-                            </ul>
-                            <div class="d-grid">
-                                <a class="btn btn-outline-primary" href="/book/unified_search">더보기</a>
+                            </div>
+                            <div class="card text-white bg-primary my-5 py-10 text-center">
+                                <div class="card-body">
+                                    <a href="/book/hit_unified_search" class="btn btn-primary btn-lg">인기
+                                        도서 게시판</a>
+                                </div>
                             </div>
                         </div>
                     </div>
