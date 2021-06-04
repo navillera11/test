@@ -374,3 +374,11 @@
       * src/main/java/com/libraryManage/DAO/BookDAO.java
       * src/main/webapp/WEB-INF/VIEWS/hit_book_unified_search.jsp
       * src/main/webapp/WEB-INF/VIEWS/member_index.jsp 
+
+   * 신간 도서 페이지 생성
+      * src/main/webapp/WEB-INF/VIEWS/new_book_unified_search.jsp - 신간 도서 
+      * src/main/java/com/libraryManage/Controller/BookController.java
+      * src/main/java/com/libraryManage/DAO/BookDAO.java
+      * src/main/java/com/libraryManage/DTO/BookDTO.java
+      * src/main/webapp/WEB-INF/VIEWS/index.jsp
+      * src/main/webapp/WEB-INF/VIEWS/member_index.jsp 
