@@ -33,10 +33,12 @@ public class BookController {
 
 	// 도서 상세 페이지 이동
 	@RequestMapping(value = "/book_detail", method = RequestMethod.GET)
-	public String book_detail(Model model, @RequestParam String bookISBN) {
+	public String book_detail(Model model, @RequestParam String bookISBN, @RequestParam String bookGenre) {
 		BookDTO bookDTO = bookDAO.selectByISBN(bookISBN);
+		List<BookDTO> genreBookList = bookDAO.genreBook(bookGenre);
 
 		model.addAttribute("bookDTO", bookDTO);
+		model.addAttribute("genreBookList", genreBookList);
 
 		return "book_detail";
 	}

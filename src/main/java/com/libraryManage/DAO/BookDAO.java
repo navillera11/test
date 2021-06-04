@@ -30,6 +30,16 @@ public class BookDAO {
 			return null;
 		}
 	}
+	
+	public List<BookDTO> genreBook(String inputGenre) {
+		List<BookDTO> result = jdbcTemplate.query("SELECT *  FROM BOOK WHERE GENRE='"+inputGenre+"' LIMIT 4;", (rs, rowNum) -> {
+			BookDTO bookDTO = new BookDTO(rs.getString("ISBN"), rs.getString("TITLE"), rs.getString("AUTHOR"),
+					rs.getString("GENRE"), rs.getString("PUBLISHER"), rs.getString("IMAGE"), rs.getInt("COUNT"),
+					rs.getString("SUMMARY"), rs.getInt("HIT"), rs.getDate("DATE"));
+			return bookDTO;
+		});
+		return result;
+	}
 
 	public List<BookDTO> showAll() {
 		List<BookDTO> result = jdbcTemplate.query("SELECT * FROM BOOK;", (rs, rowNum) -> {
@@ -99,4 +109,6 @@ public class BookDAO {
 				});
 		return result;
 	}
+	
+	
 }
