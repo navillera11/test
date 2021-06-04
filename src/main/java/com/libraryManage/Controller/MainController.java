@@ -18,17 +18,17 @@ public class MainController {
 	BookService bookService;
 	@Autowired
 	BookDAO bookDAO;
-	
+
 	@Autowired
 	BoardService boardService;
 	@Autowired
 	BoardDAO boardDAO;
-	
+
 	@Autowired
 	NoticeService noticeService;
 	@Autowired
 	NoticeDAO noticeDAO;
-	
+
 	@Autowired
 	GoodService goodService;
 	@Autowired
@@ -40,26 +40,21 @@ public class MainController {
 		List<BoardDTO> boardList = boardDAO.showThree();
 		List<BookDTO> bookList = bookDAO.showFive();
 		List<GoodDTO> goodList = goodDAO.showThree();
-		
-		//hit 작 3개만
-		List<BookDTO> hitBookList = bookDAO.hitBook3();
-		//모든 hit 작
-		List<BookDTO> hitBookLists = bookDAO.hitBook();
-		
+		List<BookDTO> hitBookList = bookDAO.hitBookThree();
+
 		model.addAttribute("noticeList", noticeList);
 		model.addAttribute("boardList", boardList);
 		model.addAttribute("bookList", bookList);
 		model.addAttribute("goodList", goodList);
-		model.addAttribute("hitBookList",hitBookList);
-		model.addAttribute("hitBookLists",hitBookLists);
-		
+		model.addAttribute("hitBookList", hitBookList);
+
 		return "index";
 	}
 
 	// 관리자 페이지 테스트용
 	@GetMapping("/admin_index")
 	public String admin_index() {
-		
+
 		return "admin_index";
 	}
 
@@ -70,22 +65,17 @@ public class MainController {
 		List<BoardDTO> boardList = boardDAO.showThree();
 		List<BookDTO> bookList = bookDAO.showFive();
 		List<GoodDTO> goodList = goodDAO.showThree();
-		//hit 작 3개만
-		List<BookDTO> hitBookList = bookDAO.hitBook3();
-		//모든 hit 작
-		List<BookDTO> hitBookLists = bookDAO.hitBook();
-		
+		List<BookDTO> hitBookList = bookDAO.hitBookThree();
+
 		model.addAttribute("noticeList", noticeList);
 		model.addAttribute("boardList", boardList);
 		model.addAttribute("bookList", bookList);
 		model.addAttribute("goodList", goodList);
-		
-		model.addAttribute("hitBookList",hitBookList);
-		model.addAttribute("hitBookLists",hitBookLists);
-		
+		model.addAttribute("hitBookList", hitBookList);
+
 		return "member_index";
 	}
-	
+
 	// 도서관 소개 페이지
 	@GetMapping("/library_introduce")
 	public String library_introduce() {

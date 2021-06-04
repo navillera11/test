@@ -123,7 +123,7 @@
 									</tr>
 								</tfoot> -->
                                 <tbody>
-                                    <c:forEach var="bookDTO" items="${hitBookLists}">
+                                    <c:forEach var="bookDTO" items="${hitBookList}">
                                         <tr>
                                             <td>${bookDTO.bookISBN}</td>
                                             <td>${bookDTO.bookTitle}</td>
