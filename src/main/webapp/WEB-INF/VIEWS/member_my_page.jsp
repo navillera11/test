@@ -137,7 +137,6 @@
                                     <tr>
                                         <th>ISBN</th>
                                         <th>해당 도서 제목</th>
-                                        <th>해당 도서 페이지</th>
                                         <th>대여 날짜</th>
                                         <th>반납 만기 날짜</th>
                                     </tr>
@@ -156,7 +155,6 @@
                                         <tr>
                                             <td>${checkOutDTO.checkOutISBN}</td>
                                             <td>${checkOutDTO.checkOutTitle}</td>
-                                            <td><input type="button" value="자세히" onclick="location.href='/book/book_detail?bookISBN=${checkOutDTO.checkOutISBN}'" /></td>
                                             <td>${checkOutDTO.checkOutRentalDate}</td>
                                             <td>${checkOutDTO.checkOutReturnDueDate}</td>
                                         </tr>

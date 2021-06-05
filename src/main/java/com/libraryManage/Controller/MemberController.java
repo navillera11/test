@@ -33,7 +33,7 @@ public class MemberController {
 
 	@Autowired
 	CheckOutDAO checkOutDAO;
-	
+
 	@Autowired
 	PhraseDAO phraseDAO;
 
@@ -176,7 +176,7 @@ public class MemberController {
 	@RequestMapping(value = "/my_page", method = RequestMethod.GET)
 	public String member_my_page(Model model, HttpSession session) {
 		MemberDTO memberDTO = (MemberDTO) session.getAttribute("loginMemberDTO");
-		
+
 		List<PhraseDTO> phraseList = phraseDAO.showAll();
 		List<CheckOutDTO> checkOutList = checkOutDAO.selectByEmail(memberDTO.getMemberEmail());
 

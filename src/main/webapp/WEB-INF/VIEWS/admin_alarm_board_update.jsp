@@ -90,7 +90,7 @@
 											<td>${boardDTO.boardDate}</td>
 											<td>${boardDTO.boardPublic}</td>
 											<td><input type="button" value="자세히"
-												onclick="location.href='/boardId=${boardDTO.boardID}'" /></td>
+												onclick="location.href='/board/board_detail?boardID=${boardDTO.boardID}'" /></td>
 											<!-- 버튼으로 게시글 ID 가져오기 테스트 성공 -->
 										</tr>
 									</c:forEach>
