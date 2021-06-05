@@ -63,9 +63,7 @@ public class BoardDAO {
 	public void insertBoard(String memberEmail, BoardDTO _boardDTO) {
 		this.boardDTO = _boardDTO;
 
-		return jdbcTemplate.update("INSERT INTO BOARD(EMAIL, TITLE, CONTENT, DATE) VALUES('" + memberEmail + "', '" + boardDTO.getBoardTitle() + "', '" + boardDTO.getBoardContent() + "', NOW());");
-				(rs, rowNum) -> new BoardDTO(rs.getInt("FBID"), rs.getString("EMAIL"), rs.getString("TITLE"),
-						rs.getString("CONTENT"), rs.getDate("DATE"), rs.getString("PUBLIC")),
-				inputFBID);
+		jdbcTemplate.update("INSERT INTO BOARD(EMAIL, TITLE, CONTENT, DATE) VALUES('" + memberEmail + "', '"
+				+ boardDTO.getBoardTitle() + "', '" + boardDTO.getBoardContent() + "', NOW());");
 	}
 }
