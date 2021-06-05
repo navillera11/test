@@ -54,10 +54,15 @@ public class AdminBookController {
 			String inputBookCountString = request.getParameter("inputBookCount");
 			String inputBookImage = null;
 			///
-			String inputBookSummary = request.getParameter("inputBookSummary").replaceAll("\r\n", "<br />");;
+			String inputBookSummary = request.getParameter("inputBookSummary").replaceAll("\r\n", "<br />");
 			int inputBookHit = 0;
-	
+
 			int inputBookCount;
+
+			BookDTO bookDTO = bookDAO.selectByISBN(inputBookISBN);
+
+			if (bookDTO != null)
+				throw new AlreadyExistingException("이미 존재하는 도서입니다.");
 
 			if (!_inputBookImage.isEmpty()) {
 				try {
@@ -69,7 +74,7 @@ public class AdminBookController {
 
 					File files = new File(filePath);
 					_inputBookImage.transferTo(files);
-					
+
 					inputBookImage = fileName;
 				} catch (Exception ex) {
 					ex.printStackTrace();
@@ -85,18 +90,14 @@ public class AdminBookController {
 			else
 				inputBookCount = Integer.parseInt(inputBookCountString);
 
-			BookDTO bookDTO = new BookDTO(inputBookISBN, inputBookTitle, inputBookAuthor, inputBookGenre,
-					inputBookPublisher, inputBookImage, inputBookCount, inputBookSummary);
+			bookDTO = new BookDTO(inputBookISBN, inputBookTitle, inputBookAuthor, inputBookGenre, inputBookPublisher,
+					inputBookImage, inputBookCount, inputBookSummary);
 
 			bookDTO = bookService.addBook(bookDTO);
 
-			if (bookDTO == null) {
-				throw new AlreadyExistingException("이미 존재하는 도서입니다.");
-			} else {
-				System.out.println(bookDTO.toString());
+			System.out.println(bookDTO.toString());
 
-				response.sendRedirect("/admin/book/add");
-			}
+			response.sendRedirect("/admin/book/add");
 		} catch (AlreadyExistingException ex) {
 			response.setContentType("text/html; charset=UTF-8");
 
@@ -186,7 +187,7 @@ public class AdminBookController {
 		return "admin_book_update";
 	}
 
-	// 도서 수정 처리
+	// 도서 추가 처리
 	@PostMapping(value = "/update")
 	public void admin_book_update(HttpServletRequest request, HttpServletResponse response,
 			@RequestParam("inputBookImage") MultipartFile _inputBookImage) throws Exception {
@@ -197,48 +198,66 @@ public class AdminBookController {
 			String inputBookAuthor = request.getParameter("inputBookAuthor");
 			String inputBookPublisher = request.getParameter("inputBookPublisher");
 			String inputBookCountString = request.getParameter("inputBookCount");
-			String inputBookSummary = request.getParameter("inputBookSummary").replaceAll("\r\n", "<br />");;
 			String inputBookImage = null;
+			///
+			String inputBookSummary = request.getParameter("inputBookSummary").replaceAll("\r\n", "<br />");
 			int inputBookHit = 0;
 
-			
-			
 			int inputBookCount;
+
+			BookDTO bookDTO = bookDAO.selectByISBN(inputBookISBN);
+
+			if (bookDTO == null)
+				throw new NotExistingException("수정할 도서가 없습니다.");
+
+			if (!_inputBookImage.isEmpty()) {
+				try {
+					String uploadDir = "/bookImageStorage/";
+					String realPathUpload = request.getServletContext().getRealPath(uploadDir);
+
+					String fileName = _inputBookImage.getOriginalFilename();
+					String filePath = realPathUpload + fileName;
+
+					File files = new File(filePath);
+					_inputBookImage.transferTo(files);
+
+					inputBookImage = fileName;
+				} catch (Exception ex) {
+					ex.printStackTrace();
+				}
+			}
+
+			if (inputBookISBN.equals("") || inputBookGenre.equals("") || inputBookTitle.equals("")
+					|| inputBookAuthor.equals("") || inputBookPublisher.equals(""))
+				throw new FillOutInformationException("모든 정보를 입력해주세요.");
 
 			if (inputBookCountString.equals(""))
 				inputBookCount = 1;
 			else
 				inputBookCount = Integer.parseInt(inputBookCountString);
 
-			BookDTO bookDTO = new BookDTO(inputBookISBN, inputBookTitle, inputBookAuthor, inputBookGenre,
-					inputBookPublisher, inputBookImage, inputBookCount, inputBookSummary);
+			bookDTO = new BookDTO(inputBookISBN, inputBookTitle, inputBookAuthor, inputBookGenre, inputBookPublisher,
+					inputBookImage, inputBookCount, inputBookSummary);
 
-			if (inputBookISBN.equals("") || inputBookGenre.equals("") || inputBookTitle.equals("")
-					|| inputBookAuthor.equals("") || inputBookPublisher.equals("") || inputBookCountString.equals("")
-					|| inputBookSummary.equals(""))
-				throw new FillOutInformationException("모든 정보를 입력해주세요.");
-			else {
-				bookDTO = bookService.updateBook(bookDTO);
+			bookDTO = bookService.updateBook(bookDTO);
 
-				if (bookDTO == null)
-					throw new NotExistingException("수정할 도서가 없습니다.");
-				else
-					response.sendRedirect("/admin/book/update");
-			}
-		} catch (FillOutInformationException ex) {
-			response.setContentType("text/html; charset=UTF-8");
+			System.out.println(bookDTO.toString());
 
-			PrintWriter out = response.getWriter();
-
-			out.println("<script>alert('모든 정보를 입력해주세요.'); location.href='/admin/book/update';</script>");
-
-			out.flush();
+			response.sendRedirect("/admin/book/update");
 		} catch (NotExistingException ex) {
 			response.setContentType("text/html; charset=UTF-8");
 
 			PrintWriter out = response.getWriter();
 
 			out.println("<script>alert('수정할 도서가 없습니다.'); location.href='/admin/book/update';</script>");
+
+			out.flush();
+		} catch (FillOutInformationException ex) {
+			response.setContentType("text/html; charset=UTF-8");
+
+			PrintWriter out = response.getWriter();
+
+			out.println("<script>alert('모든 정보를 입력해주세요.'); location.href='/admin/book/update';</script>");
 
 			out.flush();
 		}
