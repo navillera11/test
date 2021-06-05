@@ -13,13 +13,13 @@ public class CommentDAO {
 	private JdbcTemplate jdbcTemplate;
 
 	public CommentDAO(DataSource dataSource) {
-		this.jdbcTemplate = new JdbcTemplate(dataSource);
+		this.jdbcTemplate = new JdbcTemplate(dataSource); 
 	}
 
 	public List<CommentDTO> selectByFBID(String inputFBID) {
 		List<CommentDTO> result = jdbcTemplate.query("SELECT * FROM COMMENT WHERE FBID=" + inputFBID + ";",
 				(rs, rowNum) -> {
-					CommentDTO commentDTO = new CommentDTO(rs.getInt("CID"), rs.getInt("FBID"), rs.getString("EMAIL"),
+					CommentDTO commentDTO = new CommentDTO(rs.getInt("CID"), rs.getInt("FBID"), rs.getString("NAME"),
 							rs.getString("CONTENT"));
 					return commentDTO;
 				});
@@ -28,16 +28,16 @@ public class CommentDAO {
 
 	public int findLatestCID(String inputFBID) {
 		try {
-			CommentDTO commentDTO = jdbcTemplate.queryForObject(
+			CommentDTO _commentDTO = jdbcTemplate.queryForObject(
 					"SELECT * FROM COMMENT WHERE FBID=? ORDER BY CID DESC LIMIT 1;",
-					(rs, rowNum) -> new CommentDTO(rs.getInt("CID"), rs.getInt("FBID"), rs.getString("EMAIL"),
+					(rs, rowNum) -> new CommentDTO(rs.getInt("CID"), rs.getInt("FBID"), rs.getString("NAME"),
 							rs.getString("CONTENT")),
 					inputFBID);
 			
-			if(commentDTO == null) {
+			if(_commentDTO == null) {
 				throw new Exception();
 			} else {
-				this.commentDTO = commentDTO;
+				this.commentDTO = _commentDTO;
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
@@ -48,8 +48,8 @@ public class CommentDAO {
 	}
 
 	public void insertComment(CommentDTO _commentDTO) {
-		jdbcTemplate.update("INSERT INTO COMMENT(CID, FBID, EMAIL, CONTENT) VALUES(" + _commentDTO.getCommentID() + ", "
-				+ _commentDTO.getCommentBoardID() + ", '" + _commentDTO.getCommentEmail() + "', '"
+		jdbcTemplate.update("INSERT INTO COMMENT(CID, FBID, NAME, CONTENT) VALUES(" + _commentDTO.getCommentID() + ", "
+				+ _commentDTO.getCommentBoardID() + ", '" + _commentDTO.getCommentName() + "', '"
 				+ _commentDTO.getCommentContent() + "');");
 	}
 }

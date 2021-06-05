@@ -37,7 +37,7 @@ public class BoardDAO {
 		});
 		return result;
 	}
-	
+
 	public List<BoardDTO> showVisibleBoard() {
 		List<BoardDTO> result = jdbcTemplate.query("SELECT * FROM BOARD WHERE PUBLIC='Y';", (rs, rowNum) -> {
 			BoardDTO boardDTO = new BoardDTO(rs.getInt("FBID"), rs.getString("EMAIL"), rs.getString("TITLE"),
@@ -46,7 +46,7 @@ public class BoardDAO {
 		});
 		return result;
 	}
-	
+
 	public List<BoardDTO> showThree() {
 		List<BoardDTO> result = jdbcTemplate.query("SELECT * FROM BOARD ORDER BY FBID DESC LIMIT 3;", (rs, rowNum) -> {
 			BoardDTO boardDTO = new BoardDTO(rs.getInt("FBID"), rs.getString("EMAIL"), rs.getString("TITLE"),
@@ -58,5 +58,14 @@ public class BoardDAO {
 
 	public void updatePublic(BoardDTO boardDTO, String newPublic) {
 		jdbcTemplate.update("UPDATE BOARD SET PUBLIC='" + newPublic + "' WHERE FBID=" + boardDTO.getBoardID() + ";");
+	}
+
+	public void insertBoard(String memberEmail, BoardDTO _boardDTO) {
+		this.boardDTO = _boardDTO;
+
+		return jdbcTemplate.update("INSERT INTO BOARD(EMAIL, TITLE, CONTENT, DATE) VALUES('" + memberEmail + "', '" + boardDTO.getBoardTitle() + "', '" + boardDTO.getBoardContent() + "', NOW());");
+				(rs, rowNum) -> new BoardDTO(rs.getInt("FBID"), rs.getString("EMAIL"), rs.getString("TITLE"),
+						rs.getString("CONTENT"), rs.getDate("DATE"), rs.getString("PUBLIC")),
+				inputFBID);
 	}
 }

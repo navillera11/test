@@ -39,8 +39,8 @@ public class BoardController {
 
 	// 자유게시판 세부 페이지 댓글
 	@PostMapping(value = "/board_detail")
-	public void upload_comment(HttpServletRequest request, @RequestParam String boardID,
-			HttpSession session, HttpServletResponse response) throws Exception {
+	public void upload_comment(HttpServletRequest request, @RequestParam String boardID, HttpSession session,
+			HttpServletResponse response) throws Exception {
 		BoardDTO boardDTO = boardDAO.selectByFBID(boardID);
 
 		String inputCommentContent = request.getParameter("inputCommentContent");
@@ -48,10 +48,10 @@ public class BoardController {
 		int latestCommentID = boardService.findLatestCID(boardID);
 
 		CommentDTO commentDTO = new CommentDTO(latestCommentID + 1, boardDTO.getBoardID(),
-				(String)session.getAttribute("loginMemberName"), inputCommentContent);
+				(String) session.getAttribute("loginMemberName"), inputCommentContent);
 
 		commentDAO.insertComment(commentDTO);
-		
+
 		response.sendRedirect("/board/board_detail?boardID=" + boardID);
 	}
 
@@ -69,6 +69,15 @@ public class BoardController {
 	@GetMapping("/board_write")
 	public String board_write() {
 		return "board_write";
+	}
+
+	// 게시판 굴 작성 처리
+	@PostMapping("/board_write")
+	public void board_write(HttpServletRequest request, HttpSession session) throws Exception {
+		String inputBoardTitle = request.getParameter("inputBoardTitle");
+		String inputBoardContent = request.getParameter("inputBoardContent");
+		
+		
 	}
 
 }

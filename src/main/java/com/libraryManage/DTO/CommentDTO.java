@@ -3,19 +3,19 @@ package com.libraryManage.DTO;
 public class CommentDTO {
 	private int commentID;
 	private int commentBoardID;
-	private String commentEmail;
+	private String commentName;
 	private String commentContent;
 
-	public CommentDTO(int _commentID, int _commentBoardID, String _commentEmail, String _commentContent) {
+	public CommentDTO(int _commentID, int _commentBoardID, String _commentName, String _commentContent) {
 		this.commentID = _commentID;
 		this.commentBoardID = _commentBoardID;
-		this.commentEmail = _commentEmail;
+		this.commentName = _commentName;
 		this.commentContent = _commentContent;
 	}
 
-	public CommentDTO(int _commentBoardID, String _commentEmail, String _commentContent) {
+	public CommentDTO(int _commentBoardID, String _commentName, String _commentContent) {
 		this.commentBoardID = _commentBoardID;
-		this.commentEmail = _commentEmail;
+		this.commentName = _commentName;
 		this.commentContent = _commentContent;
 	}
 
@@ -35,12 +35,12 @@ public class CommentDTO {
 		this.commentBoardID = commentBoardID;
 	}
 
-	public String getCommentEmail() {
-		return commentEmail;
+	public String getCommentName() {
+		return commentName;
 	}
 
-	public void setCommentEmail(String commentEmail) {
-		this.commentEmail = commentEmail;
+	public void setCommentName(String commentName) {
+		this.commentName = commentName;
 	}
 
 	public String getCommentContent() {
