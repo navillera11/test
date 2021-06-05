@@ -24,7 +24,7 @@ public class BoardService {
 	}
 	
 	// 게시글 마지막 댓글 아이디 가져오기
-	public int findLatestCID(String inputFBID) {
+	public int findLatestCID(int inputFBID) {
 		return commentDAO.findLatestCID(inputFBID);
 	}
 }

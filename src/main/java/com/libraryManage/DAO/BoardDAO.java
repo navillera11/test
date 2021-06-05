@@ -18,7 +18,7 @@ public class BoardDAO {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 
-	public BoardDTO selectByFBID(String inputFBID) {
+	public BoardDTO selectByFBID(int inputFBID) {
 		try {
 			return jdbcTemplate.queryForObject("SELECT * FROM BOARD WHERE FBID=?;",
 					(rs, rowNum) -> new BoardDTO(rs.getInt("FBID"), rs.getString("EMAIL"), rs.getString("TITLE"),
@@ -65,5 +65,9 @@ public class BoardDAO {
 
 		jdbcTemplate.update("INSERT INTO BOARD(EMAIL, TITLE, CONTENT, DATE) VALUES('" + memberEmail + "', '"
 				+ boardDTO.getBoardTitle() + "', '" + boardDTO.getBoardContent() + "', NOW());");
+	}
+
+	public void deleteBoard(int boardID) {
+		jdbcTemplate.update("DELETE FROM BOARD WHERE FBID=" + boardID + ";");
 	}
 }

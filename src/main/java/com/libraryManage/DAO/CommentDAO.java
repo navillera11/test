@@ -16,7 +16,7 @@ public class CommentDAO {
 		this.jdbcTemplate = new JdbcTemplate(dataSource); 
 	}
 
-	public List<CommentDTO> selectByFBID(String inputFBID) {
+	public List<CommentDTO> selectByFBID(int inputFBID) {
 		List<CommentDTO> result = jdbcTemplate.query("SELECT * FROM COMMENT WHERE FBID=" + inputFBID + ";",
 				(rs, rowNum) -> {
 					CommentDTO commentDTO = new CommentDTO(rs.getInt("CID"), rs.getInt("FBID"), rs.getString("NAME"),
@@ -26,7 +26,7 @@ public class CommentDAO {
 		return result;
 	}
 
-	public int findLatestCID(String inputFBID) {
+	public int findLatestCID(int inputFBID) {
 		try {
 			CommentDTO _commentDTO = jdbcTemplate.queryForObject(
 					"SELECT * FROM COMMENT WHERE FBID=? ORDER BY CID DESC LIMIT 1;",

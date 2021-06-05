@@ -45,7 +45,7 @@ public class AdminBoardController {
 	@PostMapping(value = "/board_update")
 	public void admin_alarm_board_update(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		try {
-			String inputBoardID = request.getParameter("inputBoardID");
+			int inputBoardID = Integer.parseInt(request.getParameter("inputBoardID"));
 			String inputBoardPublic = request.getParameter("inputBoardPublic");
 
 			BoardDTO boardDTO = boardDAO.selectByFBID(inputBoardID);
