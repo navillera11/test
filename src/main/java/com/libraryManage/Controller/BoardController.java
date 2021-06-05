@@ -73,15 +73,17 @@ public class BoardController {
 
 	// 게시판 굴 작성 처리
 	@PostMapping("/board_write")
-	public void board_write(HttpServletRequest request, HttpSession session) throws Exception {
+	public void board_write(HttpServletRequest request, HttpServletResponse response, HttpSession session) throws Exception {
 		String inputBoardTitle = request.getParameter("inputBoardTitle");
-		String inputBoardContent = request.getParameter("inputBoardContent");
+		String inputBoardContent = request.getParameter("inputBoardContent").replaceAll("\r\n", "<br />");
 
 		MemberDTO memberDTO = (MemberDTO) session.getAttribute("loginMemberDTO");
 
 		BoardDTO boardDTO = new BoardDTO(memberDTO.getMemberEmail(), inputBoardTitle, inputBoardContent);
 		
 		boardDAO.insertBoard(memberDTO.getMemberEmail(), boardDTO);
+		
+		response.sendRedirect("/board/unified_search");
 	}
 
 }
