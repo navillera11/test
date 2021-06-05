@@ -107,7 +107,7 @@
                                 <h3 class="text-center font-weight-light my-4">게시판 글 쓰기</h3>
                             </div>
                             <div class="card-body">
-                                <form action="#" method="POST" enctype="multipart/form-data">
+                                <form action="/board/board_write" method="POST" enctype="multipart/form-data">
 
                                     <!--                                    ISBN10 & 제목-->
                                     <div class="form-floating mb-3">

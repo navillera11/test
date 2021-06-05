@@ -76,8 +76,12 @@ public class BoardController {
 	public void board_write(HttpServletRequest request, HttpSession session) throws Exception {
 		String inputBoardTitle = request.getParameter("inputBoardTitle");
 		String inputBoardContent = request.getParameter("inputBoardContent");
+
+		MemberDTO memberDTO = (MemberDTO) session.getAttribute("loginMemberDTO");
+
+		BoardDTO boardDTO = new BoardDTO(memberDTO.getMemberEmail(), inputBoardTitle, inputBoardContent);
 		
-		
+		boardDAO.insertBoard(memberDTO.getMemberEmail(), boardDTO);
 	}
 
 }

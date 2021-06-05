@@ -35,7 +35,7 @@ public class BookController {
 	@RequestMapping(value = "/book_detail", method = RequestMethod.GET)
 	public String book_detail(Model model, @RequestParam String bookISBN, @RequestParam String bookGenre) {
 		BookDTO bookDTO = bookDAO.selectByISBN(bookISBN);
-		List<BookDTO> genreBookList = bookDAO.genreBook(bookISBN,bookGenre);
+		List<BookDTO> genreBookList = bookDAO.genreBook(bookISBN, bookGenre);
 
 		model.addAttribute("bookDTO", bookDTO);
 		model.addAttribute("genreBookList", genreBookList);
@@ -72,7 +72,8 @@ public class BookController {
 
 						bookDAO.updateBook(bookDTO); // 도서 정보 업데이트
 
-						response.sendRedirect("/book/book_detail?bookISBN=" + bookISBN);
+						response.sendRedirect(
+								"/book/book_detail?bookISBN=" + bookISBN + "&bookGenre=" + bookDTO.getBookGenre());
 					} else
 						throw new NotAvailableException("대여할 수 없습니다.");
 				}
@@ -115,7 +116,7 @@ public class BookController {
 
 		return "hit_book_unified_search";
 	}
-	
+
 	// 인기 도서 목록
 	@RequestMapping(value = "/new_unified_search", method = RequestMethod.GET)
 	public String new_book_unified_search(Model model) {
