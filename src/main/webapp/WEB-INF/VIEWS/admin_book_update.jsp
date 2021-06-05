@@ -160,9 +160,11 @@
 									</div>
 									
 									<!--                                    줄거리-->
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="inputBookSummary" type="text" placeholder="줄거리를 입력해주세요." name="inputBookSummary" /> <label for="inputBookSummary">한줄 줄거리</label>
-                                    </div>
+                                    <div class="form-group">
+										<textarea class="form-control" id="inputNoticeContent"
+											placeholder="줄거리를 입력해주세요." rows="10" name="inputBookSummary"></textarea>
+									</div>
+									<div id="inputNoticeContentCount">(0 / 1000)</div>
 
 									<!--                                    파일-->
 									<label class="form-label" for="inputBookImage">책의 이미지
@@ -193,7 +195,7 @@
 			<script
 				src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
 			<!-- Core theme JS-->
-			<script src="js/scripts.js"></script>
+			<script src="/js/scripts.js"></script>
 			<!--    회원 정의 추가용-->
 			<script
 				src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -209,10 +211,16 @@
 			<script
 				src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
 				crossorigin="anonymous"></script>
-			<script src="js/scripts.js"></script>
 			<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest"
 				crossorigin="anonymous"></script>
 			<script src="/js/dataTables.js"></script>
+
+			<!-- 글자제한 -->
+			<script
+				src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+			<script src="https://code.jquery.com/jquery-3.5.1.js"
+				integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+				crossorigin="anonymous"></script>
 		</div>
 	</div>
 </body>
