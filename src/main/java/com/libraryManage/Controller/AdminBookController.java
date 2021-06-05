@@ -137,6 +137,11 @@ public class AdminBookController {
 
 			BookDTO bookDTO = bookDAO.selectByISBN(inputBookISBN);
 
+			List<CheckOutDTO> checkOutDTO = checkOutDAO.selectByISBN(inputBookISBN);
+
+			if (checkOutDTO != null) // 대여한 사람이 있다는 것
+				throw new AlreadyExistingException("해당 도서를 대여한 회원이 있습니다.");
+
 			if (bookDTO == null)
 				throw new NotExistingException("존재하지 않는 도서입니다.");
 			else {
@@ -172,6 +177,14 @@ public class AdminBookController {
 			PrintWriter out = response.getWriter();
 
 			out.println("<script>alert('책의 제목이 맞지 않습니다.'); location.href='/admin/book/delete';</script>");
+
+			out.flush();
+		} catch (AlreadyExistingException ex) {
+			response.setContentType("text/html; charset=UTF-8");
+
+			PrintWriter out = response.getWriter();
+
+			out.println("<script>alert('해당 도서를 대여한 회원이 있습니다.'); location.href='/admin/book/delete';</script>");
 
 			out.flush();
 		}

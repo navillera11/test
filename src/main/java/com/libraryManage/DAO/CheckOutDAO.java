@@ -40,6 +40,18 @@ public class CheckOutDAO {
 		return result;
 	}
 
+	public List<CheckOutDTO> selectByISBN(String bookISBN) {
+		// 대여한 도서
+		List<CheckOutDTO> result = jdbcTemplate.query("SELECT * FROM CHECKOUT WHERE ISBN='" + bookISBN + "';",
+				(rs, rowNum) -> {
+					CheckOutDTO checkOutDTO = new CheckOutDTO(rs.getString("ISBN"), rs.getString("TITLE"),
+							rs.getString("EMAIL"), rs.getDate("RENTAL_DATE"), rs.getDate("RETURN_DUE_DATE"),
+							rs.getInt("EXTENSION_COUNT"));
+					return checkOutDTO;
+				});
+		return result;
+	}
+
 	public List<CheckOutDTO> selectByEmail(String memberEmail) {
 		// 대여한 도서
 		List<CheckOutDTO> result = jdbcTemplate.query("SELECT * FROM CHECKOUT WHERE EMAIL='" + memberEmail + "';",
