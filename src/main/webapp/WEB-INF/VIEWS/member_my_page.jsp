@@ -105,7 +105,11 @@
             <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="../assets/img/admin_wallpaper.jpg" alt="..." /></div>
             <div class="col-lg-5">
                 <h1 class="font-weight-light">MinGW's Library<br /> My Page</h1>
-                <p><%=session.getAttribute("loginMemberName")%>님 안녕하세요! <br /> <%=session.getAttribute("loginMemberName")%>님의 행복한 하루를 기원합니다.</p>
+                <p>
+                <%=session.getAttribute("loginMemberName")%>님 안녕하세요! <br /> 
+                <%=session.getAttribute("loginMemberName")%>님의 행복한 하루를 기원합니다.<br /> <br /> 
+                저희 도서관은 정상 반납한 횟수와 연체 반납 횟수를 종합해 계산하여 회원님이 대여하실 수 있는 도서의 권수를 조정해드립니다.
+                </p>
             </div>
         </div>
         <!-- Call to Action-->
