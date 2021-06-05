@@ -61,7 +61,7 @@ public class BoardController {
 	// 자유게시판 전체 검색
 	@RequestMapping(value = "/unified_search", method = RequestMethod.GET)
 	public String board_unified_search(Model model) {
-		List<BoardDTO> boardList = boardDAO.showAll();
+		List<BoardDTO> boardList = boardDAO.showVisibleBoard();
 
 		model.addAttribute("boardList", boardList);
 
