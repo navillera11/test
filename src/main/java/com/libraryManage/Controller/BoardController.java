@@ -99,6 +99,7 @@ public class BoardController {
 
 			MemberDTO memberDTO = (MemberDTO) session.getAttribute("loginMemberDTO");
 
+			
 			if (memberDTO == null)
 				throw new NotAvailableException("삭제할 수 없습니다.");
 

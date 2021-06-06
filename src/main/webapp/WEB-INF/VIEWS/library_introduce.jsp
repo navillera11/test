@@ -109,6 +109,7 @@
                         <p class="lead fw-normal text-muted mb-5">부디 당신의 책을 찾으실 수 있기를.</p>
                         <div class="d-flex flex-column flex-lg-row align-items-center">
                             <a class="me-lg-3 mb-4 mb-lg-0" href="https://github.com/jee00609/LibraryManage"><img class="app-badge" src="assets/img/git.png" alt="..." /></a>
+                        	<a class="me-lg-3 mb-4 mb-lg-0" href="https://github.com/17mirinae/LibraryManage"><img class="app-badge" src="assets/img/git2.png" alt="..." /></a>
                         </div>
                     </div>
                 </div>
@@ -223,6 +224,7 @@
                     <p class="lead fw-normal text-muted mb-5 mb-lg-0">읽고 싶은 도서를 직접 신청하고, 읽은 도서에 대한 <br/>후기를 작성 해 다른 회원들과 감상을 나누며 <br/>책에 대한 경험을 배로 얻어보세요.</p>
                 </div>
                 <div class="col-sm-8 col-md-6">
+                	
                     <div class="px-5 px-sm-0"><img class="img-fluid rounded-circle" src="https://source.unsplash.com/u8Jn2rzYIps/900x900" alt="..." /></div>
                 </div>
             </div>
@@ -246,6 +248,7 @@
         <div class="container px-5">
             <h2 class="text-center text-white font-alt mb-4">Get the code now!</h2>
             <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center">
+            	<a class="me-lg-3 mb-4 mb-lg-0" href="https://github.com/jee00609/LibraryManage"><img class="app-badge" src="assets/img/git.png" alt="..." /></a>
                 <a class="me-lg-3 mb-4 mb-lg-0" href="https://github.com/17mirinae/LibraryManage"><img class="app-badge" src="assets/img/git2.png" alt="..." /></a>
             </div>
         </div>
