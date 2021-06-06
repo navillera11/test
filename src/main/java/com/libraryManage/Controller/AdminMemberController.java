@@ -74,7 +74,6 @@ public class AdminMemberController {
 				throw new NotExistingException("존재하지 않는 계정입니다.");
 			else {
 				memberService.updateRank(memberDTO, Integer.parseInt(inputMemberRank));
-
 				response.sendRedirect("/admin/member/black_show");
 			}
 		} catch (NotExistingException ex) {
