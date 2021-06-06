@@ -117,7 +117,7 @@
 										for="inputBoardID">수정을 원하는 게시글의 ID</label>
 								</div>
 
-								<label for="inputBoardPublid">회원 랭크 관리</label>
+								<label for="inputBoardPublid">회원 게시글 관리</label>
 								<div class="">
 									<select class="form-control form-control-lg"
 										id="inputBoardPublic" name="inputBoardPublic">
