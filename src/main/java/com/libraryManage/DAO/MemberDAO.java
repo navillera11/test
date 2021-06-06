@@ -69,8 +69,8 @@ public class MemberDAO {
 	public void updateRank(MemberDTO memberDTO, int newRank) {
 		// 랭크 설정
 		if (newRank == 1)
-			jdbcTemplate.update("UPDATE MEMBER SET RANK=" + newRank
-					+ ", RETURN_AVAILABLE=RETURN_AVAILABLE+2 WHERE EMAIL='" + memberDTO.getMemberEmail() + "';");
+			jdbcTemplate.update("UPDATE MEMBER SET RANK=" + newRank + ", RETURN_AVAILABLE="
+					+ memberDTO.getMemberReturnAvailable() + "+2 WHERE EMAIL='" + memberDTO.getMemberEmail() + "';");
 		else if (newRank == 0)
 			jdbcTemplate.update("UPDATE MEMBER SET RANK=" + newRank + ", RETURN_AVAILABLE=3 WHERE EMAIL='"
 					+ memberDTO.getMemberEmail() + "';");
