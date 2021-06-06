@@ -139,7 +139,7 @@ public class AdminBookController {
 
 			List<CheckOutDTO> checkOutDTO = checkOutDAO.selectByISBN(inputBookISBN);
 
-			if (checkOutDTO != null) // 대여한 사람이 있다는 것
+			if (checkOutDTO == null) // 대여한 사람이 있다는 것
 				throw new AlreadyExistingException("해당 도서를 대여한 회원이 있습니다.");
 
 			if (bookDTO == null)

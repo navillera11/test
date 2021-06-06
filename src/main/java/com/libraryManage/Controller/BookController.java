@@ -49,7 +49,7 @@ public class BookController {
 			throws Exception {
 		try {
 			MemberDTO sessionMemberDTO = (MemberDTO) session.getAttribute("loginMemberDTO");
-
+			System.out.println(sessionMemberDTO);
 			BookDTO bookDTO = bookDAO.selectByISBN(bookISBN);
 
 			CheckOutDTO checkOutDTO = checkOutDAO.getOneCheckOut(sessionMemberDTO.getMemberEmail(), bookISBN);
@@ -72,6 +72,7 @@ public class BookController {
 
 						bookDAO.updateBook(bookDTO); // 도서 정보 업데이트
 
+						session.setAttribute("loginMemberDTO", sessionMemberDTO);
 						response.sendRedirect(
 								"/book/book_detail?bookISBN=" + bookISBN + "&bookGenre=" + bookDTO.getBookGenre());
 					} else

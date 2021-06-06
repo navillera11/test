@@ -17,7 +17,7 @@ import com.libraryManage.Exception.*;
 import com.libraryManage.DAO.*;
 
 @Controller
-@RequestMapping(value = "/admin/")
+@RequestMapping(value = "/admin/*")
 public class AdminController {
 	// 관리자 로그아웃
 	@GetMapping("/logout")
@@ -27,6 +27,6 @@ public class AdminController {
 
 		session.invalidate();
 
-		return "index";
+		return "redirect:/";
 	}
 }

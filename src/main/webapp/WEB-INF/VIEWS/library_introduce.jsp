@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>New Age - Start Bootstrap Theme</title>
+    <title>MINGW's Library</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
@@ -25,7 +25,15 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg bg-light static-top ">
         <div class="container px-5">
-            <a class="navbar-brand" href="/">MINGW's Library</a>
+            <%
+					// 세션값 가져오기
+					String id = (String) session.getAttribute("loginMemberName"); // Object 타입이므로 다운캐스팅
+					if (id == null){%>
+                    <a class="navbar-brand" href="/">MINGW's Library</a>
+                    <%}else{%>
+                    <a class="navbar-brand" href="/member_index">MINGW's Library</a>
+                    <%}
+			%>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -33,7 +41,7 @@
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <%
 					// 세션값 가져오기
-					String id = (String) session.getAttribute("loginMemberName"); // Object 타입이므로 다운캐스팅
+
 					if (id == null){%>
 						<li class="nav-item"><a class="nav-link" href="/member/register">Register</a></li>
 	                    <li class="nav-item"><a class="nav-link" href="/member/login">Login</a></li>
@@ -229,7 +237,7 @@
                     <br />
                     Start Reading.
                 </h2>
-                <a class="btn btn-outline-light py-3 px-4 rounded-pill" href="/member/login">Register for free</a>
+                <a class="btn btn-outline-light py-3 px-4 rounded-pill" href="/member/register">Register for free</a>
             </div>
         </div>
     </section>

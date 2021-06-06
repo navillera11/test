@@ -54,8 +54,17 @@ public class MainController {
 	// 관리자 페이지 테스트용
 	@GetMapping("/admin_index")
 	public String admin_index() {
-
 		return "admin_index";
+	}
+	
+	@GetMapping("/logout")
+	public String member_logout(final HttpSession session) {
+		if (session.getAttribute("loginMemberName") != null)
+			session.removeAttribute("loginMemberName");
+
+		session.invalidate();
+
+		return "redirect:/";
 	}
 
 	// 회원 페이지 테스트용

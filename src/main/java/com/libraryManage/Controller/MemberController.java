@@ -207,16 +207,15 @@ public class MemberController {
 		BookDTO bookDTO = bookDAO.selectByISBN(inputISBN);
 
 		CheckOutDTO checkOutDTO = checkOutDAO.getOneCheckOut(memberDTO.getMemberEmail(), inputISBN);
-		checkOutDAO.returnCheckOut(memberDTO.getMemberEmail(), inputISBN); // 반납 처리
 
 		// 날짜 확인
 		Date nowDate = new Date(new java.util.Date().getTime());
 		System.out.println(nowDate);
 
-		if (nowDate.before(checkOutDTO.getCheckOutReturnDueDate())) // 연체 중이면
-			memberDTO.setMemberNormalReturn(memberDTO.getMemberNormalReturn() + 1); // 정상 반납 - 1
+		if (nowDate.before(checkOutDTO.getCheckOutReturnDueDate())) // 연체 중이 아니면
+			memberDTO.setMemberNormalReturn(memberDTO.getMemberNormalReturn() + 1); // 정상 반납 + 1
 		else
-			memberDTO.setMemberNormalReturn(memberDTO.getMemberNormalReturn() - 1); // 정상 반납 + 1
+			memberDTO.setMemberNormalReturn(memberDTO.getMemberNormalReturn() - 1); // 정상 반납 - 1
 
 		memberDAO.updateMemberNormalReturn(memberDTO);
 		// 대여 가능 횟수 + 1
@@ -231,6 +230,8 @@ public class MemberController {
 		else if (memberDTO.getMemberNormalReturn() <= -3) // 블랙리스트 조건 달성
 			memberDAO.updateRank(memberDTO, -1);
 
+		checkOutDAO.returnCheckOut(memberDTO.getMemberEmail(), inputISBN); // 반납 처리
+		session.setAttribute("loginMemberDTO", memberDTO);
 		response.sendRedirect("/member/my_page");
 	}
 
@@ -256,6 +257,7 @@ public class MemberController {
 
 			checkOutDAO.extendCheckOut(memberDTO.getMemberEmail(), inputISBN); // 연장 처리
 
+			session.setAttribute("loginMemberDTO", memberDTO);
 			response.sendRedirect("/member/my_page");
 		} catch (NotAvailableException ex) {
 			response.setContentType("text/html; charset=UTF-8");

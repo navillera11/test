@@ -9,7 +9,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>MINGW's Library Admin Page</title>
+<title>MINGW's Library</title>
 <!-- Favicon-->
 <link rel="icon" type="image/x-icon" href="../../assets/favicon.ico" />
 <!-- Core theme CSS (includes Bootstrap)-->
@@ -32,7 +32,7 @@
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="/admin_index">Home</a></li>
-					<li class="nav-item"><a class="nav-link" href="/">Logout</a></li>
+					<li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
 				</ul>
 			</div>
 		</div>
