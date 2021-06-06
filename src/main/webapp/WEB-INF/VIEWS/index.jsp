@@ -282,6 +282,28 @@
         </div>
     </section>
 
+	<!-- Testimonials-->
+    <section class="testimonials text-center bg-light">
+        <div class="container">
+            <h2 class="mb-5">Spring Project 를 함께한 전우</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                        <img class="img-fluid rounded-circle mb-3" src="assets/img/MJC.jpg" alt="..." />
+                        <h5>MJ.C</h5>
+                        <p class="font-weight-light mb-0">"취업하고 싶어요!"</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                        <img class="img-fluid rounded-circle mb-3" src="assets/img/MJK.png" alt="..." />
+                        <h5>MJ.K</h5>
+                        <p class="font-weight-light mb-0">"The cake is a lie!"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <!-- Footer-->
