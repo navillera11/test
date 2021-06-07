@@ -387,8 +387,43 @@
       * src/main/java/com/libraryManage/DAO/PhraseDAO.java
       * src/main/webapp/WEB-INF/VIEWS/member_my_page.jsp 
 
+   * 댓글 기능 수정 완료
+      * src/main/java/com/libraryManage/Controller/BoardController.java
+      * src/main/java/com/libraryManage/DAO/BoardDAO.java
+      * src/main/java/com/libraryManage/DAO/CommentDAO.java
+      * src/main/java/com/libraryManage/DTO/CommentDTO.java
+      * src/main/webapp/WEB-INF/VIEWS/board_detail.jsp
 
-현재 문제
+   * 게시글 작성 기능 구현 및 도서 세부 페이지 URL 수정
+      * src/main/java/com/libraryManage/DAO/BoardDAO.java
+      * src/main/java/com/libraryManage/Controller/BoardController.java
+      * src/main/java/com/libraryManage/Controller/BookController.java
+      * src/main/java/com/libraryManage/Service/MemberService.java
+      * src/main/webapp/WEB-INF/VIEWS/board_write.jsp
 
-   * 도서 수정 안됨
-   * 댓글 
+   * 게시글 삭제 기능 구현
+      * src/main/java/com/libraryManage/Controller/AdminBoardController.java
+      * src/main/java/com/libraryManage/Controller/BoardController.java
+      * src/main/java/com/libraryManage/DAO/BoardDAO.java
+      * src/main/java/com/libraryManage/DAO/CommentDAO.java
+      * src/main/java/com/libraryManage/Service/BoardService.java
+      * src/main/webapp/WEB-INF/VIEWS/board_detail.jsp
+
+   * 도서 수정 기능 구현
+      * src/main/java/com/libraryManage/Controller/AdminBookController.java
+      * src/main/webapp/WEB-INF/VIEWS/admin_book_update.jsp
+
+   * 도서 삭제 처리
+      * src/main/java/com/libraryManage/Controller/AdminBookController.java
+      * src/main/java/com/libraryManage/DAO/CheckOutDAO.java
+   
+   * 인기 도서 게시판은 인기도가 보이도록 제공 및 도서 추가하면서 생긴 이미지 삽입
+      * src/main/webapp/WEB-INF/VIEWS/hit_book_unified_search.jsp
+      
+   * 마이페이지 도서관 소개 문구 변경
+      * src/main/webapp/WEB-INF/VIEWS/member_my_page.jsp
+
+   * 게시글 공개인 것만 보이게 설정
+      * src/main/java/com/libraryManage/Controller/BoardController.java
+      * src/main/java/com/libraryManage/DAO/BoardDAO.java
+      * src/main/java/com/libraryManage/DAO/BoardDAO.java
