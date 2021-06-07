@@ -40,7 +40,7 @@
                                             <label for="inputNewPasswordConfirm">New Password Confirm</label>
                                         </div>
                                         <div class="d-flex align-items-center justify-content-center mt-4 mb-0">
-                                            <input type="submit" class="btn btn-primary" value="Chage Password" />
+                                            <input type="submit" class="btn btn-primary" value="Change Password" />
                                         </div>
                                     </form>
                                 </div>
