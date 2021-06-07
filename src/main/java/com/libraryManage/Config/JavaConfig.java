@@ -14,6 +14,8 @@ public class JavaConfig {
 		dataSource.setUrl(
 				"jdbc:mysql://localhost:3306/spring5fs?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8");
 		dataSource.setUsername("root");
+		
+		//민지는 1234
 		dataSource.setPassword("rootoor");
 		return dataSource;
 	}
