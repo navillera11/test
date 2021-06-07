@@ -275,6 +275,26 @@ ALTER TABLE spring5fs.`comment`
           REFERENCES spring5fs.board (`FBID`)
 ~~~~
 
+   * 2021-06-07 최종
+
+~~~~sql
+CREATE TABLE spring5fs.comment
+(
+   `CID`        INT(20) NOT NULL,
+   `FBID`       INT(11) NOT NULL DEFAULT 0,
+   `NAME`       VARCHAR(45) CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
+   `CONTENT`    VARCHAR(1100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
+   PRIMARY KEY(`CID`, `FBID`),
+   CONSTRAINT `FK_comment_1` FOREIGN KEY(`FBID`)
+      REFERENCES board (`FBID`) ON UPDATE RESTRICT ON DELETE RESTRICT,
+   CONSTRAINT comment_ibfk_1 FOREIGN KEY(`FBID`)
+      REFERENCES board (`FBID`) ON UPDATE RESTRICT ON DELETE CASCADE
+)
+ENGINE INNODB
+COLLATE 'utf8_general_ci'
+ROW_FORMAT DEFAULT;
+~~~~
+
 ## 희망 도서 테이블
 
 ~~~~sql
