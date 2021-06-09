@@ -235,7 +235,7 @@
         <div class="cta-content">
             <div class="container px-5">
                 <h2 class="text-white display-1 lh-1 mb-4">
-                    Stop waiting.
+                    Stop Waiting.
                     <br />
                     Start Reading.
                 </h2>

@@ -48,7 +48,7 @@ public class BoardDAO {
 	}
 
 	public List<BoardDTO> showThree() {
-		List<BoardDTO> result = jdbcTemplate.query("SELECT * FROM BOARD ORDER BY FBID DESC LIMIT 3;", (rs, rowNum) -> {
+		List<BoardDTO> result = jdbcTemplate.query("SELECT * FROM BOARD WHERE PUBLIC='Y' ORDER BY FBID DESC LIMIT 3;", (rs, rowNum) -> {
 			BoardDTO boardDTO = new BoardDTO(rs.getInt("FBID"), rs.getString("EMAIL"), rs.getString("TITLE"),
 					rs.getString("CONTENT"), rs.getDate("DATE"), rs.getString("PUBLIC"));
 			return boardDTO;
