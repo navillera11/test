@@ -5,15 +5,17 @@
 조원 : 민지 * 2
 
 ## 목차
-   * [1.소개 영상](#소개-영상)
+   * [1.소개 영상 및 매뉴얼](#소개-영상-및-매뉴얼)
    * [2.Admin 기능](#Admin-기능)
    * [3.Member 기능](#Member-기능)
    * [4.Database 구조](#Database-구조)
    * [5.PUSH 목록](#PUSH-목록)
 
-## 소개 영상
+## 소개 영상 및 매뉴얼
 
 [소개 영상](https://youtu.be/_joRphN1b_w)
+
+[개발자 매뉴얼 및 사용자 매뉴얼](./src/main/resources/static/pdf)
 
 ## Admin 기능
 
