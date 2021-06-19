@@ -17,7 +17,7 @@
 
 [개발자 매뉴얼 및 사용자 매뉴얼](./src/main/resources/static/pdf)
 
-클래스 UML
+[클래스 UML](./src/main/resources/static/uml/libraryDEV_ClassDiagram_UML.png)
 
 <img src="https://github.com/jee00609/LibraryManage/blob/master/src/main/resources/static/uml/libraryDEV_ClassDiagram_UML.png" width="90%"></img>
 
