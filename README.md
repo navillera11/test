@@ -5,17 +5,21 @@
 조원 : 민지 * 2
 
 ## 목차
-   * [1.소개 영상 및 매뉴얼](#소개-영상-및-매뉴얼)
+   * [1.소개](#소개)
    * [2.Admin 기능](#Admin-기능)
    * [3.Member 기능](#Member-기능)
    * [4.Database 구조](#Database-구조)
    * [5.PUSH 목록](#PUSH-목록)
 
-## 소개 영상 및 매뉴얼
+## 소개
 
 [소개 영상](https://youtu.be/_joRphN1b_w)
 
 [개발자 매뉴얼 및 사용자 매뉴얼](./src/main/resources/static/pdf)
+
+클래스 UML
+
+<img src="https://github.com/jee00609/LibraryManage/blob/master/src/main/resources/static/uml/libraryDEV_ClassDiagram_UML.png" width="90%"></img>
 
 ## Admin 기능
 
