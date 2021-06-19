@@ -5,10 +5,15 @@
 조원 : 민지 * 2
 
 ## 목차
-   * [1.Admin 기능](#Admin-기능)
-   * [2.Member 기능](#Member-기능)
-   * [3.Database 구조](#Database-구조)
-   * [4.PUSH 목록](#PUSH-목록)
+   * [1.소개 영상](#소개-영상)
+   * [2.Admin 기능](#Admin-기능)
+   * [3.Member 기능](#Member-기능)
+   * [4.Database 구조](#Database-구조)
+   * [5.PUSH 목록](#PUSH-목록)
+
+## 소개 영상
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_joRphN1b_w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Admin 기능
 
