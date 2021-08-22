@@ -4,16 +4,16 @@
 
 조원 : 민지 * 2
 
-## Tilte Home Page
-
-![Title](https://user-images.githubusercontent.com/31675804/130341165-b50fafdc-c796-4d4c-b910-9d48fd1a126b.png)
-
 ## 목차
    * [1.소개](#소개)
    * [2.Admin 기능](#Admin-기능)
    * [3.Member 기능](#Member-기능)
    * [4.Database 구조](#Database-구조)
    * [5.PUSH 목록](#PUSH-목록)
+
+## Tilte Home Page
+
+![Title](https://user-images.githubusercontent.com/31675804/130341165-b50fafdc-c796-4d4c-b910-9d48fd1a126b.png)
 
 ## 소개
 
