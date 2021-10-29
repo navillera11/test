@@ -10,6 +10,7 @@
    * [3.Member 기능](#Member-기능)
    * [4.Database 구조](#Database-구조)
    * [5.PUSH 목록](#PUSH-목록)
+   * [6.메뉴얼](#)
 
 ## Tilte Home Page
 
@@ -97,3 +98,9 @@
 ## PUSH 목록
 
 [날짜별 업데이트 목록](https://github.com/jee00609/LibraryManage/blob/master/src/main/resources/static/push/pushAlert.md)
+
+## 메뉴얼
+
+[개발자 메뉴얼](https://github.com/jee00609/LibraryManage/blob/master/src/main/resources/static/pdf/Spring_MinGW's_%EA%B0%9C%EB%B0%9C%EC%9E%90_%EB%A7%A4%EB%89%B4%EC%96%BC.pdf)
+
+[사용자 메뉴얼](https://github.com/jee00609/LibraryManage/blob/master/src/main/resources/static/pdf/Spring_MinGW's_%EC%82%AC%EC%9A%A9%EC%9E%90_%EB%A7%A4%EB%89%B4%EC%96%BC.pdf)
