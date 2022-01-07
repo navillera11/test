@@ -11,7 +11,7 @@
    * [4.Database 구조](#Database-구조)
    * [5.PUSH 목록](#PUSH-목록)
    * [6.메뉴얼](#메뉴얼)
-   * [7.동영상](#)
+   * [7.동영상](#동영상)
 
 ## Tilte Home Page
 
