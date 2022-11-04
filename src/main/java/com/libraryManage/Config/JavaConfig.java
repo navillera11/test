@@ -16,7 +16,7 @@ public class JavaConfig {
 		dataSource.setUsername("root");
 		
 		//민지는 1234
-		dataSource.setPassword("rootoor");
+		dataSource.setPassword("1234");
 		return dataSource;
 	}
 }
